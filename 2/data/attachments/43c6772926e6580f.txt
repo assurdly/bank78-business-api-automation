@@ -1,0 +1,65 @@
+
+pm.test("Response status code is 200", function () {
+  pm.expect(pm.response.code).to.equal(200);
+});
+
+
+pm.test("The hasResult field should be a boolean", function () {
+  const responseData = pm.response.json();
+  
+  pm.expect(responseData.hasResult).to.be.a('boolean');
+});
+
+
+pm.test("The 'result' field is an object", function () {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.result).to.be.an('object');
+});
+
+
+pm.test("Validate resultType field is a number", function() {
+  const responseData = pm.response.json();
+
+  pm.expect(responseData.resultType).to.be.a('number');
+});
+
+pm.test("Response has 'hasResult' set to true", function () {
+    pm.expect(pm.response.json().hasResult).to.equal(true);
+});
+
+pm.test("Response 'result' is an object", function () {
+    pm.expect(pm.response.json().result).to.be.an('object');
+});
+
+pm.test("Response 'resultType' is 1", function () {
+    pm.expect(pm.response.json().resultType).to.equal(1);
+});
+
+pm.test("Response 'message' is null", function () {
+    pm.expect(pm.response.json().message).to.be.null;
+});
+
+pm.test("Response 'validationMessages' is null", function () {
+    pm.expect(pm.response.json().validationMessages).to.be.null;
+});
+
+pm.test("Response 'successful' is true", function () {
+    pm.expect(pm.response.json().successful).to.equal(true);
+});
+
+pm.test("Response 'errorCode' is 0", function () {
+    pm.expect(pm.response.json().errorCode).to.equal(0);
+});
+
+pm.test("Response 'responseCode' is null", function () {
+    pm.expect(pm.response.json().responseCode).to.be.null;
+});
+
+pm.test("Response 'result' has 'reference' property", function () {
+    pm.expect(pm.response.json().result).to.have.property('reference');
+});
+
+pm.test("Response 'result' has 'message' property", function () {
+    pm.expect(pm.response.json().result).to.have.property('message');
+});
