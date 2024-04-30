@@ -1,0 +1,47 @@
+// Verify that the response has a 'result' object
+pm.test("Response has a 'result' object", function () {
+    const responseBody = pm.response.json();
+    pm.expect(responseBody).to.have.property("result");
+});
+
+// Verify that the 'result' object is null
+pm.test("'result' object is null (Expected)", function () {
+    const result = pm.response.json().result;
+    pm.expect(result).to.be.null;
+});
+
+// Verify that the 'resultType' is 3
+pm.test("Result type is 3 (Expected)", function () {
+    const resultType = pm.response.json().resultType;
+    pm.expect(resultType).to.equal(3);
+});
+
+// Verify that the 'message' property is "Response has validation errors"
+pm.test("'message' property is 'Response has validation errors' (Expected)", function () {
+    const message = pm.response.json().message;
+    pm.expect(message).to.equal("Response has validation errors");
+});
+
+// Verify that 'validationMessages' property contains "Beneficiary Name can only contain alphabets"
+pm.test("Validation error message is 'Beneficiary Name can only contain alphabets' (Expected)", function () {
+    const validationMessages = pm.response.json().validationMessages;
+    pm.expect(validationMessages).to.include("Beneficiary Name can only contain alphabets");
+});
+
+// Verify that 'successful' property is false
+pm.test("'successful' property is false (Expected)", function () {
+    const successful = pm.response.json().successful;
+    pm.expect(successful).to.be.false;
+});
+
+// Verify that 'errorCode' property is 0
+pm.test("'errorCode' property is 0 (Expected)", function () {
+    const errorCode = pm.response.json().errorCode;
+    pm.expect(errorCode).to.equal(0);
+});
+
+// Verify that 'responseCode' property is null
+pm.test("'responseCode' property is null (Expected)", function () {
+    const responseCode = pm.response.json().responseCode;
+    pm.expect(responseCode).to.be.null;
+});
