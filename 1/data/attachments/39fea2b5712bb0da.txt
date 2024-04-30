@@ -1,0 +1,13 @@
+{
+  "channel": null,
+  "frequency": null,
+  "maturityDays": "<integer>",
+  "planName": "<string>",
+  "savingsProductId": "<integer>",
+  "sourceAccountNo": "<string>",
+  "targetAmount": "<double>",
+  "autoSave": "<boolean>",
+  "savingAmount": "<double>",
+  "savingStartDate": "<dateTime>",
+  "savingPlanId": "<integer>"
+}
