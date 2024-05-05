@@ -1,0 +1,25 @@
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+pm.test("Has result equal to true", function () {
+     pm.expect(pm.response.json().hasResult).to.equal(true);
+});
+
+pm.test("resultType equal to 1", function () {
+     pm.expect(pm.response.json().resultType).to.equal(1);
+});
+pm.test("message equal to success", function () {
+    pm.expect(pm.response.json().message).to.equal("Success");
+});
+pm.test("validationMessages", function () {
+    pm.expect(pm.response.json().validationMessages).to.equal(null);
+});
+pm.test("successful", function () {
+    pm.expect(pm.response.json().successful).to.equal(true);
+});
+pm.test("errorCode", function () {
+    pm.expect(pm.response.json().errorCode).to.equal(0);
+});
+pm.test("responseCode", function () {
+    pm.expect(pm.response.json().responseCode).to.equal(null);
+});
