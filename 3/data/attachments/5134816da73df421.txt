@@ -1,0 +1,23 @@
+pm.test("Response code is 400 (Bad Request)", function () {
+    pm.response.to.have.status(400);
+});
+
+pm.test("Response structure and properties for 400", function () {
+    pm.expect(pm.response.json()).to.have.property("hasResult", false);
+    pm.expect(pm.response.json()).to.have.property("result", null);
+    pm.expect(pm.response.json()).to.have.property("resultType", 3);
+    pm.expect(pm.response.json()).to.have.property("message", "Response has validation errors");
+    pm.expect(pm.response.json()).to.have.property("validationMessages");
+    pm.expect(pm.response.json()).to.have.property("successful", false);
+    pm.expect(pm.response.json()).to.have.property("errorCode", 0);
+    pm.expect(pm.response.json()).to.not.have.property("responseCode", "null");
+});
+
+pm.test("Error message Invalid amount paid. Amount passed is lesser than the bill package amount", function () {
+    var validationMessages = pm.response.json().validationMessages;
+    pm.expect(validationMessages).to.be.an("array").that.includes("Fixed package amount: Invalid amount paid. Amount passed is lesser than the bill package amount");
+});
+
+pm.test("Error code is 0 for failed request", function () {
+    pm.expect(pm.response.json().errorCode).to.equal(0);
+});
