@@ -1,0 +1,14 @@
+pm.test("Status code is 400 Bad Request", function () {
+    pm.response.to.have.status(400);
+});
+
+pm.test("Response has expected structure", function () {
+    pm.expect(pm.response.json()).to.have.property("hasResult", false);
+    pm.expect(pm.response.json()).to.have.property("result", null);
+    pm.expect(pm.response.json()).to.have.property("resultType", 2);
+    pm.expect(pm.response.json()).to.have.property("message", "Error occured while processing some records: Input string was not in a correct format.");
+    pm.expect(pm.response.json()).to.have.property("validationMessages", null);
+    pm.expect(pm.response.json()).to.have.property("successful", false);
+    pm.expect(pm.response.json()).to.have.property("errorCode", 0);
+    pm.expect(pm.response.json()).to.have.property("responseCode", null);
+});

@@ -1,0 +1,336 @@
+{
+  "firstName": "<string>",
+  "lastName": "<string>",
+  "rcBnNumber": "<string>",
+  "email": "<string>",
+  "phoneNumber": "<string>",
+  "phoneNumberCountryCode": "<string>",
+  "countryCode": "<string>",
+  "financialId": "<string>",
+  "financialIdType": "<string>",
+  "stateProvince": "<string>",
+  "city": "<string>",
+  "streetAddress1": "<string>",
+  "streetAddress2": "<string>",
+  "nearestLandmark": "<string>",
+  "postalCode": "<string>",
+  "profileImage": "<string>",
+  "gender": "<string>",
+  "stakeholderType": "Director",
+  "ownerhipPercentage": "<float>",
+  "phoneNumberVerifiedAt": "<dateTime>",
+  "emailVeriedAt": "<dateTime>",
+  "businessId": "<integer>",
+  "business": {
+    "id": "<integer>",
+    "name": "<string>",
+    "businessUid": "<uuid>",
+    "email": "<string>",
+    "rcBnNumber": "<string>",
+    "phoneNumber": "<string>",
+    "phoneNumberCountryCode": "<string>",
+    "tin": "<string>",
+    "hasDirectors": "<boolean>",
+    "hasShareHolders": "<boolean>",
+    "hasBenficialOwners": "<boolean>",
+    "natureOfBusiness": "<string>",
+    "sourceOfRevenue": "<string>",
+    "sourceOfCapital": "<string>",
+    "taxCompliance": "<boolean>",
+    "evidenceOfCorporateGovernance": "<boolean>",
+    "dailyDeposit": "<double>",
+    "dailyTransfer": "<double>",
+    "lifetimeDeposit": "<double>",
+    "limitTransfer": "<double>",
+    "streetAddress1": "<string>",
+    "streetAddress2": "<string>",
+    "stateProvince": "<string>",
+    "city": "<string>",
+    "nearestLandmark": "<string>",
+    "postalCode": "<string>",
+    "countryCode": "<string>",
+    "status": "<string>",
+    "active": "<boolean>",
+    "customerNumber": "<string>",
+    "kycLevel": "<string>",
+    "kycStatus": "Level2Rejected",
+    "kycApprovedBy": "<string>",
+    "kycApprovedDate": "<dateTime>",
+    "kycDeclineReason": "<string>",
+    "blacklisted": "<boolean>",
+    "accounts": [
+      {
+        "value": "<Circular reference to #/components/schemas/Account detected>"
+      },
+      {
+        "value": "<Circular reference to #/components/schemas/Account detected>"
+      }
+    ],
+    "customerRelationships": [
+      {
+        "id": "<integer>",
+        "customerId": "<integer>",
+        "customer": {
+          "value": "<Circular reference to #/components/schemas/Customer detected>"
+        },
+        "businessId": "<integer>",
+        "business": {
+          "value": "<Circular reference to #/components/schemas/Business detected>"
+        },
+        "dateCreated": "<dateTime>",
+        "lastUpdatedOn": "<dateTime>",
+        "createdBy": "<string>",
+        "lastUpdatedBy": "<string>"
+      },
+      {
+        "id": "<integer>",
+        "customerId": "<integer>",
+        "customer": {
+          "value": "<Circular reference to #/components/schemas/Customer detected>"
+        },
+        "businessId": "<integer>",
+        "business": {
+          "value": "<Circular reference to #/components/schemas/Business detected>"
+        },
+        "dateCreated": "<dateTime>",
+        "lastUpdatedOn": "<dateTime>",
+        "createdBy": "<string>",
+        "lastUpdatedBy": "<string>"
+      }
+    ],
+    "stakeholders": [
+      {
+        "id": "<integer>",
+        "rcBnNumber": "<string>",
+        "firstName": "<string>",
+        "lastName": "<string>",
+        "email": "<string>",
+        "phoneNumber": "<string>",
+        "phoneNumberCountryCode": "<string>",
+        "countryCode": "<string>",
+        "financialId": "<string>",
+        "financialIdType": "BVN",
+        "stateProvince": "<string>",
+        "city": "<string>",
+        "streetAddress1": "<string>",
+        "streetAddress2": "<string>",
+        "nearestLandmark": "<string>",
+        "postalCode": "<string>",
+        "profileImage": "<string>",
+        "gender": "<string>",
+        "stakeholderType": "BeneficialOwner",
+        "ownerhipPercentage": "<float>",
+        "phoneNumberVerifiedAt": "<dateTime>",
+        "emailVeriedAt": "<dateTime>",
+        "businessId": "<integer>",
+        "business": {
+          "value": "<Circular reference to #/components/schemas/Business detected>"
+        },
+        "dateOfBirth": "<string>",
+        "stateOfOrigin": "<string>",
+        "lgaOfOrigin": "<string>",
+        "nationality": "<string>",
+        "photoOnBVN": "<string>",
+        "bvnLinkedNin": "<string>",
+        "livenesssPhoto": "<string>",
+        "photoOnMeansOfId": "<string>",
+        "kycLevel": "<string>",
+        "kycStatus": "Level1Pending",
+        "livenessCheck": "<boolean>",
+        "idVerified": "<boolean>",
+        "bvnVerified": "<boolean>",
+        "addressVerified": "<boolean>",
+        "wasInvited": "<boolean>",
+        "acceptedInvite": "<boolean>",
+        "acceptedInviteOn": "<dateTime>",
+        "inviteExpiresOn": "<dateTime>",
+        "inviteId": "<uuid>",
+        "idNumber": "<string>",
+        "inviteRevoked": "<boolean>",
+        "isDeleted": "<boolean>",
+        "meansOfId": "VNin",
+        "bvnMeansOfIdCompare": "<boolean>",
+        "bvnMeansOfIdCompareResult": "<string>",
+        "dateCreated": "<dateTime>",
+        "lastUpdatedOn": "<dateTime>",
+        "createdBy": "<string>",
+        "lastUpdatedBy": "<string>"
+      },
+      {
+        "id": "<integer>",
+        "rcBnNumber": "<string>",
+        "firstName": "<string>",
+        "lastName": "<string>",
+        "email": "<string>",
+        "phoneNumber": "<string>",
+        "phoneNumberCountryCode": "<string>",
+        "countryCode": "<string>",
+        "financialId": "<string>",
+        "financialIdType": "BVN",
+        "stateProvince": "<string>",
+        "city": "<string>",
+        "streetAddress1": "<string>",
+        "streetAddress2": "<string>",
+        "nearestLandmark": "<string>",
+        "postalCode": "<string>",
+        "profileImage": "<string>",
+        "gender": "<string>",
+        "stakeholderType": "Director",
+        "ownerhipPercentage": "<float>",
+        "phoneNumberVerifiedAt": "<dateTime>",
+        "emailVeriedAt": "<dateTime>",
+        "businessId": "<integer>",
+        "business": {
+          "value": "<Circular reference to #/components/schemas/Business detected>"
+        },
+        "dateOfBirth": "<string>",
+        "stateOfOrigin": "<string>",
+        "lgaOfOrigin": "<string>",
+        "nationality": "<string>",
+        "photoOnBVN": "<string>",
+        "bvnLinkedNin": "<string>",
+        "livenesssPhoto": "<string>",
+        "photoOnMeansOfId": "<string>",
+        "kycLevel": "<string>",
+        "kycStatus": "Level1Review",
+        "livenessCheck": "<boolean>",
+        "idVerified": "<boolean>",
+        "bvnVerified": "<boolean>",
+        "addressVerified": "<boolean>",
+        "wasInvited": "<boolean>",
+        "acceptedInvite": "<boolean>",
+        "acceptedInviteOn": "<dateTime>",
+        "inviteExpiresOn": "<dateTime>",
+        "inviteId": "<uuid>",
+        "idNumber": "<string>",
+        "inviteRevoked": "<boolean>",
+        "isDeleted": "<boolean>",
+        "meansOfId": "Passport",
+        "bvnMeansOfIdCompare": "<boolean>",
+        "bvnMeansOfIdCompareResult": "<string>",
+        "dateCreated": "<dateTime>",
+        "lastUpdatedOn": "<dateTime>",
+        "createdBy": "<string>",
+        "lastUpdatedBy": "<string>"
+      }
+    ],
+    "userBusinesses": [
+      {
+        "id": "<long>",
+        "userId": "<string>",
+        "user": {
+          "userId": "<string>",
+          "userName": "<string>",
+          "firstName": "<string>",
+          "lastName": "<string>",
+          "phoneNumber": "<string>",
+          "phoneNumberCode": "<string>",
+          "referralCode": "<string>",
+          "profileImage": "<string>",
+          "email": "<string>",
+          "phoneNumberVerifiedAt": "<dateTime>",
+          "emailVerifiedAt": "<dateTime>",
+          "dateOfBirth": "<dateTime>",
+          "hasTransactionPin": "<boolean>",
+          "primaryProfile": "<string>",
+          "gender": "<string>",
+          "active": "<boolean>",
+          "blacklisted": "<boolean>",
+          "customerId": "<integer>",
+          "customer": {
+            "value": "<Circular reference to #/components/schemas/Customer detected>"
+          },
+          "userBusinesses": [
+            {
+              "value": "<Circular reference to #/components/schemas/UserBusiness detected>"
+            },
+            {
+              "value": "<Circular reference to #/components/schemas/UserBusiness detected>"
+            }
+          ],
+          "createdBy": "<string>",
+          "dateCreated": "<dateTime>",
+          "updatedBy": "<string>",
+          "lastUpdateDate": "<dateTime>",
+          "isDeleted": "<boolean>",
+          "agreeToSignUpTandC": "<boolean>"
+        },
+        "businessId": "<integer>",
+        "business": {
+          "value": "<Circular reference to #/components/schemas/Business detected>"
+        }
+      },
+      {
+        "id": "<long>",
+        "userId": "<string>",
+        "user": {
+          "userId": "<string>",
+          "userName": "<string>",
+          "firstName": "<string>",
+          "lastName": "<string>",
+          "phoneNumber": "<string>",
+          "phoneNumberCode": "<string>",
+          "referralCode": "<string>",
+          "profileImage": "<string>",
+          "email": "<string>",
+          "phoneNumberVerifiedAt": "<dateTime>",
+          "emailVerifiedAt": "<dateTime>",
+          "dateOfBirth": "<dateTime>",
+          "hasTransactionPin": "<boolean>",
+          "primaryProfile": "<string>",
+          "gender": "<string>",
+          "active": "<boolean>",
+          "blacklisted": "<boolean>",
+          "customerId": "<integer>",
+          "customer": {
+            "value": "<Circular reference to #/components/schemas/Customer detected>"
+          },
+          "userBusinesses": [
+            {
+              "value": "<Circular reference to #/components/schemas/UserBusiness detected>"
+            },
+            {
+              "value": "<Circular reference to #/components/schemas/UserBusiness detected>"
+            }
+          ],
+          "createdBy": "<string>",
+          "dateCreated": "<dateTime>",
+          "updatedBy": "<string>",
+          "lastUpdateDate": "<dateTime>",
+          "isDeleted": "<boolean>",
+          "agreeToSignUpTandC": "<boolean>"
+        },
+        "businessId": "<integer>",
+        "business": {
+          "value": "<Circular reference to #/components/schemas/Business detected>"
+        }
+      }
+    ],
+    "isDeleted": "<boolean>",
+    "addressVerified": "<boolean>",
+    "kycVerified": "<boolean>",
+    "numberOfDirectorsInvited": "<integer>",
+    "numberOfDirectorsAddressVerified": "<integer>",
+    "boardResolutionFile": "<string>",
+    "cacForm2aFile": "<string>",
+    "cacForm7aFile": "<string>",
+    "mematFile": "<string>",
+    "companyTinFile": "<string>",
+    "proofOfAddressFile": "<string>",
+    "additionalDocument": [
+      "<string>",
+      "<string>"
+    ],
+    "agreeToAddDirectors": "<boolean>",
+    "dateCreated": "<dateTime>",
+    "lastUpdatedOn": "<dateTime>",
+    "createdBy": "<string>",
+    "lastUpdatedBy": "<string>"
+  },
+  "acceptedInvite": "<boolean>",
+  "acceptedInviteOn": "<dateTime>",
+  "inviteExpiresOn": "<dateTime>",
+  "inviteId": "<uuid>",
+  "idNumber": "<string>",
+  "inviteRevoked": "<boolean>"
+}
