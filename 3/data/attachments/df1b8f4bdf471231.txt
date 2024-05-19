@@ -1,0 +1,39 @@
+
+pm.test("Response status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+
+pm.test("Verify that 'hasResult' is true", function () {
+    const responseData = pm.response.json();
+
+    pm.expect(responseData.hasResult).to.be.true;
+});
+
+
+pm.test("Total savings is a non-negative number", function () {
+    const responseData = pm.response.json();
+
+    pm.expect(responseData).to.be.an('object');
+    pm.expect(responseData.result.totalSavings).to.be.a('number').and.to.be.at.least(0);
+});
+
+
+pm.test("Total interest is a non-negative number", function () {
+    const responseData = pm.response.json();
+
+    pm.expect(responseData).to.be.an('object');
+    pm.expect(responseData.result).to.be.an('object');
+    pm.expect(responseData.result.totalInterest).to.be.a('number');
+    pm.expect(responseData.result.totalInterest).to.be.at.least(0);
+});
+
+
+pm.test("Verify that interestDelta is equal to 0", function () {
+  const responseData = pm.response.json();
+  
+  pm.expect(responseData).to.be.an('object');
+  pm.expect(responseData.result).to.exist.and.to.be.an('object');
+  pm.expect(responseData.result.interestDelta).to.exist.and.to.equal(0);
+});
+

@@ -1,0 +1,31 @@
+// Generate a random string function
+function generateRandomString(length) {
+    const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        result += characters.charAt(randomIndex);
+    }
+    return result;
+}
+
+// Update the requestBody with a random clientRequestId
+const randomClientId = generateRandomString(10); // Change 10 to the desired length
+const requestBody = {
+    "amount": "100",
+    "billId": "28",
+    "channel": "1",
+    "clientRequestId": randomClientId,
+    "meterNumber": "123456695049",
+    "packageId": "105",
+    "sourceAccountNumber": "{{bus_account}}",
+    "transactionPin": "6383",
+    "narration": "buy elec",
+    "saveBeneficiary": "false",
+    "deviceId": "meter1",
+    "beneficiaryName": "bryan",
+    "beneficiaryPhone": "08185597979",
+    "beneficiaryEmail": "bryan@assurdly"
+};
+
+pm.request.body.raw = JSON.stringify(requestBody);
