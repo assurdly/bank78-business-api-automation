@@ -1,0 +1,40 @@
+
+pm.test("Response status code is 400", function () {
+    pm.expect(pm.response.code).to.equal(400);
+});
+
+pm.test("Response has 'hasResult' set to false", function () {
+    pm.expect(pm.response.json().hasResult).to.equal(false);
+});
+
+pm.test("Response 'result' is null", function () {
+    pm.expect(pm.response.json().result).to.be.null;
+});
+
+pm.test("Response 'resultType' is 3", function () {
+    pm.expect(pm.response.json().resultType).to.equal(3);
+});
+
+pm.test("Response 'message' is 'Response has validation errors'", function () {
+    pm.expect(pm.response.json().message).to.equal("Response has validation errors");
+});
+
+pm.test("Response 'validationMessages' is an array with one element", function () {
+    pm.expect(pm.response.json().validationMessages).to.be.an('array').that.has.lengthOf(1);
+});
+
+pm.test("Response 'validationMessages' contains 'Transaction PIN is required'", function () {
+    pm.expect(pm.response.json().validationMessages[0]).to.equal("Transaction PIN is required");
+});
+
+pm.test("Response 'successful' is false", function () {
+    pm.expect(pm.response.json().successful).to.equal(false);
+});
+
+pm.test("Response 'errorCode' is 0", function () {
+    pm.expect(pm.response.json().errorCode).to.equal(0);
+});
+
+pm.test("Response 'responseCode' is null", function () {
+    pm.expect(pm.response.json().responseCode).to.be.null;
+});
