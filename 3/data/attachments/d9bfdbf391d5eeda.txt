@@ -1,0 +1,38 @@
+pm.test("Response status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response code is 200 for success", function () {
+    pm.response.to.have.status(200);
+});
+
+
+pm.test("The 'amount' field should be a number", function () {
+    const responseData = pm.response.json();
+    pm.expect(responseData).to.be.an('object');
+    pm.expect(responseData.result.amount).to.be.a('number');
+});
+
+pm.test("Response structure and properties for 200", function () {
+    pm.expect(pm.response.json()).to.have.property("hasResult", true);
+    pm.expect(pm.response.json()).to.have.property("result");
+    pm.expect(pm.response.json()).to.have.property("resultType", 1);
+    pm.expect(pm.response.json()).to.have.property("message", "Successful");
+    pm.expect(pm.response.json()).to.have.property("successful", true);
+    pm.expect(pm.response.json()).to.have.property("errorCode", 0);
+    pm.expect(pm.response.json()).to.have.property("responseCode", "200");
+});
+
+pm.test("Result object properties for 200", function () {
+    var result = pm.response.json().result;
+    
+    pm.expect(result).to.have.property("message", "Successful");
+    pm.expect(result).to.have.property("status", "Success");
+    pm.expect(result).to.have.property("billToken").to.be.null;
+});
+
+
+pm.test("Check if transaction reference is present", function () {
+    var responseBody = pm.response.json();
+    pm.expect(responseBody.result.reference).to.not.be.undefined;
+});
