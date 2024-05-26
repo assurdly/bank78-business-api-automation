@@ -1,0 +1,31 @@
+pm.test("Response status code is 400", function () {
+    pm.response.to.have.status(400);
+});
+
+pm.test("Response is an object with properties", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData).to.be.an('object').that.has.all.keys('hasResult', 'result', 'resultType', 'message', 'validationMessages', 'successful', 'errorCode', 'responseCode');
+});
+
+pm.test("Test response properties for data types", function () {
+    const responseData = pm.response.json();
+
+    pm.expect(responseData).to.be.an('object');
+
+    // Check the data types of individual properties
+    pm.expect(responseData.hasResult).to.be.a('boolean');
+    pm.expect(responseData.result).to.be.null;
+    pm.expect(responseData.resultType).to.be.a('number');
+    pm.expect(responseData.message).to.be.a('string');
+    pm.expect(responseData.validationMessages).to.be.an('array');
+    pm.expect(responseData.successful).to.be.a('boolean');
+    pm.expect(responseData.errorCode).to.be.a('number');
+    pm.expect(responseData.responseCode).to.be.null;
+});
+
+
+pm.test("Response contains the expected validation message", function () {
+    var jsonData = pm.response.json();
+    var validationMessages = jsonData.validationMessages;
+    pm.expect(validationMessages).to.include("Account Number can only be digits with a length of 10");
+});

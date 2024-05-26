@@ -1,0 +1,17 @@
+pm.test("Response code is 400 (Bad Request)", function () {
+    pm.response.to.have.status(400);
+});
+
+pm.test("Response structure and properties for 400", function () {
+    pm.expect(pm.response.json()).to.have.property("hasResult", false);
+    pm.expect(pm.response.json()).to.have.property("result", null);
+    pm.expect(pm.response.json()).to.have.property("resultType", 2);
+    pm.expect(pm.response.json()).to.have.property("message", "Duplicate Transaction with ref buydata1335");
+    pm.expect(pm.response.json()).to.have.property("successful", false);
+    pm.expect(pm.response.json()).to.have.property("errorCode", 1013);
+    pm.expect(pm.response.json()).to.have.property("responseCode", "BANK78BP01012");
+});
+
+pm.test("Error message says duplicate transadtion", function () {
+    pm.expect(pm.response.json().message).to.equal("Duplicate Transaction with ref buydata1335");
+});
