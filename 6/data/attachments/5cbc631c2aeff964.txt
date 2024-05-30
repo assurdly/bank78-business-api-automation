@@ -1,0 +1,30 @@
+
+pm.test("Response status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+
+pm.test("The 'result' field is an array with at least one element", function () {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.result).to.be.an('array').and.to.have.lengthOf.at.least(1);
+});
+
+
+pm.test("Each element in the 'result' array has the required fields - id and name", function () {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.result).to.be.an('array');
+    responseData.result.forEach(function (element) {
+        pm.expect(element.id).to.exist.and.to.be.a('number');
+        pm.expect(element.name).to.exist.and.to.be.a('string');
+    });
+});
+
+
+pm.test("Name field is a non-empty string", function () {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData.result[0].name).to.be.a('string').and.to.have.lengthOf.at.least(1, "Value should not be empty");
+});
+

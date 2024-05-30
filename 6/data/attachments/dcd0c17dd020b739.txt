@@ -1,0 +1,50 @@
+// // Function to generate a random 10-digit accountNumber
+// function generateRandomAccountNumber() {
+//     return Math.floor(Math.random() * 9000000000) + 1000000000;
+// }
+
+// // Function to generate a random email address
+// function generateRandomEmail() {
+//     const emailDomain = "example.com"; // You can replace this with your desired domain
+//     const randomString = Math.random().toString(36).substring(7);
+//     return `random_${randomString}@${emailDomain}`;
+// }
+
+// // Function to generate random alphabetic characters
+// function generateRandomAlphabets(length) {
+//     const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+//     let result = '';
+//     for (let i = 0; i < length; i++) {
+//         const randomIndex = Math.floor(Math.random() * characters.length);
+//         result += characters.charAt(randomIndex);
+//     }
+//     return result;
+// }
+
+// // Generate random values
+// const randomAccountNumber = generateRandomAccountNumber();
+// const randomEmail = generateRandomEmail();
+// const randomAlphabets = generateRandomAlphabets(10); // Generate 10 random alphabetic characters
+
+// // Update the requestBody with random values
+// const requestBody = {
+//     "beneficiaryName": randomAlphabets,
+//     "bankName": "Providus",
+//     "accountName": randomAlphabets,
+//     "accountNumber": randomAccountNumber.toString(), // Convert to string
+//     "emailAddress": randomEmail,
+//     "countryCode": "+234",
+//     "address": "Lagos",
+//     "currencyRequirement": {
+//         "name": "NGN",
+//         "value": "100",
+//         "forms": [
+//             {
+//                 "dataLabel": "new beneficiary",
+//                 "dataValue": "Save"
+//             }
+//         ]
+//     }
+// };
+
+// pm.request.body.raw = JSON.stringify(requestBody);
