@@ -1,0 +1,8 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu May 30 18:26:44 GMT 2024","Thu May 30 18:26:45 GMT 2024","625","Login to a Business","Sign In","","","","Signin - Valid details - Mary","Get Auth Token"
+"failed","Thu May 30 18:26:45 GMT 2024","Thu May 30 18:26:46 GMT 2024","495","Login to a Business","Sign In","","","","Signin - Invalid password","Get Auth Token"
+"failed","Thu May 30 18:26:45 GMT 2024","Thu May 30 18:26:45 GMT 2024","237","Login to a Business","Sign In","","","","Signin - Valid details  {Business acct}","Get Auth Token"
+"passed","Thu May 30 18:26:46 GMT 2024","Thu May 30 18:26:46 GMT 2024","300","Login to a Business","Sign In","","","","Signin - Invalid username","Get Auth Token"
+"passed","Thu May 30 18:26:46 GMT 2024","Thu May 30 18:26:47 GMT 2024","220","Login to a Business","Sign In","","","","Signin - Blank username","Get Auth Token"
+"passed","Thu May 30 18:26:45 GMT 2024","Thu May 30 18:26:45 GMT 2024","245","Login to a Business","Sign In","","","","Signin - Valid details","Get Auth Token"
+"failed","Thu May 30 18:26:46 GMT 2024","Thu May 30 18:26:46 GMT 2024","250","Login to a Business","Sign In","","","","Signin - Blank password","Get Auth Token"
