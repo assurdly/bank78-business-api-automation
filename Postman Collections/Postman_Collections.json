@@ -1082,7 +1082,7 @@
 									"script": {
 										"id": "f061a3a2-d667-4e28-bea3-cf2474fa5283",
 										"exec": [
-											"postman.setNextRequest(\"Forgot Password - Invalid PIN\")"
+											"postman.setNextRequest(\"Forgot Password - Invalid email\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
