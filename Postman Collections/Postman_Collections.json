@@ -12,178 +12,7 @@
 					"name": "Sign In",
 					"item": [
 						{
-							"name": "Signin - Valid details",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "56780d2f-6ec1-43f8-853c-f55d481d8b9b",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											"var jsonData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response has the required fields\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.access_token).to.exist;\r",
-											"    pm.expect(jsonData.access_token).to.be.a('string');\r",
-											"    pm.expect(jsonData.expires_in).to.be.an('number');\r",
-											"    pm.expect(jsonData.token_type).to.be.a('string');\r",
-											"    pm.expect(jsonData.refresh_token).to.be.a('string');\r",
-											"    pm.expect(jsonData.scope).to.exist;\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Set access token as an environmental variable\", function () {\r",
-											"   pm.environment.set(\"business_access_token\", jsonData.access_token);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Verify expires_in is 3600\", function () {\r",
-											"    pm.expect(jsonData.expires_in).to.eql(3600);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Verify token_type is Bearer\", function () {\r",
-											"    pm.expect(jsonData.token_type).to.eql(\"Bearer\");\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "46497f85-7afd-4b41-9a9a-c390192cd1b2",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/x-www-form-urlencoded"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "urlencoded",
-									"urlencoded": [
-										{
-											"description": "grant_type can either be password, client_credentials or refresh_token",
-											"key": "grant_type",
-											"value": "password"
-										},
-										{
-											"description": "username",
-											"key": "username",
-											"value": "ogo@mailinator.com"
-										},
-										{
-											"description": "password",
-											"key": "password",
-											"value": "Password!123"
-										},
-										{
-											"description": "client_id",
-											"key": "client_id",
-											"value": "ECBEECBC7CE5434DBA509B9375203EC1"
-										},
-										{
-											"description": "client_secret",
-											"key": "client_secret",
-											"value": "E166C7F9E6EA4D899A499EE239FCD930"
-										},
-										{
-											"key": "",
-											"value": "",
-											"type": "text",
-											"disabled": true
-										}
-									]
-								},
-								"url": "{{baseUrl}}/identity/connect/token",
-								"description": "Get Auth Token"
-							},
-							"response": [
-								{
-									"id": "533d07f6-bd94-49e0-9930-683213816fd9",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/x-www-form-urlencoded"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "urlencoded",
-											"urlencoded": [
-												{
-													"description": "grant_type can either be password, client_credentials or refresh_token",
-													"key": "grant_type",
-													"value": "<string>"
-												},
-												{
-													"description": "username",
-													"key": "username",
-													"value": "<string>"
-												},
-												{
-													"description": "password",
-													"key": "password",
-													"value": "<string>"
-												},
-												{
-													"description": "client_id",
-													"key": "client_id",
-													"value": "<string>"
-												},
-												{
-													"description": "client_secret",
-													"key": "client_secret",
-													"value": "<string>"
-												}
-											]
-										},
-										"url": "{{baseUrl}}/connect/token"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"access_token\": \"<string>\",\n  \"error_description\": \"<string>\",\n  \"error\": \"<string>\",\n  \"expires_in\": \"<integer>\",\n  \"scope\": \"<string>\",\n  \"token_type\": \"<string>\",\n  \"refresh_token\": \"<string>\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Signin - Valid details Copy",
+							"name": "Signin - Valid details - Mary",
 							"event": [
 								{
 									"listen": "test",
@@ -258,12 +87,12 @@
 										{
 											"description": "username",
 											"key": "username",
-											"value": "gwendoline+1biz@assurdly.com"
+											"value": "mary+babe@assurdly.com"
 										},
 										{
 											"description": "password",
 											"key": "password",
-											"value": "Password@1"
+											"value": "Assurdly01!"
 										},
 										{
 											"description": "client_id",
@@ -289,6 +118,367 @@
 							"response": [
 								{
 									"id": "85c62724-a476-4400-8110-2c56562bed85",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "grant_type can either be password, client_credentials or refresh_token",
+													"key": "grant_type",
+													"value": "<string>"
+												},
+												{
+													"description": "username",
+													"key": "username",
+													"value": "<string>"
+												},
+												{
+													"description": "password",
+													"key": "password",
+													"value": "<string>"
+												},
+												{
+													"description": "client_id",
+													"key": "client_id",
+													"value": "<string>"
+												},
+												{
+													"description": "client_secret",
+													"key": "client_secret",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": "{{baseUrl}}/connect/token"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"access_token\": \"<string>\",\n  \"error_description\": \"<string>\",\n  \"error\": \"<string>\",\n  \"expires_in\": \"<integer>\",\n  \"scope\": \"<string>\",\n  \"token_type\": \"<string>\",\n  \"refresh_token\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Signin - Valid details  {Business acct}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "56780d2f-6ec1-43f8-853c-f55d481d8b9b",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response has the required fields\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.access_token).to.exist;\r",
+											"    pm.expect(jsonData.access_token).to.be.a('string');\r",
+											"    pm.expect(jsonData.expires_in).to.be.an('number');\r",
+											"    pm.expect(jsonData.token_type).to.be.a('string');\r",
+											"    pm.expect(jsonData.refresh_token).to.be.a('string');\r",
+											"    pm.expect(jsonData.scope).to.exist;\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Set access token as an environmental variable\", function () {\r",
+											"   pm.environment.set(\"business_access_token\", jsonData.access_token);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Verify expires_in is 3600\", function () {\r",
+											"    pm.expect(jsonData.expires_in).to.eql(3600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Verify token_type is Bearer\", function () {\r",
+											"    pm.expect(jsonData.token_type).to.eql(\"Bearer\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "f4af49e0-1b4e-4a28-b27c-d98c22ce5938",
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "85700b6f-5eda-4df5-bfa3-e4a266cf3197",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "grant_type can either be password, client_credentials or refresh_token",
+											"key": "grant_type",
+											"value": "password"
+										},
+										{
+											"description": "username",
+											"key": "username",
+											"value": "{{bus_username}}"
+										},
+										{
+											"description": "password",
+											"key": "password",
+											"value": "Tested@0980"
+										},
+										{
+											"description": "client_id",
+											"key": "client_id",
+											"value": "ECBEECBC7CE5434DBA509B9375203EC1"
+										},
+										{
+											"description": "client_secret",
+											"key": "client_secret",
+											"value": "E166C7F9E6EA4D899A499EE239FCD930"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": "{{baseUrl}}/identity/connect/token",
+								"description": "Get Auth Token"
+							},
+							"response": [
+								{
+									"id": "581dec94-0a37-4653-9e73-00117522a141",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "grant_type can either be password, client_credentials or refresh_token",
+													"key": "grant_type",
+													"value": "<string>"
+												},
+												{
+													"description": "username",
+													"key": "username",
+													"value": "<string>"
+												},
+												{
+													"description": "password",
+													"key": "password",
+													"value": "<string>"
+												},
+												{
+													"description": "client_id",
+													"key": "client_id",
+													"value": "<string>"
+												},
+												{
+													"description": "client_secret",
+													"key": "client_secret",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": "{{baseUrl}}/connect/token"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"access_token\": \"<string>\",\n  \"error_description\": \"<string>\",\n  \"error\": \"<string>\",\n  \"expires_in\": \"<integer>\",\n  \"scope\": \"<string>\",\n  \"token_type\": \"<string>\",\n  \"refresh_token\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Signin - Valid details",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "56780d2f-6ec1-43f8-853c-f55d481d8b9b",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response has the required fields\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.access_token).to.exist;\r",
+											"    pm.expect(jsonData.access_token).to.be.a('string');\r",
+											"    pm.expect(jsonData.expires_in).to.be.an('number');\r",
+											"    pm.expect(jsonData.token_type).to.be.a('string');\r",
+											"    pm.expect(jsonData.refresh_token).to.be.a('string');\r",
+											"    pm.expect(jsonData.scope).to.exist;\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Set access token as an environmental variable\", function () {\r",
+											"   pm.environment.set(\"business_access_token\", jsonData.access_token);\r",
+											"   pm.environment.set(\"business_access_token\", jsonData.access_token);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Verify expires_in is 3600\", function () {\r",
+											"    pm.expect(jsonData.expires_in).to.eql(3600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Verify token_type is Bearer\", function () {\r",
+											"    pm.expect(jsonData.token_type).to.eql(\"Bearer\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "03c3e43a-9ca0-4f3d-beac-81fbfc920aea",
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "46497f85-7afd-4b41-9a9a-c390192cd1b2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "grant_type can either be password, client_credentials or refresh_token",
+											"key": "grant_type",
+											"value": "password"
+										},
+										{
+											"description": "username",
+											"key": "username",
+											"value": "ogo@mailinator.com"
+										},
+										{
+											"description": "password",
+											"key": "password",
+											"value": "Password!123"
+										},
+										{
+											"description": "client_id",
+											"key": "client_id",
+											"value": "ECBEECBC7CE5434DBA509B9375203EC1"
+										},
+										{
+											"description": "client_secret",
+											"key": "client_secret",
+											"value": "E166C7F9E6EA4D899A499EE239FCD930"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": "{{baseUrl}}/identity/connect/token",
+								"description": "Get Auth Token"
+							},
+							"response": [
+								{
+									"id": "533d07f6-bd94-49e0-9930-683213816fd9",
 									"name": "Success",
 									"originalRequest": {
 										"method": "POST",
@@ -881,7 +1071,19 @@
 											"// });\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "f061a3a2-d667-4e28-bea3-cf2474fa5283",
+										"exec": [
+											"pm."
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -1029,6 +1231,169 @@
 					"name": "Sign Up",
 					"item": [
 						{
+							"name": "Get Token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5cbbe3ec-ec6a-449c-b893-0f648dd308b6",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Access token is present in the response\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.access_token).to.exist;\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Access token is a non-empty string\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.access_token).to.be.a('string').and.to.not.be.empty;\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Set access token as an environmental variable\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.collectionVariables.set(\"Onboarding_access_token\", jsonData.access_token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "3223d1ba-cb3b-42c1-8e40-48cb88fb1eda",
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "4b2fb78c-9222-4be4-8ca8-dce6dcdf2fa0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-api-key",
+										"value": "h9tRbOJzcH9O8mDsWRVey6OimYrqYUdg4c4IKNTf",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "grant_type can either be password, client_credentials or refresh_token",
+											"key": "grant_type",
+											"value": "client_credentials"
+										},
+										{
+											"description": "username= test1860@mailinator.com, test6900, {{latest_cust_email}}",
+											"key": "username",
+											"value": "test8033@mailinator.com",
+											"disabled": true
+										},
+										{
+											"description": "password",
+											"key": "password",
+											"value": "Tested@0980",
+											"disabled": true
+										},
+										{
+											"description": "client_id",
+											"key": "client_id",
+											"value": "ECBEECBC7CE5434DBA509B9375203EC1"
+										},
+										{
+											"description": "client_secret",
+											"key": "client_secret",
+											"value": "E166C7F9E6EA4D899A499EE239FCD930"
+										}
+									]
+								},
+								"url": "{{baseUrl}}/identity/connect/token",
+								"description": "Get Auth Token"
+							},
+							"response": [
+								{
+									"id": "84c0b814-bda1-4f9c-a580-92c9ae36fb27",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "grant_type can either be password, client_credentials or refresh_token",
+													"key": "grant_type",
+													"value": "<string>"
+												},
+												{
+													"description": "username",
+													"key": "username",
+													"value": "<string>"
+												},
+												{
+													"description": "password",
+													"key": "password",
+													"value": "<string>"
+												},
+												{
+													"description": "client_id",
+													"key": "client_id",
+													"value": "<string>"
+												},
+												{
+													"description": "client_secret",
+													"key": "client_secret",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": "{{baseUrl}}/connect/token"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"access_token\": \"<string>\",\n  \"error_description\": \"<string>\",\n  \"error\": \"<string>\",\n  \"expires_in\": \"<integer>\",\n  \"scope\": \"<string>\",\n  \"token_type\": \"<string>\",\n  \"refresh_token\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
 							"name": "Signup - Successful",
 							"event": [
 								{
@@ -1044,7 +1409,8 @@
 											"var email = \"test\"+rand+\"@mailinator.com\"\r",
 											"pm.environment.set(\"bus_email\",email)"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -1116,9 +1482,16 @@
 											"\r",
 											"pm.test(\"Successful\", function () {\r",
 											"    pm.expect(responseData.successful).to.eql(true);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Set Business email,name,typeId as global variable\", function () {\r",
+											"    pm.globals.set(\"NewBusinessEmail\", jsonData.result.email)\r",
+											"    pm.globals.set(\"NewBusinessName\", jsonData.result.businessName)\r",
+											"    pm.globals.set(\"NewBusinessTypeId\", jsonData.result.TypeId)\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -1130,7 +1503,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{su_access_token}}"
+										"token": "{{Onboarding_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -1151,7 +1524,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"userName\": \"{{bus_email}}\",\n    \"email\": \"{{bus_email}}\",\n    \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"referralCode\": \"\",\n    \"businessName\": \"Documen\",\n    \"countryCode\": \"NG\",\n    \"rcBnNumber\": \"RC{{number}}\",\n    \"Password\":\"Tested@0980\",\n    \"agreeToSignUpTandC\": true\n  }",
+									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"userName\": \"{{bus_email}}\",\n    \"email\": \"{{bus_email}}\",\n    \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"referralCode\": \"\",\n    \"businessTypeId\": 1,\n    \"businessType\": \"Business Name\",\n    \"businessName\": \"{{$randomFirstName}} {{$randomLastName}}{{number}} ltd\",\n    \"countryCode\": \"NG\",\n    \"rcBnNumber\": \"RC{{number}}\",\n    \"Password\":\"Tested@0980\",\n    \"agreeToSignUpTandC\": true\n  }",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1250,7 +1623,8 @@
 											"pm.environment.set(\"number\", number)\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -1333,7 +1707,8 @@
 											"// });\r",
 											"// */"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -1345,7 +1720,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{su_access_token}}"
+										"token": "{{Onboarding_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -1462,7 +1837,8 @@
 										"exec": [
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -1507,7 +1883,8 @@
 											"    pm.expect(pm.response.text()).to.include(false);\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -1519,7 +1896,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{su_access_token}}"
+										"token": "{{Onboarding_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -1636,7 +2013,8 @@
 										"exec": [
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -1681,7 +2059,8 @@
 											"    pm.expect(pm.response.text()).to.include(false);\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -1693,7 +2072,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{su_access_token}}"
+										"token": "{{Onboarding_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -1855,7 +2234,8 @@
 											"     pm.expect(jsonData.successful).to.eq(false);\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -1869,7 +2249,8 @@
 											"\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -1881,7 +2262,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{su_access_token}}"
+										"token": "{{Onboarding_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -2071,7 +2452,8 @@
 											"\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -2085,7 +2467,8 @@
 											"\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -2097,7 +2480,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{su_access_token}}"
+										"token": "{{Onboarding_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -2237,7 +2620,8 @@
 											"});\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -2251,7 +2635,8 @@
 											"\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -2263,7 +2648,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{su_access_token}}"
+										"token": "{{Onboarding_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -2405,7 +2790,8 @@
 											"\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -2418,7 +2804,8 @@
 											"pm.environment.set(\"number\", number)\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -2430,7 +2817,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{su_access_token}}"
+										"token": "{{Onboarding_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -2568,7 +2955,8 @@
 											"});\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -2582,7 +2970,8 @@
 											"\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -2594,7 +2983,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{su_access_token}}"
+										"token": "{{Onboarding_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -2734,7 +3123,8 @@
 											"    pm.expect(pm.response.text()).to.include(false);\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -2744,7 +3134,8 @@
 										"exec": [
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -2756,7 +3147,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{su_access_token}}"
+										"token": "{{Onboarding_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -2895,7 +3286,8 @@
 											"});\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -2907,7 +3299,8 @@
 											"var number  = \"806744\" + num\r",
 											"pm.environment.set(\"number\", number)"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -2919,7 +3312,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{su_access_token}}"
+										"token": "{{Onboarding_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -3076,7 +3469,8 @@
 											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -3090,7 +3484,8 @@
 											"\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -3102,7 +3497,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{su_access_token}}"
+										"token": "{{Onboarding_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -3280,7 +3675,8 @@
 											"\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -3291,7 +3687,8 @@
 											"pm.collectionVariables.set(\"bus_username\", pm.environment.get(\"bus_email\"));\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -3303,7 +3700,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{su_access_token}}"
+										"token": "{{Onboarding_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -3324,7 +3721,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{ \n  \"UserName\": \"{{bus_username}}\", \n  \"otp\": \"715443\"\n}",
+									"raw": "{ \n  \"UserName\": \"{{bus_username}}\", \n  \"otp\": \"257340\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -16505,6 +16902,15 @@
 											"    pm.environment.set(\"business_access_token\", jsonData.access_token);\r",
 											"});"
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "7e97b78d-fd6f-444c-8427-15b890b2dc0f",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -16541,7 +16947,7 @@
 										{
 											"description": "username= test1860@mailinator.com, test6900, {{latest_cust_email}}",
 											"key": "username",
-											"value": "ajaerouchenya@gmail.com"
+											"value": "{{bus_username}}"
 										},
 										{
 											"description": "password",
@@ -16714,6 +17120,129 @@
 							"response": [
 								{
 									"id": "f816b496-d21e-4a98-a13b-26b5d82ec5bb",
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/account?accountNumber=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"account"
+											],
+											"query": [
+												{
+													"key": "accountNumber",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"userName\": \"<string>\",\n    \"accountNumber\": \"<string>\",\n    \"accountType\": \"<string>\",\n    \"currencyCode\": \"<string>\",\n    \"cardLimit\": \"<double>\",\n    \"customerId\": \"<integer>\",\n    \"businessId\": \"<integer>\",\n    \"customer\": {\n      \"id\": \"<integer>\",\n      \"userName\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"email\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"phoneNumberCountryCode\": \"<string>\",\n      \"referralCode\": \"<string>\",\n      \"financialId\": \"<string>\",\n      \"financialIdType\": \"BVN\",\n      \"profileImage\": \"<string>\",\n      \"gender\": \"<string>\",\n      \"previousNames\": \"<string>\",\n      \"meansOfId\": \"DriversLicense\",\n      \"dateOfBirth\": \"<string>\",\n      \"idNumber\": \"<string>\",\n      \"securityQuestion1\": \"<string>\",\n      \"securityAnswer1\": \"<string>\",\n      \"securityQuestion2\": \"<string>\",\n      \"securityAnswer2\": \"<string>\",\n      \"phoneNumberVerfiedAt\": \"<dateTime>\",\n      \"emailVeriedAt\": \"<dateTime>\",\n      \"dailyDeposit\": \"<double>\",\n      \"dailyTransfer\": \"<double>\",\n      \"lifetimeDeposit\": \"<double>\",\n      \"limitTransfer\": \"<double>\",\n      \"useKYCLevelLimit\": \"<boolean>\",\n      \"streetAddress1\": \"<string>\",\n      \"streetAddress2\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"city\": \"<string>\",\n      \"nearestLandmark\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"income\": \"<double>\",\n      \"idFile\": \"<string>\",\n      \"proofOfAddressFile\": \"<string>\",\n      \"bankStatementFile\": \"<string>\",\n      \"customerNumber\": \"<string>\",\n      \"kycLevel\": \"<string>\",\n      \"kycStatus\": \"Level1Pending\",\n      \"kycApprovedBy\": \"<string>\",\n      \"kycApprovedDate\": \"<dateTime>\",\n      \"active\": \"<boolean>\",\n      \"status\": \"Email_Verification_Pending\",\n      \"accounts\": [\n        {\n          \"id\": \"<integer>\",\n          \"userName\": \"<string>\",\n          \"accountNumber\": \"<string>\",\n          \"accountType\": \"<string>\",\n          \"currencyCode\": \"<string>\",\n          \"cardLimit\": \"<double>\",\n          \"customerId\": \"<integer>\",\n          \"customer\": {\n            \"value\": \"<Circular reference to #/components/schemas/Customer detected>\"\n          },\n          \"businessId\": \"<integer>\",\n          \"business\": {\n            \"id\": \"<integer>\",\n            \"name\": \"<string>\",\n            \"email\": \"<string>\",\n            \"rcBnNumber\": \"<string>\",\n            \"phoneNumber\": \"<string>\",\n            \"phoneNumberCountryCode\": \"<string>\",\n            \"tin\": \"<string>\",\n            \"hasDirectors\": \"<boolean>\",\n            \"hasShareHolders\": \"<boolean>\",\n            \"hasBenficialOwners\": \"<boolean>\",\n            \"natureOfBusiness\": \"<string>\",\n            \"sourceOfRevenue\": \"<string>\",\n            \"sourceOfCapital\": \"<string>\",\n            \"taxCompliance\": \"<boolean>\",\n            \"evidenceOfCorporateGovernance\": \"<boolean>\",\n            \"dailyDeposit\": \"<double>\",\n            \"dailyTransfer\": \"<double>\",\n            \"lifetimeDeposit\": \"<double>\",\n            \"limitTransfer\": \"<double>\",\n            \"streetAddress1\": \"<string>\",\n            \"streetAddress2\": \"<string>\",\n            \"stateProvince\": \"<string>\",\n            \"city\": \"<string>\",\n            \"nearestLandmark\": \"<string>\",\n            \"postalCode\": \"<string>\",\n            \"countryCode\": \"<string>\",\n            \"status\": \"<string>\",\n            \"active\": \"<boolean>\",\n            \"customerNumber\": \"<string>\",\n            \"kycLevel\": \"<string>\",\n            \"kycStatus\": \"Level2Approved\",\n            \"kycApprovedBy\": \"<string>\",\n            \"kycApprovedDate\": \"<dateTime>\",\n            \"blackListed\": \"<boolean>\",\n            \"accounts\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Account detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Account detected>\"\n              }\n            ],\n            \"customerRelationships\": [\n              {\n                \"id\": \"<integer>\",\n                \"customerId\": \"<integer>\",\n                \"customer\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Customer detected>\"\n                },\n                \"businessId\": \"<integer>\",\n                \"business\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n                },\n                \"dateCreated\": \"<dateTime>\",\n                \"lastUpdatedOn\": \"<dateTime>\",\n                \"createdBy\": \"<string>\",\n                \"lastUpdatedBy\": \"<string>\"\n              },\n              {\n                \"id\": \"<integer>\",\n                \"customerId\": \"<integer>\",\n                \"customer\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Customer detected>\"\n                },\n                \"businessId\": \"<integer>\",\n                \"business\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n                },\n                \"dateCreated\": \"<dateTime>\",\n                \"lastUpdatedOn\": \"<dateTime>\",\n                \"createdBy\": \"<string>\",\n                \"lastUpdatedBy\": \"<string>\"\n              }\n            ],\n            \"stakeholders\": [\n              {\n                \"id\": \"<integer>\",\n                \"rcBnNumber\": \"<string>\",\n                \"firstName\": \"<string>\",\n                \"lastName\": \"<string>\",\n                \"email\": \"<string>\",\n                \"phoneNumber\": \"<string>\",\n                \"phoneNumberCountryCode\": \"<string>\",\n                \"countryCode\": \"<string>\",\n                \"financialId\": \"<string>\",\n                \"financialIdType\": \"<string>\",\n                \"stateProvince\": \"<string>\",\n                \"city\": \"<string>\",\n                \"streetAddress1\": \"<string>\",\n                \"streetAddress2\": \"<string>\",\n                \"nearestLandmark\": \"<string>\",\n                \"postalCode\": \"<string>\",\n                \"profileImage\": \"<string>\",\n                \"gender\": \"<string>\",\n                \"stakeholderType\": \"<string>\",\n                \"ownerhipPercentage\": \"<float>\",\n                \"phoneNumberVerfiedAt\": \"<dateTime>\",\n                \"emailVeriedAt\": \"<dateTime>\",\n                \"businessId\": \"<integer>\",\n                \"business\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n                },\n                \"dateCreated\": \"<dateTime>\",\n                \"lastUpdatedOn\": \"<dateTime>\",\n                \"createdBy\": \"<string>\",\n                \"lastUpdatedBy\": \"<string>\"\n              },\n              {\n                \"id\": \"<integer>\",\n                \"rcBnNumber\": \"<string>\",\n                \"firstName\": \"<string>\",\n                \"lastName\": \"<string>\",\n                \"email\": \"<string>\",\n                \"phoneNumber\": \"<string>\",\n                \"phoneNumberCountryCode\": \"<string>\",\n                \"countryCode\": \"<string>\",\n                \"financialId\": \"<string>\",\n                \"financialIdType\": \"<string>\",\n                \"stateProvince\": \"<string>\",\n                \"city\": \"<string>\",\n                \"streetAddress1\": \"<string>\",\n                \"streetAddress2\": \"<string>\",\n                \"nearestLandmark\": \"<string>\",\n                \"postalCode\": \"<string>\",\n                \"profileImage\": \"<string>\",\n                \"gender\": \"<string>\",\n                \"stakeholderType\": \"<string>\",\n                \"ownerhipPercentage\": \"<float>\",\n                \"phoneNumberVerfiedAt\": \"<dateTime>\",\n                \"emailVeriedAt\": \"<dateTime>\",\n                \"businessId\": \"<integer>\",\n                \"business\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n                },\n                \"dateCreated\": \"<dateTime>\",\n                \"lastUpdatedOn\": \"<dateTime>\",\n                \"createdBy\": \"<string>\",\n                \"lastUpdatedBy\": \"<string>\"\n              }\n            ],\n            \"userBusinesses\": [\n              {\n                \"id\": \"<long>\",\n                \"userId\": \"<string>\",\n                \"user\": {\n                  \"userId\": \"<string>\",\n                  \"userName\": \"<string>\",\n                  \"firstName\": \"<string>\",\n                  \"lastName\": \"<string>\",\n                  \"phoneNumber\": \"<string>\",\n                  \"phoneNumberCode\": \"<string>\",\n                  \"referralCode\": \"<string>\",\n                  \"profileImage\": \"<string>\",\n                  \"phoneNumberVerifiedAt\": \"<dateTime>\",\n                  \"emailVerifiedAt\": \"<dateTime>\",\n                  \"dateOfBirth\": \"<dateTime>\",\n                  \"hasTransactionPin\": \"<boolean>\",\n                  \"primaryProfile\": \"<string>\",\n                  \"gender\": \"<string>\",\n                  \"active\": \"<boolean>\",\n                  \"blacklisted\": \"<boolean>\",\n                  \"customerId\": \"<integer>\",\n                  \"customer\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Customer detected>\"\n                  },\n                  \"userBusinesses\": [\n                    {\n                      \"value\": \"<Circular reference to #/components/schemas/UserBusiness detected>\"\n                    },\n                    {\n                      \"value\": \"<Circular reference to #/components/schemas/UserBusiness detected>\"\n                    }\n                  ],\n                  \"createdBy\": \"<string>\",\n                  \"dateCreated\": \"<dateTime>\",\n                  \"updatedBy\": \"<string>\",\n                  \"lastUpdateDate\": \"<dateTime>\"\n                },\n                \"businessId\": \"<integer>\",\n                \"business\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n                }\n              },\n              {\n                \"id\": \"<long>\",\n                \"userId\": \"<string>\",\n                \"user\": {\n                  \"userId\": \"<string>\",\n                  \"userName\": \"<string>\",\n                  \"firstName\": \"<string>\",\n                  \"lastName\": \"<string>\",\n                  \"phoneNumber\": \"<string>\",\n                  \"phoneNumberCode\": \"<string>\",\n                  \"referralCode\": \"<string>\",\n                  \"profileImage\": \"<string>\",\n                  \"phoneNumberVerifiedAt\": \"<dateTime>\",\n                  \"emailVerifiedAt\": \"<dateTime>\",\n                  \"dateOfBirth\": \"<dateTime>\",\n                  \"hasTransactionPin\": \"<boolean>\",\n                  \"primaryProfile\": \"<string>\",\n                  \"gender\": \"<string>\",\n                  \"active\": \"<boolean>\",\n                  \"blacklisted\": \"<boolean>\",\n                  \"customerId\": \"<integer>\",\n                  \"customer\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Customer detected>\"\n                  },\n                  \"userBusinesses\": [\n                    {\n                      \"value\": \"<Circular reference to #/components/schemas/UserBusiness detected>\"\n                    },\n                    {\n                      \"value\": \"<Circular reference to #/components/schemas/UserBusiness detected>\"\n                    }\n                  ],\n                  \"createdBy\": \"<string>\",\n                  \"dateCreated\": \"<dateTime>\",\n                  \"updatedBy\": \"<string>\",\n                  \"lastUpdateDate\": \"<dateTime>\"\n                },\n                \"businessId\": \"<integer>\",\n                \"business\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n                }\n              }\n            ],\n            \"dateCreated\": \"<dateTime>\",\n            \"lastUpdatedOn\": \"<dateTime>\",\n            \"createdBy\": \"<string>\",\n            \"lastUpdatedBy\": \"<string>\"\n          },\n          \"dateCreated\": \"<dateTime>\",\n          \"lastUpdatedOn\": \"<dateTime>\",\n          \"createdBy\": \"<string>\",\n          \"lastUpdatedBy\": \"<string>\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"userName\": \"<string>\",\n          \"accountNumber\": \"<string>\",\n          \"accountType\": \"<string>\",\n          \"currencyCode\": \"<string>\",\n          \"cardLimit\": \"<double>\",\n          \"customerId\": \"<integer>\",\n          \"customer\": {\n            \"value\": \"<Circular reference to #/components/schemas/Customer detected>\"\n          },\n          \"businessId\": \"<integer>\",\n          \"business\": {\n            \"id\": \"<integer>\",\n            \"name\": \"<string>\",\n            \"email\": \"<string>\",\n            \"rcBnNumber\": \"<string>\",\n            \"phoneNumber\": \"<string>\",\n            \"phoneNumberCountryCode\": \"<string>\",\n            \"tin\": \"<string>\",\n            \"hasDirectors\": \"<boolean>\",\n            \"hasShareHolders\": \"<boolean>\",\n            \"hasBenficialOwners\": \"<boolean>\",\n            \"natureOfBusiness\": \"<string>\",\n            \"sourceOfRevenue\": \"<string>\",\n            \"sourceOfCapital\": \"<string>\",\n            \"taxCompliance\": \"<boolean>\",\n            \"evidenceOfCorporateGovernance\": \"<boolean>\",\n            \"dailyDeposit\": \"<double>\",\n            \"dailyTransfer\": \"<double>\",\n            \"lifetimeDeposit\": \"<double>\",\n            \"limitTransfer\": \"<double>\",\n            \"streetAddress1\": \"<string>\",\n            \"streetAddress2\": \"<string>\",\n            \"stateProvince\": \"<string>\",\n            \"city\": \"<string>\",\n            \"nearestLandmark\": \"<string>\",\n            \"postalCode\": \"<string>\",\n            \"countryCode\": \"<string>\",\n            \"status\": \"<string>\",\n            \"active\": \"<boolean>\",\n            \"customerNumber\": \"<string>\",\n            \"kycLevel\": \"<string>\",\n            \"kycStatus\": \"Level3Approved\",\n            \"kycApprovedBy\": \"<string>\",\n            \"kycApprovedDate\": \"<dateTime>\",\n            \"blackListed\": \"<boolean>\",\n            \"accounts\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Account detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Account detected>\"\n              }\n            ],\n            \"customerRelationships\": [\n              {\n                \"id\": \"<integer>\",\n                \"customerId\": \"<integer>\",\n                \"customer\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Customer detected>\"\n                },\n                \"businessId\": \"<integer>\",\n                \"business\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n                },\n                \"dateCreated\": \"<dateTime>\",\n                \"lastUpdatedOn\": \"<dateTime>\",\n                \"createdBy\": \"<string>\",\n                \"lastUpdatedBy\": \"<string>\"\n              },\n              {\n                \"id\": \"<integer>\",\n                \"customerId\": \"<integer>\",\n                \"customer\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Customer detected>\"\n                },\n                \"businessId\": \"<integer>\",\n                \"business\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n                },\n                \"dateCreated\": \"<dateTime>\",\n                \"lastUpdatedOn\": \"<dateTime>\",\n                \"createdBy\": \"<string>\",\n                \"lastUpdatedBy\": \"<string>\"\n              }\n            ],\n            \"stakeholders\": [\n              {\n                \"id\": \"<integer>\",\n                \"rcBnNumber\": \"<string>\",\n                \"firstName\": \"<string>\",\n                \"lastName\": \"<string>\",\n                \"email\": \"<string>\",\n                \"phoneNumber\": \"<string>\",\n                \"phoneNumberCountryCode\": \"<string>\",\n                \"countryCode\": \"<string>\",\n                \"financialId\": \"<string>\",\n                \"financialIdType\": \"<string>\",\n                \"stateProvince\": \"<string>\",\n                \"city\": \"<string>\",\n                \"streetAddress1\": \"<string>\",\n                \"streetAddress2\": \"<string>\",\n                \"nearestLandmark\": \"<string>\",\n                \"postalCode\": \"<string>\",\n                \"profileImage\": \"<string>\",\n                \"gender\": \"<string>\",\n                \"stakeholderType\": \"<string>\",\n                \"ownerhipPercentage\": \"<float>\",\n                \"phoneNumberVerfiedAt\": \"<dateTime>\",\n                \"emailVeriedAt\": \"<dateTime>\",\n                \"businessId\": \"<integer>\",\n                \"business\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n                },\n                \"dateCreated\": \"<dateTime>\",\n                \"lastUpdatedOn\": \"<dateTime>\",\n                \"createdBy\": \"<string>\",\n                \"lastUpdatedBy\": \"<string>\"\n              },\n              {\n                \"id\": \"<integer>\",\n                \"rcBnNumber\": \"<string>\",\n                \"firstName\": \"<string>\",\n                \"lastName\": \"<string>\",\n                \"email\": \"<string>\",\n                \"phoneNumber\": \"<string>\",\n                \"phoneNumberCountryCode\": \"<string>\",\n                \"countryCode\": \"<string>\",\n                \"financialId\": \"<string>\",\n                \"financialIdType\": \"<string>\",\n                \"stateProvince\": \"<string>\",\n                \"city\": \"<string>\",\n                \"streetAddress1\": \"<string>\",\n                \"streetAddress2\": \"<string>\",\n                \"nearestLandmark\": \"<string>\",\n                \"postalCode\": \"<string>\",\n                \"profileImage\": \"<string>\",\n                \"gender\": \"<string>\",\n                \"stakeholderType\": \"<string>\",\n                \"ownerhipPercentage\": \"<float>\",\n                \"phoneNumberVerfiedAt\": \"<dateTime>\",\n                \"emailVeriedAt\": \"<dateTime>\",\n                \"businessId\": \"<integer>\",\n                \"business\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n                },\n                \"dateCreated\": \"<dateTime>\",\n                \"lastUpdatedOn\": \"<dateTime>\",\n                \"createdBy\": \"<string>\",\n                \"lastUpdatedBy\": \"<string>\"\n              }\n            ],\n            \"userBusinesses\": [\n              {\n                \"id\": \"<long>\",\n                \"userId\": \"<string>\",\n                \"user\": {\n                  \"userId\": \"<string>\",\n                  \"userName\": \"<string>\",\n                  \"firstName\": \"<string>\",\n                  \"lastName\": \"<string>\",\n                  \"phoneNumber\": \"<string>\",\n                  \"phoneNumberCode\": \"<string>\",\n                  \"referralCode\": \"<string>\",\n                  \"profileImage\": \"<string>\",\n                  \"phoneNumberVerifiedAt\": \"<dateTime>\",\n                  \"emailVerifiedAt\": \"<dateTime>\",\n                  \"dateOfBirth\": \"<dateTime>\",\n                  \"hasTransactionPin\": \"<boolean>\",\n                  \"primaryProfile\": \"<string>\",\n                  \"gender\": \"<string>\",\n                  \"active\": \"<boolean>\",\n                  \"blacklisted\": \"<boolean>\",\n                  \"customerId\": \"<integer>\",\n                  \"customer\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Customer detected>\"\n                  },\n                  \"userBusinesses\": [\n                    {\n                      \"value\": \"<Circular reference to #/components/schemas/UserBusiness detected>\"\n                    },\n                    {\n                      \"value\": \"<Circular reference to #/components/schemas/UserBusiness detected>\"\n                    }\n                  ],\n                  \"createdBy\": \"<string>\",\n                  \"dateCreated\": \"<dateTime>\",\n                  \"updatedBy\": \"<string>\",\n                  \"lastUpdateDate\": \"<dateTime>\"\n                },\n                \"businessId\": \"<integer>\",\n                \"business\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n                }\n              },\n              {\n                \"id\": \"<long>\",\n                \"userId\": \"<string>\",\n                \"user\": {\n                  \"userId\": \"<string>\",\n                  \"userName\": \"<string>\",\n                  \"firstName\": \"<string>\",\n                  \"lastName\": \"<string>\",\n                  \"phoneNumber\": \"<string>\",\n                  \"phoneNumberCode\": \"<string>\",\n                  \"referralCode\": \"<string>\",\n                  \"profileImage\": \"<string>\",\n                  \"phoneNumberVerifiedAt\": \"<dateTime>\",\n                  \"emailVerifiedAt\": \"<dateTime>\",\n                  \"dateOfBirth\": \"<dateTime>\",\n                  \"hasTransactionPin\": \"<boolean>\",\n                  \"primaryProfile\": \"<string>\",\n                  \"gender\": \"<string>\",\n                  \"active\": \"<boolean>\",\n                  \"blacklisted\": \"<boolean>\",\n                  \"customerId\": \"<integer>\",\n                  \"customer\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Customer detected>\"\n                  },\n                  \"userBusinesses\": [\n                    {\n                      \"value\": \"<Circular reference to #/components/schemas/UserBusiness detected>\"\n                    },\n                    {\n                      \"value\": \"<Circular reference to #/components/schemas/UserBusiness detected>\"\n                    }\n                  ],\n                  \"createdBy\": \"<string>\",\n                  \"dateCreated\": \"<dateTime>\",\n                  \"updatedBy\": \"<string>\",\n                  \"lastUpdateDate\": \"<dateTime>\"\n                },\n                \"businessId\": \"<integer>\",\n                \"business\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n                }\n              }\n            ],\n            \"dateCreated\": \"<dateTime>\",\n            \"lastUpdatedOn\": \"<dateTime>\",\n            \"createdBy\": \"<string>\",\n            \"lastUpdatedBy\": \"<string>\"\n          },\n          \"dateCreated\": \"<dateTime>\",\n          \"lastUpdatedOn\": \"<dateTime>\",\n          \"createdBy\": \"<string>\",\n          \"lastUpdatedBy\": \"<string>\"\n        }\n      ],\n      \"businessRelationships\": [\n        {\n          \"id\": \"<integer>\",\n          \"customerId\": \"<integer>\",\n          \"customer\": {\n            \"value\": \"<Circular reference to #/components/schemas/Customer detected>\"\n          },\n          \"businessId\": \"<integer>\",\n          \"business\": {\n            \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n          },\n          \"dateCreated\": \"<dateTime>\",\n          \"lastUpdatedOn\": \"<dateTime>\",\n          \"createdBy\": \"<string>\",\n          \"lastUpdatedBy\": \"<string>\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"customerId\": \"<integer>\",\n          \"customer\": {\n            \"value\": \"<Circular reference to #/components/schemas/Customer detected>\"\n          },\n          \"businessId\": \"<integer>\",\n          \"business\": {\n            \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n          },\n          \"dateCreated\": \"<dateTime>\",\n          \"lastUpdatedOn\": \"<dateTime>\",\n          \"createdBy\": \"<string>\",\n          \"lastUpdatedBy\": \"<string>\"\n        }\n      ],\n      \"userId\": \"<string>\",\n      \"stateOfOrigin\": \"<string>\",\n      \"lgaOfOrigin\": \"<string>\",\n      \"nationality\": \"<string>\",\n      \"livenesssPhoto\": \"<string>\",\n      \"photoOnMeansOfId\": \"<string>\",\n      \"photoOnBVN\": \"<string>\",\n      \"bvnLinkedNin\": \"<string>\",\n      \"blacklisted\": \"<boolean>\",\n      \"user\": {\n        \"userId\": \"<string>\",\n        \"userName\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"phoneNumber\": \"<string>\",\n        \"phoneNumberCode\": \"<string>\",\n        \"referralCode\": \"<string>\",\n        \"profileImage\": \"<string>\",\n        \"phoneNumberVerifiedAt\": \"<dateTime>\",\n        \"emailVerifiedAt\": \"<dateTime>\",\n        \"dateOfBirth\": \"<dateTime>\",\n        \"hasTransactionPin\": \"<boolean>\",\n        \"primaryProfile\": \"<string>\",\n        \"gender\": \"<string>\",\n        \"active\": \"<boolean>\",\n        \"blacklisted\": \"<boolean>\",\n        \"customerId\": \"<integer>\",\n        \"customer\": {\n          \"value\": \"<Circular reference to #/components/schemas/Customer detected>\"\n        },\n        \"userBusinesses\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/UserBusiness detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/UserBusiness detected>\"\n          }\n        ],\n        \"createdBy\": \"<string>\",\n        \"dateCreated\": \"<dateTime>\",\n        \"updatedBy\": \"<string>\",\n        \"lastUpdateDate\": \"<dateTime>\"\n      },\n      \"dateCreated\": \"<dateTime>\",\n      \"lastUpdatedOn\": \"<dateTime>\",\n      \"createdBy\": \"<string>\",\n      \"lastUpdatedBy\": \"<string>\"\n    },\n    \"business\": {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"rcBnNumber\": \"<string>\",\n      \"phoneNumber\": \"<string>\",\n      \"phoneNumberCountryCode\": \"<string>\",\n      \"tin\": \"<string>\",\n      \"hasDirectors\": \"<boolean>\",\n      \"hasShareHolders\": \"<boolean>\",\n      \"hasBenficialOwners\": \"<boolean>\",\n      \"natureOfBusiness\": \"<string>\",\n      \"sourceOfRevenue\": \"<string>\",\n      \"sourceOfCapital\": \"<string>\",\n      \"taxCompliance\": \"<boolean>\",\n      \"evidenceOfCorporateGovernance\": \"<boolean>\",\n      \"dailyDeposit\": \"<double>\",\n      \"dailyTransfer\": \"<double>\",\n      \"lifetimeDeposit\": \"<double>\",\n      \"limitTransfer\": \"<double>\",\n      \"streetAddress1\": \"<string>\",\n      \"streetAddress2\": \"<string>\",\n      \"stateProvince\": \"<string>\",\n      \"city\": \"<string>\",\n      \"nearestLandmark\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"countryCode\": \"<string>\",\n      \"status\": \"<string>\",\n      \"active\": \"<boolean>\",\n      \"customerNumber\": \"<string>\",\n      \"kycLevel\": \"<string>\",\n      \"kycStatus\": \"Level3Pending\",\n      \"kycApprovedBy\": \"<string>\",\n      \"kycApprovedDate\": \"<dateTime>\",\n      \"blackListed\": \"<boolean>\",\n      \"accounts\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Account detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Account detected>\"\n        }\n      ],\n      \"customerRelationships\": [\n        {\n          \"id\": \"<integer>\",\n          \"customerId\": \"<integer>\",\n          \"customer\": {\n            \"value\": \"<Circular reference to #/components/schemas/Customer detected>\"\n          },\n          \"businessId\": \"<integer>\",\n          \"business\": {\n            \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n          },\n          \"dateCreated\": \"<dateTime>\",\n          \"lastUpdatedOn\": \"<dateTime>\",\n          \"createdBy\": \"<string>\",\n          \"lastUpdatedBy\": \"<string>\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"customerId\": \"<integer>\",\n          \"customer\": {\n            \"value\": \"<Circular reference to #/components/schemas/Customer detected>\"\n          },\n          \"businessId\": \"<integer>\",\n          \"business\": {\n            \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n          },\n          \"dateCreated\": \"<dateTime>\",\n          \"lastUpdatedOn\": \"<dateTime>\",\n          \"createdBy\": \"<string>\",\n          \"lastUpdatedBy\": \"<string>\"\n        }\n      ],\n      \"stakeholders\": [\n        {\n          \"id\": \"<integer>\",\n          \"rcBnNumber\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"email\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"phoneNumberCountryCode\": \"<string>\",\n          \"countryCode\": \"<string>\",\n          \"financialId\": \"<string>\",\n          \"financialIdType\": \"<string>\",\n          \"stateProvince\": \"<string>\",\n          \"city\": \"<string>\",\n          \"streetAddress1\": \"<string>\",\n          \"streetAddress2\": \"<string>\",\n          \"nearestLandmark\": \"<string>\",\n          \"postalCode\": \"<string>\",\n          \"profileImage\": \"<string>\",\n          \"gender\": \"<string>\",\n          \"stakeholderType\": \"<string>\",\n          \"ownerhipPercentage\": \"<float>\",\n          \"phoneNumberVerfiedAt\": \"<dateTime>\",\n          \"emailVeriedAt\": \"<dateTime>\",\n          \"businessId\": \"<integer>\",\n          \"business\": {\n            \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n          },\n          \"dateCreated\": \"<dateTime>\",\n          \"lastUpdatedOn\": \"<dateTime>\",\n          \"createdBy\": \"<string>\",\n          \"lastUpdatedBy\": \"<string>\"\n        },\n        {\n          \"id\": \"<integer>\",\n          \"rcBnNumber\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"email\": \"<string>\",\n          \"phoneNumber\": \"<string>\",\n          \"phoneNumberCountryCode\": \"<string>\",\n          \"countryCode\": \"<string>\",\n          \"financialId\": \"<string>\",\n          \"financialIdType\": \"<string>\",\n          \"stateProvince\": \"<string>\",\n          \"city\": \"<string>\",\n          \"streetAddress1\": \"<string>\",\n          \"streetAddress2\": \"<string>\",\n          \"nearestLandmark\": \"<string>\",\n          \"postalCode\": \"<string>\",\n          \"profileImage\": \"<string>\",\n          \"gender\": \"<string>\",\n          \"stakeholderType\": \"<string>\",\n          \"ownerhipPercentage\": \"<float>\",\n          \"phoneNumberVerfiedAt\": \"<dateTime>\",\n          \"emailVeriedAt\": \"<dateTime>\",\n          \"businessId\": \"<integer>\",\n          \"business\": {\n            \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n          },\n          \"dateCreated\": \"<dateTime>\",\n          \"lastUpdatedOn\": \"<dateTime>\",\n          \"createdBy\": \"<string>\",\n          \"lastUpdatedBy\": \"<string>\"\n        }\n      ],\n      \"userBusinesses\": [\n        {\n          \"id\": \"<long>\",\n          \"userId\": \"<string>\",\n          \"user\": {\n            \"userId\": \"<string>\",\n            \"userName\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"phoneNumber\": \"<string>\",\n            \"phoneNumberCode\": \"<string>\",\n            \"referralCode\": \"<string>\",\n            \"profileImage\": \"<string>\",\n            \"phoneNumberVerifiedAt\": \"<dateTime>\",\n            \"emailVerifiedAt\": \"<dateTime>\",\n            \"dateOfBirth\": \"<dateTime>\",\n            \"hasTransactionPin\": \"<boolean>\",\n            \"primaryProfile\": \"<string>\",\n            \"gender\": \"<string>\",\n            \"active\": \"<boolean>\",\n            \"blacklisted\": \"<boolean>\",\n            \"customerId\": \"<integer>\",\n            \"customer\": {\n              \"value\": \"<Circular reference to #/components/schemas/Customer detected>\"\n            },\n            \"userBusinesses\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/UserBusiness detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/UserBusiness detected>\"\n              }\n            ],\n            \"createdBy\": \"<string>\",\n            \"dateCreated\": \"<dateTime>\",\n            \"updatedBy\": \"<string>\",\n            \"lastUpdateDate\": \"<dateTime>\"\n          },\n          \"businessId\": \"<integer>\",\n          \"business\": {\n            \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n          }\n        },\n        {\n          \"id\": \"<long>\",\n          \"userId\": \"<string>\",\n          \"user\": {\n            \"userId\": \"<string>\",\n            \"userName\": \"<string>\",\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"phoneNumber\": \"<string>\",\n            \"phoneNumberCode\": \"<string>\",\n            \"referralCode\": \"<string>\",\n            \"profileImage\": \"<string>\",\n            \"phoneNumberVerifiedAt\": \"<dateTime>\",\n            \"emailVerifiedAt\": \"<dateTime>\",\n            \"dateOfBirth\": \"<dateTime>\",\n            \"hasTransactionPin\": \"<boolean>\",\n            \"primaryProfile\": \"<string>\",\n            \"gender\": \"<string>\",\n            \"active\": \"<boolean>\",\n            \"blacklisted\": \"<boolean>\",\n            \"customerId\": \"<integer>\",\n            \"customer\": {\n              \"value\": \"<Circular reference to #/components/schemas/Customer detected>\"\n            },\n            \"userBusinesses\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/UserBusiness detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/UserBusiness detected>\"\n              }\n            ],\n            \"createdBy\": \"<string>\",\n            \"dateCreated\": \"<dateTime>\",\n            \"updatedBy\": \"<string>\",\n            \"lastUpdateDate\": \"<dateTime>\"\n          },\n          \"businessId\": \"<integer>\",\n          \"business\": {\n            \"value\": \"<Circular reference to #/components/schemas/Business detected>\"\n          }\n        }\n      ],\n      \"dateCreated\": \"<dateTime>\",\n      \"lastUpdatedOn\": \"<dateTime>\",\n      \"createdBy\": \"<string>\",\n      \"lastUpdatedBy\": \"<string>\"\n    }\n  },\n  \"resultType\": \"Error\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Account Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e3bb173b-c65e-4b98-9b38-77bdb9078830",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code response is OK\", function () {\r",
+											"    pm.response.to.have.status('OK');\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.environment.set(\"bus_account\", jsonData.result.profiles[0].accounts[0].accountNumber);\r",
+											"\r",
+											"pm.test(\"Response body property\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(jsonData.result).to.be.an('object');\r",
+											"    pm.expect(jsonData.resultType).to.be.a('string');\r",
+											"    pm.expect(jsonData.message).to.be.a('string');\r",
+											"    pm.expect(jsonData.validationMessages).to.be.null;\r",
+											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"hasResult is true\", function () {\r",
+											"    pm.expect(jsonData.hasResult).to.eql(true);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is Success\", function () {\r",
+											"    pm.expect(jsonData.resultType).to.eql('Success');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"message is Success\", function () {\r",
+											"    pm.expect(jsonData.message).to.eql('Success');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"successful is true\", function () {\r",
+											"    pm.expect(jsonData.successful).to.eql(true);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "d7834c55-d3b0-4580-a7f3-00695c1ba8e9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": "{{baseUrl}}/onboard/api/user/"
+							},
+							"response": [
+								{
+									"id": "0ad75ed0-c574-4eb5-9752-e099afae6f02",
 									"name": "Success",
 									"originalRequest": {
 										"method": "GET",
@@ -35952,6 +36481,10 @@
 		},
 		{
 			"key": "username",
+			"value": ""
+		},
+		{
+			"key": "Onboarding_access_token",
 			"value": ""
 		}
 	]
