@@ -1,0 +1,19 @@
+pm.test("Response code is 400 (Bad Request)", function () {
+    pm.response.to.have.status(400);
+});
+
+pm.test("Response structure and properties for 400", function () {
+    pm.expect(pm.response.json()).to.have.property("hasResult", false);
+    pm.expect(pm.response.json()).to.have.property("result", null);
+    pm.expect(pm.response.json()).to.have.property("resultType", 3);
+    pm.expect(pm.response.json()).to.have.property("message", "Response has validation errors");
+    pm.expect(pm.response.json()).to.have.property("validationMessages");
+    pm.expect(pm.response.json()).to.have.property("successful", false);
+    pm.expect(pm.response.json()).to.have.property("errorCode", 0);
+    pm.expect(pm.response.json()).to.not.have.property("responseCode", "null");
+});
+
+pm.test("Error message says Kindly specify an amount greater than 0", function () {
+    var validationMessages = pm.response.json().validationMessages;
+    pm.expect(validationMessages).to.be.an("array").that.includes("Kindly specify an amount greater than 0");
+});
