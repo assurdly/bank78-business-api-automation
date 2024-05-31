@@ -16912,8 +16912,11 @@
 									"listen": "prerequest",
 									"script": {
 										"id": "7e97b78d-fd6f-444c-8427-15b890b2dc0f",
-										"exec": [],
-										"type": "text/javascript"
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -16934,8 +16937,7 @@
 									},
 									{
 										"key": "x-api-key",
-										"value": "h9tRbOJzcH9O8mDsWRVey6OimYrqYUdg4c4IKNTf",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									}
 								],
 								"body": {
