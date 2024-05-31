@@ -1,6 +1,0 @@
-pm.test("Status code is 401", function () {
-    pm.response.to.have.status(401);
-});
-pm.test("Status code name has string Unauthorized", function () {
-    pm.response.to.have.status("Unauthorized");
-});
