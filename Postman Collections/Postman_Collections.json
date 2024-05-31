@@ -36468,6 +36468,30 @@
 			"id": "cf3a8d65-61d1-4894-8618-21498d1675a2"
 		}
 	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "81ca6b05-4d91-4e7a-b3f0-e6835c4b683c",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a8ab491d-1568-4464-b392-11ef7c72d7d2",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
 	"variable": [
 		{
 			"key": "firstname",
@@ -36488,6 +36512,11 @@
 		{
 			"key": "Onboarding_access_token",
 			"value": ""
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://sandbox.bank78.co",
+			"type": "string"
 		}
 	]
 }
