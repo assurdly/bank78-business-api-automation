@@ -21475,7 +21475,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "// \n\n\n\n{\n  \"transactionPin\": \"6383\",\n  \"narration\": \"Pay Epin\",\n  \"channel\": \"3\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"saveBeneficiary\": true,\n  \"deviceId\": \"1284903\",\n  \"beneficiaryName\": \"Jamb\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"test8033@mailinator.com\",\n  \"billId\": \"30\",\n  \"packageId\": \"109\",\n  \"amount\": \"4700\",\n  \"numberOfPins\": \"1\",\n  \"phone\" : \"07035361770\",\n  \"accountNumber\": \"1111111111\"\n\n}",
+									"raw": "// \n\n\n\n{\n  \"transactionPin\": \"6543\",\n  \"narration\": \"Pay Epin\",\n  \"channel\": \"3\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"saveBeneficiary\": true,\n  \"deviceId\": \"1284903\",\n  \"beneficiaryName\": \"Jamb\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"test8033@mailinator.com\",\n  \"billId\": \"30\",\n  \"packageId\": \"109\",\n  \"amount\": \"4700\",\n  \"numberOfPins\": \"1\",\n  \"phone\" : \"07035361770\",\n  \"accountNumber\": \"1111111111\"\n\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -21682,7 +21682,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"transactionPin\": \"6383\",\n  \"narration\": \"payment\",\n  \"channel\": \"1\",\n  \"sourceAccountNumber\": \"1010001719\",\n  \"saveBeneficiary\": true,\n  \"clientRequestId\": \"fundbet\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"0815597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly.com\",\n  \"packageId\": \"107\",\n  \"billId\": \"29\",\n  \"amount\": \"10\",\n  \"beneficiary\": \"bryan\"\n}",
+									"raw": "{\n  \"transactionPin\": \"6543\",\n  \"narration\": \"payment\",\n  \"channel\": \"1\",\n  \"sourceAccountNumber\": \"1010001719\",\n  \"saveBeneficiary\": true,\n  \"clientRequestId\": \"fundbet\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"0815597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly.com\",\n  \"packageId\": \"107\",\n  \"billId\": \"29\",\n  \"amount\": \"10\",\n  \"beneficiary\": \"bryan\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -21824,7 +21824,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"transactionPin\": \"6383\",\n  \"narration\": \"payment\",\n  \"channel\": \"1\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"saveBeneficiary\": true,\n  \"clientRequestId\": \"fundbet\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"0815597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly.com\",\n  \"packageId\": \"107\",\n  \"billId\": \"29\",\n  \"amount\": \"-100\",\n  \"beneficiary\": \"bryan\"\n}",
+									"raw": "{\n  \"transactionPin\": \"6543\",\n  \"narration\": \"payment\",\n  \"channel\": \"1\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"saveBeneficiary\": true,\n  \"clientRequestId\": \"fundbet\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"0815597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly.com\",\n  \"packageId\": \"107\",\n  \"billId\": \"29\",\n  \"amount\": \"-100\",\n  \"beneficiary\": \"bryan\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -22133,7 +22133,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"transactionPin\": \"6383\",\n  \"narration\": \"payment\",\n  \"channel\": \"1\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"saveBeneficiary\": true,\n  \"clientRequestId\": \"fundbet\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"0815597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly.com\",\n  \"packageId\": \"107\",\n  \"billId\": \"29\",\n  \"amount\": \"100\",\n  \"beneficiary\": \"bryan\"\n}",
+									"raw": "{\n  \"transactionPin\": \"6543\",\n  \"narration\": \"payment\",\n  \"channel\": \"1\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"saveBeneficiary\": true,\n  \"clientRequestId\": \"fundbet\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"0815597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly.com\",\n  \"packageId\": \"107\",\n  \"billId\": \"29\",\n  \"amount\": \"100\",\n  \"beneficiary\": \"bryan\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -22286,7 +22286,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"transactionPin\": \"6383\",\n  \"narration\": \"payment\",\n  \"channel\": \"1\",\n  \"sourceAccountNumber\": \"101000171b\",\n  \"saveBeneficiary\": true,\n  \"clientRequestId\": \"fundbet\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"0815597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly.com\",\n  \"packageId\": \"107\",\n  \"billId\": \"29\",\n  \"amount\": \"100\",\n  \"beneficiary\": \"bryan\"\n}",
+									"raw": "{\n  \"transactionPin\": \"6543\",\n  \"narration\": \"payment\",\n  \"channel\": \"1\",\n  \"sourceAccountNumber\": \"101000171b\",\n  \"saveBeneficiary\": true,\n  \"clientRequestId\": \"fundbet\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"0815597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly.com\",\n  \"packageId\": \"107\",\n  \"billId\": \"29\",\n  \"amount\": \"100\",\n  \"beneficiary\": \"bryan\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -22494,7 +22494,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"100\",\n  \"billId\": \"1\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"anyportrrrr\",\n  \"phoneNumber\": \"07062765437\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"transactionPin\": \"6383\",\n  \"narration\": \"Buy the airtime\",\n  \"saveBeneficiary\": \"true\",\n  \"deviceId\": \"postman\",\n  \"beneficiaryName\": \"Bryan\",\n  \"beneficiaryPhone\": \"29847059374\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
+									"raw": "{\n  \"amount\": \"100\",\n  \"billId\": \"1\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"anyportrrrr\",\n  \"phoneNumber\": \"07062765437\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"transactionPin\": \"6543\",\n  \"narration\": \"Buy the airtime\",\n  \"saveBeneficiary\": \"true\",\n  \"deviceId\": \"postman\",\n  \"beneficiaryName\": \"Bryan\",\n  \"beneficiaryPhone\": \"29847059374\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -22666,7 +22666,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"-100\",\n  \"billId\": \"1\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"anyportrrrr\",\n  \"phoneNumber\": \"07062765437\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"transactionPin\": \"6383\",\n  \"narration\": \"Buy the airtime\",\n  \"saveBeneficiary\": \"true\",\n  \"deviceId\": \"postman\",\n  \"beneficiaryName\": \"Bryan\",\n  \"beneficiaryPhone\": \"29847059374\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
+									"raw": "{\n  \"amount\": \"-100\",\n  \"billId\": \"1\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"anyportrrrr\",\n  \"phoneNumber\": \"07062765437\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"transactionPin\": \"6543\",\n  \"narration\": \"Buy the airtime\",\n  \"saveBeneficiary\": \"true\",\n  \"deviceId\": \"postman\",\n  \"beneficiaryName\": \"Bryan\",\n  \"beneficiaryPhone\": \"29847059374\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -22942,7 +22942,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"100\",\n  \"billId\": \"1\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"idnumber\",\n  \"phoneNumber\": \"07062765437\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6383\",\n  \"narration\": \"Buy the airtime\",\n  \"saveBeneficiary\": \"true\",\n  \"deviceId\": \"postman\",\n  \"beneficiaryName\": \"Bryan\",\n  \"beneficiaryPhone\": \"29847059374\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
+									"raw": "{\n  \"amount\": \"100\",\n  \"billId\": \"1\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"idnumber\",\n  \"phoneNumber\": \"07062765437\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6543\",\n  \"narration\": \"Buy the airtime\",\n  \"saveBeneficiary\": \"true\",\n  \"deviceId\": \"postman\",\n  \"beneficiaryName\": \"Bryan\",\n  \"beneficiaryPhone\": \"29847059374\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -23096,7 +23096,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"100\",\n  \"billId\": \"1\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"idnumber12345\",\n  \"phoneNumber\": \"0706276543p\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"transactionPin\": \"6383\",\n  \"narration\": \"Buy the airtime\",\n  \"saveBeneficiary\": \"true\",\n  \"deviceId\": \"postman\",\n  \"beneficiaryName\": \"Bryan\",\n  \"beneficiaryPhone\": \"07062765437\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
+									"raw": "{\n  \"amount\": \"100\",\n  \"billId\": \"1\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"idnumber12345\",\n  \"phoneNumber\": \"0706276543p\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"transactionPin\": \"6543\",\n  \"narration\": \"Buy the airtime\",\n  \"saveBeneficiary\": \"true\",\n  \"deviceId\": \"postman\",\n  \"beneficiaryName\": \"Bryan\",\n  \"beneficiaryPhone\": \"07062765437\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -25161,7 +25161,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -25450,7 +25450,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"100\",\n  \"transactionPin\": \"6383\",\n  \"narration\": \"Transfer overseas\",\n  \"channel\": \"1\",\n  \"sourceAccountNo\": \"{{sourceAccount}}\",\n  \"saveBeneficiary\": true,\n  \"deviceId\": \"phoneX\",\n  \"canSchedule\": true,\n  \"scheduleInfo\": {\n    \"scheduledStartDate\": \"2024-08-30T16:10:46.856Z\",\n    \"scheduledEndDate\": \"2024-08-30T16:10:46.856Z\",\n    \"repeatFrequency\": \"0\",\n    \"repeatWeekDay\": \"0\",\n    \"repeatMonthDay\": \"0\",\n    \"repeatCount\": \"0\"\n  },\n  \"accountNumber\": \"1780004070\",\n  \"nameEnquiryRequestId\": \"7006\",\n  \"currency\": \"NGN\"\n}",
+									"raw": "{\n    \"amount\": 100,\n    \"transactionPin\": \"6543\",\n    \"channel\": \"Web\",\n    \"sourceAccountNo\": \"0000025014\",\n    \"saveBeneficiary\": false,\n    \"deviceId\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36\",\n    \"canSchedule\": false,\n    \"accountNumber\": \"1010001719\",\n    \"nameEnquiryRequestId\": 9630\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -25698,7 +25698,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"100\",\n  \"transactionPin\": \"6383\",\n  \"narration\": \"Invalid account number\",\n  \"channel\": \"1\",\n  \"sourceAccountNo\": \"{{sourceAccount}}\",\n  \"saveBeneficiary\": true,\n  \"deviceId\": \"phoneX\",\n  \"canSchedule\": true,\n  \"scheduleInfo\": {\n    \"scheduledStartDate\": \"2024-08-30T16:10:46.856Z\",\n    \"scheduledEndDate\": \"2024-08-30T16:10:46.856Z\",\n    \"repeatFrequency\": \"0\",\n    \"repeatWeekDay\": \"0\",\n    \"repeatMonthDay\": \"0\",\n    \"repeatCount\": \"0\"\n  },\n  \"accountNumber\": \"1780001233\",\n  \"nameEnquiryRequestId\": \"10\",\n  \"currency\": \"NGN\"\n}",
+									"raw": "{\n    \"amount\": 100,\n    \"transactionPin\": \"6543\",\n    \"channel\": \"Web\",\n    \"sourceAccountNo\": \"0000025014\",\n    \"saveBeneficiary\": false,\n    \"deviceId\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36\",\n    \"canSchedule\": false,\n    \"accountNumber\": \"1010091719\",\n    \"nameEnquiryRequestId\": 963\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -25839,7 +25839,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"100\",\n  \"transactionPin\": \"6385\",\n  \"narration\": \"Transfer overseas\",\n  \"channel\": \"1\",\n  \"sourceAccountNo\": \"1010000712\",\n  \"saveBeneficiary\": true,\n  \"deviceId\": \"phoneX\",\n  \"canSchedule\": true,\n  \"scheduleInfo\": {\n    \"scheduledStartDate\": \"2024-08-30T16:10:46.856Z\",\n    \"scheduledEndDate\": \"2024-08-30T16:10:46.856Z\",\n    \"repeatFrequency\": \"0\",\n    \"repeatWeekDay\": \"0\",\n    \"repeatMonthDay\": \"0\",\n    \"repeatCount\": \"0\"\n  },\n  \"accountNumber\": \"1780004070\",\n  \"nameEnquiryRequestId\": \"10\",\n  \"currency\": \"NGN\"\n}",
+									"raw": "{\n    \"amount\": 100,\n    \"transactionPin\": \"6593\",\n    \"channel\": \"Web\",\n    \"sourceAccountNo\": \"0000025014\",\n    \"saveBeneficiary\": false,\n    \"deviceId\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36\",\n    \"canSchedule\": false,\n    \"accountNumber\": \"1010001719\",\n    \"nameEnquiryRequestId\": 963\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -26092,6 +26092,15 @@
 											"    pm.expect(jsonData.successful).to.eql(false);\r",
 											"});"
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "0e0c3cb9-6255-4927-b02d-de0cda1cf343",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -26125,7 +26134,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"accountNumber\": \"1010001626\",\n  \"amount\": \"-5000\",\n  \"channel\": \"1\",\n  \"nameEnquiryRequestId\": \"10\",\n  \"narration\": \"New Schedule for 9 in the morning Sharp\",\n  \"repeatFrequency\": \"1\",\n  \"scheduledStartDate\": \"2023-10-20T09:00:00.942Z\",\n  \"sourceAccountNo\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6383\",\n  \"scheduledEndDate\": \"2023-10-25T10:00:00.942Z\",\n  \"repeatWeekDay\": \"1\",\n  \"repeatCount\": \"1\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"iphone19\",\n  \"repeatMonthDay\": \"0\"\n}",
+									"raw": "{\n  \"accountNumber\": \"1010001626\",\n  \"amount\": \"-5000\",\n  \"channel\": \"1\",\n  \"nameEnquiryRequestId\": \"10\",\n  \"narration\": \"New Schedule for 9 in the morning Sharp\",\n  \"repeatFrequency\": \"1\",\n  \"scheduledStartDate\": \"2023-10-20T09:00:00.942Z\",\n  \"sourceAccountNo\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6543\",\n  \"scheduledEndDate\": \"2023-10-25T10:00:00.942Z\",\n  \"repeatWeekDay\": \"1\",\n  \"repeatCount\": \"1\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"iphone19\",\n  \"repeatMonthDay\": \"0\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
