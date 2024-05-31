@@ -17050,6 +17050,64 @@
 							"item": [
 								{
 									"name": "/api/account/username/:username",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "f5ce8699-33d6-43fb-92f5-b687e648bad1",
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"pm.test(\"Response code is 200 for success\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"",
+													"",
+													"pm.test(\"The 'amount' field should be a number\", function () {",
+													"    const responseData = pm.response.json();",
+													"    pm.expect(responseData).to.be.an('object');",
+													"    pm.expect(responseData.result.amount).to.be.a('number');",
+													"});",
+													"",
+													"pm.test(\"Response structure and properties for 200\", function () {",
+													"    pm.expect(pm.response.json()).to.have.property(\"hasResult\", true);",
+													"    pm.expect(pm.response.json()).to.have.property(\"result\");",
+													"    pm.expect(pm.response.json()).to.have.property(\"resultType\", 1);",
+													"    pm.expect(pm.response.json()).to.have.property(\"message\", \"Successful\");",
+													"    pm.expect(pm.response.json()).to.have.property(\"successful\", true);",
+													"    pm.expect(pm.response.json()).to.have.property(\"errorCode\", 0);",
+													"    pm.expect(pm.response.json()).to.have.property(\"responseCode\", \"200\");",
+													"});",
+													"",
+													"pm.test(\"Result object properties for 200\", function () {",
+													"    var result = pm.response.json().result;",
+													"    ",
+													"    pm.expect(result).to.have.property(\"message\", \"Successful\");",
+													"    pm.expect(result).to.have.property(\"status\", \"Success\");",
+													"    pm.expect(result).to.have.property(\"billToken\").to.be.null;",
+													"});",
+													"",
+													"",
+													"pm.test(\"Check if transaction reference is present\", function () {",
+													"    var responseBody = pm.response.json();",
+													"    pm.expect(responseBody.result.reference).to.not.be.undefined;",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "bb45bdb0-9cb5-4994-b26c-0aad27743bf2",
+												"exec": [],
+												"type": "text/javascript"
+											}
+										}
+									],
 									"id": "c5fe2c49-4faa-4f46-a6d8-590db7f9109a",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -17081,9 +17139,8 @@
 											],
 											"variable": [
 												{
-													"id": "0242c917-e3c8-49e3-8f6c-5b46f7f3aa23",
 													"key": "username",
-													"value": "<string>"
+													"value": "{{bus_username}}"
 												}
 											]
 										}
@@ -17198,7 +17255,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -17292,6 +17349,15 @@
 											"    pm.response.to.have.jsonBody('validationMessages');\r",
 											"});"
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "5c262c59-6346-4e00-bc3f-bf4bcc0f6225",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -17304,7 +17370,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -17398,6 +17464,15 @@
 											"    pm.response.to.have.jsonBody('validationMessages');\r",
 											"});"
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "6649adf1-a9ec-45e9-8b22-2b63e19c5d51",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -17410,7 +17485,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -17504,6 +17579,15 @@
 											"    pm.response.to.have.jsonBody('validationMessages');\r",
 											"});"
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "623e2879-db32-446b-a4cc-e37051a12db5",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -17516,7 +17600,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -17610,6 +17694,15 @@
 											"    pm.response.to.have.jsonBody('validationMessages');\r",
 											"});"
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "abd0c52f-bc6f-4f6a-8f95-a0080d2312c9",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -17622,7 +17715,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -17776,7 +17869,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "GET",
@@ -19446,12 +19539,6 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -19463,10 +19550,8 @@
 										"value": "text/plain"
 									},
 									{
-										"warning": "This is a duplicate header and will be overridden by the x-api-key header generated by Postman.",
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									}
 								],
 								"body": {
@@ -19579,7 +19664,8 @@
 											"    pm.expect(jsonData.successful).to.eql(false);\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -19619,7 +19705,8 @@
 											"\r",
 											"// pm.request.body.raw = JSON.stringify(requestBody);"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -19628,12 +19715,6 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -19645,10 +19726,8 @@
 										"value": "text/plain"
 									},
 									{
-										"warning": "This is a duplicate header and will be overridden by the x-api-key header generated by Postman.",
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									}
 								],
 								"body": {
@@ -19753,7 +19832,8 @@
 											"    pm.expect(pm.response.json()).to.have.property(\"responseCode\", \"200\");\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -19793,7 +19873,8 @@
 											"\r",
 											"pm.request.body.raw = JSON.stringify(requestBody);"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -19802,12 +19883,6 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -19819,10 +19894,8 @@
 										"value": "text/plain"
 									},
 									{
-										"warning": "This is a duplicate header and will be overridden by the x-api-key header generated by Postman.",
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									}
 								],
 								"body": {
@@ -19913,7 +19986,8 @@
 											"});\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -19953,7 +20027,8 @@
 											"\r",
 											"// pm.request.body.raw = JSON.stringify(requestBody);"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -19962,12 +20037,6 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -19979,10 +20048,8 @@
 										"value": "text/plain"
 									},
 									{
-										"warning": "This is a duplicate header and will be overridden by the x-api-key header generated by Postman.",
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									}
 								],
 								"body": {
@@ -20076,7 +20143,8 @@
 											"\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -20116,7 +20184,8 @@
 											"\r",
 											"// pm.request.body.raw = JSON.stringify(requestBody);"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -20125,12 +20194,6 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -20142,10 +20205,8 @@
 										"value": "text/plain"
 									},
 									{
-										"warning": "This is a duplicate header and will be overridden by the x-api-key header generated by Postman.",
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									}
 								],
 								"body": {
@@ -20290,12 +20351,6 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -20307,10 +20362,8 @@
 										"value": "text/plain"
 									},
 									{
-										"warning": "This is a duplicate header and will be overridden by the x-api-key header generated by Postman.",
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									}
 								],
 								"body": {
@@ -20423,12 +20476,6 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -20440,10 +20487,8 @@
 										"value": "text/plain"
 									},
 									{
-										"warning": "This is a duplicate header and will be overridden by the x-api-key header generated by Postman.",
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									}
 								],
 								"body": {
@@ -20640,12 +20685,6 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -20658,8 +20697,7 @@
 									},
 									{
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									}
 								],
 								"body": {
@@ -20750,7 +20788,8 @@
 											"});\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -20790,7 +20829,8 @@
 											"\r",
 											"pm.request.body.raw = JSON.stringify(requestBody);"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -20799,12 +20839,6 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -20817,8 +20851,7 @@
 									},
 									{
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									}
 								],
 								"body": {
@@ -20929,12 +20962,6 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -20947,8 +20974,7 @@
 									},
 									{
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									}
 								],
 								"body": {
