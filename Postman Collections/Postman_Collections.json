@@ -18332,12 +18332,6 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -18350,8 +18344,7 @@
 									},
 									{
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									}
 								],
 								"body": {
@@ -18442,7 +18435,8 @@
 											"});\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -18483,7 +18477,8 @@
 											"\r",
 											"// pm.request.body.raw = JSON.stringify(requestBody);"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -18492,12 +18487,6 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -18510,8 +18499,7 @@
 									},
 									{
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									}
 								],
 								"body": {
@@ -18622,12 +18610,6 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -18640,8 +18622,7 @@
 									},
 									{
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									}
 								],
 								"body": {
@@ -18737,7 +18718,8 @@
 											"});\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -18778,7 +18760,8 @@
 											"\r",
 											"// pm.request.body.raw = JSON.stringify(requestBody);"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -18787,12 +18770,6 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -18805,8 +18782,7 @@
 									},
 									{
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									}
 								],
 								"body": {
@@ -18954,12 +18930,6 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -18972,8 +18942,7 @@
 									},
 									{
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									}
 								],
 								"body": {
@@ -19065,7 +19034,8 @@
 											"});\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -19106,7 +19076,8 @@
 											"\r",
 											"// pm.request.body.raw = JSON.stringify(requestBody);"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -19115,12 +19086,6 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -19133,8 +19098,7 @@
 									},
 									{
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									}
 								],
 								"body": {
@@ -19226,7 +19190,8 @@
 											"});\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -19267,7 +19232,8 @@
 											"\r",
 											"pm.request.body.raw = JSON.stringify(requestBody);"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -19276,12 +19242,6 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{customer_access_token}}"
-									}
-								},
 								"method": "POST",
 								"header": [
 									{
@@ -19294,8 +19254,7 @@
 									},
 									{
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "{{x-api-key}}"
 									}
 								],
 								"body": {
