@@ -17818,6 +17818,7 @@
 											"\r",
 											"var jsonData = pm.response.json();\r",
 											"pm.environment.set(\"bus_account\", jsonData.result.profiles[0].accounts[0].accountNumber);\r",
+											"pm.environment.set(\"sourceAccount\", jsonData.result.profiles[0].accounts[0].accountNumber);\r",
 											"\r",
 											"pm.test(\"Response body property\", function () {\r",
 											"    pm.expect(jsonData).to.be.an('object');\r",
@@ -19732,7 +19733,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"-1000\",\n  \"billId\": \"28\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"hffjsknyrhgfkfk\",\n  \"meterNumber\": \"123456695049\",\n  \"packageId\": \"104\",\n  \"sourceAccountNumber\": {{sourceAccount}},\n  \"transactionPin\": \"6383\",\n  \"narration\": \"buy elec\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"meter1\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
+									"raw": "{\n  \"amount\": \"-1000\",\n  \"billId\": \"28\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"hffjsknyrhgfkfk\",\n  \"meterNumber\": \"123456695049\",\n  \"packageId\": \"104\",\n  \"sourceAccountNumber\": {{sourceAccount}},\n  \"transactionPin\": \"6543\",\n  \"narration\": \"buy elec\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"meter1\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -19900,7 +19901,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"1000\",\n  \"billId\": \"28\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"hffjsknyrhgfkfk\",\n  \"meterNumber\": \"123456695049\",\n  \"packageId\": \"104\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"transactionPin\": \"6383\",\n  \"narration\": \"buy elec\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"meter1\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
+									"raw": "{\n  \"amount\": \"1000\",\n  \"billId\": \"28\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"hffjsknyrhgfkfk\",\n  \"meterNumber\": \"123456695049\",\n  \"packageId\": \"104\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"transactionPin\": \"6543\",\n  \"narration\": \"buy elec\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"meter1\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -20368,7 +20369,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"1000\",\n  \"billId\": \"25\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"hffjsknyrhgfkfk\",\n  \"meterNumber\": \"s@.dfgre\",\n  \"packageId\": \"99\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6383\",\n  \"narration\": \"buy elec\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"meter1\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
+									"raw": "{\n  \"amount\": \"1000\",\n  \"billId\": \"25\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"hffjsknyrhgfkfk\",\n  \"meterNumber\": \"s@.dfgre\",\n  \"packageId\": \"99\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6543\",\n  \"narration\": \"buy elec\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"meter1\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -20493,7 +20494,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"1000\",\n  \"billId\": \"28\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"buyelect\",\n  \"meterNumber\": \"123456695049\",\n  \"packageId\": \"104\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6383\",\n  \"narration\": \"buy elec\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"meter1\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
+									"raw": "{\n  \"amount\": \"1000\",\n  \"billId\": \"28\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"buyelect\",\n  \"meterNumber\": \"123456695049\",\n  \"packageId\": \"104\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6543\",\n  \"narration\": \"buy elec\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"meter1\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -20702,7 +20703,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"7200\",\n  \"billId\": \"13\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"payforcabletv123\",\n  \"decoder\": \"123445678890\",\n  \"packageId\": \"72\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6383\",\n  \"narration\": \"Buy Cable bundle\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaryName\": \"Paul\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"12345\"\n}",
+									"raw": "{\n  \"amount\": \"7200\",\n  \"billId\": \"13\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"payforcabletv123\",\n  \"decoder\": \"123445678890\",\n  \"packageId\": \"72\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6543\",\n  \"narration\": \"Buy Cable bundle\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaryName\": \"Paul\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"12345\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -20979,7 +20980,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"7200\",\n  \"billId\": \"6\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"buycable\",\n  \"decoder\": \"123445678890\",\n  \"packageId\": \"72\", \n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6383\",\n  \"narration\": \"Buy Cable bundle\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaryName\": \"Paul\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"12345\"\n}",
+									"raw": "{\n  \"amount\": \"7200\",\n  \"billId\": \"6\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"buycable\",\n  \"decoder\": \"123445678890\",\n  \"packageId\": \"72\", \n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6543\",\n  \"narration\": \"Buy Cable bundle\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaryName\": \"Paul\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"12345\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -21136,7 +21137,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"7200\",\n  \"billId\": \"6\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"payforcabletv123\",\n  \"decoder\": \"123445678890\",\n  \"packageId\": \"1\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"transactionPin\": \"6383\",\n  \"narration\": \"Buy Cable bundle\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaryName\": \"Paul\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"12345\"\n}",
+									"raw": "{\n  \"amount\": \"7200\",\n  \"billId\": \"6\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"payforcabletv123\",\n  \"decoder\": \"123445678890\",\n  \"packageId\": \"1\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"transactionPin\": \"6543\",\n  \"narration\": \"Buy Cable bundle\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaryName\": \"Paul\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"12345\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -21295,7 +21296,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"7200\",\n  \"billId\": \"6\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"payforcabletv123\",\n  \"decoder\": \"123445678890\",\n  \"packageId\": \"1\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"transactionPin\": \"6383\",\n  \"narration\": \"Buy Cable bundle\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaryName\": \"Paul\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"12345\"\n}",
+									"raw": "{\n  \"amount\": \"7200\",\n  \"billId\": \"6\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"payforcabletv123\",\n  \"decoder\": \"123445678890\",\n  \"packageId\": \"1\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"transactionPin\": \"6543\",\n  \"narration\": \"Buy Cable bundle\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaryName\": \"Paul\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"12345\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -24879,7 +24880,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -24900,7 +24901,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"100\",\n  \"transactionPin\": \"6383\",\n  \"narration\": \"Transfer now\",\n  \"channel\": \"1\",\n  \"sourceAccountNo\": {{sourceAccount}},\n  \"saveBeneficiary\": true,\n  \"deviceId\": \"phoneX\",\n  \"canSchedule\": true,\n  \"scheduleInfo\": {\n    \"scheduledStartDate\": \"2023-08-30T16:10:46.856Z\",\n    \"scheduledEndDate\": \"2023-08-30T16:10:46.856Z\",\n    \"repeatFrequency\": \"0\",\n    \"repeatWeekDay\": \"0\",\n    \"repeatMonthDay\": \"0\",\n    \"repeatCount\": \"0\"\n  },\n  \"accountNumber\": \"124959400-3\",\n  \"nameEnquiryRequestId\": \"15\",\n  \"currency\": \"NGN\"\n}",
+									"raw": "{\n  \"amount\": \"100\",\n  \"transactionPin\": \"6543\",\n  \"narration\": \"Transfer now\",\n  \"channel\": \"1\",\n  \"sourceAccountNo\": {{sourceAccount}},\n  \"saveBeneficiary\": true,\n  \"deviceId\": \"phoneX\",\n  \"canSchedule\": true,\n  \"scheduleInfo\": {\n    \"scheduledStartDate\": \"2023-08-30T16:10:46.856Z\",\n    \"scheduledEndDate\": \"2023-08-30T16:10:46.856Z\",\n    \"repeatFrequency\": \"0\",\n    \"repeatWeekDay\": \"0\",\n    \"repeatMonthDay\": \"0\",\n    \"repeatCount\": \"0\"\n  },\n  \"accountNumber\": \"124959400-3\",\n  \"nameEnquiryRequestId\": \"15\",\n  \"currency\": \"NGN\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
