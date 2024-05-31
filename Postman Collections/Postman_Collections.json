@@ -27195,7 +27195,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"channel\": \"1\",\n  \"sourceAccountNo\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6383\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaries\": [\n    {\n      \"accountNumber\": \"10100013fh\",\n      \"amount\": \"100\",\n      \"NameEnquiryRequestId\": \"15\",\n      \"narration\": \"My sister\",\n      \"saveBeneficiary\": \"true\"\n    },\n    {\n      \"accountNumber\": \"17800040we\",\n      \"amount\": \"100\",\n      \"NameEnquiryRequestId\": \"10\",\n      \"narration\": \"My sister\",\n      \"saveBeneficiary\": \"true\"\n    },\n    {\n      \"accountNumber\": \"1010001dy\",\n      \"amount\": \"100\",\n      \"NameEnquiryRequestId\": \"15\",\n      \"narration\": \"Have fun\",\n      \"saveBeneficiary\": \"true\"\n    }\n  \n  ],\n  \"currency\": \"NGN\"\n}",
+									"raw": "{\n  \"channel\": \"1\",\n  \"sourceAccountNo\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6543\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaries\": [\n    {\n      \"accountNumber\": \"10100013fh\",\n      \"amount\": \"100\",\n      \"NameEnquiryRequestId\": \"15\",\n      \"narration\": \"My sister\",\n      \"saveBeneficiary\": \"true\"\n    },\n    {\n      \"accountNumber\": \"17800040we\",\n      \"amount\": \"100\",\n      \"NameEnquiryRequestId\": \"10\",\n      \"narration\": \"My sister\",\n      \"saveBeneficiary\": \"true\"\n    },\n    {\n      \"accountNumber\": \"1010001dy\",\n      \"amount\": \"100\",\n      \"NameEnquiryRequestId\": \"15\",\n      \"narration\": \"Have fun\",\n      \"saveBeneficiary\": \"true\"\n    }\n  \n  ],\n  \"currency\": \"NGN\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -27342,7 +27342,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"channel\": \"1\",\n  \"sourceAccountNo\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6383\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaries\": [\n    {\n      \"accountNumber\": \"1010001367\",\n      \"amount\": \"100\",\n      \"NameEnquiryRequestId\": \"15\",\n      \"narration\": \"My sister\",\n      \"saveBeneficiary\": \"true\"\n    },\n    {\n      \"accountNumber\": \"1780004070\",\n      \"amount\": \"100\",\n      \"NameEnquiryRequestId\": \"10\",\n      \"narration\": \"My sister\",\n      \"saveBeneficiary\": \"true\"\n    },\n    {\n      \"accountNumber\": \"1010001729\",\n      \"amount\": \"100\",\n      \"NameEnquiryRequestId\": \"15\",\n      \"narration\": \"Have fun\",\n      \"saveBeneficiary\": \"true\"\n    }\n  \n  ],\n  \"currency\": \"NGN\"\n}",
+									"raw": "{\n  \"channel\": \"1\",\n  \"sourceAccountNo\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6543\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaries\": [\n    {\n      \"accountNumber\": \"1010001367\",\n      \"amount\": \"100\",\n      \"NameEnquiryRequestId\": \"15\",\n      \"narration\": \"My sister\",\n      \"saveBeneficiary\": \"true\"\n    },\n    {\n      \"accountNumber\": \"1780004070\",\n      \"amount\": \"100\",\n      \"NameEnquiryRequestId\": \"10\",\n      \"narration\": \"My sister\",\n      \"saveBeneficiary\": \"true\"\n    },\n    {\n      \"accountNumber\": \"1010001729\",\n      \"amount\": \"100\",\n      \"NameEnquiryRequestId\": \"15\",\n      \"narration\": \"Have fun\",\n      \"saveBeneficiary\": \"true\"\n    }\n  \n  ],\n  \"currency\": \"NGN\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -27473,6 +27473,15 @@
 													"    pm.expect(responseCode).to.be.null;\r",
 													"});"
 												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "03402cd2-d055-41a1-98da-4dd7ee3ad4bf",
+												"exec": [],
 												"type": "text/javascript"
 											}
 										}
@@ -27485,7 +27494,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{customer_access_token}}"
+												"token": "{{business_access_token}}"
 											}
 										},
 										"method": "POST",
@@ -27506,7 +27515,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"channel\": \"1\",\n  \"sourceAccountNo\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6383\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaries\": [\n    {\n            \"accountName\": \"Reece Koch\",\n            \"accountNumber\": \"1010001719\",\n            \"nameEnquiryId\": 600,\n            \"amount\": \"100\",\n            \"narration\": \"First Salary\"\n        },\n        {\n            \"accountName\": \"John Doe\",\n            \"accountNumber\": \"8045013161\",\n            \"amount\": \"110\",\n            \"narration\": \"Second Salary\",\n            \"nameEnquiryId\": 601\n        },\n        {\n            \"accountName\": \"Chi Chi\",\n            \"accountNumber\": \"8198765432\",\n            \"amount\": \"120\",\n            \"narration\": \"Third Salary\",\n            \"nameEnquiryId\": 602\n        },\n        {\n            \"accountName\": \"John Doe\",\n            \"accountNumber\": \"8055584568\",\n            \"amount\": \"130\",\n            \"narration\": \"Fourth Salary\",\n            \"nameEnquiryId\": 603\n        },\n        {\n            \"accountName\": \"Bunch Dillon\",\n            \"accountNumber\": \"9373494343\",\n            \"amount\": \"140\",\n            \"narration\": \"Fift Salary\",\n            \"nameEnquiryId\": 604\n        }\n  ]\n}",
+											"raw": "{\n  \"channel\": \"1\",\n  \"sourceAccountNo\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6543\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaries\": [\n    {\n            \"accountName\": \"Reece Koch\",\n            \"accountNumber\": \"1010001719\",\n            \"nameEnquiryId\": 600,\n            \"amount\": \"100\",\n            \"narration\": \"First Salary\"\n        },\n        {\n            \"accountName\": \"John Doe\",\n            \"accountNumber\": \"8045013161\",\n            \"amount\": \"110\",\n            \"narration\": \"Second Salary\",\n            \"nameEnquiryId\": 601\n        },\n        {\n            \"accountName\": \"Chi Chi\",\n            \"accountNumber\": \"8198765432\",\n            \"amount\": \"120\",\n            \"narration\": \"Third Salary\",\n            \"nameEnquiryId\": 602\n        },\n        {\n            \"accountName\": \"John Doe\",\n            \"accountNumber\": \"8055584568\",\n            \"amount\": \"130\",\n            \"narration\": \"Fourth Salary\",\n            \"nameEnquiryId\": 603\n        },\n        {\n            \"accountName\": \"Bunch Dillon\",\n            \"accountNumber\": \"9373494343\",\n            \"amount\": \"140\",\n            \"narration\": \"Fift Salary\",\n            \"nameEnquiryId\": 604\n        }\n  ]\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -27708,6 +27717,15 @@
 													"});\r",
 													""
 												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "f93dd42e-1bca-43e5-ba10-bb7850452b0f",
+												"exec": [],
 												"type": "text/javascript"
 											}
 										}
@@ -27720,7 +27738,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{customer_access_token}}"
+												"token": "{{business_access_token}}"
 											}
 										},
 										"method": "POST",
@@ -27741,7 +27759,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"channel\": \"1000\",\n  \"sourceAccountNo\": \"{{bussAccount}}\",\n  \"transactionPin\": \"6383\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaries\": [\n    {\n            \"accountName\": \"Reece Koch\",\n            \"accountNumber\": \"1010001719\",\n            \"nameEnquiryId\": 600,\n            \"amount\": \"100\",\n            \"narration\": \"Salary\"\n        },\n        {\n            \"accountName\": \"John Doe\",\n            \"accountNumber\": \"8045013161\",\n            \"amount\": \"110\",\n            \"narration\": \"Salary\",\n            \"nameEnquiryId\": 601\n        },\n        {\n            \"accountName\": \"Chi Chi\",\n            \"accountNumber\": \"8198765432\",\n            \"amount\": \"120\",\n            \"narration\": \"Salary\",\n            \"nameEnquiryId\": 602\n        },\n        {\n            \"accountName\": \"John Doe\",\n            \"accountNumber\": \"8055584568\",\n            \"amount\": \"130\",\n            \"narration\": \"Salary\",\n            \"nameEnquiryId\": 603\n        },\n        {\n            \"accountName\": \"Bunch Dillon\",\n            \"accountNumber\": \"9373494343\",\n            \"amount\": \"140\",\n            \"narration\": \"Salary\",\n            \"nameEnquiryId\": 604\n        }\n  ]\n}",
+											"raw": "{\n  \"channel\": \"1000\",\n  \"sourceAccountNo\": \"{{bussAccount}}\",\n  \"transactionPin\": \"6543\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaries\": [\n    {\n            \"accountName\": \"Reece Koch\",\n            \"accountNumber\": \"1010001719\",\n            \"nameEnquiryId\": 600,\n            \"amount\": \"100\",\n            \"narration\": \"Salary\"\n        },\n        {\n            \"accountName\": \"John Doe\",\n            \"accountNumber\": \"8045013161\",\n            \"amount\": \"110\",\n            \"narration\": \"Salary\",\n            \"nameEnquiryId\": 601\n        },\n        {\n            \"accountName\": \"Chi Chi\",\n            \"accountNumber\": \"8198765432\",\n            \"amount\": \"120\",\n            \"narration\": \"Salary\",\n            \"nameEnquiryId\": 602\n        },\n        {\n            \"accountName\": \"John Doe\",\n            \"accountNumber\": \"8055584568\",\n            \"amount\": \"130\",\n            \"narration\": \"Salary\",\n            \"nameEnquiryId\": 603\n        },\n        {\n            \"accountName\": \"Bunch Dillon\",\n            \"accountNumber\": \"9373494343\",\n            \"amount\": \"140\",\n            \"narration\": \"Salary\",\n            \"nameEnquiryId\": 604\n        }\n  ]\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -27876,7 +27894,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{admin_access_token}}"
+												"token": "{{business_access_token}}"
 											}
 										},
 										"method": "POST",
@@ -27979,6 +27997,15 @@
 													"});\r",
 													""
 												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "58d0c5fa-4403-4277-81d8-0b16294093d2",
+												"exec": [],
 												"type": "text/javascript"
 											}
 										}
@@ -27991,7 +28018,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{admin_access_token}}"
+												"token": "{{business_access_token}}"
 											}
 										},
 										"method": "POST",
@@ -28094,6 +28121,15 @@
 													"});\r",
 													""
 												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "0f94eeba-26b0-40c4-bad1-399245851f5a",
+												"exec": [],
 												"type": "text/javascript"
 											}
 										}
@@ -28106,7 +28142,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{admin_access_token}}"
+												"token": "{{business_access_token}}"
 											}
 										},
 										"method": "POST",
@@ -28226,6 +28262,15 @@
 													"});\r",
 													""
 												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "b64ebd7c-c971-420d-8b67-5fbe82ba08c7",
+												"exec": [],
 												"type": "text/javascript"
 											}
 										}
@@ -28238,7 +28283,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{admin_access_token}}"
+												"token": "{{business_access_token}}"
 											}
 										},
 										"method": "GET",
@@ -28307,6 +28352,15 @@
 													"    pm.response.to.have.status(200);\r",
 													"});"
 												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "fd6c776b-cd9d-473e-904d-efd92cfee31b",
+												"exec": [],
 												"type": "text/javascript"
 											}
 										}
@@ -28319,7 +28373,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{admin_access_token}}"
+												"token": "{{business_access_token}}"
 											}
 										},
 										"method": "GET",
