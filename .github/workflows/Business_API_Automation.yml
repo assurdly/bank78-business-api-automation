@@ -123,7 +123,7 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_CHANNEL: 'C070KUKPDLZ'
           SLACK_MESSAGE: |
-            NGX-IPO Broker - API Quality Readiness
+            Bank78 Business - API Quality Readiness
             Contributors - Larry Ogbe, Mary Francis
             Status: ${{ job.status }}
             Passing Tests: ${{ steps.parse_json.outputs.passing_percentage }}%
