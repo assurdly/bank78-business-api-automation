@@ -18839,7 +18839,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "// \n\n\n\n{\n  \"transactionPin\": \"6543\",\n  \"narration\": \"Pay Epin\",\n  \"channel\": \"3\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"saveBeneficiary\": true,\n  \"deviceId\": \"1284903\",\n  \"beneficiaryName\": \"Jamb\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"test8033@mailinator.com\",\n  \"billId\": \"30\",\n  \"packageId\": \"109\",\n  \"amount\": \"4700\",\n  \"numberOfPins\": \"1\",\n  \"phone\" : \"07035361770\",\n  \"accountNumber\": \"1111111111\"\n\n}",
+									"raw": "{\n  \"transactionPin\": \"6543\",\n  \"narration\": \"Pay Epin\",\n  \"channel\": \"3\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"saveBeneficiary\": true,\n  \"deviceId\": \"1284903\",\n  \"beneficiaryName\": \"Jamb\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"test8033@mailinator.com\",\n  \"billId\": \"30\",\n  \"packageId\": \"109\",\n  \"amount\": \"4700\",\n  \"numberOfPins\": \"1\",\n  \"phone\" : \"07035361770\",\n  \"accountNumber\": \"1111111111\"\n\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -19812,6 +19812,12 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
 								"method": "POST",
 								"header": [
 									{
@@ -19829,7 +19835,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"100\",\n  \"billId\": \"1\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"anyportrrrr\",\n  \"phoneNumber\": \"07062765437\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"transactionPin\": \"6543\",\n  \"narration\": \"Buy the airtime\",\n  \"saveBeneficiary\": \"true\",\n  \"deviceId\": \"postman\",\n  \"beneficiaryName\": \"Bryan\",\n  \"beneficiaryPhone\": \"29847059374\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
+									"raw": "{\n    \"transactionPin\": \"6543\",\n    \"narration\": \"test\",\n    \"channel\": \"Web\",\n    \"sourceAccountNumber\": \"0000025014\",\n    \"saveBeneficiary\": true,\n    \"deviceId\": \"iphone\",\n    \"beneficiaryName\": \"\",\n    \"beneficiaryPhone\": \"07011725297\",\n    \"beneficiaryEmail\": \"\",\n    \"billId\": 3,\n    \"amount\": 100,\n    \"phoneNumber\": \"07011725297\",\n    \"canSchedule\": false,\n    \"scheduleInfo\": {}\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -19837,7 +19843,7 @@
 										}
 									}
 								},
-								"url": "{{baseUrlb}}/api/v1/BillsPayment/"
+								"url": "{{baseUrl}}/bills-payment/api/v1/BillsPayment/airtime"
 							},
 							"response": [
 								{
