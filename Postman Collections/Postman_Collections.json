@@ -14357,7 +14357,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"firstName\": \"\",\n  \"lastName\": \"\",\n  \"rcBnNumber\": \"hdkakfnkwfnwlkl\",\n  \"email\": \"unyc25@mailinator.com\",\n  \"phoneNumber\": \"08185597962\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"stakeholderType\": \"Director\"\n\n}",
+									"raw": "{\n  \"firstName\": \"\",\n  \"lastName\": \"\",\n  \"rcBnNumber\": \"hdkakfnkwfnwlkl\",\n  \"email\": \"{{$randomFirstName}}@mailinator.com\",\n  \"phoneNumber\": \"08185597962\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"stakeholderType\": \"Director\"\n\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
