@@ -11520,7 +11520,14 @@
 											"});\r",
 											"\r",
 											"var jsonData = pm.response.json();\r",
-											"var requestData = JSON.Papm.request.body.raw\r",
+											"var requestData = JSON.parse(pm.request.body.raw)\r",
+											"Email = requestData.emailAddress\r",
+											"username = requestData.userName\r",
+											"\r",
+											"pm.test(\"Response body properties\", function () {\r",
+											"    pm.collectionVariables.set(\"TeamMemberEmail\", Email)\r",
+											"    pm.collectionVariables.set(\"TeamMemberuserName\", username)\r",
+											"});\r",
 											"\r",
 											"pm.test(\"Response body properties\", function () {\r",
 											"    pm.expect(jsonData).to.be.an('object');\r",
@@ -11559,9 +11566,12 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "aa3731c6-9097-4e40-8c94-b304e27996e0",
-										"exec": [],
-										"type": "text/javascript"
+										"id": "9e0dc36f-5fae-4013-acac-763e5aae8c4c",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -11841,6 +11851,15 @@
 											"    pm.expect(jsonData.successful).to.eql(false);\r",
 											"});"
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "b8a5f7ed-09d4-4837-9719-e800c5bab1f6",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -27280,6 +27299,14 @@
 		},
 		{
 			"key": "NewBusinessEmail",
+			"value": ""
+		},
+		{
+			"key": "TeamMemeberEmail",
+			"value": ""
+		},
+		{
+			"key": "TeamMemeberuserName",
 			"value": ""
 		}
 	]
