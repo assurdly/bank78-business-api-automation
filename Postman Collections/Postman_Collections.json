@@ -3304,7 +3304,7 @@
 											"var number  = \"806744\" + num\r",
 											"pm.environment.set(\"number\", number)\r",
 											"\r",
-											"postman.setNextRequest(\"Verify email - Unregistered email\")"
+											"pm.execution.setNextRequest(\"Verify email - Unregistered email\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -4244,7 +4244,7 @@
 									"script": {
 										"id": "d45b1390-f830-4644-84c4-909779c588f7",
 										"exec": [
-											"postman.setNextRequest(\"Request PIN OTP\")"
+											"pm.execution.setNextRequest(\"Request PIN OTP - Blank Pin field\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -4985,7 +4985,7 @@
 									"script": {
 										"id": "2c6aa8ba-4a20-4d79-841f-b73229f8eb87",
 										"exec": [
-											"postman.setNextRequest(\"Verify OTP - Invalid OTP\")"
+											"pm.execution.setNextRequest(\"Verify OTP - Invalid OTP\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -5442,7 +5442,7 @@
 									"script": {
 										"id": "efa0d883-942b-47e8-9087-e428ed3afc69",
 										"exec": [
-											"postman.setNextRequest(\"Create Pin - Mismatched PIN\")"
+											"pm.execution.setNextRequest(\"Create Pin - Mismatched PIN\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -15148,7 +15148,7 @@
 									"script": {
 										"id": "08f26750-db1d-4955-80a3-af513adb2b01",
 										"exec": [
-											"postman.setNextRequest(\"Create Account - Invalid currency code\")"
+											"pm.execution.setNextRequest(\"Create Account - Invalid currency code\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
