@@ -4235,7 +4235,19 @@
 											"});\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "d45b1390-f830-4644-84c4-909779c588f7",
+										"exec": [
+											"postman.setNextRequest(\"Request PIN OTP\")"
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -4964,7 +4976,19 @@
 											"    pm.expect(jsonData.successful).to.eql(false);\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "2c6aa8ba-4a20-4d79-841f-b73229f8eb87",
+										"exec": [
+											"postman.setNextRequest(\"Verify OTP - Valid OTP\")"
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -5109,7 +5133,19 @@
 											"\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "42c7bfd5-0ddc-477a-8701-b4945a54d377",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -5579,162 +5615,6 @@
 							"response": [
 								{
 									"id": "bd0e212a-b318-489c-8015-e690424003b9",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"confirmPin\": \"8868\",\n  \"otp\": \"061967\",\n  \"pin\": \"8911\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/v1/users/pin/create-pin"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Warning\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Create Pin - Valid Matching PIN",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "0090914f-b497-44bb-a634-346ddf6a9145",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code response\", function () {\r",
-											"    pm.response.to.have.status(\"OK\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Content-Type is present\", function () {\r",
-											"    pm.response.to.have.header(\"Content-Type\");\r",
-											"});\r",
-											"\r",
-											"var jsonData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response body has a result property\", function () {\r",
-											"    pm.expect(jsonData).to.be.an(\"object\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Result property is an object\", function () {\r",
-											"    pm.expect(jsonData.result).to.be.an(\"object\");\r",
-											"    pm.expect(jsonData.result).to.have.property(\"message\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Result property has a message property\", function () {\r",
-											"    pm.expect(jsonData.result.message).to.be.a(\"string\");\r",
-											"    pm.expect(jsonData.result.message).to.eq(\"PIN Created Successfully\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"ResultType is a number\", function () {\r",
-											"    pm.expect(jsonData.resultType).to.be.a(\"number\");\r",
-											"    pm.expect(jsonData.resultType).to.eq(1);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Message is a string\", function () {\r",
-											"    pm.expect(jsonData.message).to.be.a(\"string\");\r",
-											"    pm.expect(jsonData.message).to.eql(\"Success\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Successful is a boolean\", function () {\r",
-											"    pm.expect(jsonData.successful).to.be.a(\"boolean\");\r",
-											"    pm.expect(jsonData.successful).to.eql(true);\r",
-											"});\r",
-											"\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "e50e7fdf-1b5c-4624-b5ce-f75a046dbcf2",
-										"exec": [
-											"// var wand = Math.floor(Math.random()* (9999 -1000) + 100)\r",
-											"// var PIN = wand\r",
-											"// pm.environment.set(\"cust_PIN\",PIN)"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "bbae825b-e079-4ec7-b873-92cfb8f95478",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{business_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"confirmPin\": \"8756\",\n  \"otp\": \"622403\",\n  \"pin\": \"8756\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/identity/api/v1/users/pin/create-pin"
-							},
-							"response": [
-								{
-									"id": "6259021e-03ec-4ebf-aa01-7c17dce0490a",
 									"name": "Success",
 									"originalRequest": {
 										"method": "POST",
@@ -8237,6 +8117,162 @@
 						}
 					],
 					"id": "e79dd69a-5453-4dec-96bb-77ea0e894ec5"
+				},
+				{
+					"name": "Create Pin - Valid Matching PIN",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0090914f-b497-44bb-a634-346ddf6a9145",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code response\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Response body has a result property\", function () {\r",
+									"    pm.expect(jsonData).to.be.an(\"object\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Result property is an object\", function () {\r",
+									"    pm.expect(jsonData.result).to.be.an(\"object\");\r",
+									"    pm.expect(jsonData.result).to.have.property(\"message\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Result property has a message property\", function () {\r",
+									"    pm.expect(jsonData.result.message).to.be.a(\"string\");\r",
+									"    pm.expect(jsonData.result.message).to.eq(\"PIN Created Successfully\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"ResultType is a number\", function () {\r",
+									"    pm.expect(jsonData.resultType).to.be.a(\"number\");\r",
+									"    pm.expect(jsonData.resultType).to.eq(1);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Message is a string\", function () {\r",
+									"    pm.expect(jsonData.message).to.be.a(\"string\");\r",
+									"    pm.expect(jsonData.message).to.eql(\"Success\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Successful is a boolean\", function () {\r",
+									"    pm.expect(jsonData.successful).to.be.a(\"boolean\");\r",
+									"    pm.expect(jsonData.successful).to.eql(true);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e50e7fdf-1b5c-4624-b5ce-f75a046dbcf2",
+								"exec": [
+									"// var wand = Math.floor(Math.random()* (9999 -1000) + 100)\r",
+									"// var PIN = wand\r",
+									"// pm.environment.set(\"cust_PIN\",PIN)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "bbae825b-e079-4ec7-b873-92cfb8f95478",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{business_access_token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{x-api-key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"confirmPin\": \"8756\",\n  \"otp\": \"622403\",\n  \"pin\": \"8756\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/identity/api/v1/users/pin/create-pin"
+					},
+					"response": [
+						{
+							"id": "6259021e-03ec-4ebf-aa01-7c17dce0490a",
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"confirmPin\": \"8868\",\n  \"otp\": \"061967\",\n  \"pin\": \"8911\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/v1/users/pin/create-pin"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Warning\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+						}
+					]
 				}
 			],
 			"id": "c5df4d03-f38b-4cf6-a6d4-60dcfe596b9a"
