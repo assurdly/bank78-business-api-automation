@@ -5849,7 +5849,7 @@
 									"script": {
 										"id": "6eb149bb-0563-46d8-83e0-78eedaa244d8",
 										"exec": [
-											"postman.setNextRequest(\"Verify Pin - Valid PIN\")"
+											"pm.execution.setNextRequest(\"Verify Pin - Invalid PIN\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -6445,7 +6445,7 @@
 									"script": {
 										"id": "5ea3ea84-e6a1-40da-8230-83c412dd028e",
 										"exec": [
-											"postman.setNextRequest(\"Change PIN - Old=New PIN\")"
+											"pm.execution.setNextRequest(\"Change PIN - Old=New PIN\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -7171,7 +7171,7 @@
 									"script": {
 										"id": "b79310f0-a9fd-4151-9c88-751fd462a8e4",
 										"exec": [
-											"postman.setNextRequest(\"Forgot PIN - No access\")"
+											"pm.execution.setNextRequest(\"Forgot PIN - No access\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -8246,7 +8246,7 @@
 									"script": {
 										"id": "dab14e37-6b79-4ad2-a417-58fa90d535df",
 										"exec": [
-											"postman.setNextRequest(\"Forgot Password - Invalid email\")"
+											"pm.execution.setNextRequest(\"Forgot Password - Invalid email\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -8878,7 +8878,7 @@
 									"script": {
 										"id": "9b08f48a-aa91-4542-a0c1-3859749b14f5",
 										"exec": [
-											"postman.setNextRequest(\"Resendotp - Invalid email\")"
+											"pm.execution.setNextRequest(\"Resendotp - Invalid email\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -9348,7 +9348,7 @@
 									"script": {
 										"id": "b3862cb4-f2b3-4acd-b44f-ef45c47a99e8",
 										"exec": [
-											"postman.setNextRequest(\"Reset Password - Invalid email\")"
+											"pm.execution.setNextRequest(\"Reset Password - Invalid email\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -10554,7 +10554,7 @@
 									"script": {
 										"id": "5ef42d23-003b-4957-b301-519fb7704df1",
 										"exec": [
-											"postman.setNextRequest(\"Change Password - Incorrect old password\")"
+											"pm.execution.setNextRequest(\"Change Password - Incorrect old password\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -11860,7 +11860,7 @@
 									"script": {
 										"id": "b3e139e7-a693-4042-bce3-b3f6fd08b1c6",
 										"exec": [
-											"postman.setNextRequest(\"Mismatched password\")"
+											"pm.execution.setNextRequest(\"Mismatched password\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -13154,7 +13154,7 @@
 									"script": {
 										"id": "7c1b35ed-e5ab-4b98-a73e-23ab3f45520e",
 										"exec": [
-											"postman.setNextRequest(\"Record not Found\")"
+											"pm.execution.setNextRequest(\"Record not Found\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
