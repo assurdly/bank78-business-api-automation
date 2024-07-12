@@ -11593,7 +11593,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"emailAddress\": \"bankuser2@dispostable.com\",\n  \"userName\": \"bankuser2@dispostable.com\",\n  \"roleId\": \"2\",\n  \"inviteUrl\": \"https://www.lover.com\",\n  \"firstName\": \"Frapo\",\n  \"lastName\": \"Ocep0\",\n  \"phoneNumber\": \"819489920\",\n  \"phoneNumberCountryCode\": \"+234\"\n}",
+									"raw": "{\n    \"emailAddress\": \"Test@mailinator.com\",\n    \"userName\": \"Test@mailinator.com\",\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"Mailinator\",\n    \"roleId\": 2\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
