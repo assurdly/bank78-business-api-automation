@@ -3304,7 +3304,7 @@
 											"var number  = \"806744\" + num\r",
 											"pm.environment.set(\"number\", number)\r",
 											"\r",
-											""
+											"postman.setNextRequest(\"Verify email - Unregistered email\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
