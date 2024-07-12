@@ -1307,9 +1307,9 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Set Business email,name,typeId as global variable\", function () {\r",
-											"    pm.globals.set(\"NewBusinessEmail\", jsonData.result.email)\r",
-											"    pm.globals.set(\"NewBusinessName\", jsonData.result.businessName)\r",
-											"    pm.globals.set(\"NewBusinessTypeId\", jsonData.result.TypeId)\r",
+											"    pm.collectionVariables.set(\"NewBusinessEmail\", jsonData.result.email)\r",
+											"    pm.collectionVariables.set(\"NewBusinessName\", jsonData.result.businessName)\r",
+											"    pm.collectionVariables.set(\"NewBusinessTypeId\", jsonData.result.TypeId)\r",
 											"});"
 										],
 										"type": "text/javascript",
@@ -13703,8 +13703,11 @@
 									"listen": "prerequest",
 									"script": {
 										"id": "97bdbf78-3083-4702-95db-c30c8968bb4e",
-										"exec": [],
-										"type": "text/javascript"
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -13737,7 +13740,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"firstName\": \"Luke\",\n  \"lastName\": \"Dube\",\n  \"rcBnNumber\": \"hdkakfnkwfnwlkl\",\n  \"email\": \"lukydube{{$randomAlphaNumeric}}@mailinator.com\",\n  \"phoneNumber\": \"08185597962\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"stakeholderType\": \"Director\"\n\n}",
+									"raw": "{\n  \"firstName\": \"Luke\",\n  \"lastName\": \"Dube\",\n  \"rcBnNumber\": \"{{hdkakfnkwfnwlkl}}\",\n  \"email\": \"lukydube{{$randomAlphaNumeric}}@mailinator.com\",\n  \"phoneNumber\": \"08185597962\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"stakeholderType\": \"Director\"\n\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
