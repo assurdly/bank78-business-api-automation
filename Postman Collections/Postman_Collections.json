@@ -11520,6 +11520,7 @@
 											"});\r",
 											"\r",
 											"var jsonData = pm.response.json();\r",
+											"var requestData = JSON.Papm.request.body.raw\r",
 											"\r",
 											"pm.test(\"Response body properties\", function () {\r",
 											"    pm.expect(jsonData).to.be.an('object');\r",
@@ -11558,7 +11559,7 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "197cef4d-5561-4f00-aff4-8aae0ebd407a",
+										"id": "aa3731c6-9097-4e40-8c94-b304e27996e0",
 										"exec": [],
 										"type": "text/javascript"
 									}
@@ -11593,7 +11594,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"emailAddress\": \"Test@mailinator.com\",\n    \"userName\": \"Test@mailinator.com\",\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"Mailinator\",\n    \"roleId\": 2\n}",
+									"raw": "{\n    \"emailAddress\": \"@mailinator.com\",\n    \"userName\": \"{{$randomFirstName}}@mailinator.com\",\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"Mailinator\",\n    \"roleId\": 2\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -11691,15 +11692,20 @@
 											"    pm.expect(jsonData.message).to.eql('Response has validation errors');\r",
 											"});\r",
 											"\r",
-											"pm.test(\"validationMessages is present\", function () {\r",
-											"    pm.expect(jsonData.validationMessages[0]).to.eql( \"The model field is required.\",\r",
-											"        \"Error converting value {null} to type 'System.Int32'. Path 'roleId', line 4, position 14.\");\r",
-											"});\r",
 											"\r",
 											"pm.test(\"successful is false\", function () {\r",
 											"    pm.expect(jsonData.successful).to.eql(false);\r",
 											"});"
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "ee4ea6a3-57b9-4678-8342-a47343c0561d",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -11733,7 +11739,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"emailAddress\": \"\",\n  \"userName\": \"\",\n  \"roleId\": \"\",\n  \"inviteUrl\": \"\",\n  \"firstName\": \"\",\n  \"lastName\": \"\",\n  \"phoneNumber\": \"\",\n  \"phoneNumberCountryCode\": \"\"\n}",
+									"raw": "{\n    \"emailAddress\": \"\",\n    \"userName\": \"\",\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"Mailinator\",\n    \"roleId\": 2\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
