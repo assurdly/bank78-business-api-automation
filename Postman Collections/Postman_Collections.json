@@ -5442,7 +5442,7 @@
 									"script": {
 										"id": "efa0d883-942b-47e8-9087-e428ed3afc69",
 										"exec": [
-											"postman.setNextRequest(\"Create Pin - Valid Matching PIN\")"
+											"postman.setNextRequest(\"Create Pin - Mismatched PIN\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -6436,7 +6436,19 @@
 											"\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "5ea3ea84-e6a1-40da-8230-83c412dd028e",
+										"exec": [
+											"postman.setNextRequest(\"Change PIN - Old=New PIN\")"
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -7150,7 +7162,19 @@
 											"     pm.expect(jsonData.successful).to.eq(false);\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "b79310f0-a9fd-4151-9c88-751fd462a8e4",
+										"exec": [
+											"postman.setNextRequest(\"Forgot PIN - No access\")"
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
