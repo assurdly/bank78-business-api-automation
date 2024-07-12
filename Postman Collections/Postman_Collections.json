@@ -12990,7 +12990,7 @@
 											"});\r",
 											"\r",
 											"pm.test(\"validationMessages is present\", function () {\r",
-											"    pm.expect(jsonData.validationMessages[0]).to.eql(\"Could not convert string to integer: ow7. Path 'id', line 3, position 13.\",\r",
+											"    pm.expect(jsonData.validationMessages[0]).to.eql(\"Error converting value {null} to type 'System.Int32'. Path 'id', line 2, position 12.\",\r",
 											"        \"The model field is required.\");\r",
 											"});\r",
 											"\r",
@@ -13005,7 +13005,7 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "7c1b35ed-e5ab-4b98-a73e-23ab3f45520e",
+										"id": "20f793ce-595c-4382-8c82-3f02e119623a",
 										"exec": [],
 										"type": "text/javascript"
 									}
@@ -13040,7 +13040,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"inviteUrl\": \"\",\n  \"id\": \"ow7\"\n}",
+									"raw": "{\n    \"id\": \"\",\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -13099,7 +13099,7 @@
 							]
 						},
 						{
-							"name": "Empty Field - Record not found Copy",
+							"name": "Non existing Number",
 							"event": [
 								{
 									"listen": "test",
@@ -13122,7 +13122,6 @@
 											"    pm.expect(jsonData.result).to.be.null;\r",
 											"    pm.expect(jsonData.resultType).to.be.an('string');\r",
 											"    pm.expect(jsonData.message).to.be.an('string');\r",
-											"    pm.expect(jsonData.validationMessages).to.be.an('array');\r",
 											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
 											"});\r",
 											"\r",
@@ -13130,7 +13129,7 @@
 											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"resultType is ValidationError\", function () {\r",
+											"pm.test(\"resultType is Error\", function () {\r",
 											"    pm.expect(jsonData.resultType).to.eql(\"ValidationError\");\r",
 											"});\r",
 											"\r",
@@ -13155,8 +13154,11 @@
 									"listen": "prerequest",
 									"script": {
 										"id": "7c1b35ed-e5ab-4b98-a73e-23ab3f45520e",
-										"exec": [],
-										"type": "text/javascript"
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -13189,7 +13191,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"inviteUrl\": \"\",\n  \"id\": \"ow7\"\n}",
+									"raw": "{\n    \"id\": 5000,\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
