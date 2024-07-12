@@ -8869,7 +8869,19 @@
 											"     pm.expect(jsonData.successful).to.eq(false);\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "9b08f48a-aa91-4542-a0c1-3859749b14f5",
+										"exec": [
+											"postman.setNextRequest(\"Resendotp - Invalid email\")"
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -9327,7 +9339,19 @@
 											"     pm.expect(jsonData.successful).to.eq(false);\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "b3862cb4-f2b3-4acd-b44f-ef45c47a99e8",
+										"exec": [
+											"postman.setNextRequest(\"Reset Password - Invalid email\")"
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -10521,7 +10545,19 @@
 											"     pm.expect(jsonData.successful).to.eq(false);\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "5ef42d23-003b-4957-b301-519fb7704df1",
+										"exec": [
+											"postman.setNextRequest(\"Change Password - Incorrect old password\")"
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -11515,6 +11551,15 @@
 											"    pm.expect(jsonData.successful).to.eql(true);\r",
 											"});"
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "197cef4d-5561-4f00-aff4-8aae0ebd407a",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
