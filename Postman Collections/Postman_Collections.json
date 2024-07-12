@@ -3597,7 +3597,7 @@
 							]
 						},
 						{
-							"name": "Verify email - Valid details Copy",
+							"name": "Verify email - Valid details",
 							"event": [
 								{
 									"listen": "test",
@@ -13544,7 +13544,7 @@
 										{
 											"description": "username",
 											"key": "username",
-											"value": "pollybiz@yopmail.com"
+											"value": "{{NewBusinessEmail}}"
 										},
 										{
 											"description": "password",
