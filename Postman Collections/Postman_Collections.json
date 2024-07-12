@@ -19835,7 +19835,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"transactionPin\": \"6543\",\n    \"narration\": \"test\",\n    \"channel\": \"Web\",\n    \"sourceAccountNumber\": \"0000025014\",\n    \"saveBeneficiary\": true,\n    \"deviceId\": \"iphone\",\n    \"beneficiaryName\": \"\",\n    \"beneficiaryPhone\": \"07011725297\",\n    \"beneficiaryEmail\": \"\",\n    \"billId\": 3,\n    \"amount\": 100,\n    \"phoneNumber\": \"07011725297\",\n    \"canSchedule\": false,\n    \"scheduleInfo\": {}\n}",
+									"raw": "{\n    \"transactionPin\": \"6543\",\n    \"narration\": \"test\",\n    \"sourceAccountNumber\": \"0000025014\",\n    \"saveBeneficiary\": true,\n    \"deviceId\": \"1284903\",\n    \"beneficiaryName\": \"Minnie\",\n    \"beneficiaryPhone\": \"07011725297\",\n    \"beneficiaryEmail\": \"12345\",\n    \"billId\": 3,\n    \"amount\": 100,\n    \"phoneNumber\": \"07011725297\",\n    \"canSchedule\": false,\n    \"scheduleInfo\": {}\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
