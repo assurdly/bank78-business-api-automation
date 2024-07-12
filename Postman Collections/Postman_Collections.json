@@ -1307,9 +1307,9 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Set Business email,name,typeId as global variable\", function () {\r",
-											"    pm.collectionVariables.set(\"NewBusinessEmail\", jsonData.result.email)\r",
-											"    pm.collectionVariables.set(\"NewBusinessName\", jsonData.result.businessName)\r",
-											"    pm.collectionVariables.set(\"NewBusinessTypeId\", jsonData.result.TypeId)\r",
+											"    pm.collectionVariables.set(\"NewBusinessEmail\", responseData.result.email)\r",
+											"    pm.collectionVariables.set(\"NewBusinessName\", responseData.result.businessName)\r",
+											"    pm.collectionVariables.set(\"NewBusinessTypeId\", responseData.result.TypeId)\r",
 											"});"
 										],
 										"type": "text/javascript",
@@ -3543,7 +3543,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{ \n  \"UserName\": \"{{NewBu}}\", \n  \"otp\": \"272662\"\n}",
+									"raw": "{ \n  \"UserName\": \"{{userName}}\", \n  \"otp\": \"272662\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -27121,6 +27121,10 @@
 			"key": "baseUrl",
 			"value": "https://sandbox.bank78.co",
 			"type": "string"
+		},
+		{
+			"key": "NewBusinessEmail",
+			"value": ""
 		}
 	]
 }
