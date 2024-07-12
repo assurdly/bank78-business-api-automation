@@ -11604,7 +11604,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"emailAddress\": \"@mailinator.com\",\n    \"userName\": \"{{$randomFirstName}}@mailinator.com\",\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"Mailinator\",\n    \"roleId\": 2\n}",
+									"raw": "{\n    \"emailAddress\": \"Testing@mailinator.com\",\n    \"userName\": \"Testing@mailinator.com\",\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"Mailinator\",\n    \"roleId\": 2\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -11860,7 +11860,7 @@
 									"script": {
 										"id": "b3e139e7-a693-4042-bce3-b3f6fd08b1c6",
 										"exec": [
-											"postman."
+											"postman.setNextRequest(\"Mismatched password\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -27310,6 +27310,14 @@
 		},
 		{
 			"key": "TeamMemeberuserName",
+			"value": ""
+		},
+		{
+			"key": "TeamMemberEmail",
+			"value": ""
+		},
+		{
+			"key": "TeamMemberUserName",
 			"value": ""
 		}
 	]
