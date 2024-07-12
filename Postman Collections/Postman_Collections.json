@@ -19017,7 +19017,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"transactionPin\": \"6543\",\n  \"narration\": \"payment\",\n  \"channel\": \"1\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"saveBeneficiary\": true,\n  \"clientRequestId\": \"fundbet\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaryName\": \"Paul\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"minnied@mailinator.com\",\n  \"packageId\": \"107\",\n  \"billId\": \"29\",\n  \"amount\": \"10\",\n  \"beneficiary\": \"bryan\"\n}",
+									"raw": "{\n    \"transactionPin\": \"6543\",\n    \"channel\": \"Web\",\n    \"sourceAccountNumber\": \"{{sourceAccount}}\",\n    \"saveBeneficiary\": true,\n    \"deviceId\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36\",\n    \"beneficiaryName\": \"\",\n    \"beneficiaryPhone\": \"07011625457\",\n    \"beneficiaryEmail\": \"\",\n    \"billId\": 29,\n    \"amount\": \"1000\",\n    \"phoneNumber\": \"07011625457\",\n    \"packageId\": 107,\n    \"beneficiary\": \"test\",\n    \"canSchedule\": false,\n    \"scheduleInfo\": null\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -19025,7 +19025,7 @@
 										}
 									}
 								},
-								"url": "{{baseUrlb}}/api/v1/BillsPayment"
+								"url": "https://sandbox.bank78.co/bills-payment/api/v1/BillsPayment"
 							},
 							"response": [
 								{
@@ -19837,7 +19837,7 @@
 										}
 									}
 								},
-								"url": "{{baseUrlb}}/api/v1/BillsPayment/airtime"
+								"url": "{{baseUrlb}}/api/v1/BillsPayment/"
 							},
 							"response": [
 								{
