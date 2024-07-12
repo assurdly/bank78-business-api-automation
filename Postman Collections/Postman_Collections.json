@@ -15139,7 +15139,19 @@
 											"    pm.expect(jsonData.successful).to.eql(false);\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "08f26750-db1d-4955-80a3-af513adb2b01",
+										"exec": [
+											"postman.setNextRequest(\"Create Account - Invalid currency code\")"
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
