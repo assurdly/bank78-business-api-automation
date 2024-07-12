@@ -26992,17 +26992,12 @@
 											"pm.test(\"ResponseBody hasResult as true \", function () {",
 											"    pm.expect(resBody.hasResult).to.eql(true);",
 											"});",
-											"",
-											"pm.test(\"ResponseBody matches string userId \", function () {",
-											"    pm.expect(pm.response.text()).to.include(\"userId\");",
+											"pm.test(\"ResponseBody hasResult as true \", function () {",
+											"    pm.expect(resBody.result.validated).to.eql(true);",
 											"});",
-											"pm.test(\"ResponseBody matches string question\", function () {",
-											"    pm.expect(pm.response.text()).to.include(\"question\");",
+											"pm.test(\"ResponseBody hasResult as true \", function () {",
+											"    pm.expect(resBody.result.message).to.eql(null);",
 											"});",
-											"pm.test(\"Has result equal to true\", function () {",
-											"     pm.expect(pm.response.json().hasResult).to.equal(true);",
-											"});",
-											"",
 											"pm.test(\"resultType equal to 1\", function () {",
 											"     pm.expect(pm.response.json().resultType).to.equal(1);",
 											"});",
@@ -27029,7 +27024,7 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "6197ea2e-75cf-402c-9088-0c7944d56b5d",
+										"id": "0ffba343-b42b-4a11-b0b9-23c6f632e9b0",
 										"exec": [],
 										"type": "text/javascript"
 									}
