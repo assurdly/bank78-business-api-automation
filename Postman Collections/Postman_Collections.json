@@ -11526,7 +11526,7 @@
 											"\r",
 											"pm.test(\"Response body properties\", function () {\r",
 											"    pm.collectionVariables.set(\"TeamMemberEmail\", Email)\r",
-											"    pm.collectionVariables.set(\"TeamMemberuserName\", username)\r",
+											"    pm.collectionVariables.set(\"TeamMemberUserName\", username)\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Response body properties\", function () {\r",
@@ -11858,9 +11858,12 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "b8a5f7ed-09d4-4837-9719-e800c5bab1f6",
-										"exec": [],
-										"type": "text/javascript"
+										"id": "b3e139e7-a693-4042-bce3-b3f6fd08b1c6",
+										"exec": [
+											"postman."
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -11893,7 +11896,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"emailAddress\": \"bankusero@dispostable.com\",\n  \"userName\": \"bankusero@dispostable.com\",\n  \"roleId\": \"2\",\n  \"inviteUrl\": \"https://www.lover.com\",\n  \"firstName\": \"Fra\",\n  \"lastName\": \"Oce\",\n  \"phoneNumber\": \"819489991\",\n  \"phoneNumberCountryCode\": \"+234\"\n}",
+									"raw": "{\n    \"emailAddress\": \"TeamMemeberEmail\",\n    \"userName\": \"TeamMemeberUserName\",\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"Mailinator\",\n    \"roleId\": 2\n}\n",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
