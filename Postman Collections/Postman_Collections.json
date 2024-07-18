@@ -26383,6 +26383,34 @@
 				}
 			],
 			"id": "cf3a8d65-61d1-4894-8618-21498d1675a2"
+		},
+		{
+			"name": "Sms opt in-and-out",
+			"item": [
+				{
+					"name": "Business",
+					"id": "04825839-5cbe-46aa-8ed7-e56a5ee3df48",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"transactionPin\": \"0987\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://onboard-dev.bank78.co/api/customer/sms-opt-in-out"
+					},
+					"response": []
+				}
+			],
+			"id": "edd9b378-167a-4cc7-a1d2-321bbbd94f95"
 		}
 	],
 	"event": [
