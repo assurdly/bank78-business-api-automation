@@ -15948,8 +15948,11 @@
 									"listen": "prerequest",
 									"script": {
 										"id": "933b39f5-9589-4956-972a-7d2904b89979",
-										"exec": [],
-										"type": "text/javascript"
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -15985,7 +15988,7 @@
 										{
 											"description": "username= test1860@mailinator.com, test6900, {{latest_cust_email}}",
 											"key": "username",
-											"value": "mayin@yopmail.com"
+											"value": "pollybiz@yopmail.com"
 										},
 										{
 											"description": "password",
