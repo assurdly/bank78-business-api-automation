@@ -26444,7 +26444,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "81ca6b05-4d91-4e7a-b3f0-e6835c4b683c",
+				"id": "7f2f4c54-f937-4b9b-a7db-5cce50f74263",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -26455,7 +26455,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "a8ab491d-1568-4464-b392-11ef7c72d7d2",
+				"id": "38950e67-a0b9-4309-86ff-0c79bc8a615a",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -26465,6 +26465,11 @@
 		}
 	],
 	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://sandbox.bank78.co",
+			"type": "string"
+		},
 		{
 			"key": "firstname",
 			"value": ""
@@ -26484,11 +26489,6 @@
 		{
 			"key": "Onboarding_access_token",
 			"value": ""
-		},
-		{
-			"key": "baseUrl",
-			"value": "https://sandbox.bank78.co",
-			"type": "string"
 		},
 		{
 			"key": "NewBusinessEmail",
