@@ -13106,7 +13106,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"2500\",\n  \"billId\": \"6\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"buydata1335\",\n  \"packageId\": \"112\",\n  \"phoneNumber\": \"08185597979\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6543\",\n  \"narration\": \"Buy data bundle\",\n  \"saveBeneficiary\": \"True\",\n  \"deviceId\": \"pixel phone\",\n  \"beneficiaryName\": \"Bryan Ek\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
+									"raw": "{\n    \"transactionPin\": \"6543\",\n    \"narration\": \"test\",\n    \"channel\": \"Web\",\n    \"sourceAccountNumber\": \"{{sourceAccount}}\",\n    \"saveBeneficiary\": true,\n    \"deviceId\": \"xphone\",\n    \"beneficiaryName\": \"\",\n    \"beneficiaryPhone\": \"07011725297\",\n    \"beneficiaryEmail\": \"\",\n    \"billId\": 12,\n    \"amount\": 200,\n    \"phoneNumber\": \"07011725297\",\n    \"packageId\": 119,\n    \"canSchedule\": false,\n    \"scheduleInfo\": {}\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -13322,7 +13322,7 @@
 										"value": "h9tRbOJzcH9O8mDsWRVey6OimYrqYUdg4c4IKNTf"
 									}
 								],
-								"url": "https://sandbox.bank78.co/bills-payment/api/v1/Bills/data"
+								"url": "{{/api/v1/Bills/data"
 							},
 							"response": [
 								{
