@@ -13165,6 +13165,228 @@
 							]
 						},
 						{
+							"name": "Successful Data Purchase Copy",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "12040e9b-2d1f-4d26-9f97-743c6d27603a",
+										"exec": [
+											"// Generate a random string function\r",
+											"function generateRandomString(length) {\r",
+											"    const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';\r",
+											"    let result = '';\r",
+											"    for (let i = 0; i < length; i++) {\r",
+											"        const randomIndex = Math.floor(Math.random() * characters.length);\r",
+											"        result += characters.charAt(randomIndex);\r",
+											"    }\r",
+											"    return result;\r",
+											"}\r",
+											"\r",
+											"// Update the requestBody with a random clientRequestId\r",
+											"// const randomClientId = generateRandomString(10); // Change 10 to the desired length\r",
+											"// const requestBody = {\r",
+											"\r",
+											"//   \"amount\": \"2500\",\r",
+											"//   \"billId\": \"9\",\r",
+											"//   \"channel\": \"1\",\r",
+											"//   \"clientRequestId\": randomClientId,\r",
+											"//   \"packageId\": \"47\",\r",
+											"//   \"phoneNumber\": \"08185597979\",\r",
+											"//   \"sourceAccountNumber\": \"{{sourceAccount}}\",\r",
+											"//   \"transactionPin\": \"6383\",\r",
+											"//   \"narration\": \"Buy data bundle\",\r",
+											"//   \"saveBeneficiary\": \"True\",\r",
+											"//   \"deviceId\": \"pixel phone\",\r",
+											"//   \"beneficiaryName\": \"Bryan Ek\",\r",
+											"//   \"beneficiaryPhone\": \"08185597979\",\r",
+											"//   \"beneficiaryEmail\": \"bryan@assurdly\"\r",
+											"// };\r",
+											"\r",
+											"// pm.request.body.raw = JSON.stringify(requestBody);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "0688d75f-2490-401c-87b9-734d79858238",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response code is 200 for success\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"The 'amount' field should be a number\", function () {\r",
+											"    const responseData = pm.response.json();\r",
+											"    pm.expect(responseData).to.be.an('object');\r",
+											"    pm.expect(responseData.result.amount).to.be.a('number');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response structure and properties for 200\", function () {\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"hasResult\", true);\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"result\");\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"resultType\", 1);\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"message\", \"Successful\");\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"successful\", true);\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"errorCode\", 0);\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"responseCode\", \"200\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Result object properties for 200\", function () {\r",
+											"    var result = pm.response.json().result;\r",
+											"    \r",
+											"    pm.expect(result).to.have.property(\"message\", \"Successful\");\r",
+											"    pm.expect(result).to.have.property(\"status\", \"Success\");\r",
+											"    pm.expect(result).to.have.property(\"billToken\").to.be.null;\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"Check if transaction reference is present\", function () {\r",
+											"    var responseBody = pm.response.json();\r",
+											"    pm.expect(responseBody.result.reference).to.not.be.undefined;\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "96a80c10-77cd-4eed-ac8c-7cb78cbad5ed",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json, text/plain, */*"
+									},
+									{
+										"key": "accept-language",
+										"value": "en-US,en;q=0.9"
+									},
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjIwNUZGMDU0NzlFMzhDQ0VFNzI1RDFDRjg5NTc3RkM1IiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE3MjE2NjE2MzYsImV4cCI6MTcyMTY2NTIzNiwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS1kZXYuYmFuazc4LmNvIiwiYXVkIjoiYXBpMSIsImNsaWVudF9pZCI6IkVDQkVFQ0JDN0NFNTQzNERCQTUwOUI5Mzc1MjAzRUMxIiwic3ViIjoiMjU0NjA2OGMtOTBmOC00YjZlLThkODYtMGZlODVjMTUzNGZiIiwiYXV0aF90aW1lIjoxNzIxNjYxNjM2LCJpZHAiOiJsb2NhbCIsInBob25lTnVtYmVyIjoiNzAyMjQyNTI5NyIsInVzZXJJZCI6IjI1NDYwNjhjLTkwZjgtNGI2ZS04ZDg2LTBmZTg1YzE1MzRmYiIsInVzZXJuYW1lIjoicG9sbHliaXpAeW9wbWFpbC5jb20iLCJpc0FjdGl2ZSI6IlRydWUiLCJ1c2VyVHlwZUlkIjoiMSIsInVzZXJUeXBlIjoiQ3VzdG9tZXIiLCJlbWFpbCI6InBvbGx5Yml6QHlvcG1haWwuY29tIiwibGFzdE5hbWUiOiJCaXoiLCJmaXJzdE5hbWUiOiJQb2x5IiwicGVybWlzc2lvbiI6IntcInNlY3Rpb25zXCI6W119IiwianRpIjoiNjI2MDE2NzZFRTBFRTdGNkZDOUQwMEVENUVGNUY3NDMiLCJpYXQiOjE3MjE2NjE2MzYsInNjb3BlIjpbImFwaTEiLCJvZmZsaW5lX2FjY2VzcyJdLCJhbXIiOlsiY3VzdG9tIl19.XR0jG0Syc4EAVSdBFO88sqKdFxrMhmJgMwhLmo_JQ-yoZUkb8ZOwXSxQllroC7B3N8EmyvAnBDMExxGAI_7ByX_nJnpqDRvSEuUGHktbQHFknacw5OoNtsfaWBGFryD1TN2wZvHqPfWaoBDW4j5c-6S24Nl9yUZsnCtnWnoI6fKOnDMwFCPVJ4Yp_XIw_DM8ZnzF2I1HqtqrHmautqb7-19rPMprgbTJHIk4sWFHS8qTzpPDb8UtVJTLLbv94OK_YH6YARTA3o5T7QQ_APgrAjuT97z5trMqxTuP0jSBe6AHvH5OvrkbP2oOWh7Nda4QVI3C9rsC-W_qRKSN_ss47w"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json"
+									},
+									{
+										"key": "origin",
+										"value": "https://app-dev.bank78.co"
+									},
+									{
+										"key": "priority",
+										"value": "u=1, i"
+									},
+									{
+										"key": "referer",
+										"value": "https://app-dev.bank78.co/"
+									},
+									{
+										"key": "sec-ch-ua",
+										"value": "\"Not/A)Brand\";v=\"8\", \"Chromium\";v=\"126\", \"Google Chrome\";v=\"126\""
+									},
+									{
+										"key": "sec-ch-ua-mobile",
+										"value": "?0"
+									},
+									{
+										"key": "sec-ch-ua-platform",
+										"value": "\"macOS\""
+									},
+									{
+										"key": "sec-fetch-dest",
+										"value": "empty"
+									},
+									{
+										"key": "sec-fetch-mode",
+										"value": "cors"
+									},
+									{
+										"key": "sec-fetch-site",
+										"value": "same-site"
+									},
+									{
+										"key": "user-agent",
+										"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+									},
+									{
+										"key": "x-api-key",
+										"value": "h9tRbOJzcH9O8mDsWRVey6OimYrqYUdg4c4IKNTf"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"amount\": \"2500\",\n  \"billId\": \"6\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"buydata1335\",\n  \"packageId\": \"112\",\n  \"phoneNumber\": \"08185597979\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6543\",\n  \"narration\": \"Buy data bundle\",\n  \"saveBeneficiary\": \"True\",\n  \"deviceId\": \"pixel phone\",\n  \"beneficiaryName\": \"Bryan Ek\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://sandbox.bank78.co/transfer/api/v1/Transfer"
+							},
+							"response": [
+								{
+									"id": "c80ad680-0d48-418c-aeec-de880ca0a1aa",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"amount\": \"<double>\",\n  \"billId\": \"<integer>\",\n  \"channel\": null,\n  \"clientRequestId\": \"<string>\",\n  \"packageId\": \"<integer>\",\n  \"phoneNumber\": \"83027014417\",\n  \"sourceAccountId\": \"<long>\",\n  \"transactionPin\": \"5206\",\n  \"narration\": \"<string>\",\n  \"saveBeneficiary\": \"<boolean>\",\n  \"deviceId\": \"<string>\",\n  \"beneficiaryName\": \"<string>\",\n  \"beneficiaryPhone\": \"<string>\",\n  \"beneficiaryEmail\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/BillsPayment/data"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"amount\": \"<double>\",\n    \"reference\": \"<string>\",\n    \"beneficiary\": \"<string>\",\n    \"message\": \"<string>\",\n    \"status\": \"<string>\",\n    \"senderName\": \"<string>\",\n    \"senderAccountNumber\": \"<string>\",\n    \"beneficiaryName\": \"<string>\",\n    \"billToken\": \"<string>\"\n  },\n  \"resultType\": null,\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\",\n  \"errorCode\": null,\n  \"responseCode\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
 							"name": "Invalid pin",
 							"event": [
 								{
