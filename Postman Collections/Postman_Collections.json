@@ -15741,7 +15741,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -15898,7 +15898,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -16072,7 +16072,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -16191,7 +16191,8 @@
 											"\r",
 											"pm.request.body.raw = JSON.stringify(requestBody);"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -16219,7 +16220,8 @@
 											"});\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -16231,7 +16233,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -16393,7 +16395,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -16533,7 +16535,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -18445,7 +18447,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -18582,8 +18584,11 @@
 									"listen": "prerequest",
 									"script": {
 										"id": "0e0f217b-7775-4b05-891f-71d87a249041",
-										"exec": [],
-										"type": "text/javascript"
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -18595,7 +18600,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -18723,6 +18728,15 @@
 											"    pm.expect(responseData.result).to.be.null;\r",
 											"});"
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "2578c83a-1c9b-4a2e-aa0a-494b646c7e54",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -18735,7 +18749,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -18859,7 +18873,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -18967,6 +18981,15 @@
 											"});\r",
 											""
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "cb6305b8-bc8b-4645-8cce-4d703b397578",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -18979,7 +19002,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -19091,6 +19114,15 @@
 											"});\r",
 											""
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "14d81348-9e90-4e46-bb48-387fc772a032",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -19103,7 +19135,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -19242,7 +19274,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -19386,7 +19418,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
