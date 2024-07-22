@@ -11273,7 +11273,19 @@
 											"    pm.expect(jsonData.successful).to.eq(false);\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "dd2318e5-937b-40d9-af19-0295252e8843",
+										"exec": [
+											"pm.execution.setNextRequest(\"invite stakeholder - number as name\")"
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -26328,7 +26340,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{customer_access_token}}"
+								"token": "{{business_access_token}}"
 							}
 						},
 						"method": "PUT",
