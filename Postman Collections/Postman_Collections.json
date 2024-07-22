@@ -13263,7 +13263,7 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "POST",
+								"method": "GET",
 								"header": [
 									{
 										"key": "accept",
@@ -13276,10 +13276,6 @@
 									{
 										"key": "authorization",
 										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjIwNUZGMDU0NzlFMzhDQ0VFNzI1RDFDRjg5NTc3RkM1IiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE3MjE2NjE2MzYsImV4cCI6MTcyMTY2NTIzNiwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS1kZXYuYmFuazc4LmNvIiwiYXVkIjoiYXBpMSIsImNsaWVudF9pZCI6IkVDQkVFQ0JDN0NFNTQzNERCQTUwOUI5Mzc1MjAzRUMxIiwic3ViIjoiMjU0NjA2OGMtOTBmOC00YjZlLThkODYtMGZlODVjMTUzNGZiIiwiYXV0aF90aW1lIjoxNzIxNjYxNjM2LCJpZHAiOiJsb2NhbCIsInBob25lTnVtYmVyIjoiNzAyMjQyNTI5NyIsInVzZXJJZCI6IjI1NDYwNjhjLTkwZjgtNGI2ZS04ZDg2LTBmZTg1YzE1MzRmYiIsInVzZXJuYW1lIjoicG9sbHliaXpAeW9wbWFpbC5jb20iLCJpc0FjdGl2ZSI6IlRydWUiLCJ1c2VyVHlwZUlkIjoiMSIsInVzZXJUeXBlIjoiQ3VzdG9tZXIiLCJlbWFpbCI6InBvbGx5Yml6QHlvcG1haWwuY29tIiwibGFzdE5hbWUiOiJCaXoiLCJmaXJzdE5hbWUiOiJQb2x5IiwicGVybWlzc2lvbiI6IntcInNlY3Rpb25zXCI6W119IiwianRpIjoiNjI2MDE2NzZFRTBFRTdGNkZDOUQwMEVENUVGNUY3NDMiLCJpYXQiOjE3MjE2NjE2MzYsInNjb3BlIjpbImFwaTEiLCJvZmZsaW5lX2FjY2VzcyJdLCJhbXIiOlsiY3VzdG9tIl19.XR0jG0Syc4EAVSdBFO88sqKdFxrMhmJgMwhLmo_JQ-yoZUkb8ZOwXSxQllroC7B3N8EmyvAnBDMExxGAI_7ByX_nJnpqDRvSEuUGHktbQHFknacw5OoNtsfaWBGFryD1TN2wZvHqPfWaoBDW4j5c-6S24Nl9yUZsnCtnWnoI6fKOnDMwFCPVJ4Yp_XIw_DM8ZnzF2I1HqtqrHmautqb7-19rPMprgbTJHIk4sWFHS8qTzpPDb8UtVJTLLbv94OK_YH6YARTA3o5T7QQ_APgrAjuT97z5trMqxTuP0jSBe6AHvH5OvrkbP2oOWh7Nda4QVI3C9rsC-W_qRKSN_ss47w"
-									},
-									{
-										"key": "content-type",
-										"value": "application/json"
 									},
 									{
 										"key": "origin",
@@ -13326,17 +13322,7 @@
 										"value": "h9tRbOJzcH9O8mDsWRVey6OimYrqYUdg4c4IKNTf"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"amount\": \"2500\",\n  \"billId\": \"6\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"buydata1335\",\n  \"packageId\": \"112\",\n  \"phoneNumber\": \"08185597979\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6543\",\n  \"narration\": \"Buy data bundle\",\n  \"saveBeneficiary\": \"True\",\n  \"deviceId\": \"pixel phone\",\n  \"beneficiaryName\": \"Bryan Ek\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "https://sandbox.bank78.co/transfer/api/v1/Transfer"
+								"url": "https://sandbox.bank78.co/bills-payment/api/v1/Bills/data"
 							},
 							"response": [
 								{
