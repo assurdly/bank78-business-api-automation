@@ -1,0 +1,19 @@
+{
+    "Date": "Mon, 22 Jul 2024 08:19:14 GMT",
+    "Content-Type": "application/json",
+    "Content-Length": "0",
+    "Connection": "keep-alive",
+    "x-amzn-RequestId": "58a37be2-9580-4f7f-b512-3f8d1b3b394d",
+    "CF-RAY": "8a72012def051b9b-DUB",
+    "access-control-allow-origin": "*",
+    "CF-Cache-Status": "DYNAMIC",
+    "x-amzn-Remapped-Content-Length": "0",
+    "x-amzn-Remapped-Connection": "keep-alive",
+    "x-amz-apigw-id": "bThgZGunDoEErMw=",
+    "x-amzn-Remapped-Server": "cloudflare",
+    "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=Nw9%2BJo0hfpWkJzMPO2eO3WvUyNNKubDbagJbXurBaA5ilUrOil4rsXtXkczDFlQZ3tAHDmcngM4s9oWHekHB4h0dmcJ0cOHj63gQ1gc4LVlJflbq5%2FvZdWgSaplV1Z2Ol0%2B8fOBn1M%2FDbhLszsk%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+    "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+    "x-amzn-Remapped-www-authenticate": "Bearer error=\"invalid_token\", error_description=\"The signature key was not found\"",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "x-amzn-Remapped-Date": "Mon, 22 Jul 2024 08:19:14 GMT"
+}
