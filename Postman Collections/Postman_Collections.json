@@ -14969,7 +14969,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"1000\",\n  \"billId\": \"25\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"hffjsknyrhgfkfk\",\n  \"meterNumber\": \"s@.dfgre\",\n  \"packageId\": \"99\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6543\",\n  \"narration\": \"buy elec\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"meter1\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly\"\n}",
+									"raw": "{\n    \"transactionPin\": \"6543\",\n    \"channel\": \"Web\",\n    \"sourceAccountNumber\": \"0000028840\",\n    \"saveBeneficiary\": true,\n    \"deviceId\": \"xphone\",\n    \"beneficiaryName\": \"\",\n    \"beneficiaryPhone\": \"07011725297\",\n    \"beneficiaryEmail\": \"\",\n    \"billId\": 28,\n    \"amount\": \"1000\",\n    \"phoneNumber\": \"07011725297\",\n    \"packageId\": 104,\n    \"meterNumber\": \"12*&456695049\",\n    \"canSchedule\": false,\n    \"scheduleInfo\": {}\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
