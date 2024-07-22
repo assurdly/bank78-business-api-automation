@@ -15275,7 +15275,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -15419,7 +15419,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -15523,7 +15523,7 @@
 											"\r",
 											"pm.test(\"Error message Invalid amount paid. Amount passed is lesser than the bill package amount\", function () {\r",
 											"    var validationMessages = pm.response.json().validationMessages;\r",
-											"    pm.expect(validationMessages).to.be.an(\"array\").that.includes(\"Fixed package amount: Invalid amount paid. Amount passed is lesser than the bill package amount\");\r",
+											"    pm.expect(validationMessages).to.be.an(\"array\").that.includes(\"Selected bundle is no longer valid. Please select a different one.\");\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Error code is 0 for failed request\", function () {\r",
@@ -15585,7 +15585,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
