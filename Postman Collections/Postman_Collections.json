@@ -13263,7 +13263,7 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [
 									{
 										"key": "accept",
@@ -13275,54 +13275,23 @@
 									},
 									{
 										"key": "authorization",
-										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjIwNUZGMDU0NzlFMzhDQ0VFNzI1RDFDRjg5NTc3RkM1IiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE3MjE2NjE2MzYsImV4cCI6MTcyMTY2NTIzNiwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS1kZXYuYmFuazc4LmNvIiwiYXVkIjoiYXBpMSIsImNsaWVudF9pZCI6IkVDQkVFQ0JDN0NFNTQzNERCQTUwOUI5Mzc1MjAzRUMxIiwic3ViIjoiMjU0NjA2OGMtOTBmOC00YjZlLThkODYtMGZlODVjMTUzNGZiIiwiYXV0aF90aW1lIjoxNzIxNjYxNjM2LCJpZHAiOiJsb2NhbCIsInBob25lTnVtYmVyIjoiNzAyMjQyNTI5NyIsInVzZXJJZCI6IjI1NDYwNjhjLTkwZjgtNGI2ZS04ZDg2LTBmZTg1YzE1MzRmYiIsInVzZXJuYW1lIjoicG9sbHliaXpAeW9wbWFpbC5jb20iLCJpc0FjdGl2ZSI6IlRydWUiLCJ1c2VyVHlwZUlkIjoiMSIsInVzZXJUeXBlIjoiQ3VzdG9tZXIiLCJlbWFpbCI6InBvbGx5Yml6QHlvcG1haWwuY29tIiwibGFzdE5hbWUiOiJCaXoiLCJmaXJzdE5hbWUiOiJQb2x5IiwicGVybWlzc2lvbiI6IntcInNlY3Rpb25zXCI6W119IiwianRpIjoiNjI2MDE2NzZFRTBFRTdGNkZDOUQwMEVENUVGNUY3NDMiLCJpYXQiOjE3MjE2NjE2MzYsInNjb3BlIjpbImFwaTEiLCJvZmZsaW5lX2FjY2VzcyJdLCJhbXIiOlsiY3VzdG9tIl19.XR0jG0Syc4EAVSdBFO88sqKdFxrMhmJgMwhLmo_JQ-yoZUkb8ZOwXSxQllroC7B3N8EmyvAnBDMExxGAI_7ByX_nJnpqDRvSEuUGHktbQHFknacw5OoNtsfaWBGFryD1TN2wZvHqPfWaoBDW4j5c-6S24Nl9yUZsnCtnWnoI6fKOnDMwFCPVJ4Yp_XIw_DM8ZnzF2I1HqtqrHmautqb7-19rPMprgbTJHIk4sWFHS8qTzpPDb8UtVJTLLbv94OK_YH6YARTA3o5T7QQ_APgrAjuT97z5trMqxTuP0jSBe6AHvH5OvrkbP2oOWh7Nda4QVI3C9rsC-W_qRKSN_ss47w"
-									},
-									{
-										"key": "origin",
-										"value": "https://app-dev.bank78.co"
-									},
-									{
-										"key": "priority",
-										"value": "u=1, i"
-									},
-									{
-										"key": "referer",
-										"value": "https://app-dev.bank78.co/"
-									},
-									{
-										"key": "sec-ch-ua",
-										"value": "\"Not/A)Brand\";v=\"8\", \"Chromium\";v=\"126\", \"Google Chrome\";v=\"126\""
-									},
-									{
-										"key": "sec-ch-ua-mobile",
-										"value": "?0"
-									},
-									{
-										"key": "sec-ch-ua-platform",
-										"value": "\"macOS\""
-									},
-									{
-										"key": "sec-fetch-dest",
-										"value": "empty"
-									},
-									{
-										"key": "sec-fetch-mode",
-										"value": "cors"
-									},
-									{
-										"key": "sec-fetch-site",
-										"value": "same-site"
-									},
-									{
-										"key": "user-agent",
-										"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjIwNUZGMDU0NzlFMzhDQ0VFNzI1RDFDRjg5NTc3RkM1IiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE3MjE2NjIwMTgsImV4cCI6MTcyMTY2NTYxOCwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS1kZXYuYmFuazc4LmNvIiwiYXVkIjoiYXBpMSIsImNsaWVudF9pZCI6IkVDQkVFQ0JDN0NFNTQzNERCQTUwOUI5Mzc1MjAzRUMxIiwic3ViIjoiMjU0NjA2OGMtOTBmOC00YjZlLThkODYtMGZlODVjMTUzNGZiIiwiYXV0aF90aW1lIjoxNzIxNjYyMDE4LCJpZHAiOiJsb2NhbCIsInBob25lTnVtYmVyIjoiNzAyMjQyNTI5NyIsInVzZXJJZCI6IjI1NDYwNjhjLTkwZjgtNGI2ZS04ZDg2LTBmZTg1YzE1MzRmYiIsInVzZXJuYW1lIjoicG9sbHliaXpAeW9wbWFpbC5jb20iLCJpc0FjdGl2ZSI6IlRydWUiLCJ1c2VyVHlwZUlkIjoiMSIsInVzZXJUeXBlIjoiQ3VzdG9tZXIiLCJlbWFpbCI6InBvbGx5Yml6QHlvcG1haWwuY29tIiwibGFzdE5hbWUiOiJCaXoiLCJmaXJzdE5hbWUiOiJQb2x5IiwicGVybWlzc2lvbiI6IntcInNlY3Rpb25zXCI6W119IiwianRpIjoiRjM3NUFFODgzRDNCNDdDOTgxQ0I0MzY5QzBCQzQ3RkYiLCJpYXQiOjE3MjE2NjIwMTgsInNjb3BlIjpbImFwaTEiLCJvZmZsaW5lX2FjY2VzcyJdLCJhbXIiOlsiY3VzdG9tIl19.XH1KQdk_WH6A4gDYTJ7VuLSWtzZ6xTPckD2Z1bOqrb4i0W6l0VgNqO8DPD6TehtLZ3_7JKYUIEe3waJ9OKP_sO0ez34ikNd_BzhE02AU_ChzXYT9MvqvVarTyGk2ScPmcqlh0FqAg2RbVdlmBatOpAXh-Zm0q9HLKvWyEthAApPIJdbYpH3l1gNSgZV4cnpwbRwd4klYmFMamFza-zVAnHkG4kf6SCAt3or_5A2Xnfp3wRr1pZ5F5WwwUGnLac6FjHD2L4KB09_a2ggXHwBn9lzBgoFMgrtqtAysC9e64azIZNxpx3pS2sGIixw9hCbw0Imr2TH7N_2T9gHL1WYeyA"
 									},
 									{
 										"key": "x-api-key",
 										"value": "h9tRbOJzcH9O8mDsWRVey6OimYrqYUdg4c4IKNTf"
 									}
 								],
-								"url": "{{/api/v1/Bills/data"
+								"body": {
+									"mode": "raw",
+									"raw": "{\"transactionPin\":\"6543\",\"narration\":\"test\",\"channel\":\"Web\",\"sourceAccountNumber\":\"0000028840\",\"saveBeneficiary\":true,\"deviceId\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36\",\"beneficiaryName\":\"\",\"beneficiaryPhone\":\"07011725297\",\"beneficiaryEmail\":\"\",\"billId\":12,\"amount\":200,\"phoneNumber\":\"07011725297\",\"packageId\":119,\"canSchedule\":false,\"scheduleInfo\":{}}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrlb}}/api/v1/BillsPayment/data"
 							},
 							"response": [
 								{
