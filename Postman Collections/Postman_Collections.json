@@ -4449,12 +4449,12 @@
 										{
 											"description": "username= test1860@mailinator.com, test6900, {{latest_cust_email}}",
 											"key": "username",
-											"value": "maying@yopmail.com"
+											"value": "ogo@mailinator.com"
 										},
 										{
 											"description": "password",
 											"key": "password",
-											"value": "Assurdly01!"
+											"value": "Password!123"
 										},
 										{
 											"description": "client_id",
@@ -11371,2480 +11371,6 @@
 			"id": "f7970c3c-7e80-4a66-bf1e-666deb6506e8"
 		},
 		{
-			"name": "Manage Team Member",
-			"item": [
-				{
-					"name": "invite-team",
-					"item": [
-						{
-							"name": "Invite team member",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "8af078da-8677-47df-b2b4-b094423b0ad9",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code response is Ok\", function () {\r",
-											"    pm.response.to.have.status('OK');\r",
-											"});\r",
-											"\r",
-											"var jsonData = pm.response.json();\r",
-											"var requestData = JSON.parse(pm.request.body.raw)\r",
-											"Email = requestData.emailAddress\r",
-											"username = requestData.userName\r",
-											"\r",
-											"pm.test(\"Response body properties\", function () {\r",
-											"    pm.collectionVariables.set(\"TeamMemberEmail\", Email)\r",
-											"    pm.collectionVariables.set(\"TeamMemberUserName\", username)\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Response body properties\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(jsonData.result).to.be.an('object');\r",
-											"    pm.expect(jsonData.resultType).to.be.a('string');\r",
-											"    pm.expect(jsonData.message).to.be.a('string');\r",
-											"    pm.expect(jsonData.validationMessages).to.be.null;\r",
-											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"hasResult is true\", function () {\r",
-											"    pm.expect(jsonData.hasResult).to.eql(true);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Result is Invite accepted successfully\", function () {\r",
-											"    pm.expect(jsonData.result.message).to.eql('Invite successfully sent');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"resultType is Success\", function () {\r",
-											"    pm.expect(jsonData.resultType).to.eql('Success');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Message is Success\", function () {\r",
-											"    pm.expect(jsonData.message).to.eql('Success');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"successful is true\", function () {\r",
-											"    pm.expect(jsonData.successful).to.eql(true);\r",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "9e0dc36f-5fae-4013-acac-763e5aae8c4c",
-										"exec": [
-											""
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "9654b0b6-8aba-4cbb-8d5b-1032a32b4e8b",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{business_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"emailAddress\": \"Testing@mailinator.com\",\n    \"userName\": \"Testing@mailinator.com\",\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"Mailinator\",\n    \"roleId\": 2\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/onboard/api/business/invite-team"
-							},
-							"response": [
-								{
-									"id": "6f7eecd3-cb3a-4629-9e3e-f17b5d61fef5",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"confirmPassword\": \"<string>\",\n  \"inviteId\": \"<string>\",\n  \"password\": \"YYwjV?FfHUeGI\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/business/accept-team-invite"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Blank fied",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "8af078da-8677-47df-b2b4-b094423b0ad9",
-										"exec": [
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code response is Bad Request\", function () {\r",
-											"    pm.response.to.have.status('Bad Request');\r",
-											"});\r",
-											"\r",
-											"var jsonData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response body properties\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(jsonData.result).to.be.null;\r",
-											"    pm.expect(jsonData.resultType).to.be.a('string');\r",
-											"    pm.expect(jsonData.message).to.be.a('string');\r",
-											"    pm.expect(jsonData.validationMessages).to.be.an('array');\r",
-											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"hasResult is false\", function () {\r",
-											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"resultType is ValidationError\", function () {\r",
-											"    pm.expect(jsonData.resultType).to.eql('ValidationError');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Message is Response has validation errors\", function () {\r",
-											"    pm.expect(jsonData.message).to.eql('Response has validation errors');\r",
-											"});\r",
-											"\r",
-											"\r",
-											"pm.test(\"successful is false\", function () {\r",
-											"    pm.expect(jsonData.successful).to.eql(false);\r",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "ee4ea6a3-57b9-4678-8342-a47343c0561d",
-										"exec": [],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "43a37849-3cdf-4758-b90b-baa9e8ca3e40",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{business_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"emailAddress\": \"\",\n    \"userName\": \"\",\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"Mailinator\",\n    \"roleId\": 2\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/onboard/api/business/invite-team"
-							},
-							"response": [
-								{
-									"id": "11c2a323-6ac6-495d-a3ca-24b3e41a794b",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"confirmPassword\": \"<string>\",\n  \"inviteId\": \"<string>\",\n  \"password\": \"YYwjV?FfHUeGI\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/business/accept-team-invite"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Duplicate team member",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "8af078da-8677-47df-b2b4-b094423b0ad9",
-										"exec": [
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code response is Bad Request\", function () {\r",
-											"    pm.response.to.have.status('Bad Request');\r",
-											"});\r",
-											"\r",
-											"var jsonData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response body properties\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(jsonData.result).to.be.null;\r",
-											"    pm.expect(jsonData.resultType).to.be.a('string');\r",
-											"    pm.expect(jsonData.message).to.be.a('string');\r",
-											"    pm.expect(jsonData.validationMessages).to.be.null;\r",
-											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"hasResult is false\", function () {\r",
-											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"resultType is Error\", function () {\r",
-											"    pm.expect(jsonData.resultType).to.eql('Error');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Message is Email already exists\", function () {\r",
-											"    pm.expect(jsonData.message).to.eql('Email already exists');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"successful is false\", function () {\r",
-											"    pm.expect(jsonData.successful).to.eql(false);\r",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "b3e139e7-a693-4042-bce3-b3f6fd08b1c6",
-										"exec": [
-											"pm.execution.setNextRequest(\"Mismatched password\")"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "fb69a16a-d141-41b0-95bc-18957b7281ac",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{business_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"emailAddress\": \"TeamMemeberEmail\",\n    \"userName\": \"TeamMemeberUserName\",\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"Mailinator\",\n    \"roleId\": 2\n}\n",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/onboard/api/business/invite-team"
-							},
-							"response": [
-								{
-									"id": "67e21681-d2f0-46ca-82fe-b78a008ecf73",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"confirmPassword\": \"<string>\",\n  \"inviteId\": \"<string>\",\n  \"password\": \"YYwjV?FfHUeGI\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/business/accept-team-invite"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						}
-					],
-					"id": "a1b8bd4d-9e78-49d3-9069-7bb188d737bd"
-				},
-				{
-					"name": "accept-team-invite",
-					"item": [
-						{
-							"name": "Invite accepted",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "55d04265-856b-48cb-ae03-5c28a1225610",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code response is OK\", function () {\r",
-											"    pm.response.to.have.status('OK');\r",
-											"});\r",
-											"\r",
-											"var jsonData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response body properties\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(jsonData.result).to.be.an('object');\r",
-											"    pm.expect(jsonData.resultType).to.be.a('string');\r",
-											"    pm.expect(jsonData.message).to.be.a('string');\r",
-											"    pm.expect(jsonData.message).to.be.null;\r",
-											"     pm.expect(jsonData.successful).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"hasResult is True\", function () {\r",
-											"    pm.expect(jsonData.hasResult).to.eql(true);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Result is Invite accepted successfully\", function () {\r",
-											"    pm.expect(jsonData.result.message).to.eql('Invite accepted successfully');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"resultType is Success\", function () {\r",
-											"    pm.expect(jsonData.resultType).to.eql('Success');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Message is Success\", function () {\r",
-											"    pm.expect(jsonData.message).to.eql('Success');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Successful is present\", function () {\r",
-											"    pm.expect(jsonData.successful).to.eql(true);\r",
-											"});\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "52936c75-402f-43f5-8253-6b9933c054a3",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{business_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"confirmPassword\": \"Tested@0980\",\n  \"inviteId\": \"45e45abd-5918-49ef-bfc3-2b19cf395d22\",\n  \"password\": \"Tested@0980\",\n  \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/onboard/api/business/accept-team-invite"
-							},
-							"response": [
-								{
-									"id": "b17acc94-92e9-4751-90b2-9b542d6dedf7",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"confirmPassword\": \"<string>\",\n  \"inviteId\": \"<string>\",\n  \"password\": \"YYwjV?FfHUeGI\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/business/accept-team-invite"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Mismatched password",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "2cff6efa-564f-4892-bb6a-f25badd8c189",
-										"exec": [
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code response is Bad Request\", function () {\r",
-											"    pm.response.to.have.status('Bad Request');\r",
-											"});\r",
-											"\r",
-											"var jsonData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response body properties\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(jsonData.result).to.be.null;\r",
-											"    pm.expect(jsonData.resultType).to.be.an('string');\r",
-											"    pm.expect(jsonData.message).to.be.an('string');\r",
-											"    pm.expect(jsonData.validationMessages).to.be.an('array');\r",
-											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"hasResult is false\", function () {\r",
-											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"resultType is ValidationError\", function () {\r",
-											"    pm.expect(jsonData.resultType).to.eql(\"ValidationError\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Message is Response has validation errors\", function () {\r",
-											"    pm.expect(jsonData.message).to.eql('Response has validation errors');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"validationMessages is present\", function () {\r",
-											"    pm.expect(jsonData.validationMessages[0]).to.eql('Password do not match');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"successful is false\", function () {\r",
-											"    pm.expect(jsonData.successful).to.eql(false);\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "a209b0ba-263a-4dd6-87c0-1373e19a13da",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{business_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"confirmPassword\": \"Password!123\",\n  \"inviteId\": \"82d2cf6d-beb1-4c41-972f-ddf91418f10a\",\n  \"password\": \"Password!3\",\n  \"phoneNumber\": \"819489991\",\n  \"phoneNumberCountryCode\": \"+234\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/onboard/api/business/accept-team-invite"
-							},
-							"response": [
-								{
-									"id": "b76ecdf2-1d8e-4aae-8caf-efedfdf6a286",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"confirmPassword\": \"<string>\",\n  \"inviteId\": \"<string>\",\n  \"password\": \"YYwjV?FfHUeGI\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/business/accept-team-invite"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Expired invite",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "2cff6efa-564f-4892-bb6a-f25badd8c189",
-										"exec": [
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code response is Bad Request\", function () {\r",
-											"    pm.response.to.have.status('Bad Request');\r",
-											"});\r",
-											"\r",
-											"var jsonData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response body properties\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(jsonData.result).to.be.null;\r",
-											"    pm.expect(jsonData.resultType).to.be.an('string');\r",
-											"    pm.expect(jsonData.message).to.be.an('string');\r",
-											"    pm.expect(jsonData.validationMessages).to.be.null;\r",
-											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"hasResult is false\", function () {\r",
-											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"resultType is Error\", function () {\r",
-											"    pm.expect(jsonData.resultType).to.eql(\"Error\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Message is Response has validation errors\", function () {\r",
-											"    pm.expect(jsonData.message).to.eql('Invite has expired. Please contact administrator');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"successful is false\", function () {\r",
-											"    pm.expect(jsonData.successful).to.eql(false);\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "b3ef7f9d-783d-448c-bdda-0b23be810345",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{business_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"confirmPassword\": \"Password!123\",\n  \"inviteId\": \"82d2cf6d-beb1-4c41-972f-ddf91418f10a\",\n  \"password\": \"Password!123\",\n  \"phoneNumber\": \"8194214321\",\n  \"phoneNumberCountryCode\": \"+234\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/onboard/api/business/accept-team-invite"
-							},
-							"response": [
-								{
-									"id": "f69a1924-78cd-4c68-a009-598067c55235",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"confirmPassword\": \"<string>\",\n  \"inviteId\": \"<string>\",\n  \"password\": \"YYwjV?FfHUeGI\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/business/accept-team-invite"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Blank field",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "2cff6efa-564f-4892-bb6a-f25badd8c189",
-										"exec": [
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code response is Bad Request\", function () {\r",
-											"    pm.response.to.have.status('Bad Request');\r",
-											"});\r",
-											"\r",
-											"var jsonData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response body properties\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(jsonData.result).to.be.null;\r",
-											"    pm.expect(jsonData.resultType).to.be.an('string');\r",
-											"    pm.expect(jsonData.message).to.be.an('string');\r",
-											"    pm.expect(jsonData.validationMessages).to.be.an('array');\r",
-											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"hasResult is false\", function () {\r",
-											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"resultType is ValidationError\", function () {\r",
-											"    pm.expect(jsonData.resultType).to.eql(\"ValidationError\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Message is Response has validation errors\", function () {\r",
-											"    pm.expect(jsonData.message).to.eql('Response has validation errors');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"validationMessages is present\", function () {\r",
-											"    pm.expect(jsonData.validationMessages[0]).to.eql(\"The Password field is required.\",\r",
-											"        \"The PhoneNumber field is required.\",\r",
-											"        \"The ConfirmPassword field is required.\",\r",
-											"        \"The PhoneNumberCountryCode field is required.\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"successful is false\", function () {\r",
-											"    pm.expect(jsonData.successful).to.eql(false);\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "79b3475e-c9b4-409d-acb6-15a17d362000",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{business_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"confirmPassword\": \"\",\n  \"inviteId\": \"82d2cf6d-beb1-4c41-972f-ddf91418f10a\",\n  \"password\": \"\",\n  \"phoneNumber\": \"\",\n  \"phoneNumberCountryCode\": \"\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/onboard/api/business/accept-team-invite"
-							},
-							"response": [
-								{
-									"id": "c8ccb0d7-db6c-4658-9253-e2cb291aca8a",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"confirmPassword\": \"<string>\",\n  \"inviteId\": \"<string>\",\n  \"password\": \"YYwjV?FfHUeGI\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/business/accept-team-invite"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Incorrect invite ID",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "195ed741-5666-4dc9-96ef-22257ed05429",
-										"exec": [
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code response is Bad Request\", function () {\r",
-											"    pm.response.to.have.status('Bad Request');\r",
-											"});\r",
-											"\r",
-											"var jsonData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response body properties\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(jsonData.result).to.be.null;\r",
-											"    pm.expect(jsonData.resultType).to.be.an('string');\r",
-											"    pm.expect(jsonData.message).to.be.an('string');\r",
-											"    pm.expect(jsonData.validationMessages).to.be.null;\r",
-											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"hasResult is false\", function () {\r",
-											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"resultType is Error\", function () {\r",
-											"    pm.expect(jsonData.resultType).to.eql(\"Error\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Message is Invite Id is in an incorrect format\", function () {\r",
-											"    pm.expect(jsonData.message).to.eql('Invite Id is in an incorrect format');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"successful is false\", function () {\r",
-											"    pm.expect(jsonData.successful).to.eql(false);\r",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "3f7fe678-b19d-4a26-b28e-80ad1082b1fd",
-										"exec": [
-											"postman.setNextRequest(\"Record not found\")"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "17391c47-908a-40d3-8703-d7b1fca7b2a7",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{business_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"confirmPassword\": \"Tested@0980\",\n  \"inviteId\": \"167788\",\n  \"password\": \"Tested@0980\",\n  \"phoneNumber\": \"{{number}}\",\n  \"phoneNumberCountryCode\": \"+234\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/onboard/api/business/accept-team-invite"
-							},
-							"response": [
-								{
-									"id": "ff76dc5c-0bae-4401-8d60-97fd62280e76",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"confirmPassword\": \"<string>\",\n  \"inviteId\": \"<string>\",\n  \"password\": \"YYwjV?FfHUeGI\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/business/accept-team-invite"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						}
-					],
-					"id": "d6dc0dc5-9c8b-41d3-883a-b1fb359a376e"
-				},
-				{
-					"name": "resend-team-invite",
-					"item": [
-						{
-							"name": "Resend invite",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "801d3af6-808d-4163-8855-34861172a9d9",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code response is OK\", function () {\r",
-											"    pm.response.to.have.status('OK');\r",
-											"});\r",
-											"\r",
-											"var jsonData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response body properties\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(jsonData.result).to.be.an('object');\r",
-											"    pm.expect(jsonData.resultType).to.be.a('string');\r",
-											"    pm.expect(jsonData.message).to.be.a('string');\r",
-											"    pm.expect(jsonData.message).to.be.null;\r",
-											"     pm.expect(jsonData.successful).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"hasResult is True\", function () {\r",
-											"    pm.expect(jsonData.hasResult).to.eql(true);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Result is Invite accepted successfully\", function () {\r",
-											"    pm.expect(jsonData.result.message).to.eql('Account Invite sent successfully');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"resultType is Success\", function () {\r",
-											"    pm.expect(jsonData.resultType).to.eql('Success');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Message is Success\", function () {\r",
-											"    pm.expect(jsonData.message).to.eql('Success');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Successful is present\", function () {\r",
-											"    pm.expect(jsonData.successful).to.eql(true);\r",
-											"});\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "f12e243c-b0cf-4415-9788-a58680b6ace0",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{business_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"inviteUrl\": \"https://www.lover.com\",\n  \"id\": \"77\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/onboard/api/business/resend-team-invite"
-							},
-							"response": [
-								{
-									"id": "2db45f6f-6296-47dd-9e52-7d8eb465a3fb",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"inviteUrl\": \"<uri>\",\n  \"id\": \"<integer>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/business/resend-team-invite"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Record not found",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "516ead7b-b716-4be9-85f2-29c6e9e88656",
-										"exec": [
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code response is Bad Request\", function () {\r",
-											"    pm.response.to.have.status('Bad Request');\r",
-											"});\r",
-											"\r",
-											"var jsonData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response body properties\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(jsonData.result).to.be.null;\r",
-											"    pm.expect(jsonData.resultType).to.be.an('string');\r",
-											"    pm.expect(jsonData.message).to.be.an('string');\r",
-											"    pm.expect(jsonData.validationMessages).to.be.an('array');\r",
-											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"hasResult is false\", function () {\r",
-											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"resultType is ValidationError\", function () {\r",
-											"    pm.expect(jsonData.resultType).to.eql(\"ValidationError\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Message is Response has validation errors\", function () {\r",
-											"    pm.expect(jsonData.message).to.eql('Response has validation errors');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"validationMessages is present\", function () {\r",
-											"    pm.expect(jsonData.validationMessages[0]).to.eql(\"Could not convert string to integer: ow7. Path 'id', line 3, position 13.\",\r",
-											"        \"The model field is required.\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"successful is false\", function () {\r",
-											"    pm.expect(jsonData.successful).to.eql(false);\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "e6ef2435-6b38-40a0-83cc-689d39b6218c",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{business_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"inviteUrl\": \"https://www.google.com\",\n  \"id\": \"ow7\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/onboard/api/business/resend-team-invite"
-							},
-							"response": [
-								{
-									"id": "4c7a819e-c2ae-476b-931f-8236b14f72c6",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"inviteUrl\": \"<uri>\",\n  \"id\": \"<integer>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/business/resend-team-invite"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Empty Field - Record not found",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "516ead7b-b716-4be9-85f2-29c6e9e88656",
-										"exec": [
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code response is Bad Request\", function () {\r",
-											"    pm.response.to.have.status('Bad Request');\r",
-											"});\r",
-											"\r",
-											"var jsonData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response body properties\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(jsonData.result).to.be.null;\r",
-											"    pm.expect(jsonData.resultType).to.be.an('string');\r",
-											"    pm.expect(jsonData.message).to.be.an('string');\r",
-											"    pm.expect(jsonData.validationMessages).to.be.an('array');\r",
-											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"hasResult is false\", function () {\r",
-											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"resultType is ValidationError\", function () {\r",
-											"    pm.expect(jsonData.resultType).to.eql(\"ValidationError\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Message is Response has validation errors\", function () {\r",
-											"    pm.expect(jsonData.message).to.eql('Response has validation errors');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"validationMessages is present\", function () {\r",
-											"    pm.expect(jsonData.validationMessages[0]).to.eql(\"Error converting value {null} to type 'System.Int32'. Path 'id', line 2, position 12.\",\r",
-											"        \"The model field is required.\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"successful is false\", function () {\r",
-											"    pm.expect(jsonData.successful).to.eql(false);\r",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "20f793ce-595c-4382-8c82-3f02e119623a",
-										"exec": [],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "d13217b4-5ae2-47eb-925c-f2da3424dfc4",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{business_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"id\": \"\",\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/onboard/api/business/resend-team-invite"
-							},
-							"response": [
-								{
-									"id": "aebe9c74-bb44-495e-867d-81b4094b44e9",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"inviteUrl\": \"<uri>\",\n  \"id\": \"<integer>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/business/resend-team-invite"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Non existing Number",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "516ead7b-b716-4be9-85f2-29c6e9e88656",
-										"exec": [
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code response is Bad Request\", function () {\r",
-											"    pm.response.to.have.status('Bad Request');\r",
-											"});\r",
-											"\r",
-											"var jsonData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response body properties\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(jsonData.result).to.be.null;\r",
-											"    pm.expect(jsonData.resultType).to.be.an('string');\r",
-											"    pm.expect(jsonData.message).to.be.an('string');\r",
-											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"hasResult is false\", function () {\r",
-											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"resultType is Error\", function () {\r",
-											"    pm.expect(jsonData.resultType).to.eql(\"Error\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Message is 'Team member record not found'\", function () {\r",
-											"    pm.expect(jsonData.message).to.eql('Team member record not found');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"validationMessages is null\", function () {\r",
-											"    pm.expect(jsonData.validationMessages).to.eql(null);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"successful is false\", function () {\r",
-											"    pm.expect(jsonData.successful).to.eql(false);\r",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "7c1b35ed-e5ab-4b98-a73e-23ab3f45520e",
-										"exec": [
-											"pm.execution.setNextRequest(\"Record not Found\")"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "56b750ff-4a35-4b23-83d3-eeaefd5aaf97",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{business_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"id\": 5000,\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/onboard/api/business/resend-team-invite"
-							},
-							"response": [
-								{
-									"id": "ab8d496c-05e0-4f23-98d7-c6a45f7a15d1",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"inviteUrl\": \"<uri>\",\n  \"id\": \"<integer>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/business/resend-team-invite"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						}
-					],
-					"id": "4dc610a4-e84e-42d1-96e5-1ed8551d0a88"
-				},
-				{
-					"name": "revoke-team-invite",
-					"item": [
-						{
-							"name": "Revoke invite",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "9424e093-e55d-4e7a-a334-0dde24f07799",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code response is OK\", function () {\r",
-											"    pm.response.to.have.status('OK');\r",
-											"});\r",
-											"\r",
-											"var jsonData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response body properties\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(jsonData.result).to.be.an('object');\r",
-											"    pm.expect(jsonData.resultType).to.be.a('string');\r",
-											"    pm.expect(jsonData.message).to.be.a('string');\r",
-											"    pm.expect(jsonData.message).to.be.null;\r",
-											"     pm.expect(jsonData.successful).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"hasResult is True\", function () {\r",
-											"    pm.expect(jsonData.hasResult).to.eql(true);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Result is Invite accepted successfully\", function () {\r",
-											"    pm.expect(jsonData.result.message).to.eql('Account Invite revoked successfully');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"resultType is Success\", function () {\r",
-											"    pm.expect(jsonData.resultType).to.eql('Success');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Message is Success\", function () {\r",
-											"    pm.expect(jsonData.message).to.eql('Success');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Successful is present\", function () {\r",
-											"    pm.expect(jsonData.successful).to.eql(true);\r",
-											"});\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "a0e20169-a137-4631-8cb4-a3fe872d23a3",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{business_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"id\": \"224\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/onboard/api/business/revoke-team-invite"
-							},
-							"response": [
-								{
-									"id": "52d2537c-5907-4c27-b650-a0d2053df7d6",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"id\": \"<integer>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/business/revoke-team-invite"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Record not found",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "ff7269c5-3818-4752-99f0-9e314b0bbffd",
-										"exec": [
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code response is Bad Request\", function () {\r",
-											"    pm.response.to.have.status('Bad Request');\r",
-											"});\r",
-											"\r",
-											"var jsonData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response body properties\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(jsonData.result).to.be.null;\r",
-											"    pm.expect(jsonData.resultType).to.be.an('string');\r",
-											"    pm.expect(jsonData.message).to.be.an('string');\r",
-											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"hasResult is false\", function () {\r",
-											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"resultType is Error\", function () {\r",
-											"    pm.expect(jsonData.resultType).to.eql(\"Error\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Message is BusinessTeam record not found\", function () {\r",
-											"    pm.expect(jsonData.message).to.eql('BusinessTeam record not found');\r",
-											"});\r",
-											"\r",
-											"\r",
-											"pm.test(\"successful is false\", function () {\r",
-											"    pm.expect(jsonData.successful).to.eql(false);\r",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "e94598ee-85f1-4456-b33e-8f194309a970",
-										"exec": [],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "4bdff691-0d37-464d-a17a-ecaaff1602ac",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{business_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"id\": \"1000\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/onboard/api/business/revoke-team-invite"
-							},
-							"response": [
-								{
-									"id": "e6b41577-c08b-4f7b-a1d2-781cec6d3214",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"id\": \"<integer>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/business/revoke-team-invite"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Invite already revoked",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "0dd50650-fb38-4c98-bff9-93cfdc24df66",
-										"exec": [
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code response is Bad Request\", function () {\r",
-											"    pm.response.to.have.status('Bad Request');\r",
-											"});\r",
-											"\r",
-											"var jsonData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response body properties\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(jsonData.result).to.be.null;\r",
-											"    pm.expect(jsonData.resultType).to.be.an('string');\r",
-											"    pm.expect(jsonData.message).to.be.an('string');\r",
-											"    pm.expect(jsonData.validationMessages).to.be.null;\r",
-											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"hasResult is false\", function () {\r",
-											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"resultType is Error\", function () {\r",
-											"    pm.expect(jsonData.resultType).to.eql(\"Error\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Message is BusinessTeam record not found\", function () {\r",
-											"    pm.expect(jsonData.message).to.eql('User invite already revoked');\r",
-											"});\r",
-											"\r",
-											"\r",
-											"pm.test(\"successful is false\", function () {\r",
-											"    pm.expect(jsonData.successful).to.eql(false);\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "829ce7ea-7297-4fe0-bfb9-f7642fc94e63",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{business_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"id\": \"57\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/onboard/api/business/revoke-team-invite"
-							},
-							"response": [
-								{
-									"id": "75d971a7-bfc4-4cc7-a222-662918b57dbe",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"id\": \"<integer>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/business/revoke-team-invite"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						}
-					],
-					"id": "56c8cd65-f8b4-4463-ba39-31563bdda067"
-				},
-				{
-					"name": "Business Team",
-					"item": [
-						{
-							"name": "View Business team",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "9faa6573-c9fa-4c07-8022-3693f2d51a6c",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code is OK\", function () {\r",
-											"    pm.response.to.have.status('OK');\r",
-											"});\r",
-											"\r",
-											"    var jsonData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response body property\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(jsonData.result).to.be.an('array');\r",
-											"    pm.expect(jsonData.resultType).to.be.a('string');\r",
-											"    pm.expect(jsonData.message).to.be.a('string');\r",
-											"    pm.expect(jsonData.validationMessages).to.be.null;\r",
-											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"hasResult is true\", function () {\r",
-											"    pm.expect(jsonData.hasResult).to.eql(true);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"resultType is Success\", function () {\r",
-											"    pm.expect(jsonData.resultType).to.eql('Success');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"message is Success\", function () {\r",
-											"    pm.expect(jsonData.message).to.eql('Success');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"successful is true\", function () {\r",
-											"    pm.expect(jsonData.successful).to.eql(true);\r",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "6148435e-2356-46b6-b22e-b211e14d8d48",
-										"exec": [
-											"pm.execution.setNextRequest(\"Invite stakeholder - Successful\")"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "f27832c6-e029-497a-8627-0654b6b32463",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{business_access_token}}"
-									}
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/onboard/api/business/team/RC8067446567"
-							},
-							"response": [
-								{
-									"id": "33f3d94c-98fd-4ab3-adc6-72c0e67505e2",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"emailAddress\": \"vCQ+Nv_J7gCNE+r0zLweE5'oPjbSxX'sfb8HJd+ksddEkffU@k0-Elu1Ch-psPJPhOzFW-F2gLRmtB-DAyPPStD.T-U4dfpFpfa-l8GibmCN.qMsZjZ.CN5S4hEgaPw-NncbRqm-CfjDAt.79-YDRd\",\n  \"firstName\": \"<string>\",\n  \"inviteUrl\": \"<uri>\",\n  \"lastName\": \"<string>\",\n  \"roleId\": \"<integer>\",\n  \"userName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"phoneNumberCountryCode\": \"<string>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/business/invite-team"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						}
-					],
-					"id": "05c2db52-dbb9-439f-951e-42e029cc1647"
-				},
-				{
-					"name": "Activate/Deactivate User",
-					"item": [
-						{
-							"name": "Activate/Deactivate user",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "f5a085ad-2116-4eef-b865-4c3e5d500156",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status code response is Ok\", function () {\r",
-											"    pm.response.to.have.status('OK');\r",
-											"});\r",
-											"\r",
-											"var jsonData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response body properties\", function () {\r",
-											"    pm.expect(jsonData).to.be.an('object');\r",
-											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(jsonData.result).to.be.an('object');\r",
-											"    pm.expect(jsonData.resultType).to.be.a('string');\r",
-											"    pm.expect(jsonData.message).to.be.a('string');\r",
-											"    pm.expect(jsonData.validationMessages).to.be.null;\r",
-											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"hasResult is true\", function () {\r",
-											"    pm.expect(jsonData.hasResult).to.eql(true);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Result is Invite accepted successfully\", function () {\r",
-											"    pm.expect(jsonData.result.message).to.eql('Team member succesfully Deactivated');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"resultType is Success\", function () {\r",
-											"    pm.expect(jsonData.resultType).to.eql('Success');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Message is Success\", function () {\r",
-											"    pm.expect(jsonData.message).to.eql('Success');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"successful is true\", function () {\r",
-											"    pm.expect(jsonData.successful).to.eql(true);\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"id": "78d816a7-76b5-42d1-935d-bd805dc6547a",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{business_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": "{{baseUrl}}/onboard/api/business/team/toggleStatus/RC8067446567/unyc23@mailinator.com"
-							},
-							"response": [
-								{
-									"id": "5378b983-ff62-4710-a7ff-0da33782f02e",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											},
-											{
-												"description": "Added as a part of security scheme: apikey",
-												"key": "Authorization",
-												"value": "<API Key>"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl}}/api/business/status/toggle?rcbnNumber=<string>",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"business",
-												"status",
-												"toggle"
-											],
-											"query": [
-												{
-													"key": "rcbnNumber",
-													"value": "<string>"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"nullable\": true\n  },\n  \"resultType\": \"ValidationError\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						}
-					],
-					"id": "c051e90b-e1d6-4ef9-b055-076d7c319ed7"
-				}
-			],
-			"id": "a38921a4-06f5-4a4a-b03a-e9392db31d88"
-		},
-		{
 			"name": "Director",
 			"item": [
 				{
@@ -15937,7 +13463,7 @@
 											"\r",
 											"pm.test(\"Set access token as an environmental variable\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
-											"    pm.environment.set(\"customer_access_token\", jsonData.access_token);\r",
+											"    pm.environment.set(\"business_access_token\", jsonData.access_token);\r",
 											"});"
 										],
 										"type": "text/javascript",
@@ -16147,7 +13673,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "GET",
@@ -25574,6 +23100,2480 @@
 			"id": "f3c02a6c-7203-40ee-b443-910f9d766ba4"
 		},
 		{
+			"name": "Manage Team Member",
+			"item": [
+				{
+					"name": "invite-team",
+					"item": [
+						{
+							"name": "Invite team member",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8af078da-8677-47df-b2b4-b094423b0ad9",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code response is Ok\", function () {\r",
+											"    pm.response.to.have.status('OK');\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"var requestData = JSON.parse(pm.request.body.raw)\r",
+											"Email = requestData.emailAddress\r",
+											"username = requestData.userName\r",
+											"\r",
+											"pm.test(\"Response body properties\", function () {\r",
+											"    pm.collectionVariables.set(\"TeamMemberEmail\", Email)\r",
+											"    pm.collectionVariables.set(\"TeamMemberUserName\", username)\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body properties\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(jsonData.result).to.be.an('object');\r",
+											"    pm.expect(jsonData.resultType).to.be.a('string');\r",
+											"    pm.expect(jsonData.message).to.be.a('string');\r",
+											"    pm.expect(jsonData.validationMessages).to.be.null;\r",
+											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"hasResult is true\", function () {\r",
+											"    pm.expect(jsonData.hasResult).to.eql(true);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Result is Invite accepted successfully\", function () {\r",
+											"    pm.expect(jsonData.result.message).to.eql('Invite successfully sent');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is Success\", function () {\r",
+											"    pm.expect(jsonData.resultType).to.eql('Success');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message is Success\", function () {\r",
+											"    pm.expect(jsonData.message).to.eql('Success');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"successful is true\", function () {\r",
+											"    pm.expect(jsonData.successful).to.eql(true);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "9e0dc36f-5fae-4013-acac-763e5aae8c4c",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "9654b0b6-8aba-4cbb-8d5b-1032a32b4e8b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emailAddress\": \"Testing@mailinator.com\",\n    \"userName\": \"Testing@mailinator.com\",\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"Mailinator\",\n    \"roleId\": 2\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/onboard/api/business/invite-team"
+							},
+							"response": [
+								{
+									"id": "6f7eecd3-cb3a-4629-9e3e-f17b5d61fef5",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"confirmPassword\": \"<string>\",\n  \"inviteId\": \"<string>\",\n  \"password\": \"YYwjV?FfHUeGI\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/business/accept-team-invite"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Blank fied",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8af078da-8677-47df-b2b4-b094423b0ad9",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code response is Bad Request\", function () {\r",
+											"    pm.response.to.have.status('Bad Request');\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response body properties\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(jsonData.result).to.be.null;\r",
+											"    pm.expect(jsonData.resultType).to.be.a('string');\r",
+											"    pm.expect(jsonData.message).to.be.a('string');\r",
+											"    pm.expect(jsonData.validationMessages).to.be.an('array');\r",
+											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"hasResult is false\", function () {\r",
+											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is ValidationError\", function () {\r",
+											"    pm.expect(jsonData.resultType).to.eql('ValidationError');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message is Response has validation errors\", function () {\r",
+											"    pm.expect(jsonData.message).to.eql('Response has validation errors');\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"successful is false\", function () {\r",
+											"    pm.expect(jsonData.successful).to.eql(false);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "ee4ea6a3-57b9-4678-8342-a47343c0561d",
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "43a37849-3cdf-4758-b90b-baa9e8ca3e40",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emailAddress\": \"\",\n    \"userName\": \"\",\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"Mailinator\",\n    \"roleId\": 2\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/onboard/api/business/invite-team"
+							},
+							"response": [
+								{
+									"id": "11c2a323-6ac6-495d-a3ca-24b3e41a794b",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"confirmPassword\": \"<string>\",\n  \"inviteId\": \"<string>\",\n  \"password\": \"YYwjV?FfHUeGI\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/business/accept-team-invite"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Duplicate team member",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "8af078da-8677-47df-b2b4-b094423b0ad9",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code response is Bad Request\", function () {\r",
+											"    pm.response.to.have.status('Bad Request');\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response body properties\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(jsonData.result).to.be.null;\r",
+											"    pm.expect(jsonData.resultType).to.be.a('string');\r",
+											"    pm.expect(jsonData.message).to.be.a('string');\r",
+											"    pm.expect(jsonData.validationMessages).to.be.null;\r",
+											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"hasResult is false\", function () {\r",
+											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is Error\", function () {\r",
+											"    pm.expect(jsonData.resultType).to.eql('Error');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message is Email already exists\", function () {\r",
+											"    pm.expect(jsonData.message).to.eql('Email already exists');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"successful is false\", function () {\r",
+											"    pm.expect(jsonData.successful).to.eql(false);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "b3e139e7-a693-4042-bce3-b3f6fd08b1c6",
+										"exec": [
+											"pm.execution.setNextRequest(\"Mismatched password\")"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "fb69a16a-d141-41b0-95bc-18957b7281ac",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emailAddress\": \"TeamMemeberEmail\",\n    \"userName\": \"TeamMemeberUserName\",\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"Mailinator\",\n    \"roleId\": 2\n}\n",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/onboard/api/business/invite-team"
+							},
+							"response": [
+								{
+									"id": "67e21681-d2f0-46ca-82fe-b78a008ecf73",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"confirmPassword\": \"<string>\",\n  \"inviteId\": \"<string>\",\n  \"password\": \"YYwjV?FfHUeGI\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/business/accept-team-invite"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "a1b8bd4d-9e78-49d3-9069-7bb188d737bd"
+				},
+				{
+					"name": "accept-team-invite",
+					"item": [
+						{
+							"name": "Invite accepted",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "55d04265-856b-48cb-ae03-5c28a1225610",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code response is OK\", function () {\r",
+											"    pm.response.to.have.status('OK');\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response body properties\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(jsonData.result).to.be.an('object');\r",
+											"    pm.expect(jsonData.resultType).to.be.a('string');\r",
+											"    pm.expect(jsonData.message).to.be.a('string');\r",
+											"    pm.expect(jsonData.message).to.be.null;\r",
+											"     pm.expect(jsonData.successful).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"hasResult is True\", function () {\r",
+											"    pm.expect(jsonData.hasResult).to.eql(true);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Result is Invite accepted successfully\", function () {\r",
+											"    pm.expect(jsonData.result.message).to.eql('Invite accepted successfully');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is Success\", function () {\r",
+											"    pm.expect(jsonData.resultType).to.eql('Success');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message is Success\", function () {\r",
+											"    pm.expect(jsonData.message).to.eql('Success');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Successful is present\", function () {\r",
+											"    pm.expect(jsonData.successful).to.eql(true);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "52936c75-402f-43f5-8253-6b9933c054a3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"confirmPassword\": \"Tested@0980\",\n  \"inviteId\": \"45e45abd-5918-49ef-bfc3-2b19cf395d22\",\n  \"password\": \"Tested@0980\",\n  \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/onboard/api/business/accept-team-invite"
+							},
+							"response": [
+								{
+									"id": "b17acc94-92e9-4751-90b2-9b542d6dedf7",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"confirmPassword\": \"<string>\",\n  \"inviteId\": \"<string>\",\n  \"password\": \"YYwjV?FfHUeGI\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/business/accept-team-invite"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Mismatched password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2cff6efa-564f-4892-bb6a-f25badd8c189",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code response is Bad Request\", function () {\r",
+											"    pm.response.to.have.status('Bad Request');\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response body properties\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(jsonData.result).to.be.null;\r",
+											"    pm.expect(jsonData.resultType).to.be.an('string');\r",
+											"    pm.expect(jsonData.message).to.be.an('string');\r",
+											"    pm.expect(jsonData.validationMessages).to.be.an('array');\r",
+											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"hasResult is false\", function () {\r",
+											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is ValidationError\", function () {\r",
+											"    pm.expect(jsonData.resultType).to.eql(\"ValidationError\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message is Response has validation errors\", function () {\r",
+											"    pm.expect(jsonData.message).to.eql('Response has validation errors');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"validationMessages is present\", function () {\r",
+											"    pm.expect(jsonData.validationMessages[0]).to.eql('Password do not match');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"successful is false\", function () {\r",
+											"    pm.expect(jsonData.successful).to.eql(false);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "a209b0ba-263a-4dd6-87c0-1373e19a13da",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"confirmPassword\": \"Password!123\",\n  \"inviteId\": \"82d2cf6d-beb1-4c41-972f-ddf91418f10a\",\n  \"password\": \"Password!3\",\n  \"phoneNumber\": \"819489991\",\n  \"phoneNumberCountryCode\": \"+234\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/onboard/api/business/accept-team-invite"
+							},
+							"response": [
+								{
+									"id": "b76ecdf2-1d8e-4aae-8caf-efedfdf6a286",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"confirmPassword\": \"<string>\",\n  \"inviteId\": \"<string>\",\n  \"password\": \"YYwjV?FfHUeGI\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/business/accept-team-invite"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Expired invite",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2cff6efa-564f-4892-bb6a-f25badd8c189",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code response is Bad Request\", function () {\r",
+											"    pm.response.to.have.status('Bad Request');\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response body properties\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(jsonData.result).to.be.null;\r",
+											"    pm.expect(jsonData.resultType).to.be.an('string');\r",
+											"    pm.expect(jsonData.message).to.be.an('string');\r",
+											"    pm.expect(jsonData.validationMessages).to.be.null;\r",
+											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"hasResult is false\", function () {\r",
+											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is Error\", function () {\r",
+											"    pm.expect(jsonData.resultType).to.eql(\"Error\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message is Response has validation errors\", function () {\r",
+											"    pm.expect(jsonData.message).to.eql('Invite has expired. Please contact administrator');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"successful is false\", function () {\r",
+											"    pm.expect(jsonData.successful).to.eql(false);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "b3ef7f9d-783d-448c-bdda-0b23be810345",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"confirmPassword\": \"Password!123\",\n  \"inviteId\": \"82d2cf6d-beb1-4c41-972f-ddf91418f10a\",\n  \"password\": \"Password!123\",\n  \"phoneNumber\": \"8194214321\",\n  \"phoneNumberCountryCode\": \"+234\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/onboard/api/business/accept-team-invite"
+							},
+							"response": [
+								{
+									"id": "f69a1924-78cd-4c68-a009-598067c55235",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"confirmPassword\": \"<string>\",\n  \"inviteId\": \"<string>\",\n  \"password\": \"YYwjV?FfHUeGI\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/business/accept-team-invite"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Blank field",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2cff6efa-564f-4892-bb6a-f25badd8c189",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code response is Bad Request\", function () {\r",
+											"    pm.response.to.have.status('Bad Request');\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response body properties\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(jsonData.result).to.be.null;\r",
+											"    pm.expect(jsonData.resultType).to.be.an('string');\r",
+											"    pm.expect(jsonData.message).to.be.an('string');\r",
+											"    pm.expect(jsonData.validationMessages).to.be.an('array');\r",
+											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"hasResult is false\", function () {\r",
+											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is ValidationError\", function () {\r",
+											"    pm.expect(jsonData.resultType).to.eql(\"ValidationError\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message is Response has validation errors\", function () {\r",
+											"    pm.expect(jsonData.message).to.eql('Response has validation errors');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"validationMessages is present\", function () {\r",
+											"    pm.expect(jsonData.validationMessages[0]).to.eql(\"The Password field is required.\",\r",
+											"        \"The PhoneNumber field is required.\",\r",
+											"        \"The ConfirmPassword field is required.\",\r",
+											"        \"The PhoneNumberCountryCode field is required.\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"successful is false\", function () {\r",
+											"    pm.expect(jsonData.successful).to.eql(false);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "79b3475e-c9b4-409d-acb6-15a17d362000",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"confirmPassword\": \"\",\n  \"inviteId\": \"82d2cf6d-beb1-4c41-972f-ddf91418f10a\",\n  \"password\": \"\",\n  \"phoneNumber\": \"\",\n  \"phoneNumberCountryCode\": \"\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/onboard/api/business/accept-team-invite"
+							},
+							"response": [
+								{
+									"id": "c8ccb0d7-db6c-4658-9253-e2cb291aca8a",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"confirmPassword\": \"<string>\",\n  \"inviteId\": \"<string>\",\n  \"password\": \"YYwjV?FfHUeGI\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/business/accept-team-invite"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Incorrect invite ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "195ed741-5666-4dc9-96ef-22257ed05429",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code response is Bad Request\", function () {\r",
+											"    pm.response.to.have.status('Bad Request');\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response body properties\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(jsonData.result).to.be.null;\r",
+											"    pm.expect(jsonData.resultType).to.be.an('string');\r",
+											"    pm.expect(jsonData.message).to.be.an('string');\r",
+											"    pm.expect(jsonData.validationMessages).to.be.null;\r",
+											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"hasResult is false\", function () {\r",
+											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is Error\", function () {\r",
+											"    pm.expect(jsonData.resultType).to.eql(\"Error\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message is Invite Id is in an incorrect format\", function () {\r",
+											"    pm.expect(jsonData.message).to.eql('Invite Id is in an incorrect format');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"successful is false\", function () {\r",
+											"    pm.expect(jsonData.successful).to.eql(false);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "3f7fe678-b19d-4a26-b28e-80ad1082b1fd",
+										"exec": [
+											"postman.setNextRequest(\"Record not found\")"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "17391c47-908a-40d3-8703-d7b1fca7b2a7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"confirmPassword\": \"Tested@0980\",\n  \"inviteId\": \"167788\",\n  \"password\": \"Tested@0980\",\n  \"phoneNumber\": \"{{number}}\",\n  \"phoneNumberCountryCode\": \"+234\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/onboard/api/business/accept-team-invite"
+							},
+							"response": [
+								{
+									"id": "ff76dc5c-0bae-4401-8d60-97fd62280e76",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"confirmPassword\": \"<string>\",\n  \"inviteId\": \"<string>\",\n  \"password\": \"YYwjV?FfHUeGI\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/business/accept-team-invite"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "d6dc0dc5-9c8b-41d3-883a-b1fb359a376e"
+				},
+				{
+					"name": "resend-team-invite",
+					"item": [
+						{
+							"name": "Resend invite",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "801d3af6-808d-4163-8855-34861172a9d9",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code response is OK\", function () {\r",
+											"    pm.response.to.have.status('OK');\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response body properties\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(jsonData.result).to.be.an('object');\r",
+											"    pm.expect(jsonData.resultType).to.be.a('string');\r",
+											"    pm.expect(jsonData.message).to.be.a('string');\r",
+											"    pm.expect(jsonData.message).to.be.null;\r",
+											"     pm.expect(jsonData.successful).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"hasResult is True\", function () {\r",
+											"    pm.expect(jsonData.hasResult).to.eql(true);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Result is Invite accepted successfully\", function () {\r",
+											"    pm.expect(jsonData.result.message).to.eql('Account Invite sent successfully');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is Success\", function () {\r",
+											"    pm.expect(jsonData.resultType).to.eql('Success');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message is Success\", function () {\r",
+											"    pm.expect(jsonData.message).to.eql('Success');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Successful is present\", function () {\r",
+											"    pm.expect(jsonData.successful).to.eql(true);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "f12e243c-b0cf-4415-9788-a58680b6ace0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"inviteUrl\": \"https://www.lover.com\",\n  \"id\": \"77\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/onboard/api/business/resend-team-invite"
+							},
+							"response": [
+								{
+									"id": "2db45f6f-6296-47dd-9e52-7d8eb465a3fb",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inviteUrl\": \"<uri>\",\n  \"id\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/business/resend-team-invite"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Record not found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "516ead7b-b716-4be9-85f2-29c6e9e88656",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code response is Bad Request\", function () {\r",
+											"    pm.response.to.have.status('Bad Request');\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response body properties\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(jsonData.result).to.be.null;\r",
+											"    pm.expect(jsonData.resultType).to.be.an('string');\r",
+											"    pm.expect(jsonData.message).to.be.an('string');\r",
+											"    pm.expect(jsonData.validationMessages).to.be.an('array');\r",
+											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"hasResult is false\", function () {\r",
+											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is ValidationError\", function () {\r",
+											"    pm.expect(jsonData.resultType).to.eql(\"ValidationError\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message is Response has validation errors\", function () {\r",
+											"    pm.expect(jsonData.message).to.eql('Response has validation errors');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"validationMessages is present\", function () {\r",
+											"    pm.expect(jsonData.validationMessages[0]).to.eql(\"Could not convert string to integer: ow7. Path 'id', line 3, position 13.\",\r",
+											"        \"The model field is required.\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"successful is false\", function () {\r",
+											"    pm.expect(jsonData.successful).to.eql(false);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "e6ef2435-6b38-40a0-83cc-689d39b6218c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"inviteUrl\": \"https://www.google.com\",\n  \"id\": \"ow7\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/onboard/api/business/resend-team-invite"
+							},
+							"response": [
+								{
+									"id": "4c7a819e-c2ae-476b-931f-8236b14f72c6",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inviteUrl\": \"<uri>\",\n  \"id\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/business/resend-team-invite"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Empty Field - Record not found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "516ead7b-b716-4be9-85f2-29c6e9e88656",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code response is Bad Request\", function () {\r",
+											"    pm.response.to.have.status('Bad Request');\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response body properties\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(jsonData.result).to.be.null;\r",
+											"    pm.expect(jsonData.resultType).to.be.an('string');\r",
+											"    pm.expect(jsonData.message).to.be.an('string');\r",
+											"    pm.expect(jsonData.validationMessages).to.be.an('array');\r",
+											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"hasResult is false\", function () {\r",
+											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is ValidationError\", function () {\r",
+											"    pm.expect(jsonData.resultType).to.eql(\"ValidationError\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message is Response has validation errors\", function () {\r",
+											"    pm.expect(jsonData.message).to.eql('Response has validation errors');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"validationMessages is present\", function () {\r",
+											"    pm.expect(jsonData.validationMessages[0]).to.eql(\"Error converting value {null} to type 'System.Int32'. Path 'id', line 2, position 12.\",\r",
+											"        \"The model field is required.\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"successful is false\", function () {\r",
+											"    pm.expect(jsonData.successful).to.eql(false);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "20f793ce-595c-4382-8c82-3f02e119623a",
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "d13217b4-5ae2-47eb-925c-f2da3424dfc4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"\",\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/onboard/api/business/resend-team-invite"
+							},
+							"response": [
+								{
+									"id": "aebe9c74-bb44-495e-867d-81b4094b44e9",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inviteUrl\": \"<uri>\",\n  \"id\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/business/resend-team-invite"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Non existing Number",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "516ead7b-b716-4be9-85f2-29c6e9e88656",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code response is Bad Request\", function () {\r",
+											"    pm.response.to.have.status('Bad Request');\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response body properties\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(jsonData.result).to.be.null;\r",
+											"    pm.expect(jsonData.resultType).to.be.an('string');\r",
+											"    pm.expect(jsonData.message).to.be.an('string');\r",
+											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"hasResult is false\", function () {\r",
+											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is Error\", function () {\r",
+											"    pm.expect(jsonData.resultType).to.eql(\"Error\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message is 'Team member record not found'\", function () {\r",
+											"    pm.expect(jsonData.message).to.eql('Team member record not found');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"validationMessages is null\", function () {\r",
+											"    pm.expect(jsonData.validationMessages).to.eql(null);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"successful is false\", function () {\r",
+											"    pm.expect(jsonData.successful).to.eql(false);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "7c1b35ed-e5ab-4b98-a73e-23ab3f45520e",
+										"exec": [
+											"pm.execution.setNextRequest(\"Record not Found\")"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "56b750ff-4a35-4b23-83d3-eeaefd5aaf97",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 5000,\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/onboard/api/business/resend-team-invite"
+							},
+							"response": [
+								{
+									"id": "ab8d496c-05e0-4f23-98d7-c6a45f7a15d1",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inviteUrl\": \"<uri>\",\n  \"id\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/business/resend-team-invite"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "4dc610a4-e84e-42d1-96e5-1ed8551d0a88"
+				},
+				{
+					"name": "revoke-team-invite",
+					"item": [
+						{
+							"name": "Revoke invite",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9424e093-e55d-4e7a-a334-0dde24f07799",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code response is OK\", function () {\r",
+											"    pm.response.to.have.status('OK');\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response body properties\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(jsonData.result).to.be.an('object');\r",
+											"    pm.expect(jsonData.resultType).to.be.a('string');\r",
+											"    pm.expect(jsonData.message).to.be.a('string');\r",
+											"    pm.expect(jsonData.message).to.be.null;\r",
+											"     pm.expect(jsonData.successful).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"hasResult is True\", function () {\r",
+											"    pm.expect(jsonData.hasResult).to.eql(true);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Result is Invite accepted successfully\", function () {\r",
+											"    pm.expect(jsonData.result.message).to.eql('Account Invite revoked successfully');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is Success\", function () {\r",
+											"    pm.expect(jsonData.resultType).to.eql('Success');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message is Success\", function () {\r",
+											"    pm.expect(jsonData.message).to.eql('Success');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Successful is present\", function () {\r",
+											"    pm.expect(jsonData.successful).to.eql(true);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "a0e20169-a137-4631-8cb4-a3fe872d23a3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"224\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/onboard/api/business/revoke-team-invite"
+							},
+							"response": [
+								{
+									"id": "52d2537c-5907-4c27-b650-a0d2053df7d6",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/business/revoke-team-invite"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Record not found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ff7269c5-3818-4752-99f0-9e314b0bbffd",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code response is Bad Request\", function () {\r",
+											"    pm.response.to.have.status('Bad Request');\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response body properties\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(jsonData.result).to.be.null;\r",
+											"    pm.expect(jsonData.resultType).to.be.an('string');\r",
+											"    pm.expect(jsonData.message).to.be.an('string');\r",
+											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"hasResult is false\", function () {\r",
+											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is Error\", function () {\r",
+											"    pm.expect(jsonData.resultType).to.eql(\"Error\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message is BusinessTeam record not found\", function () {\r",
+											"    pm.expect(jsonData.message).to.eql('BusinessTeam record not found');\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"successful is false\", function () {\r",
+											"    pm.expect(jsonData.successful).to.eql(false);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "e94598ee-85f1-4456-b33e-8f194309a970",
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "4bdff691-0d37-464d-a17a-ecaaff1602ac",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"1000\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/onboard/api/business/revoke-team-invite"
+							},
+							"response": [
+								{
+									"id": "e6b41577-c08b-4f7b-a1d2-781cec6d3214",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/business/revoke-team-invite"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Invite already revoked",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0dd50650-fb38-4c98-bff9-93cfdc24df66",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code response is Bad Request\", function () {\r",
+											"    pm.response.to.have.status('Bad Request');\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response body properties\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(jsonData.result).to.be.null;\r",
+											"    pm.expect(jsonData.resultType).to.be.an('string');\r",
+											"    pm.expect(jsonData.message).to.be.an('string');\r",
+											"    pm.expect(jsonData.validationMessages).to.be.null;\r",
+											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"hasResult is false\", function () {\r",
+											"    pm.expect(jsonData.hasResult).to.eql(false);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is Error\", function () {\r",
+											"    pm.expect(jsonData.resultType).to.eql(\"Error\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message is BusinessTeam record not found\", function () {\r",
+											"    pm.expect(jsonData.message).to.eql('User invite already revoked');\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"successful is false\", function () {\r",
+											"    pm.expect(jsonData.successful).to.eql(false);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "829ce7ea-7297-4fe0-bfb9-f7642fc94e63",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"57\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/onboard/api/business/revoke-team-invite"
+							},
+							"response": [
+								{
+									"id": "75d971a7-bfc4-4cc7-a222-662918b57dbe",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/business/revoke-team-invite"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "56c8cd65-f8b4-4463-ba39-31563bdda067"
+				},
+				{
+					"name": "Business Team",
+					"item": [
+						{
+							"name": "View Business team",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9faa6573-c9fa-4c07-8022-3693f2d51a6c",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is OK\", function () {\r",
+											"    pm.response.to.have.status('OK');\r",
+											"});\r",
+											"\r",
+											"    var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response body property\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(jsonData.result).to.be.an('array');\r",
+											"    pm.expect(jsonData.resultType).to.be.a('string');\r",
+											"    pm.expect(jsonData.message).to.be.a('string');\r",
+											"    pm.expect(jsonData.validationMessages).to.be.null;\r",
+											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"hasResult is true\", function () {\r",
+											"    pm.expect(jsonData.hasResult).to.eql(true);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is Success\", function () {\r",
+											"    pm.expect(jsonData.resultType).to.eql('Success');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"message is Success\", function () {\r",
+											"    pm.expect(jsonData.message).to.eql('Success');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"successful is true\", function () {\r",
+											"    pm.expect(jsonData.successful).to.eql(true);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "6148435e-2356-46b6-b22e-b211e14d8d48",
+										"exec": [
+											"pm.execution.setNextRequest(\"Invite stakeholder - Successful\")"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "f27832c6-e029-497a-8627-0654b6b32463",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/onboard/api/business/team/RC8067446567"
+							},
+							"response": [
+								{
+									"id": "33f3d94c-98fd-4ab3-adc6-72c0e67505e2",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"emailAddress\": \"vCQ+Nv_J7gCNE+r0zLweE5'oPjbSxX'sfb8HJd+ksddEkffU@k0-Elu1Ch-psPJPhOzFW-F2gLRmtB-DAyPPStD.T-U4dfpFpfa-l8GibmCN.qMsZjZ.CN5S4hEgaPw-NncbRqm-CfjDAt.79-YDRd\",\n  \"firstName\": \"<string>\",\n  \"inviteUrl\": \"<uri>\",\n  \"lastName\": \"<string>\",\n  \"roleId\": \"<integer>\",\n  \"userName\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"phoneNumberCountryCode\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/business/invite-team"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": \"Success\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "05c2db52-dbb9-439f-951e-42e029cc1647"
+				},
+				{
+					"name": "Activate/Deactivate User",
+					"item": [
+						{
+							"name": "Activate/Deactivate user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f5a085ad-2116-4eef-b865-4c3e5d500156",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code response is Ok\", function () {\r",
+											"    pm.response.to.have.status('OK');\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response body properties\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.hasResult).to.be.a('boolean');\r",
+											"    pm.expect(jsonData.result).to.be.an('object');\r",
+											"    pm.expect(jsonData.resultType).to.be.a('string');\r",
+											"    pm.expect(jsonData.message).to.be.a('string');\r",
+											"    pm.expect(jsonData.validationMessages).to.be.null;\r",
+											"    pm.expect(jsonData.successful).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"hasResult is true\", function () {\r",
+											"    pm.expect(jsonData.hasResult).to.eql(true);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Result is Invite accepted successfully\", function () {\r",
+											"    pm.expect(jsonData.result.message).to.eql('Team member succesfully Deactivated');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is Success\", function () {\r",
+											"    pm.expect(jsonData.resultType).to.eql('Success');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Message is Success\", function () {\r",
+											"    pm.expect(jsonData.message).to.eql('Success');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"successful is true\", function () {\r",
+											"    pm.expect(jsonData.successful).to.eql(true);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "78d816a7-76b5-42d1-935d-bd805dc6547a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": "{{baseUrl}}/onboard/api/business/team/toggleStatus/RC8067446567/unyc23@mailinator.com"
+							},
+							"response": [
+								{
+									"id": "5378b983-ff62-4710-a7ff-0da33782f02e",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/business/status/toggle?rcbnNumber=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"business",
+												"status",
+												"toggle"
+											],
+											"query": [
+												{
+													"key": "rcbnNumber",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"nullable\": true\n  },\n  \"resultType\": \"ValidationError\",\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "c051e90b-e1d6-4ef9-b055-076d7c319ed7"
+				}
+			],
+			"id": "a38921a4-06f5-4a4a-b03a-e9392db31d88"
+		},
+		{
 			"name": "Security questions",
 			"item": [
 				{
@@ -26252,7 +26252,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{customer_access_token}}"
+								"token": "{{business_access_token}}"
 							}
 						},
 						"method": "PUT",
