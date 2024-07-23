@@ -22198,8 +22198,11 @@
 											"listen": "prerequest",
 											"script": {
 												"id": "33de51d6-ab8a-429f-b560-4982767c8228",
-												"exec": [],
-												"type": "text/javascript"
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -22211,7 +22214,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{customer_access_token}}"
+												"token": "{{business_access_token}}"
 											}
 										},
 										"method": "POST",
@@ -22322,8 +22325,11 @@
 											"listen": "prerequest",
 											"script": {
 												"id": "a4dbad35-2d32-41b5-865f-26397f09e7ef",
-												"exec": [],
-												"type": "text/javascript"
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -22335,7 +22341,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{customer_access_token}}"
+												"token": "{{business_access_token}}"
 											}
 										},
 										"method": "POST",
@@ -22455,6 +22461,15 @@
 													"});\r",
 													""
 												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "9ba79ff3-08f0-4374-b895-1c86354ecafd",
+												"exec": [],
 												"type": "text/javascript"
 											}
 										}
@@ -22467,7 +22482,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{admin_access_token}}"
+												"token": "{{business_access_token}}"
 											}
 										},
 										"method": "GET",
@@ -22536,6 +22551,15 @@
 													"    pm.response.to.have.status(200);\r",
 													"});"
 												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "f1a854b7-d8b3-413c-a311-fc6c05ba9b1c",
+												"exec": [],
 												"type": "text/javascript"
 											}
 										}
@@ -22548,7 +22572,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{admin_access_token}}"
+												"token": "{{business_access_token}}"
 											}
 										},
 										"method": "GET",
