@@ -20482,8 +20482,11 @@
 									"listen": "prerequest",
 									"script": {
 										"id": "1853c60d-092f-4740-bdc0-cf5f3f9f7528",
-										"exec": [],
-										"type": "text/javascript"
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -20495,7 +20498,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -20619,7 +20622,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -20738,8 +20741,11 @@
 									"listen": "prerequest",
 									"script": {
 										"id": "26e74852-d3c8-4473-b334-b39f8c76aec4",
-										"exec": [],
-										"type": "text/javascript"
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -20751,7 +20757,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -20927,7 +20933,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -21055,6 +21061,15 @@
 											"    pm.expect(responseData.result).to.be.null;\r",
 											"});"
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "727f5d8b-7f8b-474e-bd12-634f47a19a49",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -21067,7 +21082,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -21186,6 +21201,15 @@
 											"    pm.expect(validationMessages).to.include(\"Account Number can only be digits with a length of 10\");",
 											"});"
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "f13f3386-fea3-4175-b162-597b031825f8",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -21198,7 +21222,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -21319,6 +21343,15 @@
 											"        \"Account Number can only be digits with a length of 10\");\r",
 											"});"
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "4249cf61-6e3a-43ca-ad04-a2c2b7e38661",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -21331,7 +21364,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -21478,7 +21511,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
