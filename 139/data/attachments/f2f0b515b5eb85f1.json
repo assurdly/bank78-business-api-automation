@@ -1,0 +1,18 @@
+{
+    "Date": "Sun, 28 Jul 2024 21:10:33 GMT",
+    "Content-Type": "application/json",
+    "Content-Length": "0",
+    "Connection": "keep-alive",
+    "x-amzn-RequestId": "9a0d9ff9-aa91-4521-9bb9-519e2fa55f4e",
+    "CF-RAY": "8aa7db4bbc109425-LHR",
+    "CF-Cache-Status": "DYNAMIC",
+    "x-amzn-Remapped-Content-Length": "0",
+    "x-amzn-Remapped-Connection": "keep-alive",
+    "x-amz-apigw-id": "bpEHiFbfDoEEX5Q=",
+    "x-amzn-Remapped-Server": "cloudflare",
+    "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=N%2FXw0ENVbCsT4t9JWJbyOAopw5u2lTf3EJ4Tlq0K5aZ9prfa6%2F%2F%2Bv7nkDjQcv%2BHUGcBO3AF1mxCFbHFHVkrl9qb7mpyQb0974Dsmea%2B08AWRxGE8OlgBk%2Fs7EEMGoMd1mfk%2FMu1Pac2G\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+    "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+    "x-amzn-Remapped-www-authenticate": "Bearer error=\"invalid_token\", error_description=\"The token expired at '07/28/2024 21:05:25'\"",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "x-amzn-Remapped-Date": "Sun, 28 Jul 2024 21:10:33 GMT"
+}
