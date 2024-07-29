@@ -8617,7 +8617,7 @@
 									"script": {
 										"id": "2067193d-8eb5-4416-bd19-bb8ec3ece8b7",
 										"exec": [
-											"pm.execution.setNextRequest(\"Change PIN - Invalid details\")"
+											"pm.execution.setNextRequest(\"Change PIN - Old=New PIN\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -8777,8 +8777,11 @@
 									"listen": "prerequest",
 									"script": {
 										"id": "02fc0c48-868c-45ae-a92f-299f34d4ac7a",
-										"exec": [],
-										"type": "text/javascript"
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -8811,7 +8814,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"confirmPin\": \"1111\",\n  \"newPin\": \"1111\",\n  \"oldPin\": \"\"\n}",
+									"raw": "{\n  \"confirmPin\": \"6543\",\n  \"newPin\": \"6543\",\n  \"oldPin\": \"6543\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
