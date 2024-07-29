@@ -8922,6 +8922,15 @@
 											"     pm.expect(jsonData.successful).to.eq(false);\r",
 											"});"
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "ee76b9c1-77cc-45a6-90b2-ca2db9362575",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -8955,7 +8964,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"confirmPin\": \"5370\",\n  \"newPin\": \"5370\",\n  \"oldPin\": \"5370\"\n}",
+									"raw": "{\n  \"confirmPin\": \"6543\",\n  \"newPin\": \"6543\",\n  \"oldPin\": \"6543\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -9063,6 +9072,15 @@
 											"     pm.expect(jsonData.successful).to.eq(false);\r",
 											"});"
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "a441d17f-cedb-44de-8080-825521524e0d",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -9096,7 +9114,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"confirmPin\": \"1234\",\n  \"newPin\": \"1234\",\n  \"oldPin\": \"5370\"\n}",
+									"raw": "{\n  \"confirmPin\": \"1234\",\n  \"newPin\": \"1234\",\n  \"oldPin\": \"6543\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -9345,6 +9363,15 @@
 											"     pm.expect(jsonData.successful).to.eq(false);\r",
 											"});"
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "2307cf88-069d-485a-9d55-69cf076945dd",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -9378,7 +9405,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"confirmPin\": \"2229\",\n  \"newPin\": \"2222\",\n  \"oldPin\": \"1111\"\n}",
+									"raw": "{\n  \"confirmPin\": \"2229\",\n  \"newPin\": \"2222\",\n  \"oldPin\": \"6543\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -9707,7 +9734,19 @@
 											"    pm.response.to.have.status(\"Unauthorized\");\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "92dbe1db-effb-497e-876e-887e325845c2",
+										"exec": [
+											"pm.execution.setNextRequest(\"Verify OTP - Valid OTP\")"
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -10421,7 +10460,8 @@
 											"    pm.expect(jsonData.successful).to.be.a(\"boolean\");\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -10433,7 +10473,8 @@
 											"var PIN = wand\r",
 											"pm.environment.set(\"cust_PIN\",PIN)"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
