@@ -10269,7 +10269,7 @@
 									"script": {
 										"id": "46338115-e626-42be-bc5e-fa595a95a5ee",
 										"exec": [
-											"postman.setNextRequest(\"Verify OTP - Invalid OTP\")"
+											"postman.setNextRequest(\"Invite stakeholder - Number as name\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -25642,7 +25642,7 @@
 									"script": {
 										"id": "6148435e-2356-46b6-b22e-b211e14d8d48",
 										"exec": [
-											"pm.execution.setNextRequest(\"Invite stakeholder - Successful\")"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
