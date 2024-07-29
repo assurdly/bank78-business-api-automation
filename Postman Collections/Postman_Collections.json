@@ -902,7 +902,7 @@
 									"script": {
 										"id": "f061a3a2-d667-4e28-bea3-cf2474fa5283",
 										"exec": [
-											"postman.setNextRequest(\"Forgot Password - Invalid email\")"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -3808,7 +3808,8 @@
 											"});\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -3816,10 +3817,10 @@
 									"script": {
 										"id": "b2c58061-264e-4670-9c7e-73ab6072c1de",
 										"exec": [
-											"// pm.collectionVariables.set(\"username\", pm.environment.get(\"cust_email\"));\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -4244,7 +4245,7 @@
 									"script": {
 										"id": "d45b1390-f830-4644-84c4-909779c588f7",
 										"exec": [
-											"//pm.execution.setNextRequest(\"Request PIN OTP - Blank Pin field\")"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -8008,7 +8009,8 @@
 											"    pm.response.to.have.status(400);\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -8016,9 +8018,10 @@
 									"script": {
 										"id": "c5979bb0-dedf-4de6-91a9-3a3562acae63",
 										"exec": [
-											"postman.setNextRequest(\"Verify Pin - Valid PIN\")"
+											"postman.setNextRequest(\"Verify Pin - Invalid PIN\")"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
