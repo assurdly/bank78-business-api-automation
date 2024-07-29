@@ -8018,7 +8018,7 @@
 									"script": {
 										"id": "c5979bb0-dedf-4de6-91a9-3a3562acae63",
 										"exec": [
-											"postman.setNextRequest(\"Verify Pin - Invalid PIN\")"
+											"pm.execution.setNextRequest(\"Verify Pin - Invalid PIN\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -8608,7 +8608,8 @@
 											"\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -8616,9 +8617,10 @@
 									"script": {
 										"id": "2067193d-8eb5-4416-bd19-bb8ec3ece8b7",
 										"exec": [
-											"ostman.setNextRequest(\"Change PIN - Valid details\")"
+											"pm.execution.setNextRequest(\"Change PIN - Invalidalid details\")"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
