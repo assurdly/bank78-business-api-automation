@@ -8054,7 +8054,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"confirmPin\": \"6383\",\n  \"otp\": \"355601\",\n  \"pin\": \"6383\"\n}",
+									"raw": "{\n  \"confirmPin\": \"6543\",\n  \"otp\": \"355601\",\n  \"pin\": \"6543\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -8617,7 +8617,7 @@
 									"script": {
 										"id": "2067193d-8eb5-4416-bd19-bb8ec3ece8b7",
 										"exec": [
-											"pm.execution.setNextRequest(\"Change PIN - Invalidalid details\")"
+											"pm.execution.setNextRequest(\"Change PIN - Invalid details\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
