@@ -3495,8 +3495,11 @@
 									"listen": "prerequest",
 									"script": {
 										"id": "569de282-7fbf-4813-8cd8-562f06a9b607",
-										"exec": [],
-										"type": "text/javascript"
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -3529,7 +3532,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"firstName\": \"1234\",\n  \"lastName\": \"1234\",\n  \"rcBnNumber\": \"hdkakfnkwfnwlkl\",\n  \"email\": \"{{$randomFirstName}}@mailinator.com\",\n  \"phoneNumber\": \"08185597962\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"stakeholderType\": \"Director\"\n\n}",
+									"raw": "{\n  \"firstName\": 1234,\n  \"lastName\": 1234,\n  \"rcBnNumber\": \"hdkakfnkwfnwlkl\",\n  \"email\": \"{{$randomFirstName}}@mailinator.com\",\n  \"phoneNumber\": \"08185597962\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"stakeholderType\": \"Director\"\n\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
