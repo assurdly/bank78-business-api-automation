@@ -23818,7 +23818,7 @@
 									"script": {
 										"id": "b3e139e7-a693-4042-bce3-b3f6fd08b1c6",
 										"exec": [
-											"pm.execution.setNextRequest(\"invite accepted\")"
+											"pm.execution.setNextRequest(\"Mismatched password\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -24527,7 +24527,7 @@
 									"script": {
 										"id": "3f7fe678-b19d-4a26-b28e-80ad1082b1fd",
 										"exec": [
-											""
+											"pm.execution.setNextRequest(\"Record not found\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
