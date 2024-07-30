@@ -12608,7 +12608,7 @@
 									"script": {
 										"id": "08f26750-db1d-4955-80a3-af513adb2b01",
 										"exec": [
-											"pm.execution.setNextRequest(\"Create Account - Invalid currency code\")"
+											"pm.execution.setNextRequest(\"Bill Payment\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
