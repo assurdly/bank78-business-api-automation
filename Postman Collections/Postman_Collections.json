@@ -1322,42 +1322,45 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{Onboarding_access_token}}"
-									}
-								},
 								"method": "POST",
 								"header": [
 									{
-										"key": "Content-Type",
+										"key": "accept",
+										"value": "application/json, text/plain, */*"
+									},
+									{
+										"key": "accept-language",
+										"value": "en-US,en;q=0.9"
+									},
+									{
+										"key": "authorization",
+										"value": "Bearer {{Onboarding_access_token}}"
+									},
+									{
+										"key": "content-type",
 										"value": "application/json"
 									},
 									{
-										"key": "Accept",
-										"value": "text/plain"
-									},
-									{
 										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
+										"value": "h9tRbOJzcH9O8mDsWRVey6OimYrqYUdg4c4IKNTf"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"userName\": \"{{bus_email}}\",\n    \"email\": \"{{bus_email}}\",\n    \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"referralCode\": \"\",\n    \"businessTypeId\": 1,\n    \"businessType\": \"Business Name\",\n    \"businessName\": \"{{$randomFirstName}} {{$randomLastName}}{{number}} ltd\",\n    \"countryCode\": \"NG\",\n    \"rcBnNumber\": \"RC{{number}}\",\n    \"Password\":\"Tested@0980\",\n    \"agreeToSignUpTandC\": true\n  }",
+									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"Franc\",\n    \"userName\": \"{{bus_email}}\",\n    \"email\": \"{{bus_email}}\",\n    \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"countryCode\": \"NG\",\n    \"password\": \"Assurdly01!\",\n    \"rcBnNumber\": 567777,\n    \"businessName\": \"{{$randomFirstName}} ltd\",\n    \"agreeToSignUpTandC\": true,\n    \"DeviceId\": 158506797645630,\n    \"businessTypeId\": 1,\n    \"businessType\": \"Business Name\"\n}",
 									"options": {
 										"raw": {
-											"headerFamily": "json",
 											"language": "json"
 										}
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/onboard/api/user/save?profile=business",
+									"raw": "https://sandbox.bank78.co/onboard/api/user/save?profile=business",
+									"protocol": "https",
 									"host": [
-										"{{baseUrl}}"
+										"sandbox",
+										"bank78",
+										"co"
 									],
 									"path": [
 										"onboard",
@@ -26805,6 +26808,14 @@
 		},
 		{
 			"key": "futureDate",
+			"value": ""
+		},
+		{
+			"key": "NewBusinessName",
+			"value": ""
+		},
+		{
+			"key": "NewBusinessTypeId",
 			"value": ""
 		}
 	]
