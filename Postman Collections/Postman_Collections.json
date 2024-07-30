@@ -17519,7 +17519,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{customer_access_token}}"
+												"token": "{{business_access_token}}"
 											}
 										},
 										"method": "POST",
@@ -17646,15 +17646,19 @@
 													"//\r",
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
 											"listen": "prerequest",
 											"script": {
 												"id": "5cfab3c3-61df-463e-a778-70b683020d4f",
-												"exec": [],
-												"type": "text/javascript"
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -17666,7 +17670,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{customer_access_token}}"
+												"token": "{{business_access_token}}"
 											}
 										},
 										"method": "POST",
@@ -17785,6 +17789,15 @@
 													"});\r",
 													""
 												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "14ac2a38-1fbb-43e5-8b93-83663ea00ae1",
+												"exec": [],
 												"type": "text/javascript"
 											}
 										}
@@ -17797,7 +17810,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{customer_access_token}}"
+												"token": "{{business_access_token}}"
 											}
 										},
 										"method": "POST",
@@ -17928,6 +17941,15 @@
 													"});\r",
 													""
 												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "82ad15f4-b7b0-4038-80b0-b1d9ce054541",
+												"exec": [],
 												"type": "text/javascript"
 											}
 										}
@@ -17940,7 +17962,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{customer_access_token}}"
+												"token": "{{business_access_token}}"
 											}
 										},
 										"method": "POST",
@@ -18071,15 +18093,19 @@
 													"});\r",
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
 											"listen": "prerequest",
 											"script": {
 												"id": "a804bcb4-e00e-431b-bd1d-fe7b4d342cad",
-												"exec": [],
-												"type": "text/javascript"
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -18091,7 +18117,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{customer_access_token}}"
+												"token": "{{business_access_token}}"
 											}
 										},
 										"method": "POST",
@@ -18181,7 +18207,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{customer_access_token}}"
+												"token": "{{business_access_token}}"
 											}
 										},
 										"method": "GET",
@@ -18265,7 +18291,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{customer_access_token}}"
+												"token": "{{business_access_token}}"
 											}
 										},
 										"method": "GET",
@@ -18349,7 +18375,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{customer_access_token}}"
+												"token": "{{business_access_token}}"
 											}
 										},
 										"method": "PUT",
