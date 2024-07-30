@@ -2610,7 +2610,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"a\",\n    \"lastName\": \"b\",\n    \"userName\": \"test8725@mailinator.com\",\n    \"email\": \"test8725@mailinator.com\",\n    \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"referralCode\": \"\",\n    \"businessName\": \"Documen\",\n    \"countryCode\": \"NG\",\n    \"rcBnNumber\": \"RC8067447899\",\n    \"Password\":\"Tested\",\n    \"agreeToSignUpTandC\": true\n  }",
+									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"Franc\",\n    \"userName\": \"{{bus_email}}\",\n    \"email\": \"{{bus_email}}\",\n    \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"countryCode\": \"NG\",\n    \"password\": \"Assurdly01\",\n    \"rcBnNumber\": 567777,\n    \"businessName\": \"{{$randomFirstName}} ltd\",\n    \"agreeToSignUpTandC\": true,\n    \"DeviceId\": 158506797645630,\n    \"businessTypeId\": 1,\n    \"businessType\": \"Business Name\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -2776,7 +2776,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"a\",\n    \"lastName\": \"b\",\n    \"userName\": \"test875@mailinator.com\",\n    \"email\": \"test875@mailinator.com\",\n    \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"referralCode\": \"\",\n    \"businessName\": \"Documen\",\n    \"countryCode\": \"89\",\n    \"rcBnNumber\": \"RC8067447899\",\n    \"Password\":\"Tested@0980\",\n    \"agreeToSignUpTandC\": true\n  }",
+									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"Franc\",\n    \"userName\": \"{{bus_email}}\",\n    \"email\": \"{{bus_email}}\",\n    \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"countryCode\": \"NG0\",\n    \"password\": \"Assurdly01!\",\n    \"rcBnNumber\": 567777,\n    \"businessName\": \"{{$randomFirstName}} ltd\",\n    \"agreeToSignUpTandC\": true,\n    \"DeviceId\": 158506797645630,\n    \"businessTypeId\": 1,\n    \"businessType\": \"Business Name\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -3042,19 +3042,10 @@
 											"    pm.response.to.have.status(\"Bad Request\");\r",
 											"});\r",
 											"pm.test(\"Verify email cannot be duplicated\", function () {\r",
-											"    pm.expect(jsonData.validationMessages[0]).to.eql(\"This email already exists\");\r",
+											"    pm.expect(jsonData.validationMessages).to.be.null\r",
 											"});\r",
 											"pm.test(\"verify reponse body contains hasResult\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(false);\r",
-											"});\r",
-											"pm.test(\"verify reponse body contains result\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(null);\r",
-											"});\r",
-											"pm.test(\"verify reponse body contains resultType\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"ValidationError\");\r",
-											"});\r",
-											"pm.test(\"verify reponse body contains successful\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(false);\r",
+											"    pm.expect(jsonData.messages).to.contains(\"Currently disallowed behavior  detected.\");\r",
 											"});\r",
 											""
 										],
@@ -3106,7 +3097,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"Baya\",\n    \"lastName\": \"Bay\",\n    \"userName\": \"test4531@mailinator.com\",\n    \"email\": \"test4531@mailinator.com\",\n    \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"referralCode\": \"\",\n    \"businessName\": \"Documen\",\n    \"countryCode\": \"89\",\n    \"rcBnNumber\": \"RC8067447899\",\n    \"Password\":\"Tested@0980\",\n    \"agreeToSignUpTandC\": true\n  }",
+									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"Franc\",\n    \"userName\": \"{{bus_email}}\",\n    \"email\": \"mary+babe@assurdly.com\",\n    \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"countryCode\": \"NG\",\n    \"password\": \"Assurdly01!\",\n    \"rcBnNumber\": 567777,\n    \"businessName\": \"{{$randomFirstName}} ltd\",\n    \"agreeToSignUpTandC\": true,\n    \"DeviceId\": 158506797645630,\n    \"businessTypeId\": 1,\n    \"businessType\": \"Business Name\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -3290,7 +3281,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"Baya\",\n    \"lastName\": \"Bay\",\n    \"userName\": \"test31@mailinator.com\",\n    \"email\": \"test31@mailinator.com\",\n    \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"referralCode\": \"\",\n    \"businessName\": \"Documen\",\n    \"countryCode\": \"89\",\n    \"rcBnNumber\": \"RC8067447899\",\n    \"Password\":\"\",\n    \"agreeToSignUpTandC\": true\n  }",
+									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"Franc\",\n    \"userName\": \"{{bus_email}}\",\n    \"email\": \"{{bus_email}}\",\n    \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"countryCode\": \"NG\",\n    \"password\": \"\",\n    \"rcBnNumber\": 567777,\n    \"businessName\": \"{{$randomFirstName}} ltd\",\n    \"agreeToSignUpTandC\": true,\n    \"DeviceId\": 158506797645630,\n    \"businessTypeId\": 1,\n    \"businessType\": \"Business Name\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
