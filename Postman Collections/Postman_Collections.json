@@ -8724,7 +8724,7 @@
 									"script": {
 										"id": "dd2318e5-937b-40d9-af19-0295252e8843",
 										"exec": [
-											""
+											"pm.execution.setNextRequest(\"Bill Payment\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -12739,7 +12739,7 @@
 			"name": "Bill Payment",
 			"item": [
 				{
-					"name": "Login",
+					"name": "Bill Payment - Login",
 					"item": [
 						{
 							"name": "Login",
@@ -17279,7 +17279,10 @@
 											"        result += characters.charAt(randomIndex);\r",
 											"    }\r",
 											"    return result;\r",
-											"}"
+											"}\r",
+											"\r",
+											"\r",
+											"pm.execution.setNextRequest(\"Transfers\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
