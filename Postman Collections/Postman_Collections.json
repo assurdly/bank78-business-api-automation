@@ -3045,7 +3045,7 @@
 											"    pm.expect(jsonData.validationMessages).to.be.null\r",
 											"});\r",
 											"pm.test(\"verify reponse body contains hasResult\", function () {\r",
-											"    pm.expect(jsonData.messages).to.contains(\"Currently disallowed behavior  detected.\");\r",
+											"    pm.expect(jsonData.message).to.contains(\"Currently disallowed behavior  detected.\");\r",
 											"});\r",
 											""
 										],
@@ -3773,7 +3773,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{su_access_token}}"
+										"token": "{{Onboarding_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -3898,7 +3898,8 @@
 											"});\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -3909,7 +3910,8 @@
 											"pm.collectionVariables.set(\"username\", pm.environment.get(\"cust_email\"));\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -3921,7 +3923,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{su_access_token}}"
+										"token": "{{Onboarding_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -4041,6 +4043,15 @@
 											"});\r",
 											""
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "7a32a15f-794c-46de-8ad4-c06f6fec7872",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -4053,7 +4064,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{su_access_token}}"
+										"token": "{{Onboarding_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -4186,7 +4197,7 @@
 									"script": {
 										"id": "d45b1390-f830-4644-84c4-909779c588f7",
 										"exec": [
-											""
+											"pm.execution.setNextRequest()"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -4201,7 +4212,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{su_access_token}}"
+										"token": "{{Onboarding_access_token}}"
 									}
 								},
 								"method": "POST",
