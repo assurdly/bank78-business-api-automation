@@ -26295,6 +26295,15 @@
 											"    pm.expect(pm.response.json().responseCode).to.equal(null);\r",
 											"});"
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8a9f3796-a051-498f-ab34-f4def99fc3f4",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -26307,7 +26316,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "GET",
