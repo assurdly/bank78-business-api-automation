@@ -12635,7 +12635,7 @@
 									"script": {
 										"id": "2d0a999a-baa0-4b89-84ec-efe41bb84e87",
 										"exec": [
-											"pm.execution.setNextRequest(\"Bill Payment\")"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
