@@ -11608,7 +11608,7 @@
 									"script": {
 										"id": "46338115-e626-42be-bc5e-fa595a95a5ee",
 										"exec": [
-											"postman.setNextRequest(\"Reset PIN - Blank OTP\")"
+											"pm.execution.setNextRequest(\"Reset PIN - Blank OTP\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
