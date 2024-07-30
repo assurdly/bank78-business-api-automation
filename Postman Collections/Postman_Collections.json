@@ -1524,7 +1524,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"1234\",\n    \"lastName\": \"1234\",\n    \"userName\": \"test882@mailinator.com\",\n    \"email\": \"test882@mailinator.com\",\n    \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"referralCode\": \"\",\n    \"businessName\": \"Documen\",\n    \"countryCode\": \"NG\",\n    \"rcBnNumber\": \"RC{{number}}\",\n    \"Password\":\"Tested@0980\",\n    \"agreeToSignUpTandC\": true\n  }",
+									"raw": "{\n    \"firstName\": 1234,\n    \"lastName\": 1234,\n    \"userName\": \"{{bus_email}}\",\n    \"email\": \"{{bus_email}}\",\n    \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"countryCode\": \"NG\",\n    \"password\": \"Assurdly01!\",\n    \"rcBnNumber\": 567777,\n    \"businessName\": \"{{$randomFirstName}} ltd\",\n    \"agreeToSignUpTandC\": true,\n    \"DeviceId\": 158506797645630,\n    \"businessTypeId\": 1,\n    \"businessType\": \"Business Name\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1700,7 +1700,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"userName\": \"test885@mailinator.com\",\n    \"email\": \"test885@mailinator.com\",\n    \"phoneNumber\": \"8067447899\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"referralCode\": \"\",\n    \"businessName\": \"Documen\",\n    \"countryCode\": \"NG\",\n    \"rcBnNumber\": \"RC{{number}}\",\n    \"Password\":\"Tested@0980\",\n    \"agreeToSignUpTandC\": true\n  }",
+									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"Franc\",\n    \"userName\": \"{{bus_email}}\",\n    \"email\": \"{{bus_email}}\",\n    \"phoneNumber\": \"7011725297\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"countryCode\": \"NG\",\n    \"password\": \"Assurdly01!\",\n    \"rcBnNumber\": 567777,\n    \"businessName\": \"{{$randomFirstName}} ltd\",\n    \"agreeToSignUpTandC\": true,\n    \"DeviceId\": 158506797645630,\n    \"businessTypeId\": 1,\n    \"businessType\": \"Business Name\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1876,7 +1876,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"userName\": \"test4531@mailinator.com\",\n    \"email\": \"test453@mailinator.com\",\n    \"phoneNumber\": \"8067447890\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"referralCode\": \"\",\n    \"businessName\": \"Documen\",\n    \"countryCode\": \"NG\",\n    \"rcBnNumber\": \"RC{{number}}\",\n    \"Password\":\"Tested@0980\",\n    \"agreeToSignUpTandC\": true\n  }",
+									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"Franc\",\n    \"userName\": \"mary+babe@assurdly.com\",\n    \"email\": \"mary+babe@assurdly.com\",\n    \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"countryCode\": \"NG\",\n    \"password\": \"Assurdly01!\",\n    \"rcBnNumber\": 567777,\n    \"businessName\": \"{{$randomFirstName}} ltd\",\n    \"agreeToSignUpTandC\": true,\n    \"DeviceId\": 158506797645630,\n    \"businessTypeId\": 1,\n    \"businessType\": \"Business Name\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
