@@ -7989,6 +7989,15 @@
 											"    pm.expect(jsonData.successful).to.eq(true);\r",
 											"});"
 										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "94d6465e-fae6-4e9c-bd36-2a4192111daf",
+										"exec": [],
 										"type": "text/javascript"
 									}
 								}
@@ -8001,7 +8010,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
