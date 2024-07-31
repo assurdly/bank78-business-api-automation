@@ -8750,7 +8750,7 @@
 									"script": {
 										"id": "dd2318e5-937b-40d9-af19-0295252e8843",
 										"exec": [
-											"pm.execution.setNextRequest(\"pin\")"
+											"pm.execution.setNextRequest(\"pin - Login\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -8857,7 +8857,7 @@
 					"name": "Login",
 					"item": [
 						{
-							"name": "Login",
+							"name": "pin - Login",
 							"event": [
 								{
 									"listen": "test",
@@ -12768,7 +12768,7 @@
 					"name": "Bill Payment - Login",
 					"item": [
 						{
-							"name": "Login",
+							"name": "Bill Payment - Login",
 							"event": [
 								{
 									"listen": "test",
