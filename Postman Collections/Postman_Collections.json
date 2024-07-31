@@ -2203,8 +2203,7 @@
 											"var num = Math.floor(Math.random() * (9999 - 1000) + 1000)\r",
 											"var number  = \"806744\" + num\r",
 											"pm.environment.set(\"number\", number)\r",
-											"\r",
-											"pm.execution.setNextRequest(\"Verify email - Unregistered email\")"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -2332,170 +2331,6 @@
 				{
 					"name": "Verify Email",
 					"item": [
-						{
-							"name": "Verify email - Valid details",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "95697624-bf87-4136-b7d0-add3d73b1561",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Status response code is OK\", function () {\r",
-											"    pm.response.to.have.status('OK');\r",
-											"});\r",
-											"\r",
-											"const responseData = pm.response.json();\r",
-											"\r",
-											"pm.test(\"Response has the required fields\", function () {\r",
-											"    pm.expect(responseData).to.be.an('object');\r",
-											"    pm.expect(responseData.hasResult).to.exist;\r",
-											"    pm.expect(responseData.result).to.be.an('object');\r",
-											"    pm.expect(responseData.resultType).to.be.a('string');\r",
-											"    pm.expect(responseData.message).to.be.a('string');\r",
-											"    pm.expect(responseData.validationMessages).to.be.null;\r",
-											"    pm.expect(responseData.successful).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"firstName is correct\", function () {\r",
-											"    pm.expect(responseData.result.firstName).to.eq(pm.collectionVariables.get(\"firstname\"));\r",
-											"});\r",
-											"\r",
-											"pm.test(\"lastName is a string\", function () {\r",
-											"    pm.expect(responseData.result.lastName).to.be.a('string');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"userName is correct\", function () {\r",
-											"    pm.expect(responseData.result.userName).to.eq(pm.collectionVariables.get(\"userName\"));\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Email is a valid email format\", function () {\r",
-											"    pm.expect(responseData.result.email).to.exist.and.to.match(/^[\\w-]+(\\.[\\w-]+)*@([\\w-]+\\.)+[a-zA-Z]{2,7}$/);\r",
-											"});\r",
-											"\r",
-											"// pm.test(\"Phone number is a valid phone number format\", function () {\r",
-											"//     const responseData = pm.response.json();\r",
-											"//     pm.expect(responseData.result.phoneNumber).to.match(/^\\+\\d{1,3}-\\d{6,14}$/);\r",
-											"// });\r",
-											"\r",
-											"pm.test(\"Phone number is a valid phone number format\", function () {\r",
-											"    pm.expect(responseData.result.phoneNumber).to.have.lengthOf(10);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"phoneNumberCountryCode should be a string\", function () {\r",
-											"    const responseData = pm.response.json();\r",
-											"    pm.expect(responseData.result.phoneNumberCountryCode).to.be.a('string');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"referralCode should be a string\", function () {\r",
-											"    const responseData = pm.response.json();\r",
-											"    pm.expect(responseData.result.referralCode).to.be.a('string');\r",
-											"});\r",
-											"\r",
-											""
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "88315584-aede-42c1-8e3f-6c9b052b6d43",
-										"exec": [
-											"pm.collectionVariables.set(\"bus_username\", pm.environment.get(\"bus_email\"));\r",
-											""
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "3e9797ce-876f-4fe5-a9bb-9e711e8eb789",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{Onboarding_access_token}}"
-									}
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Accept",
-										"value": "text/plain"
-									},
-									{
-										"key": "x-api-key",
-										"value": "{{x-api-key}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{ \n  \"UserName\": \"{{userName}}\", \n  \"otp\": \"272662\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/onboard/api/user/otp/verify/email"
-							},
-							"response": [
-								{
-									"id": "cb79f261-6534-4b24-920f-639b9ceb6612",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"userName\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"phoneNumberCountryCode\": \"<string>\",\n  \"referralCode\": \"<string>\",\n  \"countryCode\": \"<string>\",\n  \"password\": \"<string>\",\n  \"otp\": \"<string>\",\n  \"status\": \"<string>\",\n  \"rcBnNumber\": \"<string>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "{{baseUrl}}/api/user/otp/verify/email"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"userName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"phoneNumberCountryCode\": \"<string>\",\n    \"referralCode\": \"<string>\",\n    \"countryCode\": \"<string>\",\n    \"password\": \"<string>\",\n    \"otp\": \"<string>\",\n    \"status\": \"<string>\",\n    \"rcBnNumber\": \"<string>\"\n  },\n  \"resultType\": 4,\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
-						},
 						{
 							"name": "Verify email - Valid details",
 							"event": [
@@ -3286,6 +3121,187 @@
 				{
 					"name": "invite",
 					"item": [
+						{
+							"name": "Signin - Valid details",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "56780d2f-6ec1-43f8-853c-f55d481d8b9b",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response has the required fields\", function () {\r",
+											"    pm.expect(jsonData).to.be.an('object');\r",
+											"    pm.expect(jsonData.access_token).to.exist;\r",
+											"    pm.expect(jsonData.access_token).to.be.a('string');\r",
+											"    pm.expect(jsonData.expires_in).to.be.an('number');\r",
+											"    pm.expect(jsonData.token_type).to.be.a('string');\r",
+											"    pm.expect(jsonData.refresh_token).to.be.a('string');\r",
+											"    pm.expect(jsonData.scope).to.exist;\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Set access token as an environmental variable\", function () {\r",
+											"   pm.environment.set(\"business_access_token\", jsonData.access_token);\r",
+											"   pm.environment.set(\"business_access_token\", jsonData.access_token);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Verify expires_in is 3600\", function () {\r",
+											"    pm.expect(jsonData.expires_in).to.eql(3600);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Verify token_type is Bearer\", function () {\r",
+											"    pm.expect(jsonData.token_type).to.eql(\"Bearer\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "03c3e43a-9ca0-4f3d-beac-81fbfc920aea",
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "91611dfc-f233-4479-bc6b-606f43c8f6f4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"description": "grant_type can either be password, client_credentials or refresh_token",
+											"key": "grant_type",
+											"value": "password"
+										},
+										{
+											"description": "username",
+											"key": "username",
+											"value": "ogo@mailinator.com"
+										},
+										{
+											"description": "password",
+											"key": "password",
+											"value": "Password!123"
+										},
+										{
+											"description": "client_id",
+											"key": "client_id",
+											"value": "ECBEECBC7CE5434DBA509B9375203EC1"
+										},
+										{
+											"description": "client_secret",
+											"key": "client_secret",
+											"value": "E166C7F9E6EA4D899A499EE239FCD930"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": "{{baseUrl}}/identity/connect/token",
+								"description": "Get Auth Token"
+							},
+							"response": [
+								{
+									"id": "e7f06b52-ab07-4a64-a311-e9029accbf2f",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"description": "grant_type can either be password, client_credentials or refresh_token",
+													"key": "grant_type",
+													"value": "<string>"
+												},
+												{
+													"description": "username",
+													"key": "username",
+													"value": "<string>"
+												},
+												{
+													"description": "password",
+													"key": "password",
+													"value": "<string>"
+												},
+												{
+													"description": "client_id",
+													"key": "client_id",
+													"value": "<string>"
+												},
+												{
+													"description": "client_secret",
+													"key": "client_secret",
+													"value": "<string>"
+												}
+											]
+										},
+										"url": "{{baseUrl}}/connect/token"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"access_token\": \"<string>\",\n  \"error_description\": \"<string>\",\n  \"error\": \"<string>\",\n  \"expires_in\": \"<integer>\",\n  \"scope\": \"<string>\",\n  \"token_type\": \"<string>\",\n  \"refresh_token\": \"<string>\"\n}"
+								}
+							]
+						},
 						{
 							"name": "Invite stakeholder - Successful",
 							"event": [
