@@ -1512,8 +1512,7 @@
 											"});\r",
 											"pm.test(\"verify password character combinations\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.validationMessages[0]).to.eql(\"Password must contain a number\",\r",
-											"        \"Password must include Upper Case Character\");\r",
+											"    pm.expect(jsonData.validationMessages[0]).to.eql(\"Password must be contain Special Characters\");\r",
 											"});\r",
 											"pm.test(\"verify reponse body contains successful\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(false);\r",
@@ -12660,7 +12659,7 @@
 									"script": {
 										"id": "2d0a999a-baa0-4b89-84ec-efe41bb84e87",
 										"exec": [
-											""
+											"pm.execution.setNextRequest(\"Bill Payment - Login\")"
 										],
 										"type": "text/javascript",
 										"packages": {}
