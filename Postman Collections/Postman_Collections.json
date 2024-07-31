@@ -1734,7 +1734,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"Franc\",\n    \"userName\": \"{{bus_email}}\",\n    \"email\": \"{{bus_email}}\",\n    \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"countryCode\": \"NG0\",\n    \"password\": \"Assurdly01!\",\n    \"rcBnNumber\": 567777,\n    \"businessName\": \"{{$randomFirstName}} ltd\",\n    \"agreeToSignUpTandC\": true,\n    \"DeviceId\": 158506797645630,\n    \"businessTypeId\": 1,\n    \"businessType\": \"Business Name\"\n}",
+									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"Franc\",\n    \"userName\": \"{{bus_email}}\",\n    \"email\": \"{{bus_email}}\",\n    \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"countryCode\": \"NGP\",\n    \"password\": \"Assurdly01!\",\n    \"rcBnNumber\": 567777,\n    \"businessName\": \"{{$randomFirstName}} ltd\",\n    \"agreeToSignUpTandC\": true,\n    \"DeviceId\": 158506797645630,\n    \"businessTypeId\": 1,\n    \"businessType\": \"Business Name\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -2395,7 +2395,8 @@
 											"\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -2406,7 +2407,8 @@
 											"pm.collectionVariables.set(\"bus_username\", pm.environment.get(\"bus_email\"));\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -2418,7 +2420,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{su_access_token}}"
+										"token": "{{Onboarding_access_token}}"
 									}
 								},
 								"method": "POST",
