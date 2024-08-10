@@ -4812,8 +4812,11 @@
 									"listen": "prerequest",
 									"script": {
 										"id": "03c3e43a-9ca0-4f3d-beac-81fbfc920aea",
-										"exec": [],
-										"type": "text/javascript"
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -12842,12 +12845,14 @@
 										{
 											"description": "username= test1860@mailinator.com, test6900, {{latest_cust_email}}",
 											"key": "username",
-											"value": "pollybiz@yopmail.com"
+											"value": "pollybiz@yopmail.com",
+											"disabled": true
 										},
 										{
 											"description": "password",
 											"key": "password",
-											"value": "Assurdly01!"
+											"value": "Assurdly01!",
+											"disabled": true
 										},
 										{
 											"description": "client_id",
@@ -12858,6 +12863,16 @@
 											"description": "client_secret",
 											"key": "client_secret",
 											"value": "E166C7F9E6EA4D899A499EE239FCD930"
+										},
+										{
+											"key": "username",
+											"value": "ogbe.larry1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "@Testing1234",
+											"type": "text"
 										}
 									]
 								},
@@ -13196,7 +13211,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"transactionPin\": \"6543\",\n    \"narration\": \"test\",\n    \"channel\": \"Web\",\n    \"sourceAccountNumber\": \"{{sourceAccount}}\",\n    \"saveBeneficiary\": true,\n    \"deviceId\": \"xphone\",\n    \"beneficiaryName\": \"\",\n    \"beneficiaryPhone\": \"07011725297\",\n    \"beneficiaryEmail\": \"\",\n    \"billId\": 12,\n    \"amount\": 200,\n    \"phoneNumber\": \"07011725297\",\n    \"packageId\": 119,\n    \"canSchedule\": false,\n    \"scheduleInfo\": {}\n}",
+									"raw": "{\n    \"transactionPin\": \"6543\",\n    \"narration\": \"testing\",\n    \"channel\": \"Web\",\n    \"sourceAccountNumber\": \"0000028840\", //\"{{sourceAccount}}\",\n    \"saveBeneficiary\": true,\n    \"deviceId\": \"xphone\",\n    \"beneficiaryName\": \"\",\n    \"beneficiaryPhone\": \"07011725297\",\n    \"beneficiaryEmail\": \"\",\n    \"billId\": 12,\n    \"amount\": 200,\n    \"phoneNumber\": \"07011725297\",\n    \"packageId\": 119,\n    \"canSchedule\": false,\n    \"scheduleInfo\": {}\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -14256,7 +14271,31 @@
 							]
 						}
 					],
-					"id": "b255eea0-e718-4690-b724-5a2dec499971"
+					"id": "b255eea0-e718-4690-b724-5a2dec499971",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cb7b972b-338d-4385-b8c4-10cc67c2394c",
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "0a8c7386-89d1-4e94-85e6-b8050142bffe",
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
 				},
 				{
 					"name": "Buy Electricity tokens",
