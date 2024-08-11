@@ -13719,7 +13719,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"transactionPin\": \"6543\",\n    \"narration\": \"test\",\n    \"channel\": \"Web\",\n    \"sourceAccountNumber\": \"0000028840\",\n    \"saveBeneficiary\": true,\n    \"deviceId\": \"xphone\",\n    \"beneficiaryName\": \"\",\n    \"beneficiaryPhone\": \"07011725297\",\n    \"beneficiaryEmail\": \"\",\n    \"billId\": 12,\n    \"amount\": 100,\n    \"phoneNumber\": \"07011725297\",\n    \"packageId\": 119,\n    \"canSchedule\": false,\n    \"scheduleInfo\": {}\n}",
+									"raw": "{\n    \"transactionPin\": \"0987\",\n    \"narration\": \"test\",\n    \"channel\": \"Web\",\n    \"sourceAccountNumber\": \"{{sourceAccount}}\",\n    \"saveBeneficiary\": true,\n    \"deviceId\": \"xphone\",\n    \"beneficiaryName\": \"\",\n    \"beneficiaryPhone\": \"07011725297\",\n    \"beneficiaryEmail\": \"\",\n    \"billId\": 12,\n    \"amount\": 100,\n    \"phoneNumber\": \"07011725297\",\n    \"packageId\": 119,\n    \"canSchedule\": false,\n    \"scheduleInfo\": {}\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -13886,7 +13886,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"transactionPin\": \"6543\",\n    \"narration\": \"test\",\n    \"channel\": \"Web\",\n    \"sourceAccountNumber\": \"0000028840\",\n    \"saveBeneficiary\": true,\n    \"deviceId\": \"xphone\",\n    \"beneficiaryName\": \"\",\n    \"beneficiaryPhone\": \"07011725297\",\n    \"beneficiaryEmail\": \"\",\n    \"billId\": 12,\n    \"amount\": 2000,\n    \"phoneNumber\": \"07011725297\",\n    \"packageId\": 119,\n    \"canSchedule\": false,\n    \"scheduleInfo\": {}\n}",
+									"raw": "{\n    \"transactionPin\": \"0987\",\n    \"narration\": \"test\",\n    \"channel\": \"Web\",\n    \"sourceAccountNumber\": \"{{sourceAccount}}\",\n    \"saveBeneficiary\": true,\n    \"deviceId\": \"xphone\",\n    \"beneficiaryName\": \"\",\n    \"beneficiaryPhone\": \"07011725297\",\n    \"beneficiaryEmail\": \"\",\n    \"billId\": 12,\n    \"amount\": 5000,\n    \"phoneNumber\": \"07011725297\",\n    \"packageId\": 119,\n    \"canSchedule\": false,\n    \"scheduleInfo\": {}\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
