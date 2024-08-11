@@ -16835,7 +16835,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{customer_access_token}}"
+										"token": "{{business_access_token}}"
 									}
 								},
 								"method": "POST",
@@ -16855,7 +16855,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"transactionPin\": \"6543\",\n    \"narration\": \"airtime\",\n    \"channel\": \"Web\",\n    \"sourceAccountNumber\": \"8135575834\",\n    \"saveBeneficiary\": true,\n    \"deviceId\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36\",\n    \"beneficiaryName\": \"\",\n    \"beneficiaryPhone\": \"07011725297\",\n    \"beneficiaryEmail\": \"\",\n    \"billId\": 3,\n    \"amount\": 100,\n    \"phoneNumber\": \"07011725297\",\n    \"canSchedule\": false,\n    \"scheduleInfo\": {}\n}",
+									"raw": "{\n    \"transactionPin\": \"0987\",\n    \"narration\": \"airtime\",\n    \"channel\": \"Web\",\n    \"sourceAccountNumber\": \"{{sourceAccount}}\",\n    \"saveBeneficiary\": true,\n    \"deviceId\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36\",\n    \"beneficiaryName\": \"\",\n    \"beneficiaryPhone\": \"07011725297\",\n    \"beneficiaryEmail\": \"\",\n    \"billId\": 3,\n    \"amount\": 100,\n    \"phoneNumber\": \"07011725297\",\n    \"canSchedule\": false,\n    \"scheduleInfo\": {}\n}",
 									"options": {
 										"raw": {
 											"language": "json"
