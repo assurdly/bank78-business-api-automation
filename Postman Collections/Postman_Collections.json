@@ -15569,7 +15569,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"7200\",\n  \"billId\": \"13\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"payforcabletv123\",\n  \"decoder\": \"\",\n  \"packageId\": \"72\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6543\",\n  \"narration\": \"Buy Cable bundle\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaryName\": \"Paul\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"12345\"\n}",
+									"raw": "{\n  \"amount\": \"7200\",\n  \"billId\": \"13\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"payforcabletv123\",\n  \"decoder\": \"\",\n  \"packageId\": \"72\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"0987\",\n  \"narration\": \"Buy Cable bundle\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaryName\": \"Paul\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"12345\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -15735,7 +15735,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"7000\",\n  \"billId\": \"13\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"payforcabletv123\",\n  \"decoder\": \"123445678890\",\n  \"packageId\": \"72\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"6543\",\n  \"narration\": \"Buy Cable bundle\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaryName\": \"Paul\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"12345\"\n}",
+									"raw": "{\n  \"amount\": \"7000\",\n  \"billId\": \"13\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"payforcabletv123\",\n  \"decoder\": \"123445678890\",\n  \"packageId\": \"72\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"0987\", //\"6543\",\n  \"narration\": \"Buy Cable bundle\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaryName\": \"Paul\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"12345\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -15891,7 +15891,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"transactionPin\": \"6543\",\n  \"narration\": \"Pay Epin\",\n  \"channel\": \"3\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"saveBeneficiary\": true,\n  \"deviceId\": \"1284903\",\n  \"beneficiaryName\": \"Jamb\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"test8033@mailinator.com\",\n  \"billId\": \"30\",\n  \"packageId\": \"109\",\n  \"amount\": \"4700\",\n  \"numberOfPins\": \"1\",\n  \"phone\" : \"07035361770\",\n  \"accountNumber\": \"1111111111\"\n\n}",
+									"raw": "{\n  \"transactionPin\": \"0987\",\n  \"narration\": \"Pay Epin\",\n  \"channel\": \"3\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"saveBeneficiary\": true,\n  \"deviceId\": \"1284903\",\n  \"beneficiaryName\": \"Jamb\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"test8033@mailinator.com\",\n  \"billId\": \"30\",\n  \"packageId\": \"109\",\n  \"amount\": \"4700\",\n  \"numberOfPins\": \"1\",\n  \"phone\" : \"07035361770\",\n  \"accountNumber\": \"1111111111\"\n\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -16095,7 +16095,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"transactionPin\": \"6543\",\n    \"channel\": \"Web\",\n    \"sourceAccountNumber\": \"8135575834\",\n    \"saveBeneficiary\": true,\n    \"deviceId\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36\",\n    \"beneficiaryName\": \"\",\n    \"beneficiaryPhone\": \"07089877770\",\n    \"beneficiaryEmail\": \"\",\n    \"billId\": 29,\n    \"amount\": \"100\",\n    \"phoneNumber\": \"07089877770\",\n    \"packageId\": 107,\n    \"beneficiary\": \"070111726666\",\n    \"canSchedule\": false,\n    \"scheduleInfo\": {}\n}",
+									"raw": "{\n    \"transactionPin\": \"0987\",\n    \"channel\": \"Web\",\n    \"sourceAccountNumber\": \"{{sourceAccount}}\",\n    \"saveBeneficiary\": true,\n    \"deviceId\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36\",\n    \"beneficiaryName\": \"\",\n    \"beneficiaryPhone\": \"07089877770\",\n    \"beneficiaryEmail\": \"\",\n    \"billId\": 29,\n    \"amount\": \"100\",\n    \"phoneNumber\": \"07089877770\",\n    \"packageId\": 107,\n    \"beneficiary\": \"070111726666\",\n    \"canSchedule\": false,\n    \"scheduleInfo\": {}\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -16222,7 +16222,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"transactionPin\": \"6543\",\n  \"narration\": \"test\",\n  \"channel\": \"1\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"saveBeneficiary\": true,\n  \"clientRequestId\": \"fundbet\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"0815597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly.com\",\n  \"packageId\": \"107\",\n  \"billId\": \"29\",\n  \"amount\": \"-100\",\n  \"beneficiary\": \"bryan\"\n}",
+									"raw": "{\n  \"transactionPin\": \"0987\",\n  \"narration\": \"test\",\n  \"channel\": \"1\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"saveBeneficiary\": true,\n  \"clientRequestId\": \"fundbet\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"0815597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly.com\",\n  \"packageId\": \"107\",\n  \"billId\": \"29\",\n  \"amount\": \"-100\",\n  \"beneficiary\": \"bryan\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -16383,7 +16383,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"transactionPin\": \"6383\",\n  \"narration\": \"payment\",\n  \"channel\": \"1\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"saveBeneficiary\": true,\n  \"clientRequestId\": \"fundbet\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"0815597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly.com\",\n  \"packageId\": \"107\",\n  \"billId\": \"29\",\n  \"amount\": \"100\",\n  \"beneficiary\": \"bryan\"\n}",
+									"raw": "{\n  \"transactionPin\": \"6383\",\n  \"narration\": \"payment\",\n  \"channel\": \"1\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"saveBeneficiary\": true,\n  \"clientRequestId\": \"fundbet\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"0815597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly.com\",\n  \"packageId\": \"107\",\n  \"billId\": \"29\",\n  \"amount\": \"100\",\n  \"beneficiary\": \"bryan\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
