@@ -16545,7 +16545,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"transactionPin\": \"6383\",\n  \"narration\": \"payment\",\n  \"channel\": \"1\",\n  \"sourceAccountNumber\": \"1010000712\",\n  \"saveBeneficiary\": true,\n  \"clientRequestId\": \"fundbet\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"0815597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly.com\",\n  \"packageId\": \"107\",\n  \"billId\": \"29\",\n  \"amount\": \"100\",\n  \"beneficiary\": \"bryan\"\n}",
+									"raw": "{\n  \"transactionPin\": \"0987\",\n  \"narration\": \"payment\",\n  \"channel\": \"1\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"saveBeneficiary\": true,\n  \"clientRequestId\": \"fundbet\",\n  \"deviceId\": \"iphone\",\n  \"beneficiaryName\": \"bryan\",\n  \"beneficiaryPhone\": \"0815597979\",\n  \"beneficiaryEmail\": \"bryan@assurdly.com\",\n  \"packageId\": \"107\",\n  \"billId\": \"29\",\n  \"amount\": \"1\",\n  \"beneficiary\": \"bryan\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
