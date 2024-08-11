@@ -15357,7 +15357,7 @@
 											"pm.test(\"Response structure and properties for 400\", function () {\r",
 											"    pm.expect(pm.response.json()).to.have.property(\"hasResult\", false);\r",
 											"    pm.expect(pm.response.json()).to.have.property(\"result\", null);\r",
-											"    pm.expect(pm.response.json()).to.have.property(\"resultType\", );\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"resultType\", 2);\r",
 											"    pm.expect(pm.response.json()).to.have.property(\"message\", \"Invalid Transaction PIN\");\r",
 											"    pm.expect(pm.response.json()).to.have.property(\"successful\", false);\r",
 											"    pm.expect(pm.response.json()).to.have.property(\"errorCode\", 1003);\r",
