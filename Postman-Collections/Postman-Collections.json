@@ -3316,12 +3316,12 @@
 									"script": {
 										"id": "c0cff0bf-1dbd-4bf0-aa87-28bea1e88c4e",
 										"exec": [
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Status code response is Bad Request\", function () {\r",
-											"    pm.response.to.have.status('Bad Request');\r",
+											"pm.test(\"Status code response is OK\", function () {\r",
+											"    pm.response.to.have.status('OK');\r",
 											"});\r",
 											"\r",
 											"var jsonData = pm.response.json();\r",
@@ -5168,8 +5168,11 @@
 									"listen": "prerequest",
 									"script": {
 										"id": "23eee1a5-2102-437a-b34a-eeec88adb7b4",
-										"exec": [],
-										"type": "text/javascript"
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -5211,7 +5214,7 @@
 										{
 											"description": "username",
 											"key": "username",
-											"value": "{{bus_username}}"
+											"value": "circle@mailinator.com"
 										},
 										{
 											"description": "password",
