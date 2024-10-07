@@ -3554,7 +3554,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"firstName\": 1234,\n  \"lastName\": 1234,\n  \"rcBnNumber\": \"hdkakfnkwfnwlkl\",\n  \"email\": \"{{$randomFirstName}}@mailinator.com\",\n  \"phoneNumber\": \"08185597962\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"stakeholderType\": \"Director\"\n\n}",
+									"raw": "{\n  \"firstName\": \"123004\",\n  \"lastName\": \"123+4\",\n  \"rcBnNumber\": \"hdkakfnkwfnwlkl\",\n  \"email\": \"{{$randomFirstName}}@mailinator.com\",\n  \"phoneNumber\": \"08185597962\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"stakeholderType\": \"Director\"\n\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -18906,7 +18906,7 @@
 													"});\r",
 													"\r",
 													"var jsonData = pm.response.json();\r",
-													"pm.environment.set(\"sourceAccount\", jsonData.result.profiles[0].accounts[0].accountNumber);\r",
+													"pm.collectionVariables.set(\"sourceAccount\", jsonData.result.profiles[0].accounts[0].accountNumber);\r",
 													"\r",
 													"pm.test(\"Response body property\", function () {\r",
 													"    pm.expect(jsonData).to.be.an('object');\r",
@@ -19127,7 +19127,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"amount\": 100,\n    \"transactionPin\": \"6543\",\n    \"channel\": \"Web\",\n    \"sourceAccountNo\": \"{{sourceAccount}}\",\n    \"saveBeneficiary\": false,\n    \"deviceId\": \"xphone\",\n    \"canSchedule\": true,\n    \"scheduleInfo\": {\n        \"scheduledStartDate\": \"{{futureDate}}\",\n        \"repeatFrequency\": \"never\",\n        \"repeatWeekDay\": 0,\n        \"repeatMonthDay\": 0,\n        \"repeatCount\": 0\n    },\n    \"accountNumber\": \"1780004070\",\n    \"nameEnquiryRequestId\": 7640\n}",
+									"raw": "{\n    \"amount\": 100,\n    \"transactionPin\": \"0987\",\n    \"channel\": \"1\",\n    \"sourceAccountNo\": \"{{sourceAccount}}\",\n    \"saveBeneficiary\": false,\n    \"deviceId\": \"xphone\",\n    \"canSchedule\": false,\n    \"scheduleInfo\": {\n    \"scheduledStartDate\": \"2023-09-05T14:50:46.856Z\",\n    \"scheduledEndDate\": \"2023-01-30T16:10:46.856Z\",\n    \"repeatFrequency\": \"5\",\n    \"repeatWeekDay\": \"1\",\n    \"repeatMonthDay\": \"10\",\n    \"repeatCount\": \"5\"\n  },\n    \"accountNumber\": \"9035000122\",\n    \"nameEnquiryRequestId\": 15,\n    \"currency\": \"NGN\"\n}\n\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -19395,8 +19395,11 @@
 									"listen": "prerequest",
 									"script": {
 										"id": "2578c83a-1c9b-4a2e-aa0a-494b646c7e54",
-										"exec": [],
-										"type": "text/javascript"
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -19429,7 +19432,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"100\",\n  \"transactionPin\": \"6381\",\n  \"narration\": \"Invalid\",\n  \"channel\": \"1\",\n  \"sourceAccountNo\": {{sourceAccount}},\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"phoneX\",\n  \"canSchedule\": false,\n  \"scheduleInfo\": {\n    \"scheduledStartDate\": \"2023-08-30T16:10:46.856Z\",\n    \"scheduledEndDate\": \"2023-08-30T16:10:46.856Z\",\n    \"repeatFrequency\": \"0\",\n    \"repeatWeekDay\": \"0\",\n    \"repeatMonthDay\": \"0\",\n    \"repeatCount\": \"0\"\n  },\n  \"accountNumber\": \"1010001367\",\n  \"nameEnquiryRequestId\": \"15\",\n  \"currency\": \"NGN\"\n}",
+									"raw": "{\n    \"amount\": 100,\n    \"transactionPin\": \"0907\",\n    \"channel\": \"1\",\n    \"sourceAccountNo\": \"{{sourceAccount}}\",\n    \"saveBeneficiary\": false,\n    \"deviceId\": \"xphone\",\n    \"canSchedule\": false,\n    \"scheduleInfo\": {\n    \"scheduledStartDate\": \"2023-09-05T14:50:46.856Z\",\n    \"scheduledEndDate\": \"2023-01-30T16:10:46.856Z\",\n    \"repeatFrequency\": \"5\",\n    \"repeatWeekDay\": \"1\",\n    \"repeatMonthDay\": \"10\",\n    \"repeatCount\": \"5\"\n  },\n    \"accountNumber\": \"9035000122\",\n    \"nameEnquiryRequestId\": 15,\n    \"currency\": \"NGN\"\n}\n\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
