@@ -5331,12 +5331,13 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Error is invalid_grant\", function () {\r",
-											"    pm.expect(jsonData.error).to.eql('unauthorized_client');\r",
+											"    pm.expect(jsonData.error).to.eql('invalid_grant');\r",
 											"});\r",
 											"\r",
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
