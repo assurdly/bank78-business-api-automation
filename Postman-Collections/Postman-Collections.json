@@ -515,64 +515,7 @@
 									]
 								}
 							},
-							"response": [
-								{
-									"id": "ae583c64-2091-444b-bb81-3652854d1255",
-									"name": "Success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"userName\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"phoneNumberCountryCode\": \"<string>\",\n  \"referralCode\": \"<string>\",\n  \"countryCode\": \"<string>\",\n  \"password\": \"<string>\",\n  \"otp\": \"<string>\",\n  \"status\": \"<string>\",\n  \"rcBnNumber\": \"<string>\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/api/user/save?profile=<string>",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"api",
-												"user",
-												"save"
-											],
-											"query": [
-												{
-													"key": "profile",
-													"value": "<string>"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"userName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"phoneNumberCountryCode\": \"<string>\",\n    \"referralCode\": \"<string>\",\n    \"countryCode\": \"<string>\",\n    \"password\": \"<string>\",\n    \"otp\": \"<string>\",\n    \"status\": \"<string>\",\n    \"rcBnNumber\": \"<string>\"\n  },\n  \"resultType\": 4,\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
-								}
-							]
+							"response": []
 						},
 						{
 							"name": "Signup - Existing Phone No",
@@ -17640,211 +17583,6 @@
 							"name": "Add Beneficiary",
 							"item": [
 								{
-									"name": "New Beneficiary",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "5af92fd5-fc1d-4aa8-89fd-6af6725c1a82",
-												"exec": [
-													"// Verify that the response has a result object\r",
-													"pm.test(\"Response has a 'result' object\", function () {\r",
-													"    const responseBody = pm.response.json();\r",
-													"    pm.expect(responseBody).to.have.property(\"result\");\r",
-													"});\r",
-													"\r",
-													"// Verify that the 'result' object has the expected 'message' property\r",
-													"pm.test(\"Result object has 'message' property with value 'Beneficiary successfully added'\", function () {\r",
-													"    const result = pm.response.json().result;\r",
-													"    pm.expect(result).to.have.property(\"message\", \"Beneficiary successfully added\");\r",
-													"});\r",
-													"\r",
-													"// Verify that the 'resultType' is 1\r",
-													"pm.test(\"Result type is 1 (Expected)\", function () {\r",
-													"    const resultType = pm.response.json().resultType;\r",
-													"    pm.expect(resultType).to.equal(1);\r",
-													"});\r",
-													"\r",
-													"// Verify that the 'message' property is null\r",
-													"pm.test(\"'message' property is null (Expected)\", function () {\r",
-													"    const message = pm.response.json().message;\r",
-													"    pm.expect(message).to.be.null;\r",
-													"});\r",
-													"\r",
-													"// Verify that 'validationMessages' property is null\r",
-													"pm.test(\"'validationMessages' property is null (Expected)\", function () {\r",
-													"    const validationMessages = pm.response.json().validationMessages;\r",
-													"    pm.expect(validationMessages).to.be.null;\r",
-													"});\r",
-													"\r",
-													"// Verify that 'successful' property is true\r",
-													"pm.test(\"'successful' property is true (Expected)\", function () {\r",
-													"    const successful = pm.response.json().successful;\r",
-													"    pm.expect(successful).to.be.true;\r",
-													"});\r",
-													"\r",
-													"// Verify that 'errorCode' property is 0\r",
-													"pm.test(\"'errorCode' property is 0 (Expected)\", function () {\r",
-													"    const errorCode = pm.response.json().errorCode;\r",
-													"    pm.expect(errorCode).to.equal(0);\r",
-													"});\r",
-													"\r",
-													"// Verify that 'responseCode' property is null\r",
-													"pm.test(\"'responseCode' property is null (Expected)\", function () {\r",
-													"    const responseCode = pm.response.json().responseCode;\r",
-													"    pm.expect(responseCode).to.be.null;\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										},
-										{
-											"listen": "prerequest",
-											"script": {
-												"id": "87f3fe34-4336-44de-953b-a61339a92fe3",
-												"exec": [
-													"// Function to generate a random 10-digit accountNumber\r",
-													"function generateRandomAccountNumber() {\r",
-													"    return Math.floor(Math.random() * 9000000000) + 1000000000;\r",
-													"}\r",
-													"\r",
-													"// Function to generate a random email address\r",
-													"function generateRandomEmail() {\r",
-													"    const emailDomain = \"example.com\"; // You can replace this with your desired domain\r",
-													"    const randomString = Math.random().toString(36).substring(7);\r",
-													"    return `random_${randomString}@${emailDomain}`;\r",
-													"}\r",
-													"\r",
-													"// Function to generate random alphabetic characters\r",
-													"function generateRandomAlphabets(length) {\r",
-													"    const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';\r",
-													"    let result = '';\r",
-													"    for (let i = 0; i < length; i++) {\r",
-													"        const randomIndex = Math.floor(Math.random() * characters.length);\r",
-													"        result += characters.charAt(randomIndex);\r",
-													"    }\r",
-													"    return result;\r",
-													"}\r",
-													"\r",
-													"// Generate random values\r",
-													"// const randomAccountNumber = generateRandomAccountNumber();\r",
-													"// const randomEmail = generateRandomEmail();\r",
-													"// const randomAlphabets = generateRandomAlphabets(10); // Generate 10 random alphabetic characters\r",
-													"\r",
-													"// // Update the requestBody with random values\r",
-													"// const requestBody = {\r",
-													"//     \"beneficiaryName\": randomAlphabets,\r",
-													"//     \"bankName\": \"Providus\",\r",
-													"//     \"accountName\": randomAlphabets,\r",
-													"//     \"accountNumber\": randomAccountNumber.toString(), // Convert to string\r",
-													"//     \"emailAddress\": randomEmail,\r",
-													"//     \"countryCode\": \"+234\",\r",
-													"//     \"address\": \"Lagos\",\r",
-													"//     \"currencyRequirement\": {\r",
-													"//         \"name\": \"NGN\",\r",
-													"//         \"value\": \"100\",\r",
-													"//         \"forms\": [\r",
-													"//             {\r",
-													"//                 \"dataLabel\": \"new beneficiary\",\r",
-													"//                 \"dataValue\": \"Save\"\r",
-													"//             }\r",
-													"//         ]\r",
-													"//     }\r",
-													"// };\r",
-													"\r",
-													"// pm.request.body.raw = JSON.stringify(requestBody);\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "dbe23968-728d-433a-8574-f9c285db1ba6",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{business_access_token}}"
-											}
-										},
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "// \n\n{\n  \"beneficiaryName\": \"Udem Chi\",\n  \"bankName\": \"Bababdus\",\n  \"accountName\": \"Udeme Chi\",\n  \"accountNumber\": \"{{$randomBankAccount}}\",\n  \"emailAddress\": \"udeme@assurdly.com\",\n  \"countryCode\": \"+234\",\n  \"address\": \"Lagos\",\n  \"bankRequirementId\": 1,\n  \"CurrencyCode\": \"NGN\",\n  \"BankRequirementValue\": \"110072\",\n  \"nameEnquiryId\": 1680,\n  \"bankId\": 335\n  \n    \n  }",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "https://transfer-dev.bank78.co/api/v1/transfers/beneficiaries"
-									},
-									"response": [
-										{
-											"id": "74aba41d-8a87-41b2-ac1b-5698f1cf9892",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Accept",
-														"value": "text/plain"
-													},
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "Authorization",
-														"value": "<API Key>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"accountName\": \" iL \",\n  \"accountNumber\": \"759117742\",\n  \"bankName\": \"Aju 6\\fW \",\n  \"beneficiaryName\": \"VxU\\tP\",\n  \"countryCode\": \"<string>\",\n  \"currencyRequirement\": {\n    \"name\": \"<string>\",\n    \"value\": \"<string>\",\n    \"forms\": [\n      {\n        \"dataLabel\": \"<string>\",\n        \"dataValue\": \"<string>\"\n      },\n      {\n        \"dataLabel\": \"<string>\",\n        \"dataValue\": \"<string>\"\n      }\n    ]\n  },\n  \"emailAddress\": \"<email>\",\n  \"address\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/v1/transfers/beneficiaries"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												}
-											],
-											"cookie": [],
-											"responseTime": null,
-											"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": null,\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\",\n  \"errorCode\": null,\n  \"responseCode\": \"<string>\"\n}"
-										}
-									]
-								},
-								{
 									"name": "Beneficiary Already Exists",
 									"event": [
 										{
@@ -17950,298 +17688,6 @@
 									"response": [
 										{
 											"id": "d5557cba-ccf6-4f0f-a22d-4270389602c7",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Accept",
-														"value": "text/plain"
-													},
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "Authorization",
-														"value": "<API Key>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"accountName\": \" iL \",\n  \"accountNumber\": \"759117742\",\n  \"bankName\": \"Aju 6\\fW \",\n  \"beneficiaryName\": \"VxU\\tP\",\n  \"countryCode\": \"<string>\",\n  \"currencyRequirement\": {\n    \"name\": \"<string>\",\n    \"value\": \"<string>\",\n    \"forms\": [\n      {\n        \"dataLabel\": \"<string>\",\n        \"dataValue\": \"<string>\"\n      },\n      {\n        \"dataLabel\": \"<string>\",\n        \"dataValue\": \"<string>\"\n      }\n    ]\n  },\n  \"emailAddress\": \"<email>\",\n  \"address\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/v1/transfers/beneficiaries"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												}
-											],
-											"cookie": [],
-											"responseTime": null,
-											"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": null,\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\",\n  \"errorCode\": null,\n  \"responseCode\": \"<string>\"\n}"
-										}
-									]
-								},
-								{
-									"name": "Invalid Account number",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "e16b8c02-e97e-4858-b62e-f9b976b5b9df",
-												"exec": [
-													"// Verify that the response has a 'validationMessages' array\r",
-													"pm.test(\"Response has a 'validationMessages' array\", function () {\r",
-													"    const responseBody = pm.response.json();\r",
-													"    pm.expect(responseBody).to.have.property(\"validationMessages\").that.is.an(\"array\");\r",
-													"});\r",
-													"\r",
-													"// Verify that the 'validationMessages' array contains the expected error message\r",
-													"pm.test(\"Validation error message is 'Account Number can only contain digits' (Expected)\", function () {\r",
-													"    const validationMessages = pm.response.json().validationMessages;\r",
-													"    pm.expect(validationMessages).to.include(\"Account Number can only contain digits\");\r",
-													"});\r",
-													"\r",
-													"// Verify that 'successful' property is false\r",
-													"pm.test(\"'successful' property is false (Expected)\", function () {\r",
-													"    const successful = pm.response.json().successful;\r",
-													"    pm.expect(successful).to.be.false;\r",
-													"});\r",
-													"\r",
-													"// Verify that 'resultType' is 3\r",
-													"pm.test(\"Result type is 3 (Expected)\", function () {\r",
-													"    const resultType = pm.response.json().resultType;\r",
-													"    pm.expect(resultType).to.equal(3);\r",
-													"});\r",
-													"\r",
-													"// Verify that 'errorCode' property is 0\r",
-													"pm.test(\"'errorCode' property is 0 (Expected)\", function () {\r",
-													"    const errorCode = pm.response.json().errorCode;\r",
-													"    pm.expect(errorCode).to.equal(0);\r",
-													"});\r",
-													"\r",
-													"// Verify that 'responseCode' property is null\r",
-													"pm.test(\"'responseCode' property is null (Expected)\", function () {\r",
-													"    const responseCode = pm.response.json().responseCode;\r",
-													"    pm.expect(responseCode).to.be.null;\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										},
-										{
-											"listen": "prerequest",
-											"script": {
-												"id": "14ac2a38-1fbb-43e5-8b93-83663ea00ae1",
-												"exec": [],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"id": "18f68d75-4fb4-44f5-b32d-db2d8b70b2c0",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{business_access_token}}"
-											}
-										},
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"beneficiaryName\": \"Abdel Abdufa\",\n  \"bankName\": \"Providus\",\n  \"accountName\": \"Abdel Abdufa\",\n  \"accountNumber\": \"1010001fhj\",\n  \"emailAddress\": \"abdel@email.com\",\n  \"countryCode\": \"+234\",\n  \"address\": \"Abuja\",\n  \"CurrencyCode\": \"nil\",\n  \"BankRequirementValue\": \"nil\",\n  \"currencyRequirement\": {\n    \"name\": \"NGN\",\n    \"value\": \"100\",\n    \"forms\": [\n      {\n        \"dataLabel\": \"Money\",\n        \"dataValue\": \"Save Money\"\n      }\n    ]\n  }\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "https://transfer-dev.bank78.co/api/v1/transfers/beneficiaries"
-									},
-									"response": [
-										{
-											"id": "e43e52cf-e916-45d9-9fec-1077d8006255",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Accept",
-														"value": "text/plain"
-													},
-													{
-														"description": "Added as a part of security scheme: apikey",
-														"key": "Authorization",
-														"value": "<API Key>"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"accountName\": \" iL \",\n  \"accountNumber\": \"759117742\",\n  \"bankName\": \"Aju 6\\fW \",\n  \"beneficiaryName\": \"VxU\\tP\",\n  \"countryCode\": \"<string>\",\n  \"currencyRequirement\": {\n    \"name\": \"<string>\",\n    \"value\": \"<string>\",\n    \"forms\": [\n      {\n        \"dataLabel\": \"<string>\",\n        \"dataValue\": \"<string>\"\n      },\n      {\n        \"dataLabel\": \"<string>\",\n        \"dataValue\": \"<string>\"\n      }\n    ]\n  },\n  \"emailAddress\": \"<email>\",\n  \"address\": \"<string>\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl}}/api/v1/transfers/beneficiaries"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												}
-											],
-											"cookie": [],
-											"responseTime": null,
-											"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": null,\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\",\n  \"errorCode\": null,\n  \"responseCode\": \"<string>\"\n}"
-										}
-									]
-								},
-								{
-									"name": "Invalid Beneficiary Name",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "918113a2-0257-4c46-abd8-c19c4ebcaa1a",
-												"exec": [
-													"// Verify that the response has a 'result' object\r",
-													"pm.test(\"Response has a 'result' object\", function () {\r",
-													"    const responseBody = pm.response.json();\r",
-													"    pm.expect(responseBody).to.have.property(\"result\");\r",
-													"});\r",
-													"\r",
-													"// Verify that the 'result' object is null\r",
-													"pm.test(\"'result' object is null (Expected)\", function () {\r",
-													"    const result = pm.response.json().result;\r",
-													"    pm.expect(result).to.be.null;\r",
-													"});\r",
-													"\r",
-													"// Verify that the 'resultType' is 3\r",
-													"pm.test(\"Result type is 3 (Expected)\", function () {\r",
-													"    const resultType = pm.response.json().resultType;\r",
-													"    pm.expect(resultType).to.equal(3);\r",
-													"});\r",
-													"\r",
-													"// Verify that the 'message' property is \"Response has validation errors\"\r",
-													"pm.test(\"'message' property is 'Response has validation errors' (Expected)\", function () {\r",
-													"    const message = pm.response.json().message;\r",
-													"    pm.expect(message).to.equal(\"Response has validation errors\");\r",
-													"});\r",
-													"\r",
-													"// Verify that 'validationMessages' property contains \"Beneficiary Name can only contain alphabets\"\r",
-													"pm.test(\"Validation error message is 'Beneficiary Name can only contain alphabets' (Expected)\", function () {\r",
-													"    const validationMessages = pm.response.json().validationMessages;\r",
-													"    pm.expect(validationMessages).to.include(\"Beneficiary Name can only contain alphabets\");\r",
-													"});\r",
-													"\r",
-													"// Verify that 'successful' property is false\r",
-													"pm.test(\"'successful' property is false (Expected)\", function () {\r",
-													"    const successful = pm.response.json().successful;\r",
-													"    pm.expect(successful).to.be.false;\r",
-													"});\r",
-													"\r",
-													"// Verify that 'errorCode' property is 0\r",
-													"pm.test(\"'errorCode' property is 0 (Expected)\", function () {\r",
-													"    const errorCode = pm.response.json().errorCode;\r",
-													"    pm.expect(errorCode).to.equal(0);\r",
-													"});\r",
-													"\r",
-													"// Verify that 'responseCode' property is null\r",
-													"pm.test(\"'responseCode' property is null (Expected)\", function () {\r",
-													"    const responseCode = pm.response.json().responseCode;\r",
-													"    pm.expect(responseCode).to.be.null;\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										},
-										{
-											"listen": "prerequest",
-											"script": {
-												"id": "82ad15f4-b7b0-4038-80b0-b1d9ce054541",
-												"exec": [],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"id": "e4710697-a4e8-4d73-baf9-cadae336bef5",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{business_access_token}}"
-											}
-										},
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Accept",
-												"value": "text/plain"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"beneficiaryName\": \"Abdel123 Lover\",\n  \"bankName\": \"Providus\",\n  \"accountName\": \"Abdel Abdufa\",\n  \"accountNumber\": \"1010001422\",\n  \"emailAddress\": \"abdel@email.com\",\n  \"countryCode\": \"+234\",\n  \"address\": \"Abuja\",\n  \"CurrencyCode\": \"nil\",\n  \"BankRequirementValue\": \"nil\",\n  \"currencyRequirement\": {\n    \"name\": \"NGN\",\n    \"value\": \"100\",\n    \"forms\": [\n      {\n        \"dataLabel\": \"Money\",\n        \"dataValue\": \"Save Money\"\n      }\n    ]\n  }\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": "https://transfer-dev.bank78.co/api/v1/transfers/beneficiaries"
-									},
-									"response": [
-										{
-											"id": "23d48470-5ef5-49ce-8ab7-82b1d473121c",
 											"name": "Success",
 											"originalRequest": {
 												"method": "POST",
@@ -18702,6 +18148,503 @@
 								}
 							],
 							"id": "0c93a519-df97-452d-9f7e-18a9e4860c73"
+						},
+						{
+							"name": "Invalid Account number",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e16b8c02-e97e-4858-b62e-f9b976b5b9df",
+										"exec": [
+											"// Verify that the response has a 'validationMessages' array\r",
+											"pm.test(\"Response has a 'validationMessages' array\", function () {\r",
+											"    const responseBody = pm.response.json();\r",
+											"    pm.expect(responseBody).to.have.property(\"validationMessages\").that.is.an(\"array\");\r",
+											"});\r",
+											"\r",
+											"// Verify that the 'validationMessages' array contains the expected error message\r",
+											"pm.test(\"Validation error message is 'Account Number can only contain digits' (Expected)\", function () {\r",
+											"    const validationMessages = pm.response.json().validationMessages;\r",
+											"    pm.expect(validationMessages).to.include(\"Account Number can only contain digits\");\r",
+											"});\r",
+											"\r",
+											"// Verify that 'successful' property is false\r",
+											"pm.test(\"'successful' property is false (Expected)\", function () {\r",
+											"    const successful = pm.response.json().successful;\r",
+											"    pm.expect(successful).to.be.false;\r",
+											"});\r",
+											"\r",
+											"// Verify that 'resultType' is 3\r",
+											"pm.test(\"Result type is 3 (Expected)\", function () {\r",
+											"    const resultType = pm.response.json().resultType;\r",
+											"    pm.expect(resultType).to.equal(3);\r",
+											"});\r",
+											"\r",
+											"// Verify that 'errorCode' property is 0\r",
+											"pm.test(\"'errorCode' property is 0 (Expected)\", function () {\r",
+											"    const errorCode = pm.response.json().errorCode;\r",
+											"    pm.expect(errorCode).to.equal(0);\r",
+											"});\r",
+											"\r",
+											"// Verify that 'responseCode' property is null\r",
+											"pm.test(\"'responseCode' property is null (Expected)\", function () {\r",
+											"    const responseCode = pm.response.json().responseCode;\r",
+											"    pm.expect(responseCode).to.be.null;\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "14ac2a38-1fbb-43e5-8b93-83663ea00ae1",
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "18f68d75-4fb4-44f5-b32d-db2d8b70b2c0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"beneficiaryName\": \"Abdel Abdufa\",\n  \"bankName\": \"Providus\",\n  \"accountName\": \"Abdel Abdufa\",\n  \"accountNumber\": \"1010001fhj\",\n  \"emailAddress\": \"abdel@email.com\",\n  \"countryCode\": \"+234\",\n  \"address\": \"Abuja\",\n  \"CurrencyCode\": \"nil\",\n  \"BankRequirementValue\": \"nil\",\n  \"currencyRequirement\": {\n    \"name\": \"NGN\",\n    \"value\": \"100\",\n    \"forms\": [\n      {\n        \"dataLabel\": \"Money\",\n        \"dataValue\": \"Save Money\"\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://transfer-dev.bank78.co/api/v1/transfers/beneficiaries"
+							},
+							"response": [
+								{
+									"id": "e43e52cf-e916-45d9-9fec-1077d8006255",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"accountName\": \" iL \",\n  \"accountNumber\": \"759117742\",\n  \"bankName\": \"Aju 6\\fW \",\n  \"beneficiaryName\": \"VxU\\tP\",\n  \"countryCode\": \"<string>\",\n  \"currencyRequirement\": {\n    \"name\": \"<string>\",\n    \"value\": \"<string>\",\n    \"forms\": [\n      {\n        \"dataLabel\": \"<string>\",\n        \"dataValue\": \"<string>\"\n      },\n      {\n        \"dataLabel\": \"<string>\",\n        \"dataValue\": \"<string>\"\n      }\n    ]\n  },\n  \"emailAddress\": \"<email>\",\n  \"address\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/transfers/beneficiaries"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": null,\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\",\n  \"errorCode\": null,\n  \"responseCode\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "New Beneficiary",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5af92fd5-fc1d-4aa8-89fd-6af6725c1a82",
+										"exec": [
+											"// Verify that the response has a result object\r",
+											"pm.test(\"Response has a 'result' object\", function () {\r",
+											"    const responseBody = pm.response.json();\r",
+											"    pm.expect(responseBody).to.have.property(\"result\");\r",
+											"});\r",
+											"\r",
+											"// Verify that the 'result' object has the expected 'message' property\r",
+											"pm.test(\"Result object has 'message' property with value 'Beneficiary successfully added'\", function () {\r",
+											"    const result = pm.response.json().result;\r",
+											"    pm.expect(result).to.have.property(\"message\", \"Beneficiary successfully added\");\r",
+											"});\r",
+											"\r",
+											"// Verify that the 'resultType' is 1\r",
+											"pm.test(\"Result type is 1 (Expected)\", function () {\r",
+											"    const resultType = pm.response.json().resultType;\r",
+											"    pm.expect(resultType).to.equal(1);\r",
+											"});\r",
+											"\r",
+											"// Verify that the 'message' property is null\r",
+											"pm.test(\"'message' property is null (Expected)\", function () {\r",
+											"    const message = pm.response.json().message;\r",
+											"    pm.expect(message).to.be.null;\r",
+											"});\r",
+											"\r",
+											"// Verify that 'validationMessages' property is null\r",
+											"pm.test(\"'validationMessages' property is null (Expected)\", function () {\r",
+											"    const validationMessages = pm.response.json().validationMessages;\r",
+											"    pm.expect(validationMessages).to.be.null;\r",
+											"});\r",
+											"\r",
+											"// Verify that 'successful' property is true\r",
+											"pm.test(\"'successful' property is true (Expected)\", function () {\r",
+											"    const successful = pm.response.json().successful;\r",
+											"    pm.expect(successful).to.be.true;\r",
+											"});\r",
+											"\r",
+											"// Verify that 'errorCode' property is 0\r",
+											"pm.test(\"'errorCode' property is 0 (Expected)\", function () {\r",
+											"    const errorCode = pm.response.json().errorCode;\r",
+											"    pm.expect(errorCode).to.equal(0);\r",
+											"});\r",
+											"\r",
+											"// Verify that 'responseCode' property is null\r",
+											"pm.test(\"'responseCode' property is null (Expected)\", function () {\r",
+											"    const responseCode = pm.response.json().responseCode;\r",
+											"    pm.expect(responseCode).to.be.null;\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "87f3fe34-4336-44de-953b-a61339a92fe3",
+										"exec": [
+											"// Function to generate a random 10-digit accountNumber\r",
+											"function generateRandomAccountNumber() {\r",
+											"    return Math.floor(Math.random() * 9000000000) + 1000000000;\r",
+											"}\r",
+											"\r",
+											"// Function to generate a random email address\r",
+											"function generateRandomEmail() {\r",
+											"    const emailDomain = \"example.com\"; // You can replace this with your desired domain\r",
+											"    const randomString = Math.random().toString(36).substring(7);\r",
+											"    return `random_${randomString}@${emailDomain}`;\r",
+											"}\r",
+											"\r",
+											"// Function to generate random alphabetic characters\r",
+											"function generateRandomAlphabets(length) {\r",
+											"    const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';\r",
+											"    let result = '';\r",
+											"    for (let i = 0; i < length; i++) {\r",
+											"        const randomIndex = Math.floor(Math.random() * characters.length);\r",
+											"        result += characters.charAt(randomIndex);\r",
+											"    }\r",
+											"    return result;\r",
+											"}\r",
+											"\r",
+											"// Generate random values\r",
+											"// const randomAccountNumber = generateRandomAccountNumber();\r",
+											"// const randomEmail = generateRandomEmail();\r",
+											"// const randomAlphabets = generateRandomAlphabets(10); // Generate 10 random alphabetic characters\r",
+											"\r",
+											"// // Update the requestBody with random values\r",
+											"// const requestBody = {\r",
+											"//     \"beneficiaryName\": randomAlphabets,\r",
+											"//     \"bankName\": \"Providus\",\r",
+											"//     \"accountName\": randomAlphabets,\r",
+											"//     \"accountNumber\": randomAccountNumber.toString(), // Convert to string\r",
+											"//     \"emailAddress\": randomEmail,\r",
+											"//     \"countryCode\": \"+234\",\r",
+											"//     \"address\": \"Lagos\",\r",
+											"//     \"currencyRequirement\": {\r",
+											"//         \"name\": \"NGN\",\r",
+											"//         \"value\": \"100\",\r",
+											"//         \"forms\": [\r",
+											"//             {\r",
+											"//                 \"dataLabel\": \"new beneficiary\",\r",
+											"//                 \"dataValue\": \"Save\"\r",
+											"//             }\r",
+											"//         ]\r",
+											"//     }\r",
+											"// };\r",
+											"\r",
+											"// pm.request.body.raw = JSON.stringify(requestBody);\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "dbe23968-728d-433a-8574-f9c285db1ba6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "// \n\n{\n  \"beneficiaryName\": \"Udem Chi\",\n  \"bankName\": \"Bababdus\",\n  \"accountName\": \"Udeme Chi\",\n  \"accountNumber\": \"{{$randomBankAccount}}\",\n  \"emailAddress\": \"udeme@assurdly.com\",\n  \"countryCode\": \"+234\",\n  \"address\": \"Lagos\",\n  \"bankRequirementId\": 1,\n  \"CurrencyCode\": \"NGN\",\n  \"BankRequirementValue\": \"110072\",\n  \"nameEnquiryId\": 1680,\n  \"bankId\": 335\n  \n    \n  }",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://transfer-dev.bank78.co/api/v1/transfers/beneficiaries"
+							},
+							"response": [
+								{
+									"id": "74aba41d-8a87-41b2-ac1b-5698f1cf9892",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"accountName\": \" iL \",\n  \"accountNumber\": \"759117742\",\n  \"bankName\": \"Aju 6\\fW \",\n  \"beneficiaryName\": \"VxU\\tP\",\n  \"countryCode\": \"<string>\",\n  \"currencyRequirement\": {\n    \"name\": \"<string>\",\n    \"value\": \"<string>\",\n    \"forms\": [\n      {\n        \"dataLabel\": \"<string>\",\n        \"dataValue\": \"<string>\"\n      },\n      {\n        \"dataLabel\": \"<string>\",\n        \"dataValue\": \"<string>\"\n      }\n    ]\n  },\n  \"emailAddress\": \"<email>\",\n  \"address\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/transfers/beneficiaries"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": null,\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\",\n  \"errorCode\": null,\n  \"responseCode\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Invalid Beneficiary Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "918113a2-0257-4c46-abd8-c19c4ebcaa1a",
+										"exec": [
+											"// Verify that the response has a 'result' object\r",
+											"pm.test(\"Response has a 'result' object\", function () {\r",
+											"    const responseBody = pm.response.json();\r",
+											"    pm.expect(responseBody).to.have.property(\"result\");\r",
+											"});\r",
+											"\r",
+											"// Verify that the 'result' object is null\r",
+											"pm.test(\"'result' object is null (Expected)\", function () {\r",
+											"    const result = pm.response.json().result;\r",
+											"    pm.expect(result).to.be.null;\r",
+											"});\r",
+											"\r",
+											"// Verify that the 'resultType' is 3\r",
+											"pm.test(\"Result type is 3 (Expected)\", function () {\r",
+											"    const resultType = pm.response.json().resultType;\r",
+											"    pm.expect(resultType).to.equal(3);\r",
+											"});\r",
+											"\r",
+											"// Verify that the 'message' property is \"Response has validation errors\"\r",
+											"pm.test(\"'message' property is 'Response has validation errors' (Expected)\", function () {\r",
+											"    const message = pm.response.json().message;\r",
+											"    pm.expect(message).to.equal(\"Response has validation errors\");\r",
+											"});\r",
+											"\r",
+											"// Verify that 'validationMessages' property contains \"Beneficiary Name can only contain alphabets\"\r",
+											"pm.test(\"Validation error message is 'Beneficiary Name can only contain alphabets' (Expected)\", function () {\r",
+											"    const validationMessages = pm.response.json().validationMessages;\r",
+											"    pm.expect(validationMessages).to.include(\"Beneficiary Name can only contain alphabets\");\r",
+											"});\r",
+											"\r",
+											"// Verify that 'successful' property is false\r",
+											"pm.test(\"'successful' property is false (Expected)\", function () {\r",
+											"    const successful = pm.response.json().successful;\r",
+											"    pm.expect(successful).to.be.false;\r",
+											"});\r",
+											"\r",
+											"// Verify that 'errorCode' property is 0\r",
+											"pm.test(\"'errorCode' property is 0 (Expected)\", function () {\r",
+											"    const errorCode = pm.response.json().errorCode;\r",
+											"    pm.expect(errorCode).to.equal(0);\r",
+											"});\r",
+											"\r",
+											"// Verify that 'responseCode' property is null\r",
+											"pm.test(\"'responseCode' property is null (Expected)\", function () {\r",
+											"    const responseCode = pm.response.json().responseCode;\r",
+											"    pm.expect(responseCode).to.be.null;\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "82ad15f4-b7b0-4038-80b0-b1d9ce054541",
+										"exec": [],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "e4710697-a4e8-4d73-baf9-cadae336bef5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"beneficiaryName\": \"Abdel123 Lover\",\n  \"bankName\": \"Providus\",\n  \"accountName\": \"Abdel Abdufa\",\n  \"accountNumber\": \"1010001422\",\n  \"emailAddress\": \"abdel@email.com\",\n  \"countryCode\": \"+234\",\n  \"address\": \"Abuja\",\n  \"CurrencyCode\": \"nil\",\n  \"BankRequirementValue\": \"nil\",\n  \"currencyRequirement\": {\n    \"name\": \"NGN\",\n    \"value\": \"100\",\n    \"forms\": [\n      {\n        \"dataLabel\": \"Money\",\n        \"dataValue\": \"Save Money\"\n      }\n    ]\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://transfer-dev.bank78.co/api/v1/transfers/beneficiaries"
+							},
+							"response": [
+								{
+									"id": "23d48470-5ef5-49ce-8ab7-82b1d473121c",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"accountName\": \" iL \",\n  \"accountNumber\": \"759117742\",\n  \"bankName\": \"Aju 6\\fW \",\n  \"beneficiaryName\": \"VxU\\tP\",\n  \"countryCode\": \"<string>\",\n  \"currencyRequirement\": {\n    \"name\": \"<string>\",\n    \"value\": \"<string>\",\n    \"forms\": [\n      {\n        \"dataLabel\": \"<string>\",\n        \"dataValue\": \"<string>\"\n      },\n      {\n        \"dataLabel\": \"<string>\",\n        \"dataValue\": \"<string>\"\n      }\n    ]\n  },\n  \"emailAddress\": \"<email>\",\n  \"address\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/transfers/beneficiaries"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"message\": \"<string>\"\n  },\n  \"resultType\": null,\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\",\n  \"errorCode\": null,\n  \"responseCode\": \"<string>\"\n}"
+								}
+							]
 						}
 					],
 					"id": "5184dc61-86cc-4b01-8cf8-1ed734524798"
