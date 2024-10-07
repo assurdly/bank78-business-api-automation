@@ -23851,7 +23851,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"emailAddress\": \"Testing@mailinator.com\",\n    \"userName\": \"Testing@mailinator.com\",\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"Mailinator\",\n    \"roleId\": 2\n}",
+									"raw": "{\n    \"emailAddress\": \"{{$randomFirstName}}@mailinator.com\",\n    \"userName\": \"{{$randomFirstName}}@mailinator.com\",\n    \"inviteUrl\": \"https://app-dev.bank78.co/activate/account\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"Mailinator\",\n    \"roleId\": 2\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
