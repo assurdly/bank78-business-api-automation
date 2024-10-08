@@ -15196,51 +15196,36 @@
 					"name": "Buy Cable package",
 					"item": [
 						{
-							"name": "Successful cable bundle purchase",
+							"name": "No decoder number",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
 										"id": "36f5a182-cdf3-4d56-b57e-b6ff59f446f9",
 										"exec": [
-											"pm.test(\"Response status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
+											"pm.test(\"Response code is 400 (Bad Request)\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Response code is 200 for success\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											"\r",
-											"pm.test(\"The 'amount' field should be a number\", function () {\r",
-											"    const responseData = pm.response.json();\r",
-											"    pm.expect(responseData).to.be.an('object');\r",
-											"    pm.expect(responseData.result.amount).to.be.a('number');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Response structure and properties for 200\", function () {\r",
-											"    pm.expect(pm.response.json()).to.have.property(\"hasResult\", true);\r",
-											"    pm.expect(pm.response.json()).to.have.property(\"result\");\r",
-											"    pm.expect(pm.response.json()).to.have.property(\"resultType\", 1);\r",
-											"    pm.expect(pm.response.json()).to.have.property(\"message\", \"Cable TV Subscription successful\");\r",
-											"    pm.expect(pm.response.json()).to.have.property(\"successful\", true);\r",
+											"pm.test(\"Response structure and properties for 400\", function () {\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"hasResult\", false);\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"result\", null);\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"resultType\", 3);\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"message\", \"Response has validation errors\");\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"validationMessages\");\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"successful\", false);\r",
 											"    pm.expect(pm.response.json()).to.have.property(\"errorCode\", 0);\r",
-											"    pm.expect(pm.response.json()).to.have.property(\"responseCode\", \"200\");\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Result object properties for 200\", function () {\r",
-											"    var result = pm.response.json().result;\r",
-											"    \r",
-											"    pm.expect(result).to.have.property(\"message\", \"Cable TV Subscription successful\");\r",
-											"    pm.expect(result).to.have.property(\"status\", \"Success\");\r",
-											"    pm.expect(result).to.have.property(\"billToken\").to.be.null;\r",
+											"    pm.expect(pm.response.json()).to.not.have.property(\"responseCode\", \"null\");\r",
 											"});\r",
 											"\r",
 											"\r",
-											"pm.test(\"Check if transaction reference is present\", function () {\r",
-											"    var responseBody = pm.response.json();\r",
-											"    pm.expect(responseBody.result.reference).to.not.be.undefined;\r",
-											"});"
+											"pm.test(\"Error message says decoder field is required\", function () {\r",
+											"    var validationMessages = pm.response.json().validationMessages;\r",
+											"    pm.expect(validationMessages).to.be.an(\"array\").that.includes(\"The Decoder field is required.\");\r",
+											"});\r",
+											"postman.setNextRequest(\"Wrong bundle amount\")\r",
+											"\r",
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -15261,34 +15246,14 @@
 											"    }\r",
 											"    return result;\r",
 											"}\r",
-											"\r",
-											"// Update the requestBody with a random clientRequestId\r",
-											"// const randomClientId = generateRandomString(10); // Change 10 to the desired length\r",
-											"// const requestBody = {\r",
-											"//     \"amount\": \"7200\",\r",
-											"//     \"billId\": \"6\",\r",
-											"//     \"channel\": \"1\",\r",
-											"//     \"clientRequestId\": randomClientId,\r",
-											"//     \"decoder\": \"123445678890\",\r",
-											"//     \"packageId\": \"1\",\r",
-											"//     \"sourceAccountNumber\": \"{{sourceAccount}}\",\r",
-											"//     \"transactionPin\": \"6383\",\r",
-											"//     \"narration\": \"Buy Cable bundle\",\r",
-											"//     \"saveBeneficiary\": \"false\",\r",
-											"//     \"deviceId\": \"xphone\",\r",
-											"//     \"beneficiaryName\": \"Paul\",\r",
-											"//     \"beneficiaryPhone\": \"08185597979\",\r",
-											"//     \"beneficiaryEmail\": \"12345\"\r",
-											"// };\r",
-											"\r",
-											"//pm.request.body.raw = JSON.stringify(requestBody);"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
 									}
 								}
 							],
-							"id": "b1e064fc-6110-4351-aef9-241c01920896",
+							"id": "0a717092-6c72-4cad-92df-b3e496cdde2b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -15317,7 +15282,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"7200\",\n  \"billId\": \"13\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"payforcabletv123\",\n  \"decoder\": \"123445678890\",\n  \"packageId\": \"72\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"0987\",\n  \"narration\": \"Buy Cable bundle\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaryName\": \"Paul\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"12345\"\n}",
+									"raw": "{\n  \"amount\": \"7200\",\n  \"billId\": \"13\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"payforcabletv123\",\n  \"decoder\": \"\",\n  \"packageId\": \"72\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"0987\",\n  \"narration\": \"Buy Cable bundle\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaryName\": \"Paul\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"12345\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -15329,7 +15294,7 @@
 							},
 							"response": [
 								{
-									"id": "ef985cb3-112f-4f4f-a813-0bb449280cbc",
+									"id": "9fac0c74-f074-4e6b-8b32-6e38990e00e1",
 									"name": "Success",
 									"originalRequest": {
 										"method": "POST",
@@ -15517,35 +15482,51 @@
 							]
 						},
 						{
-							"name": "No decoder number",
+							"name": "Successful cable bundle purchase",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
 										"id": "36f5a182-cdf3-4d56-b57e-b6ff59f446f9",
 										"exec": [
-											"pm.test(\"Response code is 400 (Bad Request)\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
+											"pm.test(\"Response status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Response structure and properties for 400\", function () {\r",
-											"    pm.expect(pm.response.json()).to.have.property(\"hasResult\", false);\r",
-											"    pm.expect(pm.response.json()).to.have.property(\"result\", null);\r",
-											"    pm.expect(pm.response.json()).to.have.property(\"resultType\", 3);\r",
-											"    pm.expect(pm.response.json()).to.have.property(\"message\", \"Response has validation errors\");\r",
-											"    pm.expect(pm.response.json()).to.have.property(\"validationMessages\");\r",
-											"    pm.expect(pm.response.json()).to.have.property(\"successful\", false);\r",
+											"pm.test(\"Response code is 200 for success\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"The 'amount' field should be a number\", function () {\r",
+											"    const responseData = pm.response.json();\r",
+											"    pm.expect(responseData).to.be.an('object');\r",
+											"    pm.expect(responseData.result.amount).to.be.a('number');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response structure and properties for 200\", function () {\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"hasResult\", true);\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"result\");\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"resultType\", 1);\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"message\", \"Cable TV Subscription successful\");\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"successful\", true);\r",
 											"    pm.expect(pm.response.json()).to.have.property(\"errorCode\", 0);\r",
-											"    pm.expect(pm.response.json()).to.not.have.property(\"responseCode\", \"null\");\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"responseCode\", \"200\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Result object properties for 200\", function () {\r",
+											"    var result = pm.response.json().result;\r",
+											"    \r",
+											"    pm.expect(result).to.have.property(\"message\", \"Cable TV Subscription successful\");\r",
+											"    pm.expect(result).to.have.property(\"status\", \"Success\");\r",
+											"    pm.expect(result).to.have.property(\"billToken\").to.be.null;\r",
 											"});\r",
 											"\r",
 											"\r",
-											"pm.test(\"Error message says decoder field is required\", function () {\r",
-											"    var validationMessages = pm.response.json().validationMessages;\r",
-											"    pm.expect(validationMessages).to.be.an(\"array\").that.includes(\"The Decoder field is required.\");\r",
-											"});\r",
-											"\r",
-											""
+											"pm.test(\"Check if transaction reference is present\", function () {\r",
+											"    var responseBody = pm.response.json();\r",
+											"    pm.expect(responseBody.result.reference).to.not.be.undefined;\r",
+											"});"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -15566,14 +15547,34 @@
 											"    }\r",
 											"    return result;\r",
 											"}\r",
-											""
+											"\r",
+											"// Update the requestBody with a random clientRequestId\r",
+											"// const randomClientId = generateRandomString(10); // Change 10 to the desired length\r",
+											"// const requestBody = {\r",
+											"//     \"amount\": \"7200\",\r",
+											"//     \"billId\": \"6\",\r",
+											"//     \"channel\": \"1\",\r",
+											"//     \"clientRequestId\": randomClientId,\r",
+											"//     \"decoder\": \"123445678890\",\r",
+											"//     \"packageId\": \"1\",\r",
+											"//     \"sourceAccountNumber\": \"{{sourceAccount}}\",\r",
+											"//     \"transactionPin\": \"6383\",\r",
+											"//     \"narration\": \"Buy Cable bundle\",\r",
+											"//     \"saveBeneficiary\": \"false\",\r",
+											"//     \"deviceId\": \"xphone\",\r",
+											"//     \"beneficiaryName\": \"Paul\",\r",
+											"//     \"beneficiaryPhone\": \"08185597979\",\r",
+											"//     \"beneficiaryEmail\": \"12345\"\r",
+											"// };\r",
+											"\r",
+											"//pm.request.body.raw = JSON.stringify(requestBody);"
 										],
 										"type": "text/javascript",
 										"packages": {}
 									}
 								}
 							],
-							"id": "0a717092-6c72-4cad-92df-b3e496cdde2b",
+							"id": "b1e064fc-6110-4351-aef9-241c01920896",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -15602,7 +15603,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"amount\": \"7200\",\n  \"billId\": \"13\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"payforcabletv123\",\n  \"decoder\": \"\",\n  \"packageId\": \"72\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"0987\",\n  \"narration\": \"Buy Cable bundle\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaryName\": \"Paul\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"12345\"\n}",
+									"raw": "{\n  \"amount\": \"7200\",\n  \"billId\": \"13\",\n  \"channel\": \"1\",\n  \"clientRequestId\": \"payforcabletv123\",\n  \"decoder\": \"123445678890\",\n  \"packageId\": \"72\",\n  \"sourceAccountNumber\": \"{{sourceAccount}}\",\n  \"transactionPin\": \"0987\",\n  \"narration\": \"Buy Cable bundle\",\n  \"saveBeneficiary\": \"false\",\n  \"deviceId\": \"xphone\",\n  \"beneficiaryName\": \"Paul\",\n  \"beneficiaryPhone\": \"08185597979\",\n  \"beneficiaryEmail\": \"12345\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -15614,7 +15615,7 @@
 							},
 							"response": [
 								{
-									"id": "9fac0c74-f074-4e6b-8b32-6e38990e00e1",
+									"id": "ef985cb3-112f-4f4f-a813-0bb449280cbc",
 									"name": "Success",
 									"originalRequest": {
 										"method": "POST",
