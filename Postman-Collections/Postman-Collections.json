@@ -802,7 +802,7 @@
 							]
 						},
 						{
-							"name": "Signup - RC/BN numeric character Check",
+							"name": "Signup - RC/BN numeric character input",
 							"event": [
 								{
 									"listen": "test",
@@ -1021,7 +1021,7 @@
 							]
 						},
 						{
-							"name": "Signup - RC/BN invalid character",
+							"name": "Signup - RC/BN invalid character input",
 							"event": [
 								{
 									"listen": "test",
