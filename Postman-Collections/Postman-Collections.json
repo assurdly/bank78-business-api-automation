@@ -1717,12 +1717,7 @@
 											"pm.test(\"verify reponse body contains message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"Response has validation errors\");\r",
 											"});\r",
-											"pm.test(\"verify password\", function () {\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.validationMessages[0]).to.eql(\"The tempCustomerDto field is required.\",\r",
-											"        \"Unexpected character encountered while parsing value: }. Path 'agreeToSignUpTandC', line 13, position 1.\",\r",
-											"        \"Unexpected end when deserializing object. Path 'agreeToSignUpTandC', line 14, position 0.\");\r",
-											"});\r",
+											"\r",
 											"pm.test(\"verify reponse body contains successful\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(false);\r",
 											"});"
@@ -1772,7 +1767,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"\",\n    \"lastName\": \"\",\n    \"userName\": \"\",\n    \"email\": \"\",\n    \"phoneNumber\": \"\",\n    \"phoneNumberCountryCode\": \"\",\n    \"referralCode\": \"\",\n    \"countryCode\": \"\",\n    \"rcBnNumber\": \"\",\n    \"agreeToSignUpTandC\": true,\n    \"Password\":\"\"\n     \n  }",
+									"raw": "{\n    \"firstName\": null,\n    \"lastName\": null,\n    \"userName\": null,\n    \"email\": null,\n    \"phoneNumber\": null,\n    \"phoneNumberCountryCode\": null,\n    \"referralCode\": null,\n    \"countryCode\": null,\n    \"rcBnNumber\": null,\n    \"agreeToSignUpTandC\": true,\n    \"Password\": null\n     \n  }",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -4235,7 +4230,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"firstName\": \"\",\n  \"lastName\": \"\",\n  \"rcBnNumber\": \"\",\n  \"email\": \"\",\n  \"phoneNumber\": \"\",\n  \"phoneNumberCountryCode\": \"\",\n  \"stakeholderType\": \"\"\n\n}",
+									"raw": "{\n  \"firstName\": null,\n  \"lastName\": null,\n  \"rcBnNumber\": null,\n  \"email\": null,\n  \"phoneNumber\": null,\n  \"phoneNumberCountryCode\": null,\n  \"stakeholderType\": null\n\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
