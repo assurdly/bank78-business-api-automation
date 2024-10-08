@@ -27287,7 +27287,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{business_access_token}}"
+								"token": "{{business_token}}"
 							}
 						},
 						"method": "PUT",
