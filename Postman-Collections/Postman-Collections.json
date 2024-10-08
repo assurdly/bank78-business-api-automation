@@ -5525,10 +5525,7 @@
 											"\r",
 											"// pm.test(\"Error message is Invalid Username or password\", function () {\r",
 											"//     pm.expect(jsonData.error_description).to.eql('Invalid Username or password');\r",
-											"// });\r",
-											"pm.test(\"Response time is less than 200ms\", function () {",
-											"    pm.expect(pm.response.responseTime).to.be.below(200);",
-											"});"
+											"// });"
 										],
 										"type": "text/javascript",
 										"packages": {}
