@@ -311,7 +311,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"Franc\",\n    \"userName\": \"{{bus_email}}\",\n    \"email\": \"{{bus_email}}\",\n    \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"countryCode\": \"NG\",\n    \"password\": \"Assurdly01!\",\n    \"rcBnNumber\": 567777,\n    \"businessName\": \"{{$randomFirstName}} ltd\",\n    \"agreeToSignUpTandC\": true,\n    \"DeviceId\": 158506797645630,\n    \"businessTypeId\": 1,\n    \"businessType\": \"Business Name\"\n}",
+									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"Franc\",\n    \"userName\": \"{{bus_email}}\",\n    \"email\": \"{{bus_email}}\",\n    \"phoneNumber\": \"9078787879\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"countryCode\": \"NG\",\n    \"password\": \"Assurdly01!\",\n    \"rcBnNumber\": 567777,\n    \"businessName\": \"{{$randomFirstName}} ltd\",\n    \"agreeToSignUpTandC\": true,\n    \"DeviceId\": 158506797645630,\n    \"businessTypeId\": 1,\n    \"businessType\": \"Business Name\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -607,7 +607,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"Franc\",\n    \"userName\": \"{{bus_email}}\",\n    \"email\": \"{{bus_email}}\",\n    \"phoneNumber\": \"7011725297\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"countryCode\": \"NG\",\n    \"password\": \"Assurdly01!\",\n    \"rcBnNumber\": 567777,\n    \"businessName\": \"{{$randomFirstName}} ltd\",\n    \"agreeToSignUpTandC\": true,\n    \"DeviceId\": 158506797645630,\n    \"businessTypeId\": 1,\n    \"businessType\": \"Business Name\"\n}",
+									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"Franc\",\n    \"userName\": \"{{bus_email}}\",\n    \"email\": \"{{bus_email}}\",\n    \"phoneNumber\": \"9078787878\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"countryCode\": \"NG\",\n    \"password\": \"Assurdly01!\",\n    \"rcBnNumber\": 567777,\n    \"businessName\": \"{{$randomFirstName}} ltd\",\n    \"agreeToSignUpTandC\": true,\n    \"DeviceId\": 158506797645630,\n    \"businessTypeId\": 1,\n    \"businessType\": \"Business Name\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
