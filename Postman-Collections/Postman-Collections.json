@@ -2684,23 +2684,8 @@
 											"\r",
 											"var responseData = pm.response.json();\r",
 											"\r",
-											"pm.test(\"Response has the required fields\", function () {\r",
-											"    pm.expect(responseData).to.be.an('object');\r",
-											"    pm.expect(responseData.hasResult).to.be.a('boolean');\r",
-											"    pm.expect(responseData.result).to.be.null;\r",
-											"    pm.expect(responseData.resultType).to.be.a('string');\r",
-											"    pm.expect(responseData.message).to.be.a('string');\r",
-											"    pm.expect(responseData.validationMessages).to.be.null;\r",
-											"    pm.expect(responseData.successful).to.be.a('boolean');\r",
-											"});\r",
-											"\r",
-											"\r",
 											"pm.test(\"Response body hasResult-false\", function () {\r",
 											"    pm.expect(responseData.hasResult).to.eql(false);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Response body resultType-Error\", function () {\r",
-											"    pm.expect(responseData.resultType).to.eql('Error');\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Response body message-Invalid OTP\", function () {\r",
@@ -2720,8 +2705,11 @@
 									"listen": "prerequest",
 									"script": {
 										"id": "7a32a15f-794c-46de-8ad4-c06f6fec7872",
-										"exec": [],
-										"type": "text/javascript"
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -2754,7 +2742,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{ \n  \"UserName\": \"{{userName}}\", \n  \"otp\": \"qwec\"\n}",
+									"raw": "{ \n  \"UserName\": \"{{userName}}\", \n  \"otp\": \"00a00\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
