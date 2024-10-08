@@ -5190,8 +5190,8 @@
 											"    pm.expect(jsonData.error).to.be.a('string');\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Error is invalid_grant\", function () {\r",
-											"    pm.expect(jsonData.error).to.eql('invalid_grant');\r",
+											"pm.test(\"Error is unauthorized_client\", function () {\r",
+											"    pm.expect(jsonData.error).to.eql('unauthorized_client');\r",
 											"});\r",
 											"\r",
 											""
