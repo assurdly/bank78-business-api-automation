@@ -2315,7 +2315,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{ \n  \"UserName\": \"{{bus_username}}\", \n  \"otp\": \"307356\"\n}",
+									"raw": "{ \n  \"UserName\": \"{{bus_email}}\", \n  \"otp\": \"307356\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
