@@ -3796,7 +3796,8 @@
 											"    pm.expect(jsonData.successful).to.eql(false);\r",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -3829,7 +3830,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"firstName\": \"1234\",\n  \"lastName\": \"1234\",\n  \"rcBnNumber\": \"hdkakfnkwfnwlkl\",\n  \"email\": \"\",\n  \"phoneNumber\": \"08185597962\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"stakeholderType\": \"Director\"\n\n}",
+									"raw": "{\n  \"firstName\": \"1234\",\n  \"lastName\": \"1234\",\n  \"rcBnNumber\": \"hdkakfnkwfnwlkl\",\n  \"email\": null,\n  \"phoneNumber\": \"08185597962\",\n  \"phoneNumberCountryCode\": \"+234\",\n  \"stakeholderType\": \"Director\"\n\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -20641,7 +20642,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"amount\": 100,\n    \"transactionPin\": \"6543\",\n    \"channel\": \"Web\",\n    \"sourceAccountNo\": \"{{sourceAccount}}\",\n    \"saveBeneficiary\": false,\n    \"deviceId\": \"xphone\",\n    \"canSchedule\": true,\n    \"scheduleInfo\": {\n        \"scheduledStartDate\": \"{{futureDate}}\",\n        \"repeatFrequency\": \"never\",\n        \"repeatWeekDay\": 0,\n        \"repeatMonthDay\": 0,\n        \"repeatCount\": 0\n    },\n    \"accountNumber\": \"7011725297\",\n    \"nameEnquiryRequestId\": 7648\n}",
+									"raw": "{\n    \"amount\": 100,\n    \"transactionPin\": \"0987\",\n    \"channel\": \"Web\",\n    \"sourceAccountNo\": \"{{sourceAccount}}\",\n    \"saveBeneficiary\": false,\n    \"deviceId\": \"xphone\",\n    \"canSchedule\": true,\n    \"scheduleInfo\": {\n        \"scheduledStartDate\": \"{{futureDate}}\",\n        \"repeatFrequency\": \"never\",\n        \"repeatWeekDay\": 0,\n        \"repeatMonthDay\": 0,\n        \"repeatCount\": 0\n    },\n    \"accountNumber\": \"7011725297\",\n    \"nameEnquiryRequestId\": 7648\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
