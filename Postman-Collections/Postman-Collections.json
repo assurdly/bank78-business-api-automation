@@ -802,7 +802,7 @@
 							]
 						},
 						{
-							"name": "Signup - RC/BN Character Check",
+							"name": "Signup - RC/BN numeric character Check",
 							"event": [
 								{
 									"listen": "test",
@@ -964,6 +964,225 @@
 							"response": [
 								{
 									"id": "a5f6f2d6-9bbb-41db-8049-f62516e020b2",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"userName\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"phoneNumberCountryCode\": \"<string>\",\n  \"referralCode\": \"<string>\",\n  \"countryCode\": \"<string>\",\n  \"password\": \"<string>\",\n  \"otp\": \"<string>\",\n  \"status\": \"<string>\",\n  \"rcBnNumber\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/user/save?profile=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"user",
+												"save"
+											],
+											"query": [
+												{
+													"key": "profile",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"userName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"phoneNumberCountryCode\": \"<string>\",\n    \"referralCode\": \"<string>\",\n    \"countryCode\": \"<string>\",\n    \"password\": \"<string>\",\n    \"otp\": \"<string>\",\n    \"status\": \"<string>\",\n    \"rcBnNumber\": \"<string>\"\n  },\n  \"resultType\": 4,\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Signup - RC/BN numeric character Check Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a3bbd591-7f4e-43d4-bcac-f20edc665da8",
+										"exec": [
+											"\r",
+											"pm.test(\"Response status code is 200\", function () {\r",
+											"    pm.expect(pm.response.code).to.equal(200);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"First name is a non-empty string\", function () {\r",
+											"    const responseData = pm.response.json();\r",
+											"\r",
+											"    pm.expect(responseData.result.firstName).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"lastName is a non-empty string\", function () {\r",
+											"    const responseData = pm.response.json();\r",
+											"\r",
+											"    pm.expect(responseData.result).to.exist.and.to.be.an('object');\r",
+											"    pm.expect(responseData.result.lastName).to.be.a('string').and.to.have.lengthOf.at.least(1, \"lastName should not be empty\");\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"userName is a non-empty string\", function () {\r",
+											"    const responseData = pm.response.json();\r",
+											"\r",
+											"    pm.expect(responseData.result.userName).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"\r",
+											"pm.test(\"Response has required fields\", function () {\r",
+											"    const responseData = pm.response.json();\r",
+											"\r",
+											"    pm.expect(responseData).to.be.an('object');\r",
+											"    pm.expect(responseData.result.email).to.exist.and.to.be.a('string');\r",
+											"    pm.expect(responseData.result.phoneNumber).to.exist.and.to.be.a('string');\r",
+											"    pm.expect(responseData.result.countryCode).to.exist.and.to.be.a('string');\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"Email is in a valid format\", function () {\r",
+											"    const responseData = pm.response.json();\r",
+											"\r",
+											"    pm.expect(responseData).to.be.an('object');\r",
+											"    pm.expect(responseData.result.email).to.match(/^[\\w-]+(\\.[\\w-]+)*@([\\w-]+\\.)+[a-zA-Z]{2,7}$/);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"Phone number is in a valid format\", function () {\r",
+											"    const responseData = pm.response.json();\r",
+											"\r",
+											"    pm.expect(responseData).to.be.an('object');\r",
+											"    pm.expect(responseData.result.phoneNumber).to.match(/^\\d+$/);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"pm.test(\"countryCode is a non-empty string\", function () {\r",
+											"    const responseData = pm.response.json();\r",
+											"\r",
+											"    pm.expect(responseData).to.be.an('object');\r",
+											"    pm.expect(responseData.result.countryCode).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"Assert resultType is 'Success'\", function () {\r",
+											"    const responseData = pm.response.json();\r",
+											"\r",
+											"    pm.expect(responseData).to.be.an('object');\r",
+											"    pm.expect(responseData.resultType).to.equal(\"Success\");\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "cf093915-93e8-492d-8b49-cd80fb186f64",
+										"exec": [
+											"var num = Math.floor(Math.random() * (9999 - 1000) + 1000)\r",
+											"var number  = \"806744\" + num\r",
+											"pm.environment.set(\"number\", number)\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "bea5d791-f827-438b-b3f5-14fffa27f77a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{Onboarding_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									},
+									{
+										"warning": "This is a duplicate header and will be overridden by the x-api-key header generated by Postman.",
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"Franc\",\n    \"userName\": \"{{bus_email}}\",\n    \"email\": \"{{bus_email}}\",\n    \"phoneNumber\": \"{{number}}\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"countryCode\": \"NG\",\n    \"password\": \"Assurdly01!\",\n    \"rcBnNumber\": 567777,\n    \"businessName\": \"{{$randomFirstName}} ltd\",\n    \"agreeToSignUpTandC\": true,\n    \"DeviceId\": 158506797645630,\n    \"businessTypeId\": 1,\n    \"businessType\": \"Business Name\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/onboard/api/user/save?profile=business",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"onboard",
+										"api",
+										"user",
+										"save"
+									],
+									"query": [
+										{
+											"key": "profile",
+											"value": "business"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "543cf04b-095e-4999-9622-815344cdac45",
 									"name": "Success",
 									"originalRequest": {
 										"method": "POST",
