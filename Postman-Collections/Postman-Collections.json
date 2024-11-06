@@ -400,6 +400,232 @@
 							]
 						},
 						{
+							"name": "Signup - Name check",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "748094b2-a553-48d2-b309-981790734fdc",
+										"exec": [
+											"var num = Math.floor(Math.random() * (9999 - 1000) + 1000)\r",
+											"var number  = \"806744\" + num\r",
+											"pm.environment.set(\"number\", number)\r",
+											"\r",
+											"var rand = Math.floor(Math.random()* (9999 -1000) + 100)\r",
+											"var email = \"test\"+rand+\"@mailinator.com\"\r",
+											"pm.environment.set(\"bus_email\",email)"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "ddfbb0b6-335f-4e86-abea-0f23dc3aaae9",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"var responseData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response has required fields\", function () {\r",
+											"    pm.expect(responseData).to.be.an('object');\r",
+											"    pm.expect(responseData.result).to.be.an('object');\r",
+											"    pm.expect(responseData.resultType).to.be.a('string');\r",
+											"    pm.expect(responseData.message).to.be.a('string');\r",
+											"    pm.expect(responseData.validationMessages).to.be.null;\r",
+											"    pm.expect(responseData.successful).to.be.a('boolean');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Result - Response has required fields\", function () {\r",
+											"    pm.expect(responseData.result.firstName).to.be.a('string');\r",
+											"    pm.expect(responseData.result.lastName).to.be.a('string');\r",
+											"    pm.expect(responseData.result.userName).to.exist;\r",
+											"    pm.expect(responseData.result.email).to.exist;\r",
+											"    pm.expect(responseData.result.phoneNumber).to.be.a('string');\r",
+											"    pm.expect(responseData.result.phoneNumberCountryCode).to.be.a('string');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Verify response contains hasResult\", function () {\r",
+											"    pm.expect(responseData.hasResult).to.eql(true);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"First name is a non-empty string\", function () {\r",
+											"    pm.expect(responseData.result.firstName).to.have.lengthOf.at.least(2, \"Value should not be empty\");\r",
+											"    pm.collectionVariables.set(\"firstname\", responseData.result.firstName);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"lastName is a non-empty string\", function () {\r",
+											"    pm.expect(responseData.result.lastName).to.have.lengthOf.at.least(2, \"lastName should not be empty\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"userName is a non-empty string\", function () {\r",
+											"    pm.expect(responseData.result.userName).to.have.lengthOf.at.least(1, \"Value should not be empty\");\r",
+											"    pm.collectionVariables.set(\"userName\", responseData.result.userName);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Email is in a valid format\", function () {\r",
+											"    pm.expect(responseData.result.email).to.match(/^[\\w-]+(\\.[\\w-]+)*@([\\w-]+\\.)+[a-zA-Z]{2,7}$/);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Phone number has a valid length\", function () {\r",
+											"    pm.expect(responseData.result.phoneNumber).to.have.lengthOf(10);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"countryCode is a non-empty string\", function () {\r",
+											"    pm.expect(responseData.result.countryCode).to.have.lengthOf.at.least(1, \"Value should not be empty\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"resultType is a number and has a value of Success\", function () {\r",
+											"    pm.expect(responseData.resultType).to.equal('Success');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"message is a string\", function () {\r",
+											"    pm.expect(responseData.message).to.be.a('string');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Successful\", function () {\r",
+											"    pm.expect(responseData.successful).to.eql(true);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Set Business email,name,typeId as global variable\", function () {\r",
+											"    pm.collectionVariables.set(\"NewBusinessEmail\", responseData.result.email)\r",
+											"    pm.collectionVariables.set(\"NewBusinessName\", responseData.result.businessName)\r",
+											"    pm.collectionVariables.set(\"NewBusinessTypeId\", responseData.result.TypeId)\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "b8b21512-8699-4e50-9ef1-10b0d60ffcc4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{su_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json, text/plain, */*"
+									},
+									{
+										"key": "accept-language",
+										"value": "en-US,en;q=0.9"
+									},
+									{
+										"key": "authorization",
+										"value": "Bearer {{Onboarding_access_token}}"
+									},
+									{
+										"key": "content-type",
+										"value": "application/json"
+									},
+									{
+										"key": "x-api-key",
+										"value": "h9tRbOJzcH9O8mDsWRVey6OimYrqYUdg4c4IKNTf"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Franc\",\n    \"lastName\": \"Franc\",\n    \"userName\": \"france@mailinator.com\",\n    \"email\": \"france@mailinator.com\",\n    \"phoneNumber\": \"9099787879\",\n    \"phoneNumberCountryCode\": \"+234\",\n    \"countryCode\": \"NG\",\n    \"password\": \"@Testing123\",\n    \"rcBnNumber\": 567777,\n    \"businessName\": \"{{$randomFirstName}} ltd\",\n    \"agreeToSignUpTandC\": true,\n    \"DeviceId\": 158506797645630,\n    \"businessTypeId\": 1,\n    \"businessType\": \"Business Name\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://sandbox.bank78.co/onboard/api/user/save?profile=business",
+									"protocol": "https",
+									"host": [
+										"sandbox",
+										"bank78",
+										"co"
+									],
+									"path": [
+										"onboard",
+										"api",
+										"user",
+										"save"
+									],
+									"query": [
+										{
+											"key": "profile",
+											"value": "business"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "37d4e241-65cc-4b72-b902-aafe597f3ccb",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"userName\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"phoneNumberCountryCode\": \"<string>\",\n  \"referralCode\": \"<string>\",\n  \"countryCode\": \"<string>\",\n  \"password\": \"<string>\",\n  \"otp\": \"<string>\",\n  \"status\": \"<string>\",\n  \"rcBnNumber\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/user/save?profile=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"user",
+												"save"
+											],
+											"query": [
+												{
+													"key": "profile",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n  \"hasResult\": \"<boolean>\",\n  \"result\": {\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"userName\": \"<string>\",\n    \"email\": \"<string>\",\n    \"phoneNumber\": \"<string>\",\n    \"phoneNumberCountryCode\": \"<string>\",\n    \"referralCode\": \"<string>\",\n    \"countryCode\": \"<string>\",\n    \"password\": \"<string>\",\n    \"otp\": \"<string>\",\n    \"status\": \"<string>\",\n    \"rcBnNumber\": \"<string>\"\n  },\n  \"resultType\": 4,\n  \"message\": \"<string>\",\n  \"validationMessages\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"successful\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
 							"name": "Signup - Numbers in name field",
 							"event": [
 								{
