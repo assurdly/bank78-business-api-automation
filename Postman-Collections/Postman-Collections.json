@@ -18312,32 +18312,23 @@
 							]
 						},
 						{
-							"name": "Invalid Beneficiary Name",
+							"name": "CharacterCheck forBeneficiary Name",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
 										"id": "918113a2-0257-4c46-abd8-c19c4ebcaa1a",
 										"exec": [
-											"// Verify that the response has a 'result' object\r",
 											"pm.test(\"Response has a 'result' object\", function () {\r",
 											"    const responseBody = pm.response.json();\r",
 											"    pm.expect(responseBody).to.have.property(\"result\");\r",
 											"});\r",
 											"\r",
-											"// Verify that the 'result' object is null\r",
 											"pm.test(\"'result' object is null (Expected)\", function () {\r",
 											"    const result = pm.response.json().result;\r",
 											"    pm.expect(result).to.be.null;\r",
 											"});\r",
 											"\r",
-											"// Verify that the 'resultType' is 3\r",
-											"pm.test(\"Result type is 3 (Expected)\", function () {\r",
-											"    const resultType = pm.response.json().resultType;\r",
-											"    pm.expect(resultType).to.equal(3);\r",
-											"});\r",
-											"\r",
-											"// Verify that the 'message' property is \"Response has validation errors\"\r",
 											"pm.test(\"'message' property is 'Response has validation errors' (Expected)\", function () {\r",
 											"    const message = pm.response.json().message;\r",
 											"    pm.expect(message).to.equal(\"Response has validation errors\");\r",
@@ -18376,8 +18367,11 @@
 									"listen": "prerequest",
 									"script": {
 										"id": "82ad15f4-b7b0-4038-80b0-b1d9ce054541",
-										"exec": [],
-										"type": "text/javascript"
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
