@@ -1,0 +1,13 @@
+{
+    "x-api-key": "{{apiKey}}",
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjQxOUE3QjRDNEREQTY3Rjg1MjI0MjQ4MEVBQzQ5QTlBIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE3MzEyNzczMDksImV4cCI6MTczMTI4MDkwOSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS1kZXYuYmFuazc4LmNvIiwiYXVkIjoiYXBpMSIsImNsaWVudF9pZCI6IkVDQkVFQ0JDN0NFNTQzNERCQTUwOUI5Mzc1MjAzRUMxIiwic3ViIjoiMWRlYTgxZmYtMGNiNi00Njk0LTgxMTctYzZiZTVjNzFkMmIwIiwiYXV0aF90aW1lIjoxNzMxMjc3MzA5LCJpZHAiOiJsb2NhbCIsInBob25lTnVtYmVyIjoiNzAwMDAwMDAwMCIsInVzZXJJZCI6IjFkZWE4MWZmLTBjYjYtNDY5NC04MTE3LWM2YmU1YzcxZDJiMCIsInVzZXJuYW1lIjoiY2lyY2xlQG1haWxpbmF0b3IuY29tIiwiaXNBY3RpdmUiOiJUcnVlIiwidXNlclR5cGVJZCI6IjEiLCJ1c2VyVHlwZSI6IkN1c3RvbWVyIiwiZW1haWwiOiJjaXJjbGVAbWFpbGluYXRvci5jb20iLCJsYXN0TmFtZSI6IkNodXJjaCIsImZpcnN0TmFtZSI6IkNpcmNsZSIsInBlcm1pc3Npb24iOiJ7XCJzZWN0aW9uc1wiOltdfSIsImp0aSI6IjA4NzY4RkJCQjIzRTMxOTZEMzlCQUQzQTAzRkM4ODQ4IiwiaWF0IjoxNzMxMjc3MzA5LCJzY29wZSI6WyJhcGkxIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbImN1c3RvbSJdfQ.vOT6o-2hGshobSttUCI51DU2fGbroMgUI4kD3VpbMRGNz7tAQSR7xHQYN_cAt1-K8W1mrRKRVwEdBv3KALhLt0JrcE_YPRp2nbB6y9sYSHQv4lqRAMZrhPmKEDT-kSzDqJJPziXWUSNzRjLnRkYPJFIoxqIGFvC4gO2lvhdB9wQg2iy--1fWKmgoWRD7Kv8vowgSYxaGk633GgZieLX1M9uVsSuhJtS3PulYs3IvzNpBrkTH33VKUfju7t92dCLJqzIC1iICxmOJ9UooB5NT-diev7QoWQcB-up5Ba-9aO4oy01y44EWWshUX1rHXOkoRcffcpYZaxfNPwY92vqksA",
+    "User-Agent": "PostmanRuntime/7.39.1",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "fbd3496c-5c1d-4bd4-8267-c44f8388254f",
+    "Host": "sandbox.bank78.co",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "28"
+}
