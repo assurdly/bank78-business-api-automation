@@ -18334,8 +18334,8 @@
 											"    pm.expect(message).to.equal(\"Response has validation errors\");\r",
 											"});\r",
 											"\r",
-											"// Verify that 'validationMessages' property contains \"Beneficiary Name can only contain alphabets\"\r",
-											"pm.test(\"Validation error message is 'Beneficiary Name can only contain alphabets' (Expected)\", function () {\r",
+											"\r",
+											"pm.test(\"Validate response message on beneficiary name(Name field should accept all users)\", function () {\r",
 											"    const validationMessages = pm.response.json().validationMessages;\r",
 											"    pm.expect(validationMessages).to.include(\"Beneficiary Name can only contain alphabets\");\r",
 											"});\r",
@@ -18399,7 +18399,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"beneficiaryName\": \"Abdel123 Lover\",\n  \"bankName\": \"Providus\",\n  \"accountName\": \"Abdel Abdufa\",\n  \"accountNumber\": \"1010001422\",\n  \"emailAddress\": \"abdel@email.com\",\n  \"countryCode\": \"+234\",\n  \"address\": \"Abuja\",\n  \"CurrencyCode\": \"nil\",\n  \"BankRequirementValue\": \"nil\",\n  \"currencyRequirement\": {\n    \"name\": \"NGN\",\n    \"value\": \"100\",\n    \"forms\": [\n      {\n        \"dataLabel\": \"Money\",\n        \"dataValue\": \"Save Money\"\n      }\n    ]\n  }\n}",
+									"raw": "{\n  \"beneficiaryName\": \"{{$randomFullName}}\",\n  \"bankName\": \"Providus\",\n  \"accountName\": \"Abdel Abdufa\",\n  \"accountNumber\": \"098700998790\",\n  \"emailAddress\": \"{{$randomExampleEmail}}\",\n  \"countryCode\": \"+234\",\n  \"address\": \"Abuja\",\n  \"CurrencyCode\": \"nil\",\n  \"BankRequirementValue\": \"nil\",\n  \"currencyRequirement\": {\n    \"name\": \"NGN\",\n    \"value\": \"100\",\n    \"forms\": [\n      {\n        \"dataLabel\": \"Money\",\n        \"dataValue\": \"Save Money\"\n      }\n    ]\n  }\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
