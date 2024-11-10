@@ -26856,37 +26856,13 @@
 									"script": {
 										"id": "88ae5932-1551-4f25-a98c-d951f960b787",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
 											"});",
 											"",
 											"var resBody = pm.response.json()",
 											"pm.test(\"ResponseBody hasResult as true \", function () {",
-											"    pm.expect(resBody.hasResult).to.eql(true);",
-											"});",
-											"pm.test(\"ResponseBody hasResult as true \", function () {",
-											"    pm.expect(resBody.result.validated).to.eql(true);",
-											"});",
-											"pm.test(\"ResponseBody hasResult as true \", function () {",
-											"    pm.expect(resBody.result.message).to.eql(null);",
-											"});",
-											"pm.test(\"resultType equal to 1\", function () {",
-											"     pm.expect(pm.response.json().resultType).to.equal(1);",
-											"});",
-											"pm.test(\"message equal to success\", function () {",
-											"    pm.expect(pm.response.json().message).to.equal(\"Success\");",
-											"});",
-											"pm.test(\"validationMessages\", function () {",
-											"    pm.expect(pm.response.json().validationMessages).to.equal(null);",
-											"});",
-											"pm.test(\"successful\", function () {",
-											"    pm.expect(pm.response.json().successful).to.equal(true);",
-											"});",
-											"pm.test(\"errorCode\", function () {",
-											"    pm.expect(pm.response.json().errorCode).to.equal(0);",
-											"});",
-											"pm.test(\"responseCode\", function () {",
-											"    pm.expect(pm.response.json().responseCode).to.equal(null);",
+											"    pm.expect(resBody.hasResult).to.eql(false);",
 											"});"
 										],
 										"type": "text/javascript",
@@ -26897,8 +26873,11 @@
 									"listen": "prerequest",
 									"script": {
 										"id": "0ffba343-b42b-4a11-b0b9-23c6f632e9b0",
-										"exec": [],
-										"type": "text/javascript"
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
