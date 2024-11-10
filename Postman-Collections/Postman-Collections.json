@@ -21466,7 +21466,7 @@
 											"pm.test(\"Assert the 'message' field is 'Invalid Transaction PIN'\", function () {\r",
 											"    const responseData = pm.response.json();\r",
 											"\r",
-											"    pm.expect(responseData.message).to.equal(\"Invalid Transaction PIN\");\r",
+											"    pm.expect(responseData.message).to.equal(\"Invalid 78 PIN\");\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Validate the 'resultType' field is present and has a value of 2\", function () {\r",
@@ -21491,8 +21491,11 @@
 									"listen": "prerequest",
 									"script": {
 										"id": "727f5d8b-7f8b-474e-bd12-634f47a19a49",
-										"exec": [],
-										"type": "text/javascript"
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
