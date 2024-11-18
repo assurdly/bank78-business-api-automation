@@ -27107,6 +27107,942 @@
 				}
 			],
 			"id": "edd9b378-167a-4cc7-a1d2-321bbbd94f95"
+		},
+		{
+			"name": "Fx Account Funding",
+			"item": [
+				{
+					"name": "Add Funds",
+					"item": [
+						{
+							"name": "Add Funds - Success",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6ae218df-db0f-43b0-ab50-71be46b2b730",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"Response body contains success message\", function () {\r",
+											"    pm.expect(pm.response.json()).to.have.property('hasResult', true);\r",
+											"    pm.expect(pm.response.json().message).to.eql('Fund transfer successful');\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "9317a4e3-533c-440d-8866-4cf889b32ecd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{admin_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"amount\": 2000,\r\n  \"accountNumber\": \"0000076205\",\r\n  \"externalAccountNumber\": \"0000002110\",\r\n  \"senderName\": \"Jack Daniels\",\r\n  \"transactionReference\": \"Godnobeman\",\r\n  \"senderBank\": \"Bank of America\",\r\n  \"otherInfo\": \"Test\",\r\n  \"remark\": \"Test Funds\",\r\n  \"currency\": \"USD\",\r\n  \"channel\": \"Web\",\r\n  \"senderAccountNo\": \"9876543210\",\r\n  \"charges\": 0,\r\n  \"emailAddress\": \"Udeme+1112@assurdly.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrltr}}/api/v1/FxAccountFunding"
+							},
+							"response": []
+						},
+						{
+							"name": "Add Funds - Invalid Internal accountNumber",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6ae218df-db0f-43b0-ab50-71be46b2b730",
+										"exec": [
+											"\r",
+											"var responseBody = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Response status code is 400\", function () {\r",
+											"  pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response has a result property\", function () {\r",
+											"  pm.expect(responseBody).to.have.property('result');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response has a message property\", function () {\r",
+											"  pm.expect(responseBody).to.have.property('message');\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "ad53e46a-6b63-4853-8049-636d4098c1d1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{admin_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"amount\": 2000,\r\n  \"accountNumber\": \"0000076025\",\r\n  \"externalAccountNumber\": \"0000002110\",\r\n  \"senderName\": \"Jack Daniels\",\r\n  \"transactionReference\": \"Godnobeman\",\r\n  \"senderBank\": \"Bank of America\",\r\n  \"otherInfo\": \"Test\",\r\n  \"remark\": \"Test Funds\",\r\n  \"currency\": \"USD\",\r\n  \"channel\": \"Web\",\r\n  \"senderAccountNo\": \"9876543210\",\r\n  \"charges\": 0,\r\n  \"emailAddress\": \"Udeme+1112@assurdly.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrltr}}/api/v1/FxAccountFunding"
+							},
+							"response": []
+						},
+						{
+							"name": "Add Funds -Negative Amount",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6ae218df-db0f-43b0-ab50-71be46b2b730",
+										"exec": [
+											"\r",
+											"var responseBody = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains error message for negative amount\", function () {\r",
+											"    pm.expect(pm.response.json()).to.have.property('message', 'Invalid amount entered');\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "1da34814-ade4-4fc3-87f7-82e7175f33c7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{admin_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"amount\": -2000,\r\n  \"accountNumber\": \"0000076205\",\r\n  \"externalAccountNumber\": \"0000002110\",\r\n  \"senderName\": \"Jack Daniels\",\r\n  \"transactionReference\": \"Godnobeman1\",\r\n  \"senderBank\": \"Bank of America\",\r\n  \"otherInfo\": \"Test\",\r\n  \"remark\": \"Test Funds\",\r\n  \"currency\": \"USD\",\r\n  \"channel\": \"Web\",\r\n  \"senderAccountNo\": \"9876543210\",\r\n  \"charges\": 0,\r\n  \"emailAddress\": \"Udeme+1112@assurdly.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrltr}}/api/v1/FxAccountFunding"
+							},
+							"response": []
+						},
+						{
+							"name": "Add Funds -Missing Transaction Reference",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6ae218df-db0f-43b0-ab50-71be46b2b730",
+										"exec": [
+											"\r",
+											"var responseBody = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains error message for missing transaction reference\", function () {\r",
+											"    pm.expect(pm.response.json()).to.have.property('message', 'The TransactionReference field is required');\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "c9a9becd-5257-4bd2-ac9b-d130690a9c02",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{admin_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"amount\": 2000,\r\n  \"accountNumber\": \"0000076205\",\r\n  \"externalAccountNumber\": \"0000002110\",\r\n  \"senderName\": \"Jack Daniels\",\r\n  \"transactionReference\": \"\",\r\n  \"senderBank\": \"Bank of America\",\r\n  \"otherInfo\": \"Test\",\r\n  \"remark\": \"Test Funds\",\r\n  \"currency\": \"USD\",\r\n  \"channel\": \"Web\",\r\n  \"senderAccountNo\": \"9876543210\",\r\n  \"charges\": 0,\r\n  \"emailAddress\": \"Udeme+1112@assurdly.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrltr}}/api/v1/FxAccountFunding"
+							},
+							"response": []
+						},
+						{
+							"name": "Add Funds - Duplicate Transaction Reference.",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6ae218df-db0f-43b0-ab50-71be46b2b730",
+										"exec": [
+											"\r",
+											"var responseBody = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains error message for Duplicate Transaction Reference\", function () {\r",
+											"    pm.expect(pm.response.json()).to.have.property('message', 'Duplicate Transaction Reference');\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "83c7c488-5169-4687-9f5d-74dbb9c1c969",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{admin_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"amount\": 200000,\r\n  \"accountNumber\": \"0000076205\",\r\n  \"externalAccountNumber\": \"0000002110\",\r\n  \"senderName\": \"Jack Daniels\",\r\n  \"transactionReference\": \"Godnobemanatall\",\r\n  \"senderBank\": \"Bank of America\",\r\n  \"otherInfo\": \"Test\",\r\n  \"remark\": \"Test Funds\",\r\n  \"currency\": \"USD\",\r\n  \"channel\": \"Web\",\r\n  \"senderAccountNo\": \"9876543210\",\r\n  \"charges\": 0,\r\n  \"emailAddress\": \"Udeme+1112@assurdly.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrltr}}/api/v1/FxAccountFunding"
+							},
+							"response": []
+						},
+						{
+							"name": "Add Funds -Exceeding Daily Limit",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6ae218df-db0f-43b0-ab50-71be46b2b730",
+										"exec": [
+											"\r",
+											"var responseBody = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains error message for exceeded daily limit\", function () {\r",
+											"    pm.expect(pm.response.json()).to.have.property('message', 'You cannot exceed the single transaction limit for this product');\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "454114da-b1ef-4af1-ba36-f851a2e9acef",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{admin_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"amount\": 20000000,\r\n  \"accountNumber\": \"0000076205\",\r\n  \"externalAccountNumber\": \"0000002110\",\r\n  \"senderName\": \"Jack Daniels\",\r\n  \"transactionReference\": \"{{$randomWords}}\",\r\n  \"senderBank\": \"Bank of America\",\r\n  \"otherInfo\": \"Test\",\r\n  \"remark\": \"Test Funds\",\r\n  \"currency\": \"USD\",\r\n  \"channel\": \"Web\",\r\n  \"senderAccountNo\": \"9876543210\",\r\n  \"charges\": 0,\r\n  \"emailAddress\": \"Udeme+1112@assurdly.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrltr}}/api/v1/FxAccountFunding"
+							},
+							"response": []
+						},
+						{
+							"name": "Add Funds -Invalid Email format",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6ae218df-db0f-43b0-ab50-71be46b2b730",
+										"exec": [
+											"\r",
+											"\r",
+											"var responseBody = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains error message for user does not exist\", function () {\r",
+											"    pm.expect(responseBody).to.have.property('message', 'Invalid email provided');\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "838f2371-122b-44af-a1e3-ac5f22d192c6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{admin_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"amount\": 200000,\r\n  \"accountNumber\": \"0000076205\",\r\n  \"externalAccountNumber\": \"0000002110\",\r\n  \"senderName\": \"Jack Daniels\",\r\n  \"transactionReference\": \"{{$randomWords}}\",\r\n  \"senderBank\": \"Bank of America\",\r\n  \"otherInfo\": \"Test\",\r\n  \"remark\": \"Test Funds\",\r\n  \"currency\": \"USD\",\r\n  \"channel\": \"Web\",\r\n  \"senderAccountNo\": \"9876543210\",\r\n  \"charges\": 0,\r\n  \"emailAddress\": \"Udeme+1112assurdly.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrltr}}/api/v1/FxAccountFunding"
+							},
+							"response": []
+						},
+						{
+							"name": "Add Funds - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6ae218df-db0f-43b0-ab50-71be46b2b730",
+										"exec": [
+											"\r",
+											"\r",
+											"var responseBody = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains error message for user does not exist\", function () {\r",
+											"    pm.expect(responseBody).to.have.property('message', 'Invalid email provided');\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "8eb6fea2-30b8-42bd-90e8-40f00823a68d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{admin_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"amount\": 200000,\r\n  \"accountNumber\": \"0000076205\",\r\n  \"externalAccountNumber\": \"0000002110\",\r\n  \"senderName\": \"Jack Daniels\",\r\n  \"transactionReference\": \"{{$randomWords}}\",\r\n  \"senderBank\": \"Bank of America\",\r\n  \"otherInfo\": \"Test\",\r\n  \"remark\": \"Test Funds\",\r\n  \"currency\": \"USD\",\r\n  \"channel\": \"Web\",\r\n  \"senderAccountNo\": \"9876543210\",\r\n  \"charges\": 0,\r\n  \"emailAddress\": \"Udeme+1112assurdly.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrltr}}/api/v1/FxAccountFunding"
+							},
+							"response": []
+						},
+						{
+							"name": "Add Funds -Invalid Token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6ae218df-db0f-43b0-ab50-71be46b2b730",
+										"exec": [
+											"var responseBody = pm.response.text();\r",
+											"\r",
+											"pm.test(\"Status code is 401 for missing auth token\", function () {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error message indicates authentication required\", function () {\r",
+											"    pm.expect(responseBody).to.include(\"Authentication required\");\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "69960bac-7cf0-45fa-a95a-1304654a3d36",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "Godnobeman"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"amount\": 200000,\r\n  \"accountNumber\": \"0000076205\",\r\n  \"externalAccountNumber\": \"0000002110\",\r\n  \"senderName\": \"Jack Daniels\",\r\n  \"transactionReference\": \"{{$randomWords}}\",\r\n  \"senderBank\": \"Bank of America\",\r\n  \"otherInfo\": \"Test\",\r\n  \"remark\": \"Test Funds\",\r\n  \"currency\": \"USD\",\r\n  \"channel\": \"Web\",\r\n  \"senderAccountNo\": \"9876543210\",\r\n  \"charges\": 0,\r\n  \"emailAddress\": \"Udeme+1112assurdly.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrltr}}/api/v1/FxAccountFunding"
+							},
+							"response": []
+						}
+					],
+					"id": "67e0c79d-2738-48c9-a74b-d1fe31b3e981"
+				},
+				{
+					"name": "Get Funds (Paged)",
+					"item": [
+						{
+							"name": "Get Funds (Paged) - Success",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "059eca26-72b2-466e-8a57-a775b9470130",
+										"exec": [
+											"pm.test(\"Response code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response has property 'hasResult' and 'resultType'\", function () {\r",
+											"    pm.expect(pm.response.json()).to.have.property('hasResult');\r",
+											"    pm.expect(pm.response.json()).to.have.property('resultType');\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "0f9149ed-89ad-46a6-a104-596e8e94861e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{admin_access_token}}"
+									}
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://transfer-dev.bank78.co/api/v1/FxAccountFunding/getpaged/:page/:pagesize/:whereCondittion",
+									"protocol": "https",
+									"host": [
+										"transfer-dev",
+										"bank78",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"FxAccountFunding",
+										"getpaged",
+										":page",
+										":pagesize",
+										":whereCondittion"
+									],
+									"variable": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "pagesize",
+											"value": "10"
+										},
+										{
+											"key": "whereCondittion",
+											"value": "{}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Funds (Paged) - No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "059eca26-72b2-466e-8a57-a775b9470130",
+										"exec": [
+											"pm.test(\"Status code is 401 for missing or invalid auth token\", function () {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error message indicates authentication failure\", function () {\r",
+											"    pm.expect(pm.response.json().message).to.include(\"Authentication required\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "a1e5ce64-92a5-45b4-b046-af8e51172215",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://transfer-dev.bank78.co/api/v1/FxAccountFunding/getpaged/:page/:pagesize/:whereCondition",
+									"protocol": "https",
+									"host": [
+										"transfer-dev",
+										"bank78",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"FxAccountFunding",
+										"getpaged",
+										":page",
+										":pagesize",
+										":whereCondition"
+									],
+									"variable": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "pagesize",
+											"value": "10"
+										},
+										{
+											"key": "whereCondition",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Funds (Paged) - Invalid Token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "059eca26-72b2-466e-8a57-a775b9470130",
+										"exec": [
+											"pm.test(\"Status code is 401 for missing or invalid auth token\", function () {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error message indicates authentication failure\", function () {\r",
+											"    pm.expect(pm.response.json().message).to.include(\"Authentication required\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "c89919f1-bb65-4a39-97cf-e13b201d61fd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "Godnobeman"
+									}
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://transfer-dev.bank78.co/api/v1/FxAccountFunding/getpaged/:page/:pagesize/:whereCondition",
+									"protocol": "https",
+									"host": [
+										"transfer-dev",
+										"bank78",
+										"co"
+									],
+									"path": [
+										"api",
+										"v1",
+										"FxAccountFunding",
+										"getpaged",
+										":page",
+										":pagesize",
+										":whereCondition"
+									],
+									"variable": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "pagesize",
+											"value": "10"
+										},
+										{
+											"key": "whereCondition",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "014f7c99-7b2b-4186-be0e-bb95f67fa31d"
+				},
+				{
+					"name": "Get Funds (QueryPaged)",
+					"item": [
+						{
+							"name": "Get Funds (Querypaged)- Success",
+							"id": "9a0e0a0a-91c6-4b64-a28f-8456149f46c6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Get Funds (Querypaged)- No Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f1170a3a-16c3-440a-8314-1090b4feb5b9",
+										"exec": [
+											"pm.test(\"Status code is 401 for missing or invalid auth token\", function () {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error message indicates authentication failure\", function () {\r",
+											"    pm.expect(pm.response.json().message).to.include(\"Authentication required\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "1b9eb933-10d6-4adf-9d0d-174b60f59ae9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrltr}}/api/v1/FxAccountFunding/querypaged/:page/:pagesize/:whereCondition",
+									"host": [
+										"{{baseUrltr}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"FxAccountFunding",
+										"querypaged",
+										":page",
+										":pagesize",
+										":whereCondition"
+									],
+									"variable": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "pagesize",
+											"value": "10"
+										},
+										{
+											"key": "whereCondition",
+											"value": "{}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Funds (Querypaged)- Invalid Token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f1170a3a-16c3-440a-8314-1090b4feb5b9",
+										"exec": [
+											"pm.test(\"Status code is 401 for missing or invalid auth token\", function () {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error message indicates authentication failure\", function () {\r",
+											"    pm.expect(pm.response.json().message).to.include(\"Authentication required\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "3e41eb5c-74d2-4ce0-bb8a-33fb85520419",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "uftgvhkbjlcuxryzexryctuviyblkn;hxzrytucvfycgvjhkbjvhjcghfxycgvhj"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrltr}}/api/v1/FxAccountFunding/querypaged/:page/:pagesize/:whereCondition",
+									"host": [
+										"{{baseUrltr}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"FxAccountFunding",
+										"querypaged",
+										":page",
+										":pagesize",
+										":whereCondition"
+									],
+									"variable": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "pagesize",
+											"value": "10"
+										},
+										{
+											"key": "whereCondition",
+											"value": "{}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "b4a599da-c08c-40c6-9528-2653bc8793fd"
+				},
+				{
+					"name": "Get Single Funds",
+					"item": [
+						{
+							"name": "Get Single Funds - Empty ID",
+							"id": "79772c59-8867-42be-a9a2-4e0c80ac99e4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					],
+					"id": "b2319817-c897-45d8-8883-2af45ffff4c2"
+				}
+			],
+			"id": "21a3e734-33e2-4e31-918b-8824bf64a139"
 		}
 	],
 	"event": [
