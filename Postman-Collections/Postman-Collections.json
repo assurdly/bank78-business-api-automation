@@ -22902,14 +22902,36 @@
 					"name": "Fx Transfer",
 					"item": [
 						{
-							"name": "New Request",
+							"name": "FX transfer",
 							"id": "eb67f531-6955-46fa-a14a-32754e6bdcec",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{business_access_token}}"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"beneficiaryAccountNumber\": \"0000069326\",\r\n  \"beneficiaryCurrency\": \"USD\",\r\n  \"beneficiaryCountryCode\": \"USA\",\r\n  \"beneficiaryAccountName\": \"Test\",\r\n  \"beneficiaryAddress\": \"Las Vegas\",\r\n  \"rateId\": \"dsfds45534234rev32432432\",\r\n  \"amount\": 10,\r\n  \"transactionPin\": \"4321\",\r\n  \"narration\": \"Test\",\r\n  \"channel\": \"Web\",\r\n  \"sourceAccountNo\": \"0000076267\",\r\n  \"deviceId\": \"Nil\",\r\n  \"categoryId\": 4,\r\n  \"others\": \"Nil\",\r\n  \"isIndividual\": false,\r\n  \"routingType\": 2,\r\n  \"routingNumber\": \"123456789\",\r\n  \"bankName\": \"Bank78\",\r\n  \"swiftCode\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrltr}}/api/v1/Transfer/fx"
 							},
 							"response": []
 						}
