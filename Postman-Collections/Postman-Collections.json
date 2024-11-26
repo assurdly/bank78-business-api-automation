@@ -22934,6 +22934,40 @@
 								"url": "{{baseUrltr}}/api/v1/Transfer/fx"
 							},
 							"response": []
+						},
+						{
+							"name": "FX transfer Copy",
+							"id": "94441ea5-99a5-4cc4-9055-43732c5370c7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjQyOUZBOTFFQzM3QTgwOTMxN0YyQzJDQzc5OUZFOEREIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE3MzI2MjIzNDAsImV4cCI6MTczMjYyNTk0MCwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS1kZXYuYmFuazc4LmNvIiwiYXVkIjoiYXBpMSIsImNsaWVudF9pZCI6IkVDQkVFQ0JDN0NFNTQzNERCQTUwOUI5Mzc1MjAzRUMxIiwic3ViIjoiZjEwMjI1MjAtYzYyOS00MmMzLTlkMDYtZjliMWRiOTIxYzQyIiwiYXV0aF90aW1lIjoxNzMyNjIyMzQwLCJpZHAiOiJsb2NhbCIsInBob25lTnVtYmVyIjoiOTAzNDU1NTMyMiIsInVzZXJJZCI6ImYxMDIyNTIwLWM2MjktNDJjMy05ZDA2LWY5YjFkYjkyMWM0MiIsInVzZXJuYW1lIjoibWFydmVsQG1haWxpbmF0b3IuY29tIiwiaXNBY3RpdmUiOiJUcnVlIiwidXNlclR5cGVJZCI6IjEiLCJ1c2VyVHlwZSI6IkN1c3RvbWVyIiwiZW1haWwiOiJtYXJ2ZWxAbWFpbGluYXRvci5jb20iLCJsYXN0TmFtZSI6IlN0dWRpb3MiLCJmaXJzdE5hbWUiOiJNYXJ2ZWwiLCJwZXJtaXNzaW9uIjoie1wic2VjdGlvbnNcIjpbXX0iLCJqdGkiOiI5QTZGQTZCMjM1MTYyMjkyNjFCREUxRjIxRjJFQTYyRSIsImlhdCI6MTczMjYyMjM0MCwic2NvcGUiOlsiYXBpMSIsIm9mZmxpbmVfYWNjZXNzIl0sImFtciI6WyJjdXN0b20iXX0.AGby60LQe120UkXLosoFhaOUYKX0iKmdPjnPUYmKaB_ku-zoitgoughd9ZiulVdEtSR82hWOiV3Sa3M_1BcXsF9KPUOtG6S8NX-ajFkDDWzrer_Av9ooNczefqE3xDGaQ3p98jKFzLqjAs3Dv1vdlQDUdAUaBa5EN1k_tXbjhikGcT0HNVVqNmddmw2odm9h2RX5HtQ31ZDF_XJ74fe0cGNsdGianykZEEwhoYI5r81R8rT802V0fzYBv-s3oj9nWixIxkV_NHGY28g2mEFEFf9KgGL2_hU5cRGSznusBm1vAdw9JXxotXjUp0N06kfTFvAW6tAHGv8fJUdcQRAXjA"
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{x-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"beneficiaryAccountNumber\": \"0000069326\",\r\n  \"beneficiaryCurrency\": \"USD\",\r\n  \"beneficiaryCountryCode\": \"USA\",\r\n  \"beneficiaryAccountName\": \"Test\",\r\n  \"beneficiaryAddress\": \"Las Vegas\",\r\n  \"rateId\": \"dsfds45534234rev32432432\",\r\n  \"amount\": 10,\r\n  \"transactionPin\": \"4321\",\r\n  \"narration\": \"Test\",\r\n  \"channel\": \"Web\",\r\n  \"sourceAccountNo\": \"0000076267\",\r\n  \"deviceId\": \"Nil\",\r\n  \"categoryId\": 4,\r\n  \"others\": \"Nil\",\r\n  \"isIndividual\": false,\r\n  \"routingType\": 2,\r\n  \"routingNumber\": \"123456789\",\r\n  \"bankName\": \"Bank78\",\r\n  \"swiftCode\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrltr}}/api/v1/Transfer/fx"
+							},
+							"response": []
 						}
 					],
 					"id": "0e925ade-58b5-464a-938d-d9607d9e7ef9"
