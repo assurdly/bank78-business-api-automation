@@ -1,0 +1,23 @@
+{
+    "accept": "application/json, text/plain, */*",
+    "accept-language": "en-US,en;q=0.9",
+    "content-type": "application/json",
+    "origin": "https://app-dev.bank78.co",
+    "priority": "u=1, i",
+    "referer": "https://app-dev.bank78.co/",
+    "sec-ch-ua": "\"Not/A)Brand\";v=\"8\", \"Chromium\";v=\"126\", \"Google Chrome\";v=\"126\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"macOS\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-site",
+    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+    "x-api-key": "h9tRbOJzcH9O8mDsWRVey6OimYrqYUdg4c4IKNTf",
+    "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjQyOUZBOTFFQzM3QTgwOTMxN0YyQzJDQzc5OUZFOEREIiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE3MzI2MzkxMDUsImV4cCI6MTczMjY0MjcwNSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS1kZXYuYmFuazc4LmNvIiwiYXVkIjoiYXBpMSIsImNsaWVudF9pZCI6IkVDQkVFQ0JDN0NFNTQzNERCQTUwOUI5Mzc1MjAzRUMxIiwic3ViIjoiMWRlYTgxZmYtMGNiNi00Njk0LTgxMTctYzZiZTVjNzFkMmIwIiwiYXV0aF90aW1lIjoxNzMyNjM5MTA1LCJpZHAiOiJsb2NhbCIsInBob25lTnVtYmVyIjoiNzAwMDAwMDAwMCIsInVzZXJJZCI6IjFkZWE4MWZmLTBjYjYtNDY5NC04MTE3LWM2YmU1YzcxZDJiMCIsInVzZXJuYW1lIjoiY2lyY2xlQG1haWxpbmF0b3IuY29tIiwiaXNBY3RpdmUiOiJUcnVlIiwidXNlclR5cGVJZCI6IjEiLCJ1c2VyVHlwZSI6IkN1c3RvbWVyIiwiZW1haWwiOiJjaXJjbGVAbWFpbGluYXRvci5jb20iLCJsYXN0TmFtZSI6IkNodXJjaCIsImZpcnN0TmFtZSI6IkNpcmNsZSIsInBlcm1pc3Npb24iOiJ7XCJzZWN0aW9uc1wiOltdfSIsImp0aSI6Ijg4MjNFQzg4QTZEQTc4RkI2NzA0MUMxM0RENTExNkJGIiwiaWF0IjoxNzMyNjM5MTA1LCJzY29wZSI6WyJhcGkxIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbImN1c3RvbSJdfQ.wiUYo3DogQsIS9EMrO07HpXXhtgTrv_6kXkDIt8Oym7AJLPfsOUe1NRrS3zIR1cIObktgqd6FiRP7zPQXCO0xM-K-b52Zemi4tnrOinEEAn6MzLjReEenBqDFZ5e4TMDNQBIWBB9p3FYpj3K-vUQ2gcVOz1xM5GRzt0-cLrqj10lSu6ktTSYAXUmDwRiwOKyxqdaQQxoI9huXR5UwL7JYGNL9-EDH_uuXmvVjV6KM0oUc_2iFdzHoviVV6S8lYt5Ct6a2J8jXrVFYnkjAI42_zkc6H8pJmAyqGO7HNibMs083yYA6TuZFH_z5uy4LNPTdG4lawmlhJSdrahupD0bAQ",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "23e11075-eeea-4b60-b348-aae241c18d00",
+    "Host": "sandbox.bank78.co",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "535"
+}
