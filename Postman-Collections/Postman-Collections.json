@@ -22958,7 +22958,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"beneficiaryAccountNumber\": \"0000076676\",\r\n  \"beneficiaryCurrency\": \"USD\",\r\n  \"beneficiaryCountryCode\": \"USA\",\r\n  \"beneficiaryAccountName\": \"Bready\",\r\n  \"beneficiaryAddress\": \"Las Vegas\",\r\n  \"rateId\": \"23e48ce0-bdf9-48cd-92a7-05111fd6d1b3\",\r\n  \"amount\": 200,\r\n  \"transactionPin\": \"0987\",\r\n  \"narration\": \"Test\",\r\n  \"channel\": \"Web\",\r\n  \"sourceAccountNo\": \"0000076528\",\r\n  \"deviceId\": \"Nil\",\r\n  \"categoryId\": 4,\r\n  \"others\": \"Nil\",\r\n  \"isIndividual\": false,\r\n  \"routingType\": 2,\r\n  \"routingNumber\": \"0001234567\",\r\n  \"bankName\": \"Bank78\",\r\n  \"swiftCode\": \"\"\r\n}",
+									"raw": "{\r\n  \"beneficiaryAccountNumber\": \"0000076676\",\r\n  \"beneficiaryCurrency\": \"USD\",\r\n  \"beneficiaryCountryCode\": \"USA\",\r\n  \"beneficiaryAccountName\": \"Bready\",\r\n  \"beneficiaryAddress\": \"Las Vegas\",\r\n  \"rateId\": \"23e48ce0-bdf9-48cd-92a7-05111fd6d1b3\",\r\n  \"amount\": 20,\r\n  \"transactionPin\": \"0987\",\r\n  \"narration\": \"Test\",\r\n  \"channel\": \"Web\",\r\n  \"sourceAccountNo\": \"0000076528\",\r\n  \"deviceId\": \"Nil\",\r\n  \"categoryId\": 4,\r\n  \"others\": \"Nil\",\r\n  \"isIndividual\": false,\r\n  \"routingType\": 2,\r\n  \"routingNumber\": \"0001234567\",\r\n  \"bankName\": \"Bank78\",\r\n  \"swiftCode\": \"\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
