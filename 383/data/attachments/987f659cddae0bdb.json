@@ -1,0 +1,13 @@
+{
+    "Date": "Wed, 08 Jan 2025 13:08:38 GMT",
+    "Content-Length": "0",
+    "Connection": "keep-alive",
+    "www-authenticate": "Bearer error=\"invalid_token\", error_description=\"The signature key was not found\"",
+    "cf-cache-status": "DYNAMIC",
+    "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=FIw1jejBBJp0FMN8Rsn60F2k6YYv0ZxcPQLRcyKRipDtUIbe2be3gmpsbpXPIbNO41LGmlQMZ9Vbbs%2BnDk2g4H%2BOfEauaAMP9EBS0ckpYr%2Bn7IFke5yGe%2BYWxUUtaRN7C5ZKscwSfLS3\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+    "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+    "Server": "cloudflare",
+    "CF-RAY": "8fec6ada1ee9c9ab-IAD",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "server-timing": "cfL4;desc=\"?proto=TCP&rtt=23412&min_rtt=5093&rtt_var=17255&sent=91&recv=106&lost=0&retrans=0&sent_bytes=22562&recv_bytes=100392&delivery_rate=826867&cwnd=257&unsent_bytes=0&cid=526cbfa2ccb3bae9&ts=24911&x=0\""
+}
