@@ -1,0 +1,14 @@
+{
+    "Date": "Fri, 17 Jan 2025 18:13:35 GMT",
+    "Content-Type": "application/json; charset=utf-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "cf-cache-status": "DYNAMIC",
+    "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=SBArsoXbn%2BT%2B4v9AFkVffnV7pKhM28LvCVd94QlmR2OTEW2%2FNj9TWEyxEjJjtL0%2FvYrnaun1nNyqmztYYesbTxuKGDUkoKbgSawrguYq41%2FsfJNyszqNOGPmIzvgKb%2FS%2BM4WdvINTSF2\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+    "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+    "Server": "cloudflare",
+    "CF-RAY": "903851df7efdcf0d-SJC",
+    "Content-Encoding": "br",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "server-timing": "cfL4;desc=\"?proto=TCP&rtt=13766&min_rtt=1307&rtt_var=15389&sent=25&recv=44&lost=0&retrans=0&sent_bytes=9603&recv_bytes=36616&delivery_rate=2185156&cwnd=257&unsent_bytes=0&cid=224e7fc1bbf83e7f&ts=12054&x=0\""
+}
