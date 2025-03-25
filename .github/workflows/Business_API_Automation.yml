@@ -7,7 +7,6 @@ on:
   push:
     branches:
       - main
-
 jobs:
   run_tests:
     if: github.event_name == 'schedule' || github.event_name == 'push'
