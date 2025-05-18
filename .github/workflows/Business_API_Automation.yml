@@ -1,7 +1,7 @@
 name: Postman Test and Allure Report
 on:
   schedule:
-    - cron: '0 13 * * 3' # Runs every Wednesday by 4pm
+    - cron: '0 19 * * 3' # Runs every Wednesday by 4pm
     - cron: '0 18 * * 5' # Runs every Friday by 4pm
     - cron: '0 20 * * 0' # Runs every Sunday by 4pm
   push:
