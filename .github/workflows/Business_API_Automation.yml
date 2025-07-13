@@ -52,11 +52,11 @@ jobs:
         continue-on-error: true
         run: sleep 10
 
-      # - name: Find latest folder and update Allure Report Title
-      #   run: |
-      #     latest_folder=$(find allure-report -type d -name '[0-9]*' | sort -n | tail -n 1)
-      #     echo "Latest Folder: $latest_folder"
-      #     sed -i 's/<title>Allure Report<\/title>/<title>[Open Banking] - API Quality Readiness<\/title>/' "$latest_folder/index.html"
+      - name: Find latest folder and update Allure Report Title
+        run: |
+           latest_folder=$(find allure-report -type d -name '[0-9]*' | sort -n | tail -n 1)
+           echo "Latest Folder: $latest_folder"
+           sed -i 's/<title>Allure Report<\/title>/<title>Bank78 - API Quality Readiness<\/title>/' "$latest_folder/index.html"
 
       - name: Update Allure Report Widget Title
         continue-on-error: true
@@ -95,7 +95,7 @@ jobs:
         if: always()
         continue-on-error: true
         run: sleep 10
-      - name: Notify Slack
+     # - name: Notify Slack
       #  if: always()
         #uses: rtCamp/action-slack-notify@v2
         #env:
