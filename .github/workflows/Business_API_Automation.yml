@@ -52,11 +52,19 @@ jobs:
         continue-on-error: true
         run: sleep 10
 
+      #- name: Find latest folder and update Allure Report Title
+       # run: |
+       #    latest_folder=$(find allure-report -type d -name '[0-9]*' | sort -n | tail -n 1)
+       #    echo "Latest Folder: $latest_folder"
+       #    sed -i 's/<title>Allure Report<\/title>/<title>Bank78 - API Quality Readiness<\/title>/' "$latest_folder/index.html"
+      
       - name: Find latest folder and update Allure Report Title
+        if: always()
+        continue-on-error: true
         run: |
-           latest_folder=$(find allure-report -type d -name '[0-9]*' | sort -n | tail -n 1)
-           echo "Latest Folder: $latest_folder"
-           sed -i 's/<title>Allure Report<\/title>/<title>Bank78 - API Quality Readiness<\/title>/' "$latest_folder/index.html"
+          # Find and update index.html wherever it exists
+          find allure-report -name "index.html" -type f -exec sed -i 's/<title>Allure Report<\/title>/<title>Bank78 - API Quality Readiness<\/title>/' {} \;
+          echo "Title update completed"
 
       - name: Update Allure Report Widget Title
         continue-on-error: true
